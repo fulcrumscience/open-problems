@@ -1,0 +1,21 @@
+{
+  "name": "Open Problem Collector Results",
+  "description": "Feasibility assessment outputs, go-now experiment packets, and RFQ materials.",
+  "version": "2026-02-11",
+  "entrypoints": [
+    "viewer.html",
+    "go_now_lab_packets.html",
+    "go_now_rfq_packages.html"
+  ],
+  "data_files": [
+    "problems_feed.json",
+    "feasibility_rankings.json",
+    "go_now_lab_packets.json",
+    "go_now_rfq_packages.json"
+  ],
+  "documents": [
+    "go_now_feasibility_redlines.md",
+    "go_now_rfq_target_labs.md",
+    "go_now_rfq_outreach_messages.md"
+  ]
+}

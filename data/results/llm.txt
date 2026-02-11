@@ -1,0 +1,24 @@
+# Open Problem Collector: LLM Guide
+
+## Purpose
+This directory contains extracted open problems, feasibility assessment outputs, and execution-ready experiment artifacts.
+
+## Primary Pages
+- viewer.html
+- go_now_lab_packets.html
+- go_now_rfq_packages.html
+
+## Primary Data
+- problems_feed.json: canonical problem list and source links
+- feasibility_rankings.json: per-problem and per-sub-question feasibility scoring details
+- go_now_lab_packets.json: lab packet definitions for ready-to-test experiments
+- go_now_rfq_packages.json: RFQ-ready scope, deliverables, and outreach templates
+
+## Supporting Docs
+- go_now_feasibility_redlines.md: feasibility redlines used before RFQ issue
+- go_now_rfq_target_labs.md: target recipient list
+- go_now_rfq_outreach_messages.md: send-ready outreach templates
+
+## Notes
+- Use source URLs and provenance snippets for traceability.
+- Values in viewer labels are derived from the JSON files above.

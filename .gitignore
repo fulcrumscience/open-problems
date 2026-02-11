@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment
+.env
+
+# Data (large files — not deployed via git)
+data/workshops/*.pdf
+data/nas_reports/*.pdf
+data/checkpoints/
+data/logs/
+collector.db
+
+# OS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/

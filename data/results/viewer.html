@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Open Problem Collector feasibility assessments, decision labels, and linked source evidence for open research problems.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Open Problem Collector — Assessment</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #1a1a1a; line-height: 1.5; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .resource-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: -12px; margin-bottom: 20px; }
+  .resource-link { display: inline-block; padding: 4px 10px; border-radius: 6px; border: 1px solid #d0d0d0; background: #fff; font-size: 12px; color: #1f2937; text-decoration: none; }
+  .resource-link:hover { border-color: #2563eb; color: #1d4ed8; }
+
+  /* Stats bar */
+  .stats { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; padding: 16px; background: #fff; border-radius: 8px; border: 1px solid #e0e0e0; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 28px; font-weight: 700; color: #2563eb; }
+  .stat-label { font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Filters */
+  .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
+  .search-input { flex: 1; min-width: 200px; padding: 8px 12px; border: 1px solid #d0d0d0; border-radius: 6px; font-size: 14px; outline: none; }
+  .search-input:focus { border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37,99,235,0.1); }
+  select { padding: 8px 12px; border: 1px solid #d0d0d0; border-radius: 6px; font-size: 14px; background: #fff; cursor: pointer; outline: none; }
+  select:focus { border-color: #2563eb; }
+  .filter-count { font-size: 13px; color: #666; }
+
+  /* Sort toggle */
+  .sort-toggle { padding: 7px 12px; border: 1px solid #d0d0d0; border-radius: 6px; font-size: 13px; background: #fff; cursor: pointer; white-space: nowrap; }
+  .sort-toggle:hover { background: #f8f8f8; }
+  .sort-toggle.active { background: #eef2ff; border-color: #2563eb; color: #2563eb; }
+
+  /* Problem cards */
+  .problem-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 12px; overflow: hidden; transition: box-shadow 0.15s; }
+  .problem-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .problem-header { padding: 16px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; }
+  .problem-header:hover { background: #fafafa; }
+  .problem-statement { font-size: 15px; font-weight: 500; }
+  .problem-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 500; }
+  .tag-domain { background: #dbeafe; color: #1e40af; }
+  .tag-scope { background: #f3e8ff; color: #6b21a8; }
+  .tag-source { background: #dcfce7; color: #166534; text-decoration: none; }
+  a.tag-source:hover { background: #bbf7d0; text-decoration: underline; }
+  .tag-lab { background: #ffedd5; color: #9a3412; text-decoration: none; }
+  a.tag-lab:hover { background: #fed7aa; text-decoration: underline; }
+  .tag-budget { background: #ecfeff; color: #155e75; }
+  .tag-complexity-simple { background: #dcfce7; color: #166534; }
+  .tag-complexity-medium { background: #fef3c7; color: #92400e; }
+  .tag-complexity-complex { background: #fee2e2; color: #991b1b; }
+  .expand-icon { float: right; color: #999; font-size: 18px; transition: transform 0.2s; }
+  .problem-card.expanded .expand-icon { transform: rotate(90deg); }
+  .keywords { font-size: 12px; color: #888; }
+
+  /* Decision badge */
+  .decision-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .decision-badge.go_now { background: #dcfce7; color: #166534; }
+  .decision-badge.needs_specification { background: #f3f4f6; color: #374151; }
+  .decision-badge.needs_repositioning { background: #fef3c7; color: #92400e; }
+  .problem-card.decision-go_now { box-shadow: inset 0 0 0 1px #16a34a22; }
+  .problem-card.decision-needs_specification { box-shadow: none; }
+  .problem-card.decision-needs_repositioning { box-shadow: inset 0 0 0 1px #d9770622; }
+
+  /* Sub-questions */
+  .sub-questions { display: none; border-top: 1px solid #e0e0e0; padding: 0 16px 16px; }
+  .problem-card.expanded .sub-questions { display: block; }
+  .sq-title { font-size: 13px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 0 8px; }
+  .sq-item { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .sq-item:last-child { border-bottom: none; }
+  .sq-question { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .sq-evidence { font-size: 13px; color: #555; margin-bottom: 4px; }
+  .sq-disciplines { font-size: 12px; color: #888; }
+  .sq-label { font-weight: 600; color: #444; }
+
+  /* Score breakdown */
+  .score-breakdown { display: flex; gap: 10px; margin-top: 8px; padding: 6px 10px; background: #f9fafb; border-radius: 6px; font-size: 11px; color: #666; flex-wrap: wrap; }
+  .score-dim { display: inline-flex; align-items: center; gap: 4px; }
+  .score-dim-label { color: #888; }
+  .score-dim-value { font-weight: 600; font-size: 12px; }
+  .score-dim-value.high { color: #16a34a; }
+  .score-dim-value.mid { color: #d97706; }
+  .score-dim-value.low { color: #dc2626; }
+  .score-dim-value.neutral { color: #6b7280; }
+
+  .no-results { text-align: center; padding: 48px; color: #888; font-size: 16px; }
+
+  /* Provenance */
+  .provenance { font-size: 11px; color: #999; margin-top: 2px; }
+  .provenance a { color: inherit; text-decoration: none; }
+  .provenance a:hover { text-decoration: underline; }
+  .prov-signal, .prov-phrases, .prov-section { color: inherit; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Open Problem Collector</h1>
+  <div class="subtitle">Extracted from workshop &amp; roadmap reports &mdash; feasibility assessment</div>
+  <div class="resource-links">
+    <a class="resource-link" href="go_now_lab_packets.html" target="_blank" rel="noopener">Go-now lab packets</a>
+    <a class="resource-link" href="go_now_lab_packets.json" target="_blank" rel="noopener">Lab packets JSON</a>
+    <a class="resource-link" href="go_now_rfq_packages.html" target="_blank" rel="noopener">Go-now RFQ packets</a>
+    <a class="resource-link" href="go_now_rfq_packages.json" target="_blank" rel="noopener">RFQ JSON</a>
+    <a class="resource-link" href="go_now_rfq_target_labs.md" target="_blank" rel="noopener">RFQ target labs</a>
+    <a class="resource-link" href="go_now_rfq_outreach_messages.md" target="_blank" rel="noopener">RFQ outreach messages</a>
+    <a class="resource-link" href="go_now_feasibility_redlines.md" target="_blank" rel="noopener">Feasibility redlines</a>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="filters">
+    <input type="text" class="search-input" id="search" placeholder="Search problems...">
+    <select id="filter-domain"><option value="">All domains</option></select>
+    <select id="filter-source"><option value="">All sources</option></select>
+    <select id="filter-scope">
+      <option value="">All scopes</option>
+      <option value="narrow">Narrow scope</option>
+      <option value="medium">Medium scope</option>
+      <option value="broad">Broad scope</option>
+    </select>
+    <select id="filter-decision">
+      <option value="">All decisions</option>
+      <option value="go_now">Ready to test</option>
+      <option value="needs_specification">Needs refinement</option>
+      <option value="needs_repositioning">Needs repositioning</option>
+    </select>
+    <button class="sort-toggle active" id="sort-decision" onclick="toggleSort()">Sort by decision</button>
+    <span class="filter-count" id="filter-count"></span>
+  </div>
+
+  <div id="problems"></div>
+</div>
+
+<script>
+let DATA = null;
+let RANKINGS = null;
+let LAB_PACKETS = null;
+let rankingMap = {};
+let packetMap = {};
+let sortByDecision = true;
+
+async function init() {
+  try {
+    const [feedResp, rankResp, packetResp] = await Promise.all([
+      fetch('problems_feed.json'),
+      fetch('feasibility_rankings.json'),
+      fetch('go_now_lab_packets.json').catch(() => null),
+    ]);
+    DATA = await feedResp.json();
+    RANKINGS = await rankResp.json();
+    LAB_PACKETS = (packetResp && packetResp.ok) ? await packetResp.json() : { experiments: [] };
+  } catch (e) {
+    document.getElementById('problems').innerHTML =
+      '<div class="no-results">Failed to load data files. Make sure problems_feed.json and the rankings file are served via HTTP.</div>';
+    return;
+  }
+
+  for (const r of (RANKINGS.ranked_problems || [])) {
+    rankingMap[r.problem_statement] = r;
+  }
+  for (const pkt of (LAB_PACKETS.experiments || [])) {
+    packetMap[normalizeStatement(pkt.maps_to_problem_statement)] = pkt;
+  }
+
+  renderStats();
+  populateFilters();
+  renderProblems();
+
+  document.getElementById('search').addEventListener('input', renderProblems);
+  document.getElementById('filter-domain').addEventListener('change', renderProblems);
+  document.getElementById('filter-source').addEventListener('change', renderProblems);
+  document.getElementById('filter-scope').addEventListener('change', renderProblems);
+  document.getElementById('filter-decision').addEventListener('change', renderProblems);
+}
+
+function toggleSort() {
+  sortByDecision = !sortByDecision;
+  document.getElementById('sort-decision').classList.toggle('active', sortByDecision);
+  renderProblems();
+}
+
+function getRanking(p) {
+  return rankingMap[p.problem_statement] || null;
+}
+
+function normalizeStatement(s) {
+  return (s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+function getLabPacket(p) {
+  return packetMap[normalizeStatement(p.problem_statement)] || null;
+}
+
+function sourceHref(s, provenance) {
+  // Use provenance deep_link when available (reviewer-anchored URL for eLife)
+  if (provenance && provenance.deep_link) return provenance.deep_link;
+  // Workshop/NAS PDFs: link to local PDF served alongside viewer
+  if (s && s.type && (s.type === 'workshop_report' || s.type === 'nas_report') && s.id) {
+    const dir = s.type === 'nas_report' ? 'nas_reports' : 'workshops';
+    return `../${dir}/${encodeURIComponent(s.id)}.pdf`;
+  }
+  if (s && typeof s.url === 'string' && s.url.trim()) return s.url;
+  if (s && typeof s.id === 'string' && s.id.trim()) {
+    return `../workshops/${encodeURIComponent(s.id)}.pdf`;
+  }
+  return '#';
+}
+
+function sourceLine(p) {
+  const prov = p.provenance;
+  const sources = p.sources || [];
+  const signalLabels = {
+    A: 'open question',
+    B: 'suggested direction',
+    C: 'priority signal',
+    D: 'reviewer critique',
+  };
+
+  // Build provenance description if available
+  const parts = [];
+  if (prov) {
+    const normalizedSectionLabel =
+      (typeof prov.section_label === 'string')
+        ? prov.section_label.replace(/^Reviewer\b/, 'reviewer')
+        : '';
+    if (prov.signal_category) {
+      parts.push(signalLabels[prov.signal_category] || 'evidence signal');
+    }
+    if (prov.matched_phrases && prov.matched_phrases.length) {
+      parts.push(prov.matched_phrases.map(ph => `"${esc(ph)}"`).join(', '));
+    }
+    if (normalizedSectionLabel) {
+      parts.push(`in ${esc(normalizedSectionLabel)}`);
+    } else if (prov.section && prov.section !== 'full_text') {
+      parts.push(`in ${esc(prov.section.replace(/_/g, ' '))}`);
+    }
+  }
+
+  // Determine link href — provenance deep_link first, then source href
+  const href = (prov && prov.deep_link)
+    ? prov.deep_link
+    : (sources.length ? sourceHref(sources[0], prov) : '');
+
+  // Append source name
+  let sourceLabel = '';
+  if (sources.length) {
+    const s = sources[0];
+    if (s.type === 'elife_review') sourceLabel = 'elifesciences';
+    else sourceLabel = esc(sourceTitle(s) || s.id);
+  }
+
+  // Build display text
+  let text;
+  if (parts.length && sourceLabel) {
+    text = `Sourced via ${parts.join(' ')} in ${sourceLabel}`;
+  } else if (parts.length) {
+    text = `Sourced via ${parts.join(' ')}`;
+  } else if (sourceLabel) {
+    text = `Source: ${sourceLabel}`;
+  } else {
+    return '';
+  }
+
+  if (href && href !== '#') {
+    return `<div class="provenance"><a href="${esc(href)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${text}</a></div>`;
+  }
+  return `<div class="provenance">${text}</div>`;
+}
+
+function sourceTitle(s) {
+  const raw = (s && typeof s.title === 'string' && s.title.trim()) ? s.title : (s && s.id ? s.id : '');
+  const d = document.createElement('div');
+  d.innerHTML = raw;
+  return (d.textContent || d.innerText || '').trim();
+}
+
+function scopeLabel(scope) {
+  if (!scope) return '';
+  return `${scope} scope`;
+}
+
+function complexityLabel(complexity) {
+  if (!complexity) return '';
+  const labels = { simple: 'low difficulty', medium: 'moderate difficulty', complex: 'high difficulty' };
+  return labels[complexity] || complexity;
+}
+
+function eligibilityReasonLabel(reason) {
+  const map = {
+    missing_experimental_action: 'no explicit experimental action',
+    missing_measurable_endpoint: 'no measurable endpoint',
+    missing_manipulable_system: 'no manipulable system',
+    policy_or_infrastructure_or_modeling_without_bench_plan:
+      'policy/infrastructure/modeling focus without bench plan',
+  };
+  if (map[reason]) return map[reason];
+  return String(reason || '').replace(/_/g, ' ');
+}
+
+function eligibilityReasonsText(reasons) {
+  if (!Array.isArray(reasons) || !reasons.length) return '';
+  return reasons.map(eligibilityReasonLabel).join(', ');
+}
+
+function formatUsdShort(n) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return '';
+  if (x >= 1000000) return `$${(x / 1000000).toFixed(1).replace(/\\.0$/, '')}M`;
+  if (x >= 1000) return `$${Math.round(x / 1000)}k`;
+  return `$${Math.round(x)}`;
+}
+
+function budgetLabel(packet) {
+  if (!packet || !packet.estimated_direct_cost_usd) return '';
+  const c = packet.estimated_direct_cost_usd;
+  const low = formatUsdShort(c.low);
+  const high = formatUsdShort(c.high);
+  if (!low && !high) return '';
+  if (low && high) return `Budget ${low}-${high}`;
+  return `Budget ${low || high}`;
+}
+
+function getDecision(r) {
+  if (!r) return 'needs_specification';
+  if (r.decision_bucket) return r.decision_bucket;
+  if (r.best_tier === 'high') return 'go_now';
+  if (r.best_tier === 'medium') return 'needs_specification';
+  return 'needs_repositioning';
+}
+
+function decisionLabel(decision) {
+  if (decision === 'go_now') return 'READY TO TEST';
+  if (decision === 'needs_specification') return 'NEEDS REFINEMENT';
+  return 'NEEDS REPOSITIONING';
+}
+
+function valueBand(n) {
+  if (!Number.isFinite(n)) return { cls: 'low', text: 'Unknown' };
+  if (n >= 0.7) return { cls: 'high', text: 'High' };
+  if (n >= 0.4) return { cls: 'mid', text: 'Medium' };
+  return { cls: 'low', text: 'Low' };
+}
+
+function renderStats() {
+  const s = DATA.summary;
+  const domains = new Set(DATA.problems.map(p => p.domain));
+  const ranked = RANKINGS.ranked_problems || [];
+  const goCount = RANKINGS.summary ? RANKINGS.summary.go_now : ranked.filter(r => getDecision(r) === 'go_now').length;
+  const needsCount = RANKINGS.summary ? RANKINGS.summary.needs_specification : ranked.filter(r => getDecision(r) === 'needs_specification').length;
+  const notFitCount = RANKINGS.summary ? RANKINGS.summary.needs_repositioning : ranked.filter(r => getDecision(r) === 'needs_repositioning').length;
+
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="stat-value">${s.problems_extracted}</div><div class="stat-label">Problems</div></div>
+    <div class="stat"><div class="stat-value">${s.sub_questions}</div><div class="stat-label">Sub-questions</div></div>
+    <div class="stat"><div class="stat-value">${s.sources_scanned}</div><div class="stat-label">Sources</div></div>
+    <div class="stat"><div class="stat-value">${domains.size}</div><div class="stat-label">Domains</div></div>
+    <div class="stat"><div class="stat-value">${goCount}</div><div class="stat-label">Ready</div></div>
+    <div class="stat"><div class="stat-value">${needsCount}</div><div class="stat-label">Needs Refinement</div></div>
+    <div class="stat"><div class="stat-value">${notFitCount}</div><div class="stat-label">Needs Repositioning</div></div>
+  `;
+}
+
+function populateFilters() {
+  const domains = [...new Set(DATA.problems.map(p => p.domain))].sort();
+  const domSel = document.getElementById('filter-domain');
+  domains.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = d;
+    domSel.appendChild(opt);
+  });
+
+  const sources = {};
+  DATA.problems.forEach(p => (p.sources || []).forEach(s => { sources[s.id] = sourceTitle(s); }));
+  const srcSel = document.getElementById('filter-source');
+  Object.entries(sources).sort((a, b) => a[1].localeCompare(b[1])).forEach(([id, title]) => {
+    const opt = document.createElement('option');
+    opt.value = id;
+    opt.textContent = title.length > 50 ? title.slice(0, 50) + '...' : title;
+    srcSel.appendChild(opt);
+  });
+}
+
+function getFiltered() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const domain = document.getElementById('filter-domain').value;
+  const source = document.getElementById('filter-source').value;
+  const scope = document.getElementById('filter-scope').value;
+  const decision = document.getElementById('filter-decision').value;
+
+  let filtered = DATA.problems.filter(p => {
+    if (q && !p.problem_statement.toLowerCase().includes(q) &&
+        !p.domain.toLowerCase().includes(q) &&
+        !(p.subdomain || '').toLowerCase().includes(q) &&
+        !(p.related_keywords || []).some(k => k.toLowerCase().includes(q))) return false;
+    if (domain && p.domain !== domain) return false;
+    if (source && !(p.sources || []).some(s => s.id === source)) return false;
+    if (scope && p.scope !== scope) return false;
+    if (decision) {
+      const r = getRanking(p);
+      if (getDecision(r) !== decision) return false;
+    }
+    return true;
+  });
+
+  if (sortByDecision) {
+    filtered.sort((a, b) => {
+      const ra = getRanking(a);
+      const rb = getRanking(b);
+      const decisionRank = { go_now: 0, needs_specification: 1, needs_repositioning: 2 };
+      const da = decisionRank[getDecision(ra)] ?? 3;
+      const db = decisionRank[getDecision(rb)] ?? 3;
+      if (da !== db) return da - db;
+      return (rb ? rb.best_score : 0) - (ra ? ra.best_score : 0);
+    });
+  }
+
+  return filtered;
+}
+
+const DIM_LABELS = {
+  biosafety: 'Biosafety',
+  technique: 'Technique',
+  reagent: 'Reagent',
+  cost: 'Estimate',
+  readiness: 'Readiness',
+  tractability: 'Tractability',
+};
+
+function biosafetyLevelLabel(sqScore) {
+  const tier = sqScore && sqScore.details && sqScore.details.biosafety && sqScore.details.biosafety.tier;
+  if (!tier || tier === 'default') return null;
+  const map = {
+    safe_organisms: { text: 'BSL-1', cls: 'high' },
+    bsl2_organisms: { text: 'BSL-2', cls: 'mid' },
+    bsl2_plus_viral: { text: 'BSL-2+', cls: 'mid' },
+    non_biological_materials: { text: 'No BSL', cls: 'high' },
+    disqualifiers: { text: 'BSL-3+/restricted', cls: 'low' },
+  };
+  return map[tier] || null;
+}
+
+function costRangeLabel(sqScore) {
+  const complexity = sqScore && sqScore.details && sqScore.details.cost && sqScore.details.cost.complexity;
+  const map = {
+    simple: '$5k-$20k',
+    medium: '$20k-$75k',
+    complex: '$75k-$250k',
+  };
+  if (complexity && map[complexity]) return map[complexity];
+  return '$20k-$75k';
+}
+
+function techniqueLabel(sqScore) {
+  const matched = (sqScore && sqScore.details && sqScore.details.technique && sqScore.details.technique.matched) || [];
+  const keywords = [];
+  for (const m of matched) {
+    for (const kw of (m.keywords || [])) {
+      if (!keywords.includes(kw)) keywords.push(kw);
+    }
+  }
+  if (!keywords.length) return null;
+  const shown = keywords.slice(0, 2);
+  const suffix = keywords.length > 2 ? ` +${keywords.length - 2}` : '';
+  return { text: `${shown.join(', ')}${suffix}`, cls: keywords.length >= 2 ? 'high' : 'mid' };
+}
+
+function reagentLabel(sqScore) {
+  const tier = sqScore && sqScore.details && sqScore.details.reagent && sqScore.details.reagent.tier;
+  if (!tier || tier === 'default') return null;
+  const map = {
+    standard_catalog: { text: 'catalog-ready', cls: 'high' },
+    specialty_commercial: { text: 'specialty vendor', cls: 'mid' },
+    custom_synthesis: { text: 'custom synthesis', cls: 'mid' },
+    author_specific: { text: 'author-supplied', cls: 'low' },
+    restricted: { text: 'restricted', cls: 'low' },
+  };
+  return map[tier] || null;
+}
+
+function readinessLabel(sqScore) {
+  const r = (sqScore && sqScore.details && sqScore.details.readiness) || {};
+  const all = ['action', 'measurement', 'system', 'controls'];
+  const hits = [];
+  if ((r.action_hits || []).length) hits.push('action');
+  if ((r.measurement_hits || []).length) hits.push('measurement');
+  if ((r.system_hits || []).length) hits.push('system');
+  if ((r.control_hits || []).length) hits.push('controls');
+  const missing = all.filter(x => !hits.includes(x));
+  if (!hits.length) return { text: `missing: ${missing.join(', ')}`, cls: 'neutral' };
+  const cls = hits.length >= 3 ? 'high' : hits.length >= 2 ? 'mid' : 'low';
+  const missingText = missing.length ? ` (missing: ${missing.join(', ')})` : '';
+  return { text: `${hits.join(', ')}${missingText}`, cls };
+}
+
+function tractabilityLabel(sqScore) {
+  const t = (sqScore && sqScore.details && sqScore.details.tractability) || {};
+  const penalties = t.penalties || [];
+  let level = (t.complexity || 'medium').toLowerCase();
+  // If long-term/multi-site scale is flagged, collapse to complex.
+  if (penalties.includes('multi_year_or_scale') || penalties.includes('infrastructure')) {
+    level = 'complex';
+  } else if (penalties.includes('non_bench_emphasis') && level === 'simple') {
+    level = 'medium';
+  }
+  if (level === 'simple') return { text: 'simple', cls: 'high' };
+  if (level === 'complex') return { text: 'complex', cls: 'low' };
+  return { text: 'medium', cls: 'mid' };
+}
+
+function scoreDimHTML(value, key, sqScore) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return '';
+  if (key === 'biosafety') {
+    const v = biosafetyLevelLabel(sqScore);
+    if (!v) return '';
+    return `<span class="score-dim"><span class="score-dim-label">${DIM_LABELS[key] || key}</span> <span class="score-dim-value ${v.cls}">${v.text}</span></span>`;
+  }
+  if (key === 'cost') {
+    return `<span class="score-dim"><span class="score-dim-label">${DIM_LABELS[key] || key}</span> <span class="score-dim-value mid">${costRangeLabel(sqScore)}</span></span>`;
+  }
+  if (key === 'technique') {
+    const v = techniqueLabel(sqScore);
+    if (!v) return '';
+    return `<span class="score-dim"><span class="score-dim-label">${DIM_LABELS[key] || key}</span> <span class="score-dim-value ${v.cls}">${esc(v.text)}</span></span>`;
+  }
+  if (key === 'reagent') {
+    const v = reagentLabel(sqScore);
+    if (!v) return '';
+    return `<span class="score-dim"><span class="score-dim-label">${DIM_LABELS[key] || key}</span> <span class="score-dim-value ${v.cls}">${esc(v.text)}</span></span>`;
+  }
+  if (key === 'readiness') {
+    const v = readinessLabel(sqScore);
+    return `<span class="score-dim"><span class="score-dim-label">${DIM_LABELS[key] || key}</span> <span class="score-dim-value ${v.cls}">${esc(v.text)}</span></span>`;
+  }
+  if (key === 'tractability') {
+    const v = tractabilityLabel(sqScore);
+    return `<span class="score-dim"><span class="score-dim-label">${DIM_LABELS[key] || key}</span> <span class="score-dim-value ${v.cls}">${esc(v.text)}</span></span>`;
+  }
+  const band = valueBand(n);
+  const label = DIM_LABELS[key] || key;
+  return `<span class="score-dim"><span class="score-dim-label">${label}</span> <span class="score-dim-value ${band.cls}">${band.text}</span></span>`;
+}
+
+function renderProblems() {
+  const filtered = getFiltered();
+  document.getElementById('filter-count').textContent =
+    `${filtered.length} of ${DATA.problems.length} problems`;
+
+  if (!filtered.length) {
+    document.getElementById('problems').innerHTML = '<div class="no-results">No problems match your filters.</div>';
+    return;
+  }
+
+  document.getElementById('problems').innerHTML = filtered.map(p => {
+    const r = getRanking(p);
+    const decision = getDecision(r);
+    const packet = getLabPacket(p);
+    const decisionClass = `decision-${decision}`;
+    const decisionBadge = `<span class="decision-badge ${decision}">${decisionLabel(decision)}</span>`;
+    const packetBadge = (decision === 'go_now' && packet)
+      ? `<a class="tag tag-lab" href="lab_packets/${encodeURIComponent(packet.id)}.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Lab packet</a>`
+      : '';
+    const budget = (decision === 'go_now' && packet) ? budgetLabel(packet) : '';
+    const budgetBadge = budget
+      ? `<span class="tag tag-budget" title="Direct consumables estimate from lab packet">${esc(budget)}</span>`
+      : '';
+
+    const sqScoreMap = {};
+    if (r && r.sub_question_scores) {
+      for (const sq of r.sub_question_scores) {
+        sqScoreMap[sq.question] = sq;
+      }
+    }
+
+    return `
+    <div class="problem-card ${decisionClass}" onclick="this.classList.toggle('expanded')">
+      <div class="problem-header">
+        <div class="problem-statement"><span class="expand-icon">&#9654;</span>${esc(p.problem_statement)}</div>
+        <div class="problem-meta">
+          <span class="tag tag-domain">${esc(p.domain)}${p.subdomain ? ' / ' + esc(p.subdomain) : ''}</span>
+          ${decisionBadge}
+          <span class="tag tag-scope">${esc(scopeLabel(p.scope))}</span>
+          ${packetBadge}
+          ${budgetBadge}
+        </div>
+        ${sourceLine(p)}
+        ${p.related_keywords && p.related_keywords.length ? `<div class="keywords">${p.related_keywords.map(k => esc(k)).join(' &middot; ')}</div>` : ''}
+      </div>
+      <div class="sub-questions">
+        <div class="sq-title">Sub-questions (${p.sub_questions.length})</div>
+        ${p.sub_questions.map(sq => {
+          const sqScore = sqScoreMap[sq.question];
+          const sqDecision = sqScore ? (sqScore.decision || 'needs_specification') : 'needs_specification';
+          const sqBadge = sqScore
+            ? `<span class="decision-badge ${sqDecision}" style="font-size:10px">${decisionLabel(sqDecision)}</span>`
+            : '';
+          let scorePieces = '';
+          if (sqScore && sqScore.breakdown) {
+            const keys = ['biosafety', 'technique', 'reagent', 'cost', 'readiness', 'tractability'];
+            scorePieces = keys.map(k => scoreDimHTML(sqScore.breakdown[k], k, sqScore)).join(' ');
+          }
+          const sqBreakdown = scorePieces ? `<div class="score-breakdown">${scorePieces}</div>` : '';
+
+          let gateNote = '';
+          if (sqScore && sqScore.details && sqScore.details.eligibility && !sqScore.details.eligibility.eligible) {
+            const reasons = sqScore.details.eligibility.reasons || [];
+            if (reasons.length) {
+              gateNote = `<div class="sq-disciplines"><span class="sq-label">Eligibility:</span> ${esc(eligibilityReasonsText(reasons))}</div>`;
+            }
+          }
+
+          return `
+          <div class="sq-item">
+            <div class="sq-question">${sqBadge} ${esc(sq.question)}</div>
+            <div class="sq-evidence"><span class="sq-label">Evidence needed:</span> ${esc(sq.evidence_needed)}</div>
+            <div class="sq-disciplines">
+              ${(sq.disciplines || []).map(d => esc(d)).join(', ')}
+              ${sq.estimated_complexity ? ` &middot; <span class="tag tag-complexity-${sq.estimated_complexity}">${esc(complexityLabel(sq.estimated_complexity))}</span>` : ''}
+            </div>
+            ${gateNote}
+            ${sqBreakdown}
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function esc(s) {
+  if (!s) return '';
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cat_a_remains_unknown",
+    "text": "Despite decades of research on antimicrobial resistance, it remains unknown how horizontal gene transfer of resistance cassettes is regulated in polymicrobial biofilm communities. The mechanisms governing selective transfer between species remain poorly understood and warrant dedicated investigation.",
+    "expected_category": "A",
+    "expected_phrases": ["it remains unknown", "remains poorly understood"]
+  },
+  {
+    "id": "cat_a_critical_gap",
+    "text": "There is a critical gap in our understanding of how engineered gene circuits behave in non-model organisms. Future research should focus on developing standardized characterization tools that work across diverse chassis organisms.",
+    "expected_category": "A",
+    "expected_phrases": ["a critical gap", "future research should"]
+  },
+  {
+    "id": "cat_b_promising_direction",
+    "text": "Single-cell multi-omics represents a promising direction for dissecting the heterogeneity of tumor microenvironments. Integration of spatial transcriptomics with proteomics data would be valuable to understand immune cell positioning and function in solid tumors.",
+    "expected_category": "B",
+    "expected_phrases": ["a promising direction", "would be valuable to"]
+  },
+  {
+    "id": "cat_b_underexplored",
+    "text": "The role of non-coding RNAs in regulating CRISPR-Cas immune responses in bacteria is largely unexplored. Limited data exists on how environmental stressors modulate these regulatory networks in natural microbial populations.",
+    "expected_category": "B",
+    "expected_phrases": ["largely unexplored", "limited data"]
+  },
+  {
+    "id": "cat_c_research_priority",
+    "text": "The workshop participants identified the development of real-time biosensors for metabolic engineering as a priority research area. Enabling technology needed for closed-loop control of fermentation processes should be prioritized in upcoming funding cycles.",
+    "expected_category": "C",
+    "expected_phrases": ["priority research area", "enabling technology needed", "should be prioritized"]
+  },
+  {
+    "id": "cat_c_bottleneck",
+    "text": "Protein expression and purification at scale remain a significant bottleneck for high-throughput enzyme characterization pipelines. This barrier to progress limits our ability to systematically map sequence-function relationships across enzyme families.",
+    "expected_category": "C",
+    "expected_phrases": ["bottleneck", "barrier to progress"]
+  },
+  {
+    "id": "negative_funding",
+    "text": "The committee recommended that the funding mechanism for early-career investigators be restructured to allow more flexible spending on workforce development initiatives. The training program should incorporate computational skills alongside traditional benchwork.",
+    "expected_category": null,
+    "expected_phrases": []
+  },
+  {
+    "id": "no_signal_background",
+    "text": "CRISPR-Cas9 has revolutionized genome editing since its development as a molecular tool in 2012. The system consists of a guide RNA that directs the Cas9 nuclease to a specific genomic locus, where it creates a double-strand break that is repaired by cellular machinery.",
+    "expected_category": null,
+    "expected_phrases": []
+  },
+  {
+    "id": "short_paragraph_skip",
+    "text": "See Figure 3 for details.",
+    "expected_category": null,
+    "expected_phrases": []
+  }
+]

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Transcriptomic Profiling of Pachytene-Specific Gene Activation in Meiotic Cells — Lab Packet</title>
+<style>  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
+  h1 { margin: 0 0 6px; font-size: 24px; }
+  .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
+  .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
+  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .tag-go { background: #dcfce7; color: #166534; }
+  .tag-score { background: #dbeafe; color: #1e40af; }
+  .tag-cost { background: #ecfeff; color: #155e75; }
+  section { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  section h2 { margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; color: #374151; }
+  section p { margin: 0 0 6px; font-size: 14px; }
+  section ul, section ol { margin: 0 0 6px; padding-left: 18px; }
+  section li { margin: 0 0 4px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
+  .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
+  .problem-box p { margin: 0 0 4px; font-size: 14px; }
+  .problem-box .label { font-weight: 600; color: #374151; }
+  @media (max-width: 800px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 10px; border: 1px solid #e5e7eb; }
+    td { border: none; border-bottom: 1px solid #f3f4f6; }
+    td:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="../viewer.html">Assessment viewer</a>
+    <a href="opc-go-006.html">&larr; Previous</a>
+    
+  </div>
+
+  <p class="muted">opc-go-005</p>
+  <h1>Transcriptomic Profiling of Pachytene-Specific Gene Activation in Meiotic Cells</h1>
+  <div class="meta">
+    <span class="tag tag-go">READY TO TEST</span>
+    <span class="tag tag-score">Score 0.527</span>
+    <span class="tag tag-cost">$18,000 &ndash; $25,000</span>
+  </div>
+
+  <section>
+    <h2>Problem mapping</h2>
+    <div class="problem-box">
+      <p><span class="label">Problem:</span> The concept of &#x27;pachytene genome activation&#x27; (PGS) is introduced without proper characterization of which genes are activated, what defines this process, or what mechanisms underlie it</p>
+      <p><span class="label">Sub-question:</span> What is the complete set of genes that are specifically upregulated during pachytene stage (pachytene genome activation)?</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objective</h2>
+    <p>To identify and validate the complete set of genes specifically upregulated during the pachytene stage of meiosis through temporal RNA-seq profiling across meiotic progression.</p>
+  </section>
+
+  <section>
+    <h2>Readouts</h2>
+    <ul><li>Primary: Differential gene expression profiles across meiotic stages (leptotene, zygotene, pachytene, diplotene) identifying pachytene-upregulated genes (fold-change ≥2, FDR&lt;0.05)</li><li>Secondary: RT-qPCR validation of top 20 pachytene-enriched candidates showing stage-specific expression patterns</li><li>Secondary: RNA in situ hybridization of 5 representative pachytene-specific genes confirming cellular localization and temporal expression</li></ul>
+  </section>
+
+  <section>
+    <h2>Experimental design</h2>
+    <p><strong>Overview:</strong> Purify staged meiotic spermatocytes from mouse testes using FACS-based separation (DNA content and surface markers), perform RNA-seq on biological quadruplicates per stage, and validate candidates through orthogonal methods.</p>
+    <ul><li>WP1: Optimize and perform FACS-based isolation of meiotic stages (leptotene, zygotene, pachytene, diplotene) from juvenile mouse testes using Hoechst/surface marker staining; quality control by cytology and stage-specific marker RT-qPCR</li><li>WP2: Extract RNA, perform quality control (RIN&gt;8), prepare libraries and sequence (150bp paired-end, 50M reads/sample) for 4 biological replicates per meiotic stage plus pre-meiotic spermatogonia control</li><li>WP3: Validate top 20 pachytene-enriched genes by RT-qPCR across all stages (technical triplicates) and perform RNA-FISH on testis sections for 5 representative genes across 3 biological replicates</li><li>WP4: Bioinformatic analysis including read alignment, differential expression (DESeq2), clustering, Gene Ontology enrichment, and motif analysis of pachytene-specific promoters</li></ul>
+    <p><strong>Controls:</strong></p>
+    <ul><li>Positive control: Known pachytene-expressed genes (e.g., Spo11, Dmc1, Sycp1) should show expected expression patterns</li><li>Negative control: Pre-meiotic spermatogonia sample to establish baseline and identify meiosis-specific vs pachytene-specific genes</li><li>Technical control: ERCC spike-in controls for RNA-seq normalization and batch effect assessment across libraries</li></ul>
+    <p><strong>Sample size plan:</strong> 4 biological replicates per stage (5 stages total = 20 RNA-seq samples); RT-qPCR validation on 3 independent biological replicates with 3 technical replicates each; RNA-FISH on 3 biological replicate animals with 10 sections per animal</p>
+    <p><strong>Success criteria:</strong></p>
+    <ul><li>Identify ≥100 genes with pachytene-specific upregulation (≥2-fold vs all other stages, FDR&lt;0.05) with clear stage separation in PCA analysis</li><li>RT-qPCR validation confirms pachytene enrichment for ≥80% of tested candidates (≥1.5-fold vs adjacent stages, p&lt;0.05)</li><li>RNA-FISH demonstrates pachytene-stage localized expression for ≥4 of 5 tested genes with signal in &gt;70% of pachytene cells</li></ul>
+    <p><strong>Estimated timeline:</strong> 16 weeks</p>
+  </section>
+
+  <section>
+    <h2>Materials</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
+      <tbody><tr>
+          <td>C57BL/6J juvenile mice (postnatal day 18-20)</td>
+          <td>Jackson Laboratory</td>
+          <td>000664</td>
+          <td></td>
+          <td>Source of enriched meiotic cells at synchronized stages</td>
+        </tr><tr>
+          <td>Hoechst 33342</td>
+          <td>Thermo Fisher</td>
+          <td>H3570</td>
+          <td></td>
+          <td>DNA staining for FACS-based cell cycle staging</td>
+        </tr><tr>
+          <td>FITC anti-mouse c-Kit antibody</td>
+          <td>BioLegend</td>
+          <td>105806</td>
+          <td></td>
+          <td>Surface marker for excluding undifferentiated spermatogonia</td>
+        </tr><tr>
+          <td>RNeasy Micro Kit</td>
+          <td>Qiagen</td>
+          <td>74004</td>
+          <td></td>
+          <td>RNA extraction from FACS-purified cell populations</td>
+        </tr><tr>
+          <td>Agilent RNA 6000 Nano Kit</td>
+          <td>Agilent</td>
+          <td>5067-1511</td>
+          <td></td>
+          <td>RNA quality control and RIN assessment</td>
+        </tr><tr>
+          <td>NEBNext Ultra II Directional RNA Library Prep Kit</td>
+          <td>New England Biolabs</td>
+          <td>E7760</td>
+          <td></td>
+          <td>Strand-specific RNA-seq library preparation</td>
+        </tr><tr>
+          <td>ERCC RNA Spike-In Mix</td>
+          <td>Thermo Fisher</td>
+          <td>4456740</td>
+          <td></td>
+          <td>Technical controls for normalization and quality assessment</td>
+        </tr><tr>
+          <td>NovaSeq 6000 S4 Reagent Kit (300 cycles)</td>
+          <td>Illumina</td>
+          <td>20028312</td>
+          <td></td>
+          <td>High-throughput paired-end RNA sequencing</td>
+        </tr><tr>
+          <td>SuperScript IV First-Strand Synthesis System</td>
+          <td>Thermo Fisher</td>
+          <td>18091050</td>
+          <td></td>
+          <td>cDNA synthesis for RT-qPCR validation</td>
+        </tr><tr>
+          <td>PowerUp SYBR Green Master Mix</td>
+          <td>Thermo Fisher</td>
+          <td>A25742</td>
+          <td></td>
+          <td>RT-qPCR quantification of validation candidates</td>
+        </tr><tr>
+          <td>RNAscope Multiplex Fluorescent Reagent Kit v2</td>
+          <td>Advanced Cell Diagnostics</td>
+          <td>323100</td>
+          <td></td>
+          <td>RNA in situ hybridization for spatial validation</td>
+        </tr><tr>
+          <td>Custom RNAscope probes (5 targets)</td>
+          <td>Advanced Cell Diagnostics</td>
+          <td>Custom design</td>
+          <td></td>
+          <td>Target-specific probes for pachytene gene visualization</td>
+        </tr><tr>
+          <td>Anti-SYCP3 antibody</td>
+          <td>Abcam</td>
+          <td>ab15093</td>
+          <td></td>
+          <td>Immunofluorescence co-staining to identify pachytene cells for RNA-FISH</td>
+        </tr></tbody>
+    </table>
+    <p class="muted">Direct cost estimate: $18,000 &ndash; $25,000 (Includes animals, FACS reagents, RNA extraction, library prep, sequencing (20 samples at institutional rates ~$400/sample), RT-qPCR reagents and primers, RNA-FISH probes and kits. Excludes personnel, equipment access fees, and computational infrastructure.)</p>
+  </section>
+
+  <section>
+    <h2>References</h2>
+    <ul><li>Bastos et al. (2005) Flow cytometric characterization of viable meiotic and postmeiotic cells by Hoechst 33342 in mouse spermatogenesis. Cytometry A 65:40-49 &mdash; Established protocol for FACS-based separation of meiotic stage spermatocytes using DNA content and staining patterns</li><li>Soumillon et al. (2013) Cellular source and mechanisms of high transcriptome complexity in the mammalian testis. Cell Rep 3:2179-2190 &mdash; Reference transcriptomic approach for meiotic cell profiling and computational methods for stage-specific gene identification</li><li>Green et al. (2018) Comprehensive roadmap of murine spermatogenesis defined by single-cell RNA-seq. Dev Cell 46:651-667 &mdash; Benchmark dataset for known stage-specific marker genes and validation of pachytene cell identity</li><li>Wang et al. (2012) RNAscope: a novel in situ RNA analysis platform for formalin-fixed, paraffin-embedded tissues. J Mol Diagn 14:22-29 &mdash; RNA-FISH protocol for sensitive detection and spatial localization of pachytene-specific transcripts</li></ul>
+  </section>
+
+  <section>
+    <h2>Lab handoff checklist</h2>
+    <ul><li>Detailed FACS gating strategy document with representative plots showing separation of leptotene, zygotene, pachytene, and diplotene populations based on DNA content and forward/side scatter parameters</li><li>Complete list of validated primer sequences for 10 known stage-specific marker genes (2-3 per stage) to be used for quality control of sorted populations prior to RNA-seq</li><li>Bioinformatics pipeline specification including: reference genome version (e.g., mm10/GRCm38), alignment software (STAR v2.7+), differential expression package (DESeq2), cutoffs for defining pachytene-specific genes (statistical and fold-change thresholds), and clustering approach for temporal pattern analysis</li><li>Animal breeding schedule to ensure availability of 4 cohorts of day 18-20 juvenile mice (minimum 6 males per cohort) at 2-week intervals for biological replicates</li></ul>
+  </section>
+
+  <div class="nav" style="margin-top: 20px;">
+    <a href="opc-go-006.html">&larr; Previous</a>
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    
+  </div>
+</div>
+</body>
+</html>

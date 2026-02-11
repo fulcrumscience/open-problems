@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/results/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+
+          # Viewer as index
+          cp data/results/viewer.html _site/index.html
+
+          # Data files (fetched by viewer)
+          cp data/results/problems_feed.json _site/
+          cp data/results/feasibility_rankings.json _site/
+          cp data/results/go_now_lab_packets.json _site/
+
+          # Linked HTML/JSON/MD reports
+          cp data/results/go_now_lab_packets.html _site/
+          cp data/results/go_now_rfq_packages.html _site/
+          cp data/results/go_now_rfq_packages.json _site/
+          cp data/results/go_now_rfq_target_labs.md _site/
+          cp data/results/go_now_rfq_outreach_messages.md _site/
+          cp data/results/go_now_feasibility_redlines.md _site/
+
+          # Lab packet detail pages
+          cp -r data/results/lab_packets _site/
+
+          # Site meta
+          cp data/results/favicon.svg _site/
+          cp data/results/robots.txt _site/
+          cp data/results/CNAME _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        id: deployment

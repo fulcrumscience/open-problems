@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Integrated Transcriptomics to Identify Novel TET2-CHIP Cardiovascular Targets — Lab Packet</title>
+<style>  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
+  h1 { margin: 0 0 6px; font-size: 24px; }
+  .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
+  .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
+  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .tag-go { background: #dcfce7; color: #166534; }
+  .tag-score { background: #dbeafe; color: #1e40af; }
+  .tag-cost { background: #ecfeff; color: #155e75; }
+  section { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  section h2 { margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; color: #374151; }
+  section p { margin: 0 0 6px; font-size: 14px; }
+  section ul, section ol { margin: 0 0 6px; padding-left: 18px; }
+  section li { margin: 0 0 4px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
+  .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
+  .problem-box p { margin: 0 0 4px; font-size: 14px; }
+  .problem-box .label { font-weight: 600; color: #374151; }
+  @media (max-width: 800px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 10px; border: 1px solid #e5e7eb; }
+    td { border: none; border-bottom: 1px solid #f3f4f6; }
+    td:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="../viewer.html">Assessment viewer</a>
+    
+    <a href="opc-go-004.html">Next &rarr;</a>
+  </div>
+
+  <p class="muted">opc-go-003</p>
+  <h1>Integrated Transcriptomics to Identify Novel TET2-CHIP Cardiovascular Targets</h1>
+  <div class="meta">
+    <span class="tag tag-go">READY TO TEST</span>
+    <span class="tag tag-score">Score 0.720</span>
+    <span class="tag tag-cost">$28,000 &ndash; $42,000</span>
+  </div>
+
+  <section>
+    <h2>Problem mapping</h2>
+    <div class="problem-box">
+      <p><span class="label">Problem:</span> The transcriptomic approaches fail to identify and validate novel therapeutic targets beyond already known markers like CXCL2/3 and IL8</p>
+      <p><span class="label">Sub-question:</span> What are the novel, previously unidentified molecular targets revealed by integrated transcriptomic analysis of TET2-CHIP-mediated cardiovascular disease?</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objective</h2>
+    <p>To identify and validate previously unreported molecular targets driving TET2-CHIP-mediated cardiovascular inflammation through bulk and single-cell RNA-seq with orthogonal validation.</p>
+  </section>
+
+  <section>
+    <h2>Readouts</h2>
+    <ul><li>Primary: Differentially expressed genes (DEGs) in TET2-deficient vs wildtype macrophages with |log2FC| &gt;1.5 and FDR &lt;0.05, excluding known markers (CXCL2/3, IL8)</li><li>Secondary: Single-cell RNA-seq cluster-specific expression profiles identifying cell-type-specific novel targets</li><li>Secondary: qPCR validation (≥3-fold change) and protein expression confirmation (≥2-fold change by Western/ELISA) for top 10 candidates</li></ul>
+  </section>
+
+  <section>
+    <h2>Experimental design</h2>
+    <p><strong>Overview:</strong> Generate TET2-KO and WT bone marrow-derived macrophages from atherosclerotic mouse models, perform bulk and scRNA-seq, computationally filter known targets, validate top novel candidates by qPCR and protein analysis in vitro and in vivo.</p>
+    <ul><li>WP1: Generate TET2-KO and WT BMDMs from Ldlr-/- mice (n=6/group), stimulate with oxLDL (50 μg/mL, 24h), harvest for bulk RNA-seq (n=4) and scRNA-seq (n=2 pooled samples)</li><li>WP2: Bulk RNA-seq analysis (DESeq2), scRNA-seq analysis (Seurat), literature mining to exclude known CHIP/CVD markers, integrate datasets to prioritize top 10 novel targets based on expression magnitude, consistency, and druggability prediction</li><li>WP3: Validate top 10 candidates by qPCR in independent BMDM samples (n=6/group, TET2-KO vs WT, ±oxLDL), confirm protein expression for top 5 by Western blot and ELISA in cell lysates and supernatants</li><li>WP4: Validate top 3 targets in vivo using aortic arch samples from TET2-CHIP atherosclerosis model (Tet2+/- Ldlr-/-, n=8/group vs WT controls), perform quality control, statistical analysis, and pathway enrichment</li></ul>
+    <p><strong>Controls:</strong></p>
+    <ul><li>Positive control: Known markers CXCL2, CXCL3, IL8 expression validated by qPCR and protein assays to confirm system responsiveness</li><li>Negative control: Unstimulated wildtype BMDMs to establish baseline expression levels</li><li>Technical control: RNA quality (RIN &gt;8.0), sequencing depth (&gt;30M reads/sample bulk, &gt;5000 cells scRNA-seq), isotype controls for protein assays</li></ul>
+    <p><strong>Sample size plan:</strong> Bulk RNA-seq: n=4 biological replicates per condition (TET2-KO+oxLDL, WT+oxLDL); scRNA-seq: n=2 pooled samples (3 mice each) per condition targeting 10,000 cells; qPCR validation: n=6 independent BMDM preparations; Western/ELISA: n=6; in vivo validation: n=8 mice per genotype</p>
+    <p><strong>Success criteria:</strong></p>
+    <ul><li>Identification of ≥20 novel DEGs (not CXCL2/3, IL8, or other reported CHIP/CVD markers) with |log2FC| &gt;1.5, FDR &lt;0.05 in bulk RNA-seq, and corroboration in scRNA-seq</li><li>≥5 of top 10 candidates validate by qPCR with ≥3-fold change (p&lt;0.05) and ≥2 validate at protein level with ≥2-fold change (p&lt;0.05)</li><li>≥1 top target validates in vivo with ≥2-fold change in aortic tissue (p&lt;0.05) between TET2-deficient and WT atherosclerotic mice</li></ul>
+    <p><strong>Estimated timeline:</strong> 16 weeks</p>
+  </section>
+
+  <section>
+    <h2>Materials</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
+      <tbody><tr>
+          <td>Tet2 flox/flox mice (C57BL/6 background)</td>
+          <td>Jackson Laboratory</td>
+          <td>017573</td>
+          <td></td>
+          <td>Generate TET2-KO BMDMs via Cre-lox system</td>
+        </tr><tr>
+          <td>Ldlr-/- mice (C57BL/6 background)</td>
+          <td>Jackson Laboratory</td>
+          <td>002207</td>
+          <td></td>
+          <td>Atherosclerosis-prone background for CHIP model</td>
+        </tr><tr>
+          <td>M-CSF recombinant mouse protein</td>
+          <td>BioLegend</td>
+          <td>576406</td>
+          <td></td>
+          <td>Differentiate bone marrow cells to macrophages</td>
+        </tr><tr>
+          <td>oxLDL (human)</td>
+          <td>Alfa Aesar</td>
+          <td>J65591</td>
+          <td></td>
+          <td>Inflammatory stimulus for atherosclerotic conditions</td>
+        </tr><tr>
+          <td>TRIzol Reagent</td>
+          <td>Thermo Fisher</td>
+          <td>15596026</td>
+          <td></td>
+          <td>RNA extraction for bulk and validation experiments</td>
+        </tr><tr>
+          <td>RNeasy Mini Kit</td>
+          <td>Qiagen</td>
+          <td>74106</td>
+          <td></td>
+          <td>RNA cleanup and quality improvement</td>
+        </tr><tr>
+          <td>TruSeq Stranded mRNA Library Prep Kit</td>
+          <td>Illumina</td>
+          <td>20020595</td>
+          <td></td>
+          <td>Bulk RNA-seq library preparation</td>
+        </tr><tr>
+          <td>Chromium Single Cell 3&#x27; GEX Kit v3.1</td>
+          <td>10x Genomics</td>
+          <td>1000269</td>
+          <td></td>
+          <td>Single-cell RNA-seq library preparation</td>
+        </tr><tr>
+          <td>NovaSeq 6000 S4 Reagent Kit (300 cycles)</td>
+          <td>Illumina</td>
+          <td>20028312</td>
+          <td></td>
+          <td>High-throughput sequencing for bulk and scRNA-seq</td>
+        </tr><tr>
+          <td>SuperScript IV First-Strand Synthesis System</td>
+          <td>Thermo Fisher</td>
+          <td>18091050</td>
+          <td></td>
+          <td>cDNA synthesis for qPCR validation</td>
+        </tr><tr>
+          <td>PowerUp SYBR Green Master Mix</td>
+          <td>Thermo Fisher</td>
+          <td>A25742</td>
+          <td></td>
+          <td>qPCR quantification of candidate targets</td>
+        </tr><tr>
+          <td>Custom TaqMan primers for novel targets</td>
+          <td>Thermo Fisher</td>
+          <td>Custom order</td>
+          <td></td>
+          <td>High-specificity qPCR validation</td>
+        </tr><tr>
+          <td>Pierce BCA Protein Assay Kit</td>
+          <td>Thermo Fisher</td>
+          <td>23225</td>
+          <td></td>
+          <td>Protein quantification for Western blots</td>
+        </tr><tr>
+          <td>4-20% Mini-PROTEAN TGX Precast Gels</td>
+          <td>Bio-Rad</td>
+          <td>4561096</td>
+          <td></td>
+          <td>Western blot protein separation</td>
+        </tr><tr>
+          <td>Custom primary antibodies for novel targets</td>
+          <td>Abcam/CST</td>
+          <td>Custom validation</td>
+          <td></td>
+          <td>Protein detection by Western blot</td>
+        </tr><tr>
+          <td>Mouse ELISA kits (custom for top targets)</td>
+          <td>R&amp;D Systems</td>
+          <td>TBD based on targets</td>
+          <td></td>
+          <td>Quantify secreted protein levels</td>
+        </tr><tr>
+          <td>Bioanalyzer 2100 with RNA Nano chips</td>
+          <td>Agilent</td>
+          <td>5067-1511</td>
+          <td></td>
+          <td>RNA quality assessment (RIN determination)</td>
+        </tr><tr>
+          <td>Cell Ranger software v7.0</td>
+          <td>10x Genomics</td>
+          <td>Free download</td>
+          <td></td>
+          <td>scRNA-seq data processing and alignment</td>
+        </tr></tbody>
+    </table>
+    <p class="muted">Direct cost estimate: $28,000 &ndash; $42,000 (Includes sequencing services ($15-20K), library prep kits ($5-8K), animal costs ($3-5K), validation reagents including custom primers/antibodies ($4-7K), and consumables ($1-2K). Excludes personnel, equipment depreciation, and institutional overhead.)</p>
+  </section>
+
+  <section>
+    <h2>References</h2>
+    <ul><li>Fuster et al. (2017) Clonal hematopoiesis associated with TET2 deficiency accelerates atherosclerosis development in mice. Science 355:842-847 &mdash; Reference CHIP-CVD mouse model generation, BMDM isolation protocols, and atherosclerosis induction parameters</li><li>Jaiswal et al. (2017) Clonal Hematopoiesis and Risk of Atherosclerotic Cardiovascular Disease. NEJM 377:111-121 &mdash; Establish clinical relevance and known CHIP-CVD markers to exclude from novel target identification</li><li>Zheng et al. (2017) Massively parallel digital transcriptional profiling of single cells. Nat Commun 8:14049 &mdash; 10x Genomics scRNA-seq protocol optimization and best practices for quality control</li><li>Love et al. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15:550 &mdash; Statistical framework for differential expression analysis with appropriate normalization and FDR control</li><li>Stuart et al. (2019) Comprehensive Integration of Single-Cell Data. Cell 177:1888-1902 &mdash; Seurat workflow for scRNA-seq analysis including clustering, cell type identification, and integration with bulk data</li><li>Bustin et al. (2009) The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments. Clin Chem 55:611-622 &mdash; Standardized qPCR validation protocols including primer design, normalization strategy, and statistical analysis</li></ul>
+  </section>
+
+  <section>
+    <h2>Lab handoff checklist</h2>
+    <ul><li>Comprehensive literature review document identifying all known CHIP-CVD markers (CXCL2/3, IL8, TNFα, IL1β, IL6, CCL2, etc.) with PubMed IDs for computational filtering, minimum 50 genes compiled</li><li>Approved IACUC protocol number and breeding strategy for generating Tet2+/- or Tet2-/- on Ldlr-/- background, including timeline for sufficient cohort generation</li><li>Bioinformatics pipeline specification including software versions (DESeq2 v1.38+, Seurat v4.3+, R v4.2+), server access credentials, and analysis scripts for reproducible DEG identification with literature-based filtering</li><li>Pre-validated primer sequences for positive control genes (Cxcl2, Cxcl3, Il8/Cxcl8 mouse ortholog, Gapdh, Actb) with demonstrated efficiency 90-110%</li><li>Vendor quotes for bulk RNA-seq (30M reads/sample, n=8) and scRNA-seq (targeting 10K cells/sample, n=4) services with confirmed turnaround time</li><li>Druggability screening criteria and database access (DrugBank, ChEMBL) for prioritizing targets with therapeutic potential in computational ranking</li></ul>
+  </section>
+
+  <div class="nav" style="margin-top: 20px;">
+    
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="opc-go-004.html">Next &rarr;</a>
+  </div>
+</div>
+</body>
+</html>

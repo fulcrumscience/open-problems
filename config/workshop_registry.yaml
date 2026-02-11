@@ -1,0 +1,35 @@
+# Registry of known workshop report sources
+# Actual PDFs go in data/workshops/ — this file is reference metadata
+
+workshop_sources:
+  - name: "NIH Workshop Reports"
+    organization: "NIH"
+    base_url: "https://orip.nih.gov/about-orip/workshop-reports"
+    notes: "Scattered across individual IC pages (NIAID, NHLBI, NIBIB, etc.)"
+
+  - name: "NSF Workshop Reports"
+    organization: "NSF"
+    base_url: "https://par.nsf.gov/"
+    notes: "NSF Public Access Repository — workshop reports as distinct product type since 2023"
+
+  - name: "DOE BER Workshop Reports"
+    organization: "DOE"
+    base_url: "https://science.osti.gov/ber/Community-Resources/BER-Workshop-Reports"
+    notes: "Well-organized — centralized page with direct PDF links by year"
+
+  - name: "NAS Consensus Studies"
+    organization: "National Academies"
+    base_url: "https://nap.nationalacademies.org/"
+    notes: "All 4000+ reports available as free PDFs"
+
+  - name: "Royal Society Open Questions"
+    organization: "Royal Society"
+    base_url: "https://royalsociety.org/journals/publishing-activities/open-questions-competition/"
+    notes: "Annual competition — open questions articles in Open Biology journal"
+
+# PoC target topics:
+#   - Synthetic biology / bioengineering
+#   - Antimicrobial resistance
+#   - AI for science / computational biology
+#   - Materials science / catalysis
+#   - Genomics / gene editing

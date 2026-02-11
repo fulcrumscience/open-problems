@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Open Problem Collector static results pages

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Validate Safe-Harbor Loci and Insulator Sequences for Stable Transgene Expression in Bioenergy Crops — Lab Packet</title>
+<style>  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
+  h1 { margin: 0 0 6px; font-size: 24px; }
+  .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
+  .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
+  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .tag-go { background: #dcfce7; color: #166534; }
+  .tag-score { background: #dbeafe; color: #1e40af; }
+  .tag-cost { background: #ecfeff; color: #155e75; }
+  section { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  section h2 { margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; color: #374151; }
+  section p { margin: 0 0 6px; font-size: 14px; }
+  section ul, section ol { margin: 0 0 6px; padding-left: 18px; }
+  section li { margin: 0 0 4px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
+  .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
+  .problem-box p { margin: 0 0 4px; font-size: 14px; }
+  .problem-box .label { font-weight: 600; color: #374151; }
+  @media (max-width: 800px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 10px; border: 1px solid #e5e7eb; }
+    td { border: none; border-bottom: 1px solid #f3f4f6; }
+    td:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="../viewer.html">Assessment viewer</a>
+    <a href="opc-go-001.html">&larr; Previous</a>
+    <a href="opc-go-006.html">Next &rarr;</a>
+  </div>
+
+  <p class="muted">opc-go-002</p>
+  <h1>Validate Safe-Harbor Loci and Insulator Sequences for Stable Transgene Expression in Bioenergy Crops</h1>
+  <div class="meta">
+    <span class="tag tag-go">READY TO TEST</span>
+    <span class="tag tag-score">Score 0.527</span>
+    <span class="tag tag-cost">$15,000 &ndash; $35,000</span>
+  </div>
+
+  <section>
+    <h2>Problem mapping</h2>
+    <div class="problem-box">
+      <p><span class="label">Problem:</span> How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenergy crops is not understood, and sequences with insulator-like function to dampen ectopic interactions are needed.</p>
+      <p><span class="label">Sub-question:</span> Can validated safe harbor loci be identified in bioenergy crop genomes for predictable transgene expression?</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objective</h2>
+    <p>Identify insertion sites and boundary elements that produce high, stable, low-variance expression across tissues and generations.</p>
+  </section>
+
+  <section>
+    <h2>Readouts</h2>
+    <ul><li>Primary: reporter mean expression and coefficient of variation across independent events</li><li>Primary: expression stability across tissues and T1 generation</li><li>Secondary: insertion fidelity and copy number</li><li>Secondary: growth/fitness neutrality</li></ul>
+  </section>
+
+  <section>
+    <h2>Experimental design</h2>
+    <p><strong>Overview:</strong> Head-to-head targeted insertion experiment comparing 3 candidate safe-harbor loci and 2 insulator configurations using a dual-luciferase reporter cassette.</p>
+    <ul><li>WP1 candidate loci nomination from pan-genome and chromatin context</li><li>WP2 build cassettes: no-insulator, insulator-A, insulator-B</li><li>WP3 CRISPR-directed insertion into each candidate locus</li><li>WP4 random-integration comparator arm (standard Agrobacterium transformation)</li><li>WP5 expression profiling by dual-luciferase and qPCR in controlled growth conditions</li><li>WP6 multi-tissue and generation follow-up (T0 leaf/callus + T1 seedling tissues)</li></ul>
+    <p><strong>Controls:</strong></p>
+    <ul><li>Random integration arm as baseline position-effect comparator</li><li>No-insulator cassette at each candidate locus</li><li>Constitutive internal Renilla control for ratiometric normalization</li></ul>
+    <p><strong>Sample size plan:</strong> Target &gt;=12 independent insertion events per locus x insulator condition; minimum 3 technical assay replicates per tissue per line.</p>
+    <p><strong>Success criteria:</strong></p>
+    <ul><li>&gt;=30% reduction in between-line expression CV versus random integration baseline</li><li>No significant drop in mean expression vs no-insulator comparator at same locus</li><li>Stable expression rank order maintained in T1 (Spearman rho &gt;=0.7)</li></ul>
+    <p><strong>Estimated timeline:</strong> 24 weeks</p>
+  </section>
+
+  <section>
+    <h2>Materials</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
+      <tbody><tr>
+          <td>Plant binary backbone (pCAMBIA1300 family)</td>
+          <td>Addgene</td>
+          <td>pCambia1300-PacI (#44183) or compatible pCAMBIA1300 derivative</td>
+          <td><a href="https://www.addgene.org/44183/" target="_blank" rel="noopener">source</a></td>
+          <td>Targeted insertion donor and reporter cassette backbone</td>
+        </tr><tr>
+          <td>Dual-luciferase assay chemistry</td>
+          <td>Promega</td>
+          <td>Dual-Luciferase Reporter Assay System, E1910/E1960</td>
+          <td><a href="https://www.promega.com/products/luciferase-assays/reporter-assays/dual_luciferase-reporter-assay-system" target="_blank" rel="noopener">source</a></td>
+          <td>Ratiometric reporter quantification</td>
+        </tr><tr>
+          <td>Firefly/Renilla reporter vectors (for cassette assembly controls)</td>
+          <td>Promega</td>
+          <td>pGL4 vector family (e.g., pGL4.10, pGL4.73)</td>
+          <td><a href="https://www.promega.com/resources/protocols/product-information-sheets/a/pgl410-vector-protocol/" target="_blank" rel="noopener">source</a></td>
+          <td>Reference reporter constructs and assay controls</td>
+        </tr><tr>
+          <td>CRISPR-Cas9 gRNA reagents</td>
+          <td>IDT</td>
+          <td>Alt-R CRISPR-Cas9 reagents</td>
+          <td><a href="https://www.idtdna.com/CRISPR-Cas9" target="_blank" rel="noopener">source</a></td>
+          <td>Guide synthesis for locus-targeted insertion</td>
+        </tr><tr>
+          <td>Agrobacterium helper/host system</td>
+          <td>DSMZ (or institutional source)</td>
+          <td>DSM 12365 (pMP90RK in GV3101)</td>
+          <td><a href="https://webshop.dsmz.de/en/plasmids/pMP90RK.html" target="_blank" rel="noopener">source</a></td>
+          <td>Transformation delivery strain</td>
+        </tr><tr>
+          <td>Murashige and Skoog basal medium with vitamins</td>
+          <td>PhytoTech Labs</td>
+          <td>M519</td>
+          <td><a href="https://phytotechlab.com/murashige-skoog-basal-medium-with-vitamins.html" target="_blank" rel="noopener">source</a></td>
+          <td>Plant tissue culture and regeneration</td>
+        </tr><tr>
+          <td>Acetosyringone</td>
+          <td>PhytoTech Labs</td>
+          <td>A104 / A1104</td>
+          <td><a href="https://phytotechlab.com/acetosyringone.html" target="_blank" rel="noopener">source</a></td>
+          <td>Agrobacterium vir induction</td>
+        </tr><tr>
+          <td>Hygromycin B selection antibiotic</td>
+          <td>Thermo Fisher (Gibco)</td>
+          <td>10687010</td>
+          <td><a href="https://www.fishersci.com/shop/products/gibco-hygromycin-b-50mg-ml/10687010" target="_blank" rel="noopener">source</a></td>
+          <td>Selection of transformed lines</td>
+        </tr><tr>
+          <td>Plant DNA extraction kit</td>
+          <td>QIAGEN</td>
+          <td>DNeasy Plant Mini Kit, 69104</td>
+          <td><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-plant-kits" target="_blank" rel="noopener">source</a></td>
+          <td>Insertion-site and copy-number QC</td>
+        </tr></tbody>
+    </table>
+    <p class="muted">Direct cost estimate: $15,000 &ndash; $35,000 (Consumables + reporter assays + routine molecular QC; excludes labor, greenhouse, and high-depth sequencing)</p>
+  </section>
+
+  <section>
+    <h2>References</h2>
+    <ul><li><a href="https://www.nature.com/articles/s41467-020-14981-y" target="_blank" rel="noopener">Marker-free targeted insertion at plant genomic safe harbors (rice)</a> &mdash; Template for CRISPR targeted insertion strategy and performance benchmarks</li><li><a href="https://pubs.acs.org/doi/full/10.1021/acssynbio.1c00248" target="_blank" rel="noopener">Plant dual-color luciferase reporter characterization</a> &mdash; Reporter assay design and normalization strategy in plants</li><li><a href="https://www.jstage.jst.go.jp/article/plantbiotechnology/18/1/18_1_71/_article" target="_blank" rel="noopener">Dual luciferase assay in higher plants</a> &mdash; Plant-specific transient reporter assay precedent</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/31919795/" target="_blank" rel="noopener">Insulator/MAR impact on transgene accumulation in plants</a> &mdash; Candidate boundary-element rationale for position-effect mitigation</li></ul>
+  </section>
+
+  <section>
+    <h2>Lab handoff checklist</h2>
+    <ul><li>Candidate safe-harbor coordinates and locus-screening rationale</li><li>Donor cassette maps (+/- insulators) and guide designs</li><li>Insertion-junction PCR and copy-number qPCR assays</li><li>Dual-luciferase plate map and normalization SOP</li><li>Expression stability analysis template (T0 and T1)</li></ul>
+  </section>
+
+  <div class="nav" style="margin-top: 20px;">
+    <a href="opc-go-001.html">&larr; Previous</a>
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="opc-go-006.html">Next &rarr;</a>
+  </div>
+</div>
+</body>
+</html>

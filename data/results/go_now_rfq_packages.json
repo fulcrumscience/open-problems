@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-02-11T00:00:00Z",
+  "source_lab_packets": "go_now_lab_packets.json",
+  "source_redline_review": "go_now_feasibility_redlines.md",
+  "criteria_version": "feasibility_go_no_go_v2_rfq_v1",
+  "notes": [
+    "Prepared for quote solicitation; not a final statement of work until bidder Q&A closes.",
+    "Crop genotype availability, shipping permits, and biosafety approvals must be confirmed before PO issuance.",
+    "All quote recipients should return explicit attrition assumptions and event-level QC deliverables."
+  ],
+  "target_labs": [
+    {
+      "id": "lab-danforth-plant-transformation",
+      "name": "Danforth Center Plant Transformation Facility",
+      "type": "fee_for_service_core",
+      "fit_summary": "High fit for sorghum and switchgrass transformation, with academic/commercial service model.",
+      "contact": {
+        "primary": "Todd Finley",
+        "email": "tfinley@danforthcenter.org",
+        "intake_url": "https://www.danforthcenter.org/our-work/technology-development/plant-transformation/"
+      },
+      "source_evidence": [
+        "https://www.danforthcenter.org/our-work/technology-development/plant-transformation/"
+      ]
+    },
+    {
+      "id": "lab-mizzou-ptcf",
+      "name": "University of Missouri Plant Transformation Core Facility",
+      "type": "fee_for_service_core",
+      "fit_summary": "Offers fee-based service for external/commercial users and supports sorghum/switchgrass transformation pathways.",
+      "contact": {
+        "primary": "Dr. Bing Yang",
+        "email": "muptf@missouri.edu",
+        "intake_url": "https://ptf.missouri.edu/"
+      },
+      "source_evidence": [
+        "https://ptf.missouri.edu/"
+      ]
+    },
+    {
+      "id": "lab-plantedits",
+      "name": "PlantEdits LLC",
+      "type": "commercial_cro",
+      "fit_summary": "Commercial plant engineering provider with published transformation service scope and contact channel.",
+      "contact": {
+        "primary": "Commercial intake",
+        "email": "contact@plantedits.com",
+        "intake_url": "https://www.plantedits.com/pricing"
+      },
+      "source_evidence": [
+        "https://www.plantedits.com/pricing"
+      ]
+    }
+  ],
+  "rfq_packages": [
+    {
+      "rfq_id": "rfq-opc-go-001-v1",
+      "source_experiment_id": "opc-go-001",
+      "title": "RFQ: Editing Transformation-Competence Determinants in Recalcitrant Bioenergy Crop Genotypes",
+      "objective": "Increase stable transformation efficiency in recalcitrant elite lines via targeted edits to competence-associated loci.",
+      "scope_of_work": [
+        "Design/build up to 2 multiplex CRISPR constructs plus one non-targeting control (Wave 1 scope).",
+        "Agrobacterium-mediated transformation in one transformable control genotype and up to two recalcitrant genotypes.",
+        "Selection, regeneration, and event tracking to independent-event level.",
+        "Molecular QC: target edit confirmation, transgene presence, copy-number estimate, backbone integration screen.",
+        "Deliver analyzable event-level dataset and summary report."
+      ],
+      "client_provided_inputs": [
+        "Final prioritized locus list (4-6 loci) and preferred guide constraints",
+        "Genotype list and seed/tissue source details",
+        "Any existing validated vector backbones and selectable marker preferences",
+        "Preferred reporting template and analysis conventions"
+      ],
+      "required_deliverables": [
+        "Independent event inventory with unique IDs and batch provenance",
+        "Transformation efficiency table by genotype/construct/replicate",
+        "Per-event QC table: target locus edit call, transgene status, copy estimate, backbone check",
+        "Regeneration and survival metrics by arm",
+        "Raw instrument/output files and processed tables in machine-readable format"
+      ],
+      "acceptance_criteria": [
+        "At least 8 independent PCR-positive events delivered per construct-genotype arm unless pre-agreed attrition exception is triggered",
+        "Event-level QC table provided for all delivered events",
+        "Matched-control analysis supports go/no-go call on >=2x efficiency lift criterion",
+        "Any protocol deviations and failed batches documented with timestamps and root-cause notes"
+      ],
+      "quote_requirements": [
+        "Fixed fee by milestone and explicit variable-cost triggers",
+        "Expected attrition model from explants to analyzable events",
+        "Guaranteed minimum event count per arm and remediation path if under-delivered",
+        "Turnaround for first analyzable dataset (calendar weeks)",
+        "Permit/logistics responsibilities (who handles shipping/permits and at what cost)",
+        "IP terms, data rights, and sample destruction/return policy"
+      ],
+      "timeline_request": {
+        "rfq_issue_date": "2026-02-11",
+        "questions_due": "2026-02-18",
+        "quote_due": "2026-02-25",
+        "target_kickoff": "2026-03-11"
+      },
+      "recommended_targets": [
+        "lab-danforth-plant-transformation",
+        "lab-mizzou-ptcf",
+        "lab-plantedits"
+      ]
+    },
+    {
+      "rfq_id": "rfq-opc-go-002-v1",
+      "source_experiment_id": "opc-go-002",
+      "title": "RFQ: Safe-Harbor Locus and Insulator Validation for Stable Transgene Expression",
+      "objective": "Identify locus/insulator combinations that reduce between-line expression variance while preserving mean reporter expression.",
+      "scope_of_work": [
+        "Wave 1 matrix: 2 candidate loci x (no-insulator + one insulator condition) plus random-integration comparator.",
+        "Construct assembly and delivery using Agrobacterium pathway and agreed targeted insertion strategy.",
+        "Event generation and pre-assay QC gating (junction PCR, copy estimate, locus confirmation).",
+        "Expression assay execution (dual-luciferase and qPCR support) across defined T0/T1 tissue panel.",
+        "Return line-level expression dataset and variance analysis-ready outputs."
+      ],
+      "client_provided_inputs": [
+        "Candidate safe-harbor coordinates and sequence context",
+        "Insulator sequence set and cassette architecture preferences",
+        "Reporter assay SOP preferences and normalization schema",
+        "Target tissue panel for T0/T1 measurements"
+      ],
+      "required_deliverables": [
+        "Per-event insertion QC package (5' and 3' junction verification, copy estimate, locus call)",
+        "Assay enrollment log showing which events passed QC gating",
+        "Line-level ratiometric expression table with tissue, generation, and batch annotations",
+        "Comparator analysis versus random integration arm",
+        "Final recommendation matrix ranking locus/insulator combinations"
+      ],
+      "acceptance_criteria": [
+        "Minimum independent event counts per arm delivered per quoted commitment",
+        "All analyzed lines have complete insertion QC records",
+        "Returned dataset supports direct computation of between-line CV and stability metrics",
+        "Bidder provides explicit caveats where power is insufficient for specific contrasts"
+      ],
+      "quote_requirements": [
+        "Detailed assumptions for targeted insertion success rates and rework policy",
+        "Milestone-based cost breakdown including assay costs and failed-event handling",
+        "Timeline to first T0 assay data and timeline to T1 follow-up",
+        "Definition of deliverable formats (raw + processed), QA checks, and transfer mechanism",
+        "Regulatory/biosafety handling responsibilities and exclusions",
+        "IP/data rights, confidentiality, and publication clauses"
+      ],
+      "timeline_request": {
+        "rfq_issue_date": "2026-02-11",
+        "questions_due": "2026-02-18",
+        "quote_due": "2026-02-25",
+        "target_kickoff": "2026-03-18"
+      },
+      "recommended_targets": [
+        "lab-danforth-plant-transformation",
+        "lab-mizzou-ptcf",
+        "lab-plantedits"
+      ]
+    }
+  ],
+  "outreach_templates": [
+    {
+      "template_id": "email-rfq-opc-go-001",
+      "subject": "RFQ Request: opc-go-001 crop transformation/editing study",
+      "body": "Hello {lab_name},\n\nWe are requesting a quote for a staged crop transformation/editing study (RFQ ID: rfq-opc-go-001-v1).\n\nWe are attaching the scope, deliverables, and acceptance criteria. Please return:\n1) milestone-based pricing,\n2) expected event-yield/attrition assumptions,\n3) timeline to first analyzable dataset, and\n4) any required clarifications or exclusions.\n\nQuestions deadline: 2026-02-18\nQuote due: 2026-02-25\n\nThank you,\n{sender_name}\n{organization}\n{contact_info}"
+    },
+    {
+      "template_id": "email-rfq-opc-go-002",
+      "subject": "RFQ Request: opc-go-002 safe-harbor/insulator validation",
+      "body": "Hello {lab_name},\n\nWe are requesting a quote for a targeted insertion + expression stability study (RFQ ID: rfq-opc-go-002-v1).\n\nPlease review the attached scope and provide:\n1) milestone-based pricing,\n2) insertion success and attrition assumptions,\n3) timeline for T0 and T1 data delivery, and\n4) required client inputs or constraints.\n\nQuestions deadline: 2026-02-18\nQuote due: 2026-02-25\n\nThank you,\n{sender_name}\n{organization}\n{contact_info}"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RFQ-ready experiment packages including scope, deliverables, acceptance criteria, and outreach templates.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Go-Now RFQ Packages</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+  h1 { margin: 0 0 6px; font-size: 28px; }
+  .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
+  .links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .link { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
+  .link:hover { border-color: #2563eb; color: #1d4ed8; }
+
+  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
+  .card-head { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; }
+  .card-title { margin: 0; font-size: 18px; }
+  .card-sub { font-size: 12px; color: #6b7280; margin-top: 4px; }
+  .card-body { padding: 14px 16px; }
+
+  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+  .chip { display: inline-block; border-radius: 999px; background: #eef2ff; color: #1e40af; font-size: 11px; font-weight: 600; padding: 3px 8px; }
+
+  h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: #374151; }
+  p { margin: 0; font-size: 14px; }
+  ul { margin: 0; padding-left: 18px; }
+  li { margin: 0 0 4px; font-size: 14px; }
+
+  .section { margin-bottom: 12px; }
+  .section:last-child { margin-bottom: 0; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+
+  pre { margin: 0; white-space: pre-wrap; background: #0f172a; color: #e2e8f0; border-radius: 8px; padding: 12px; font-size: 12px; overflow: auto; }
+  .muted { color: #6b7280; font-size: 12px; }
+  .empty { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; color: #6b7280; }
+
+  @media (max-width: 800px) {
+    h1 { font-size: 24px; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 10px; border: 1px solid #e5e7eb; }
+    td { border: none; border-bottom: 1px solid #f3f4f6; }
+    td:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Go-Now RFQ Packages</h1>
+  <p class="subtitle">Quote-ready scope, deliverables, acceptance criteria, and outreach templates for current go-now experiments.</p>
+  <div class="links">
+    <a class="link" href="viewer.html">Back to assessment viewer</a>
+    <a class="link" href="go_now_lab_packets.html">Go-now lab packets</a>
+    <a class="link" href="go_now_feasibility_redlines.md" target="_blank" rel="noopener">Feasibility redlines (MD)</a>
+    <a class="link" href="go_now_rfq_target_labs.md" target="_blank" rel="noopener">Target labs (MD)</a>
+    <a class="link" href="go_now_rfq_outreach_messages.md" target="_blank" rel="noopener">Outreach messages (MD)</a>
+    <a class="link" href="go_now_rfq_packages.json" target="_blank" rel="noopener">Open raw RFQ JSON</a>
+  </div>
+
+  <div class="grid" id="summary"></div>
+  <div class="grid" id="targets" style="margin-top:14px"></div>
+  <div class="grid" id="packages" style="margin-top:14px"></div>
+  <div class="grid" id="emails" style="margin-top:14px"></div>
+</div>
+
+<script>
+let RFQ = null;
+
+function esc(s) {
+  if (s === null || s === undefined) return '';
+  const d = document.createElement('div');
+  d.textContent = String(s);
+  return d.innerHTML;
+}
+
+function arr(v) {
+  return Array.isArray(v) ? v : [];
+}
+
+function renderSummary() {
+  const root = document.getElementById('summary');
+  const labs = arr(RFQ.target_labs).length;
+  const pkgs = arr(RFQ.rfq_packages).length;
+  const date = RFQ.generated_at ? new Date(RFQ.generated_at).toLocaleDateString('en-US') : 'n/a';
+
+  root.innerHTML = `
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">RFQ Set Summary</h2>
+        <div class="card-sub">Generated ${esc(date)} · Criteria ${esc(RFQ.criteria_version || 'n/a')}</div>
+      </div>
+      <div class="card-body">
+        <div class="chip-row">
+          <span class="chip">${pkgs} RFQ packages</span>
+          <span class="chip">${labs} target labs</span>
+        </div>
+        <ul style="margin-top:10px">${arr(RFQ.notes).map(n => `<li>${esc(n)}</li>`).join('')}</ul>
+      </div>
+    </section>
+  `;
+}
+
+function renderTargets() {
+  const root = document.getElementById('targets');
+  const rows = arr(RFQ.target_labs).map(lab => `
+    <tr>
+      <td>${esc(lab.name)}</td>
+      <td>${esc(lab.type)}</td>
+      <td>${esc((lab.contact || {}).primary || '')}</td>
+      <td>${(lab.contact || {}).email ? `<a href="mailto:${esc(lab.contact.email)}">${esc(lab.contact.email)}</a>` : ''}</td>
+      <td>${(lab.contact || {}).intake_url ? `<a href="${esc(lab.contact.intake_url)}" target="_blank" rel="noopener">intake</a>` : ''}</td>
+      <td>${esc(lab.fit_summary || '')}</td>
+    </tr>
+  `).join('');
+
+  root.innerHTML = `
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">Target Labs (2-3 quote recipients)</h2>
+      </div>
+      <div class="card-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Lab</th>
+              <th>Type</th>
+              <th>Primary</th>
+              <th>Email</th>
+              <th>Intake</th>
+              <th>Fit</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function renderPackages() {
+  const root = document.getElementById('packages');
+  const labById = new Map(arr(RFQ.target_labs).map(l => [l.id, l.name]));
+
+  const html = arr(RFQ.rfq_packages).map(pkg => `
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">${esc(pkg.title)}</h2>
+        <div class="card-sub">${esc(pkg.rfq_id)} · source ${esc(pkg.source_experiment_id)}</div>
+      </div>
+      <div class="card-body">
+        <div class="section">
+          <h3>Objective</h3>
+          <p>${esc(pkg.objective)}</p>
+        </div>
+        <div class="section">
+          <h3>Scope of Work</h3>
+          <ul>${arr(pkg.scope_of_work).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>
+        <div class="section">
+          <h3>Client Inputs</h3>
+          <ul>${arr(pkg.client_provided_inputs).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>
+        <div class="section">
+          <h3>Deliverables</h3>
+          <ul>${arr(pkg.required_deliverables).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>
+        <div class="section">
+          <h3>Acceptance Criteria</h3>
+          <ul>${arr(pkg.acceptance_criteria).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>
+        <div class="section">
+          <h3>Quote Requirements</h3>
+          <ul>${arr(pkg.quote_requirements).map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        </div>
+        <div class="section">
+          <h3>Timeline Request</h3>
+          <ul>
+            <li>Issue date: ${esc((pkg.timeline_request || {}).rfq_issue_date)}</li>
+            <li>Questions due: ${esc((pkg.timeline_request || {}).questions_due)}</li>
+            <li>Quote due: ${esc((pkg.timeline_request || {}).quote_due)}</li>
+            <li>Target kickoff: ${esc((pkg.timeline_request || {}).target_kickoff)}</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h3>Recommended Recipients</h3>
+          <ul>${arr(pkg.recommended_targets).map(id => `<li>${esc(labById.get(id) || id)}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </section>
+  `).join('');
+
+  root.innerHTML = html || '<div class="empty">No RFQ packages found in JSON.</div>';
+}
+
+function renderEmails() {
+  const root = document.getElementById('emails');
+  const html = arr(RFQ.outreach_templates).map(t => `
+    <section class="card">
+      <div class="card-head">
+        <h2 class="card-title">Outreach Template: ${esc(t.template_id)}</h2>
+        <div class="card-sub">${esc(t.subject)}</div>
+      </div>
+      <div class="card-body">
+        <h3>Body</h3>
+        <pre>${esc(t.body)}</pre>
+        <p class="muted" style="margin-top:8px">Replace placeholders: {lab_name}, {sender_name}, {organization}, {contact_info}.</p>
+      </div>
+    </section>
+  `).join('');
+
+  root.innerHTML = html || '<div class="empty">No outreach templates found in JSON.</div>';
+}
+
+async function init() {
+  try {
+    const resp = await fetch('go_now_rfq_packages.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    RFQ = await resp.json();
+    renderSummary();
+    renderTargets();
+    renderPackages();
+    renderEmails();
+  } catch (e) {
+    document.getElementById('summary').innerHTML = '<div class="empty">Failed to load go_now_rfq_packages.json.</div>';
+  }
+}
+
+init();
+</script>
+</body>
+</html>

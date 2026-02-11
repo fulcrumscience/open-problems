@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#2563eb">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Cell Density and Viability Validation for Lucifer Yellow Dye Transfer Assay — Lab Packet</title>
+<style>  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
+  h1 { margin: 0 0 6px; font-size: 24px; }
+  .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
+  .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
+  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .tag-go { background: #dcfce7; color: #166534; }
+  .tag-score { background: #dbeafe; color: #1e40af; }
+  .tag-cost { background: #ecfeff; color: #155e75; }
+  section { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+  section h2 { margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; color: #374151; }
+  section p { margin: 0 0 6px; font-size: 14px; }
+  section ul, section ol { margin: 0 0 6px; padding-left: 18px; }
+  section li { margin: 0 0 4px; font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
+  th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
+  .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
+  .problem-box p { margin: 0 0 4px; font-size: 14px; }
+  .problem-box .label { font-weight: 600; color: #374151; }
+  @media (max-width: 800px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 10px; border: 1px solid #e5e7eb; }
+    td { border: none; border-bottom: 1px solid #f3f4f6; }
+    td:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="../viewer.html">Assessment viewer</a>
+    <a href="opc-go-003.html">&larr; Previous</a>
+    <a href="opc-go-001.html">Next &rarr;</a>
+  </div>
+
+  <p class="muted">opc-go-004</p>
+  <h1>Cell Density and Viability Validation for Lucifer Yellow Dye Transfer Assay</h1>
+  <div class="meta">
+    <span class="tag tag-go">READY TO TEST</span>
+    <span class="tag tag-score">Score 0.531</span>
+    <span class="tag tag-cost">$3,200 &ndash; $4,800</span>
+  </div>
+
+  <section>
+    <h2>Problem mapping</h2>
+    <div class="problem-box">
+      <p><span class="label">Problem:</span> Lucifer Yellow dye transfer assay lacks essential controls (cell density, viability) and shows unexplained discrepancy where mutant has less dye but comparable migration distance to control</p>
+      <p><span class="label">Sub-question:</span> Are cell density and viability comparable between control and mutant groups in the dye transfer assay?</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Objective</h2>
+    <p>To quantify and compare cell density and viability between control and mutant cell populations at the time of Lucifer Yellow dye transfer assays.</p>
+  </section>
+
+  <section>
+    <h2>Readouts</h2>
+    <ul><li>Primary: Cell density (cells/mm²) measured by automated nuclei counting in control vs. mutant cultures</li><li>Secondary: Cell viability percentage measured by live/dead fluorescence staining (calcein-AM/ethidium homodimer)</li><li>Secondary: Metabolic activity (MTT absorbance at 570nm) normalized to cell number</li><li>Secondary: Apoptotic cell percentage measured by Annexin V-FITC/PI flow cytometry</li></ul>
+  </section>
+
+  <section>
+    <h2>Experimental design</h2>
+    <p><strong>Overview:</strong> Culture control and mutant cells under identical conditions as the original dye transfer experiments, then quantify cell density by automated nuclei counting and assess viability by three orthogonal methods (live/dead imaging, MTT metabolic assay, and Annexin V flow cytometry) at the exact timepoint when dye transfer would be performed.</p>
+    <ul><li>WP1: Establish standardized cell culture protocol matching original dye transfer conditions - seed control and mutant cells at defined densities, culture for same duration as dye transfer experiments, collect samples at 0h, 24h, 48h, and 72h timepoints</li><li>WP2: Automated cell density quantification - fix cells, perform DAPI nuclear staining, image 10 fields per well using automated microscopy, analyze with ImageJ particle counting to determine cells/mm²</li><li>WP3: Multi-method viability assessment - perform live/dead staining (calcein-AM/EthD-1) with fluorescence imaging, MTT assay with spectrophotometry, and Annexin V-FITC/PI flow cytometry on parallel samples</li><li>WP4: Statistical analysis and correlation - perform two-way ANOVA (genotype × timepoint), calculate coefficient of variation within groups, correlate viability metrics with original dye transfer data, generate standardized report with quality control metrics</li></ul>
+    <p><strong>Controls:</strong></p>
+    <ul><li>Positive control for cell death: treat subset of control cells with 70% methanol for 10 minutes to induce complete cell death, verify viability assays detect 0% viability</li><li>Negative control for counting artifacts: image and analyze cell-free wells with media only to establish background threshold for automated counting</li><li>Technical control for metabolic assay: include wells with known cell numbers (5,000, 10,000, 20,000 cells) to generate standard curve and verify linear MTT response range</li></ul>
+    <p><strong>Sample size plan:</strong> N=6 biological replicates per genotype (control and mutant) per timepoint (4 timepoints), with 3 technical replicates per assay method, total of 48 culture wells; for flow cytometry, analyze 10,000 events per sample; for imaging, capture 10 fields per well (0.9 mm² each)</p>
+    <p><strong>Success criteria:</strong></p>
+    <ul><li>Cell density measurements show coefficient of variation &lt;15% within genotype groups and automated counting correlation with manual counts r²&gt;0.95</li><li>If cell density differs between genotypes by &gt;20% or viability differs by &gt;10% at dye transfer timepoint, these are identified as confounding variables requiring experimental redesign</li><li>All three viability assays (live/dead, MTT, Annexin V) show concordance within 10% for same samples, validating measurement reliability</li></ul>
+    <p><strong>Estimated timeline:</strong> 6 weeks</p>
+  </section>
+
+  <section>
+    <h2>Materials</h2>
+    <table>
+      <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
+      <tbody><tr>
+          <td>LIVE/DEAD Viability/Cytotoxicity Kit for mammalian cells</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>L3224</td>
+          <td></td>
+          <td>Simultaneous fluorescence-based measurement of live cells (calcein-AM) and dead cells (ethidium homodimer-1)</td>
+        </tr><tr>
+          <td>MTT (3-(4,5-Dimethylthiazol-2-yl)-2,5-Diphenyltetrazolium Bromide)</td>
+          <td>Sigma-Aldrich</td>
+          <td>M5655-1G</td>
+          <td></td>
+          <td>Colorimetric assay for metabolic activity/viability</td>
+        </tr><tr>
+          <td>FITC Annexin V Apoptosis Detection Kit with PI</td>
+          <td>BioLegend</td>
+          <td>640914</td>
+          <td></td>
+          <td>Flow cytometry detection of apoptotic (Annexin V+) and necrotic (PI+) cells</td>
+        </tr><tr>
+          <td>DAPI (4&#x27;,6-Diamidino-2-Phenylindole, Dihydrochloride)</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>D1306</td>
+          <td></td>
+          <td>Nuclear counterstain for automated cell counting</td>
+        </tr><tr>
+          <td>96-well clear bottom black-walled plate</td>
+          <td>Corning</td>
+          <td>3904</td>
+          <td></td>
+          <td>Culture vessel for fluorescence-based assays with minimal background</td>
+        </tr><tr>
+          <td>96-well flat bottom plate</td>
+          <td>Corning</td>
+          <td>3599</td>
+          <td></td>
+          <td>Culture vessel for MTT absorbance assay</td>
+        </tr><tr>
+          <td>Paraformaldehyde 16% solution</td>
+          <td>Electron Microscopy Sciences</td>
+          <td>15710</td>
+          <td></td>
+          <td>Cell fixation for immunofluorescence and counting</td>
+        </tr><tr>
+          <td>Countess II FL Automated Cell Counter</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>AMQAF1000</td>
+          <td></td>
+          <td>Initial cell seeding standardization and validation of automated counting</td>
+        </tr><tr>
+          <td>Cell culture dish, 35mm</td>
+          <td>Corning</td>
+          <td>430165</td>
+          <td></td>
+          <td>Standard culture vessel matching original dye transfer experimental setup</td>
+        </tr><tr>
+          <td>Trypan Blue Solution 0.4%</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>15250061</td>
+          <td></td>
+          <td>Manual cell counting viability assessment at seeding</td>
+        </tr></tbody>
+    </table>
+    <p class="muted">Direct cost estimate: $3,200 &ndash; $4,800 (Includes all reagent kits, plates, and consumables for the described experiment. Excludes equipment costs (microscope, flow cytometer, plate reader assumed available), cell culture media, and personnel costs. High estimate includes additional replicates and troubleshooting reagents.)</p>
+  </section>
+
+  <section>
+    <h2>References</h2>
+    <ul><li>Papadopoulos NG, et al. An improved fluorescence assay for the determination of lymphocyte-mediated cytotoxicity using flow cytometry. J Immunol Methods. 1994;177(1-2):101-11 &mdash; Establishes validated flow cytometry gating strategy for Annexin V/PI discrimination of live, apoptotic, and necrotic cell populations</li><li>Riss TL, et al. Cell Viability Assays. Assay Guidance Manual [Internet]. Bethesda (MD): Eli Lilly &amp; Company and the National Center for Advancing Translational Sciences; 2004-2016 &mdash; Provides comprehensive guidance on MTT assay optimization, linear range determination, and appropriate controls for metabolic viability assessment</li><li>Decrock E, et al. Transfer of IP3 through gap junctions is critical, but not sufficient, for the spread of apoptosis. Cell Death Differ. 2012;19(6):947-57 &mdash; Demonstrates integrated approach to measuring gap junction communication and cell viability/apoptosis in parallel, relevant for experimental design</li><li>Schneider CA, Rasband WS, Eliceiri KW. NIH Image to ImageJ: 25 years of image analysis. Nat Methods. 2012;9(7):671-5 &mdash; Technical reference for automated cell counting using ImageJ nuclei segmentation and particle analysis tools</li></ul>
+  </section>
+
+  <section>
+    <h2>Lab handoff checklist</h2>
+    <ul><li>Detailed cell culture protocol from original Lucifer Yellow dye transfer experiments including: cell line identities, passage numbers used, seeding density, culture duration, media formulation, and exact timing of dye injection relative to plating</li><li>Microscope specifications and imaging parameters: objective magnification, numerical aperture, camera pixel size, field of view dimensions, and exposure settings to enable proper calibration of cell density measurements (cells/mm²)</li><li>Original dye transfer experimental data including: number of replicates performed, passage number ranges, any observations about cell morphology or confluence differences, and raw data on dye transfer distances and fluorescence intensities for correlation analysis</li><li>Standard operating procedures for handling the specific control and mutant cell lines including: optimal seeding densities, splitting ratios, freezing/thawing protocols, and any known growth rate differences or special culture requirements</li></ul>
+  </section>
+
+  <div class="nav" style="margin-top: 20px;">
+    <a href="opc-go-003.html">&larr; Previous</a>
+    <a href="../go_now_lab_packets.html">All lab packets</a>
+    <a href="opc-go-001.html">Next &rarr;</a>
+  </div>
+</div>
+</body>
+</html>

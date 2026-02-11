@@ -1,0 +1,34 @@
+sources:
+  workshops:
+    enabled: true
+    registry: "config/workshop_registry.yaml"
+  elife_reviews:
+    enabled: true
+    subjects:
+      - "biochemistry-chemical-biology"
+      - "cell-biology"
+      - "genetics-genomics"
+      - "microbiology-infectious-disease"
+    max_per_subject: 50
+    rate_limit_delay: 1.0
+  nas_reports:
+    enabled: true
+    topics:
+      - "biotechnology"
+      - "infectious-disease"
+      - "genomics"
+      - "environmental-science"
+    max_reports: 20
+    data_dir: "data/nas_reports"
+  conference_abstracts:
+    enabled: false
+
+llm:
+  extractor_model: "claude-sonnet-4-5-20250929"
+  max_concurrent_requests: 5
+  retry_attempts: 3
+  max_input_tokens_per_call: 8000
+
+budget:
+  max_sonnet_calls: 100
+  spending_alert_threshold: 5.00
