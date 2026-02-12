@@ -3,10 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Browse ready-to-test experiment lab packets, budgets, and execution details for Open Problem Collector go-now decisions.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#2563eb">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>Go-Now Lab Packets</title>
 <style>
   * { box-sizing: border-box; }
@@ -15,8 +11,10 @@
   h1 { margin: 0 0 6px; font-size: 28px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .summary { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
   .chip { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; }
   .chip-value { font-size: 18px; font-weight: 700; color: #2563eb; }
@@ -28,7 +26,7 @@
   .tag-cost { background: #ecfeff; color: #155e75; }
   .cards { display: grid; gap: 12px; }
   .card { display: block; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; text-decoration: none; color: inherit; transition: box-shadow 0.15s, border-color 0.15s; }
-  .card:hover { border-color: #2563eb; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .card:hover { border-color: #9b9b94; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
   .card-id { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
   .card-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
   .card-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
@@ -47,7 +45,7 @@
 
   <div class="summary">
     <div class="chip"><div class="chip-value">6</div><div class="chip-label">Go-now packets</div></div>
-    <div class="chip"><div class="chip-value">$84,700 &ndash; $149,800</div><div class="chip-label">Total direct consumables</div></div>
+    <div class="chip"><div class="chip-value">$137,300 &ndash; $216,000</div><div class="chip-label">Total direct consumables</div></div>
     <div class="chip"><div class="chip-value">feasibility_go_no_go_v2</div><div class="chip-label">Criteria version</div></div>
   </div>
 
@@ -55,9 +53,9 @@
 
   <div class="cards">
     
-    <a class="card" href="lab_packets/opc-go-003.html">
-      <div class="card-id">opc-go-003</div>
-      <div class="card-title">Integrated Transcriptomics to Identify Novel TET2-CHIP Cardiovascular Targets</div>
+    <a class="card" href="lab_packets/opc-go-001.html">
+      <div class="card-id">opc-go-001</div>
+      <div class="card-title">Integrated Transcriptomics to Identify Novel TET2-CHIP Inflammatory Targets</div>
       <div class="card-meta">
         <span class="tag tag-go">READY TO TEST</span>
         <span class="tag tag-score">Score 0.720</span>
@@ -65,55 +63,55 @@
       </div>
       <div class="card-problem">The transcriptomic approaches fail to identify and validate novel therapeutic targets beyond already known markers like </div>
     </a>
-    <a class="card" href="lab_packets/opc-go-004.html">
-      <div class="card-id">opc-go-004</div>
-      <div class="card-title">Cell Density and Viability Validation for Lucifer Yellow Dye Transfer Assay</div>
+    <a class="card" href="lab_packets/opc-go-002.html">
+      <div class="card-id">opc-go-002</div>
+      <div class="card-title">Cell Density and Viability Assessment in Gap Junction Dye Transfer Assay</div>
       <div class="card-meta">
         <span class="tag tag-go">READY TO TEST</span>
         <span class="tag tag-score">Score 0.531</span>
-        <span class="tag tag-cost">$3,200 &ndash; $4,800</span>
+        <span class="tag tag-cost">$2,800 &ndash; $4,500</span>
       </div>
       <div class="card-problem">Lucifer Yellow dye transfer assay lacks essential controls (cell density, viability) and shows unexplained discrepancy w</div>
     </a>
-    <a class="card" href="lab_packets/opc-go-001.html">
-      <div class="card-id">opc-go-001</div>
-      <div class="card-title">Edit Transformation-Competence Determinants in Recalcitrant Bioenergy Crop Genotypes</div>
+    <a class="card" href="lab_packets/opc-go-003.html">
+      <div class="card-id">opc-go-003</div>
+      <div class="card-title">CRISPR-Based Enhancement of Transformation Competence in Recalcitrant Elite Maize Lines</div>
       <div class="card-meta">
         <span class="tag tag-go">READY TO TEST</span>
         <span class="tag tag-score">Score 0.527</span>
-        <span class="tag tag-cost">$12,000 &ndash; $28,000</span>
+        <span class="tag tag-cost">$35,000 &ndash; $55,000</span>
       </div>
       <div class="card-problem">Genotype-specific transformation efficiency differences are driven by unknown underlying genetic or epigenetic variation</div>
     </a>
-    <a class="card" href="lab_packets/opc-go-002.html">
-      <div class="card-id">opc-go-002</div>
-      <div class="card-title">Validate Safe-Harbor Loci and Insulator Sequences for Stable Transgene Expression in Bioenergy Crops</div>
+    <a class="card" href="lab_packets/opc-go-004.html">
+      <div class="card-id">opc-go-004</div>
+      <div class="card-title">Functional validation of Type 2 IRES-ribosome structural contacts via mutagenesis and translation assays</div>
       <div class="card-meta">
         <span class="tag tag-go">READY TO TEST</span>
         <span class="tag tag-score">Score 0.527</span>
-        <span class="tag tag-cost">$15,000 &ndash; $35,000</span>
-      </div>
-      <div class="card-problem">How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenerg</div>
-    </a>
-    <a class="card" href="lab_packets/opc-go-006.html">
-      <div class="card-id">opc-go-006</div>
-      <div class="card-title">Functional Validation of Viral Type 2 IRES-Ribosome Interactions via Translation Assays</div>
-      <div class="card-meta">
-        <span class="tag tag-go">READY TO TEST</span>
-        <span class="tag tag-score">Score 0.527</span>
-        <span class="tag tag-cost">$8,500 &ndash; $15,000</span>
+        <span class="tag tag-cost">$8,500 &ndash; $14,500</span>
       </div>
       <div class="card-problem">Lack of complementary biochemical validation for the structural findings of viral Type 2 IRES recruitment to ribosomal p</div>
     </a>
     <a class="card" href="lab_packets/opc-go-005.html">
       <div class="card-id">opc-go-005</div>
-      <div class="card-title">Transcriptomic Profiling of Pachytene-Specific Gene Activation in Meiotic Cells</div>
+      <div class="card-title">Transcriptomic Profiling of Pachytene Genome Activation in Mouse Spermatocytes</div>
       <div class="card-meta">
         <span class="tag tag-go">READY TO TEST</span>
         <span class="tag tag-score">Score 0.527</span>
         <span class="tag tag-cost">$18,000 &ndash; $25,000</span>
       </div>
       <div class="card-problem">The concept of &#x27;pachytene genome activation&#x27; (PGS) is introduced without proper characterization of which genes are acti</div>
+    </a>
+    <a class="card" href="lab_packets/opc-go-006.html">
+      <div class="card-id">opc-go-006</div>
+      <div class="card-title">Identification and Validation of Safe Harbor Loci in Switchgrass and Miscanthus Genomes</div>
+      <div class="card-meta">
+        <span class="tag tag-go">READY TO TEST</span>
+        <span class="tag tag-score">Score 0.527</span>
+        <span class="tag tag-cost">$45,000 &ndash; $75,000</span>
+      </div>
+      <div class="card-problem">How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenerg</div>
     </a>
   </div>
 </div>

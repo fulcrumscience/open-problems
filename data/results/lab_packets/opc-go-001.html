@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#2563eb">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<title>Edit Transformation-Competence Determinants in Recalcitrant Bioenergy Crop Genotypes — Lab Packet</title>
+<title>Integrated Transcriptomics to Identify Novel TET2-CHIP Inflammatory Targets — Lab Packet</title>
 <style>  * { box-sizing: border-box; }
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
   .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
   h1 { margin: 0 0 6px; font-size: 24px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
   .tag-go { background: #dcfce7; color: #166534; }
@@ -29,6 +27,8 @@
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  td a { color: #9b9b94; text-decoration: none; }
+  td a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
   .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
   .problem-box p { margin: 0 0 4px; font-size: 14px; }
@@ -47,46 +47,46 @@
   <div class="nav">
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="../viewer.html">Assessment viewer</a>
-    <a href="opc-go-004.html">&larr; Previous</a>
+    
     <a href="opc-go-002.html">Next &rarr;</a>
   </div>
 
   <p class="muted">opc-go-001</p>
-  <h1>Edit Transformation-Competence Determinants in Recalcitrant Bioenergy Crop Genotypes</h1>
+  <h1>Integrated Transcriptomics to Identify Novel TET2-CHIP Inflammatory Targets</h1>
   <div class="meta">
     <span class="tag tag-go">READY TO TEST</span>
-    <span class="tag tag-score">Score 0.527</span>
-    <span class="tag tag-cost">$12,000 &ndash; $28,000</span>
+    <span class="tag tag-score">Score 0.720</span>
+    <span class="tag tag-cost">$28,000 &ndash; $42,000</span>
   </div>
 
   <section>
     <h2>Problem mapping</h2>
     <div class="problem-box">
-      <p><span class="label">Problem:</span> Genotype-specific transformation efficiency differences are driven by unknown underlying genetic or epigenetic variation, preventing widespread adoption of plant engineering in non-elite lines.</p>
-      <p><span class="label">Sub-question:</span> Can identified genetic or epigenetic determinants of transformation competence be edited to convert recalcitrant elite lines into transformable lines?</p>
+      <p><span class="label">Problem:</span> The transcriptomic approaches fail to identify and validate novel therapeutic targets beyond already known markers like CXCL2/3 and IL8</p>
+      <p><span class="label">Sub-question:</span> What are the novel, previously unidentified molecular targets revealed by integrated transcriptomic analysis of TET2-CHIP-mediated cardiovascular disease?</p>
     </div>
   </section>
 
   <section>
     <h2>Objective</h2>
-    <p>Test whether targeted editing of candidate competence loci increases Agrobacterium-mediated transformation efficiency in recalcitrant lines.</p>
+    <p>Perform bulk and single-cell RNA-seq on TET2-deficient mouse and human models to identify and validate novel inflammatory mediators beyond known chemokines, followed by orthogonal validation.</p>
   </section>
 
   <section>
     <h2>Readouts</h2>
-    <ul><li>Primary: stable transformation efficiency = PCR-positive independent events / immature embryos treated</li><li>Secondary: event quality (copy number, backbone integration, edit genotype at target loci)</li><li>Secondary: regeneration rate and fertility in T0/T1</li></ul>
+    <ul><li>Primary: Differentially expressed genes (DEGs) in TET2-deficient vs WT macrophages with FDR&lt;0.05 and |log2FC|&gt;1.5, filtered against known CHIP markers</li><li>Secondary: Cell-type-specific expression patterns from scRNA-seq identifying myeloid subpopulations driving novel gene expression</li><li>Secondary: qPCR and Western blot validation of top 10 novel candidates with &gt;2-fold expression change and correlation R²&gt;0.7 with RNA-seq</li></ul>
   </section>
 
   <section>
     <h2>Experimental design</h2>
-    <p><strong>Overview:</strong> Parallel construct and transformation study across one transformable control genotype and two recalcitrant genotypes, with multiplex CRISPR edits to top-ranked candidate loci.</p>
-    <ul><li>WP1 candidate selection: choose 8-12 loci from prior omics/QTL literature and internal pilot data</li><li>WP2 construct build: 3-4 multiplex CRISPR constructs plus non-targeting control</li><li>WP3 Agrobacterium transformation: immature embryos or embryogenic callus using a validated sorghum/switchgrass protocol</li><li>WP4 selection and regeneration under hygromycin</li><li>WP5 molecular QC: targeted amplicon sequencing, transgene PCR/qPCR copy number, backbone check</li><li>WP6 statistics: mixed-effects model of transformation efficiency by genotype and construct</li></ul>
+    <p><strong>Overview:</strong> Generate TET2-knockout and wild-type bone marrow-derived macrophages (BMDMs), perform bulk RNA-seq and scRNA-seq under basal and inflammatory conditions (LPS stimulation), conduct bioinformatic filtering to exclude known markers, then validate top novel candidates by qPCR, Western blot, and ELISA in mouse and human TET2-CHIP samples.</p>
+    <ul><li>WP1: Generate Tet2-/- and WT mouse BMDMs, culture under basal and LPS conditions (10 ng/ml, 6h), isolate RNA and prepare samples for bulk RNA-seq (n=4/group) and scRNA-seq (n=3/group)</li><li>WP2: Perform sequencing (150bp paired-end bulk RNA-seq at 40M reads/sample; 10X Chromium scRNA-seq targeting 5000 cells/sample), conduct quality control, alignment, and differential expression analysis with DESeq2 and Seurat</li><li>WP3: Bioinformatic prioritization - exclude genes matching literature search for CHIP/TET2/cardiovascular inflammation, prioritize secreted proteins and surface markers with drug target potential using Gene Ontology and druggability databases</li><li>WP4: Validate top 10 candidates by qPCR in independent BMDM samples (n=6/group), Western blot for protein expression (n=4/group), and ELISA for secreted factors in culture supernatants and plasma from Tet2-/- atherosclerosis mice</li></ul>
     <p><strong>Controls:</strong></p>
-    <ul><li>Transformable genotype positive process control (e.g., TX430-like line)</li><li>Recalcitrant genotype + empty/non-targeting construct negative control</li><li>No-Agrobacterium contamination control on selection media</li></ul>
-    <p><strong>Sample size plan:</strong> Per construct per genotype: 120 immature embryos, 3 biological replicates (total ~1080 embryos for 3 genotypes x 3 constructs x 120).</p>
+    <ul><li>Positive control: CXCL2, CXCL3, and IL8 expression must show expected upregulation (&gt;3-fold) in TET2-deficient conditions, validating the model</li><li>Negative control: Wild-type BMDMs under identical culture and stimulation conditions to establish baseline expression</li><li>Technical control: ERCC spike-in controls for bulk RNA-seq; housekeeping genes (ACTB, GAPDH, 18S) for qPCR normalization; isotype controls for flow cytometry if surface markers identified</li></ul>
+    <p><strong>Sample size plan:</strong> Bulk RNA-seq: n=4 biological replicates per condition (WT basal, WT+LPS, Tet2-/- basal, Tet2-/-+LPS). scRNA-seq: n=3 pooled samples per condition targeting 5000 cells each. qPCR validation: n=6 independent biological replicates. Western blot: n=4. ELISA: n=8 mouse plasma samples per genotype.</p>
     <p><strong>Success criteria:</strong></p>
-    <ul><li>&gt;=2x increase in stable transformation efficiency in &gt;=1 recalcitrant genotype vs matched non-targeting control</li><li>No major regeneration penalty (&gt;25% drop) compared with control</li><li>At least 30% of positive events show intended edit at one or more target loci</li></ul>
-    <p><strong>Estimated timeline:</strong> 20 weeks</p>
+    <ul><li>Identification of ≥50 novel DEGs (FDR&lt;0.05, |log2FC|&gt;1.5) in TET2-deficient conditions that are absent from curated list of 200+ known CHIP-associated inflammatory markers</li><li>≥5 of top 10 prioritized candidates validated by qPCR with concordant direction and &gt;2-fold change (p&lt;0.05), and ≥3 confirmed at protein level by Western or ELISA</li></ul>
+    <p><strong>Estimated timeline:</strong> 16 weeks</p>
   </section>
 
   <section>
@@ -94,82 +94,112 @@
     <table>
       <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
       <tbody><tr>
-          <td>Agrobacterium helper/host system (GV3101:pMP90RK or equivalent validated plant transformation strain)</td>
-          <td>DSMZ (or institutional source)</td>
-          <td>DSM 12365 (pMP90RK in GV3101)</td>
-          <td><a href="https://webshop.dsmz.de/en/plasmids/pMP90RK.html" target="_blank" rel="noopener">source</a></td>
-          <td>Binary vector delivery into plant tissue</td>
+          <td>Tet2 knockout mice (C57BL/6 background)</td>
+          <td>Jackson Laboratory</td>
+          <td>Stock No: 017573</td>
+          <td><a href="https://www.jax.org/strain/017573" target="_blank" rel="noopener">source</a></td>
+          <td>Source of bone marrow for TET2-deficient macrophage generation</td>
         </tr><tr>
-          <td>Plant binary backbone (pCAMBIA1300 family)</td>
-          <td>Addgene</td>
-          <td>pCambia1300-PacI (#44183) or current pCAMBIA1300-compatible backbone</td>
-          <td><a href="https://www.addgene.org/44183/" target="_blank" rel="noopener">source</a></td>
-          <td>CRISPR cassette and selectable marker backbone</td>
+          <td>C57BL/6J wild-type mice</td>
+          <td>Jackson Laboratory</td>
+          <td>Stock No: 000664</td>
+          <td><a href="https://www.jax.org/strain/000664" target="_blank" rel="noopener">source</a></td>
+          <td>Control mice for wild-type BMDM generation</td>
         </tr><tr>
-          <td>CRISPR-Cas9 gRNA reagents</td>
-          <td>IDT</td>
-          <td>Alt-R CRISPR-Cas9 reagents</td>
-          <td><a href="https://www.idtdna.com/CRISPR-Cas9" target="_blank" rel="noopener">source</a></td>
-          <td>Guide design and synthesis for locus editing</td>
+          <td>Recombinant Mouse M-CSF</td>
+          <td>BioLegend</td>
+          <td>576406</td>
+          <td></td>
+          <td>Differentiation of bone marrow cells into macrophages</td>
         </tr><tr>
-          <td>Murashige and Skoog basal medium with vitamins</td>
-          <td>PhytoTech Labs</td>
-          <td>M519</td>
-          <td><a href="https://phytotechlab.com/murashige-skoog-basal-medium-with-vitamins.html" target="_blank" rel="noopener">source</a></td>
-          <td>Core plant tissue culture medium</td>
-        </tr><tr>
-          <td>Acetosyringone</td>
-          <td>PhytoTech Labs</td>
-          <td>A104 (powder) or A1104 (100 mM solution)</td>
-          <td><a href="https://phytotechlab.com/acetosyringone.html" target="_blank" rel="noopener">source</a></td>
-          <td>Vir gene induction to enhance Agrobacterium transfer</td>
-        </tr><tr>
-          <td>6-Benzylaminopurine (cytokinin)</td>
-          <td>PhytoTech Labs</td>
-          <td>B800</td>
-          <td><a href="https://phytotechlab.com/6-benzylaminopurine-ba.html" target="_blank" rel="noopener">source</a></td>
-          <td>Regeneration medium hormone component</td>
-        </tr><tr>
-          <td>Naphthaleneacetic acid (auxin)</td>
+          <td>LPS from E. coli O111:B4</td>
           <td>Sigma-Aldrich</td>
-          <td>N0640</td>
-          <td><a href="https://b2b.sigmaaldrich.com/FR/fr/product/sigma/n0640" target="_blank" rel="noopener">source</a></td>
-          <td>Callus/rooting medium hormone component</td>
+          <td>L4391</td>
+          <td><a href="https://www.sigmaaldrich.com/US/en/product/sigma/l4391" target="_blank" rel="noopener">source</a></td>
+          <td>Inflammatory stimulation of macrophages</td>
         </tr><tr>
-          <td>Hygromycin B selection antibiotic</td>
-          <td>Thermo Fisher (Gibco)</td>
-          <td>10687010</td>
-          <td><a href="https://www.thermofisher.cn/order/catalog/product/cn/en/10687010" target="_blank" rel="noopener">source</a></td>
-          <td>Selection of transformed plant tissue</td>
+          <td>RNeasy Plus Mini Kit</td>
+          <td>Qiagen</td>
+          <td>74134</td>
+          <td><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/total-rna/rneasy-plus-mini-kit" target="_blank" rel="noopener">source</a></td>
+          <td>RNA extraction from cultured macrophages for bulk RNA-seq and qPCR</td>
         </tr><tr>
-          <td>Plant DNA extraction kit</td>
-          <td>QIAGEN</td>
-          <td>DNeasy Plant Mini Kit, 69104</td>
-          <td><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-plant-kits" target="_blank" rel="noopener">source</a></td>
-          <td>Genotyping and transgene QC</td>
+          <td>Chromium Next GEM Single Cell 3&#x27; Kit v3.1</td>
+          <td>10X Genomics</td>
+          <td>1000269</td>
+          <td><a href="https://www.10xgenomics.com/products/single-cell-gene-expression" target="_blank" rel="noopener">source</a></td>
+          <td>Single-cell RNA-seq library preparation</td>
         </tr><tr>
-          <td>qPCR master mix</td>
-          <td>Applied Biosystems / Thermo Fisher</td>
+          <td>TruSeq Stranded mRNA Library Prep Kit</td>
+          <td>Illumina</td>
+          <td>20020594</td>
+          <td><a href="https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/truseq-stranded-mrna.html" target="_blank" rel="noopener">source</a></td>
+          <td>Bulk RNA-seq library preparation</td>
+        </tr><tr>
+          <td>NovaSeq 6000 SP Reagent Kit v1.5 (300 cycles)</td>
+          <td>Illumina</td>
+          <td>20028401</td>
+          <td></td>
+          <td>Sequencing reagents for bulk RNA-seq</td>
+        </tr><tr>
+          <td>ERCC RNA Spike-In Mix</td>
+          <td>Thermo Fisher</td>
+          <td>4456740</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/4456740" target="_blank" rel="noopener">source</a></td>
+          <td>Technical control for RNA-seq quality and normalization</td>
+        </tr><tr>
+          <td>High-Capacity cDNA Reverse Transcription Kit</td>
+          <td>Applied Biosystems</td>
+          <td>4368814</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/4368814" target="_blank" rel="noopener">source</a></td>
+          <td>cDNA synthesis for qPCR validation</td>
+        </tr><tr>
           <td>PowerUp SYBR Green Master Mix</td>
-          <td><a href="https://www.fishersci.com/shop/products/powerup-sybr-green-master-mix/a25743" target="_blank" rel="noopener">source</a></td>
-          <td>Copy number and marker-qPCR assays</td>
+          <td>Applied Biosystems</td>
+          <td>A25742</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/A25742" target="_blank" rel="noopener">source</a></td>
+          <td>qPCR reagent for candidate validation</td>
+        </tr><tr>
+          <td>Custom TaqMan Gene Expression Assays</td>
+          <td>Thermo Fisher</td>
+          <td>Custom design</td>
+          <td><a href="https://www.thermofisher.com/order/custom-genomic-products/tools/gene-expression/" target="_blank" rel="noopener">source</a></td>
+          <td>Probe-based qPCR validation of top 10 novel candidates</td>
+        </tr><tr>
+          <td>Pierce BCA Protein Assay Kit</td>
+          <td>Thermo Fisher</td>
+          <td>23225</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/23225" target="_blank" rel="noopener">source</a></td>
+          <td>Protein quantification for Western blot normalization</td>
+        </tr><tr>
+          <td>4-20% Mini-PROTEAN TGX Precast Gels</td>
+          <td>Bio-Rad</td>
+          <td>4561094</td>
+          <td><a href="https://www.bio-rad.com/en-us/sku/4561094-mini-protean-tgx-precast-gels" target="_blank" rel="noopener">source</a></td>
+          <td>Protein separation for Western blot validation</td>
+        </tr><tr>
+          <td>Mouse Cytokine Array / Chemokine Array 44-Plex</td>
+          <td>Eve Technologies</td>
+          <td>MD44</td>
+          <td></td>
+          <td>Multiplex screening of secreted protein candidates in plasma</td>
         </tr></tbody>
     </table>
-    <p class="muted">Direct cost estimate: $12,000 &ndash; $28,000 (Consumables + standard molecular assays; excludes labor, sequencing core overhead, greenhouse costs, and major equipment)</p>
+    <p class="muted">Direct cost estimate: $28,000 &ndash; $42,000 (Includes RNA-seq (bulk and single-cell) library prep and sequencing, qPCR reagents and custom assays, Western blot supplies, ELISA/multiplex assays, and molecular biology reagents. Excludes mouse housing costs, personnel, bioinformatics compute infrastructure, and institutional core facility access fees.)</p>
   </section>
 
   <section>
     <h2>References</h2>
-    <ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/26316679/" target="_blank" rel="noopener">Optimized Agrobacterium-mediated sorghum transformation protocol</a> &mdash; Transformation benchmarking and event quality expectations</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/28936670/" target="_blank" rel="noopener">Agrobacterium-mediated sorghum transformation (Methods Mol Biol)</a> &mdash; Step-level sorghum transformation guidance</li><li><a href="https://www.osti.gov/biblio/1618774" target="_blank" rel="noopener">Switchgrass cell-suspension transformation with GV3101</a> &mdash; Switchgrass-compatible high-throughput workflow</li><li><a href="https://www.jstage.jst.go.jp/article/plantbiotechnology/33/1/33_15.1127b/_article/-char/en" target="_blank" rel="noopener">Simple efficient switchgrass Agrobacterium protocol</a> &mdash; Coculture parameters and acetosyringone usage range</li></ul>
+    <ul><li>Fuster et al. (2017) Clonal hematopoiesis associated with TET2 deficiency accelerates atherosclerosis development in mice. Science 355(6327):842-847 &mdash; Established protocols for generating TET2-CHIP mouse models and characterizing inflammatory phenotypes in cardiovascular disease context</li><li>Jaiswal et al. (2017) Clonal Hematopoiesis and Risk of Atherosclerotic Cardiovascular Disease. N Engl J Med 377:111-121 &mdash; Reference for known CHIP-associated markers to create exclusion list for novel target identification</li><li>Zheng et al. (2017) Massively parallel digital transcriptional profiling of single cells. Nature Communications 8:14049 &mdash; 10X Genomics scRNA-seq methodology and quality control parameters for immune cell profiling</li><li>Love et al. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology 15:550 &mdash; Statistical framework for differential expression analysis with appropriate FDR correction</li><li>Bustin et al. (2009) The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments. Clinical Chemistry 55(4):611-622 &mdash; Best practices for qPCR validation including primer design, normalization strategies, and statistical analysis</li></ul>
   </section>
 
   <section>
     <h2>Lab handoff checklist</h2>
-    <ul><li>Target locus list and gRNA sequences</li><li>Construct maps and cloning strategy</li><li>Per-genotype tissue source and stage criteria</li><li>Transformation and regeneration media recipes</li><li>QC assay primer list and acceptance thresholds</li><li>Statistical analysis plan template</li></ul>
+    <ul><li>Curated exclusion list of 200+ known CHIP/TET2-associated inflammatory genes compiled from literature search (PubMed, GeneCards) including CXCL2, CXCL3, IL8, IL1B, IL6, TNF, and all genes from Fuster 2017 and Jaiswal 2017 studies</li><li>Detailed BMDM differentiation and stimulation protocol with timing, cell density (10^6 cells/well), M-CSF concentration (50 ng/ml for 7 days), and quality control criteria (&gt;95% CD11b+F4/80+ by flow cytometry)</li><li>Bioinformatics analysis pipeline specification: alignment tools (STAR v2.7+), DE analysis parameters (DESeq2, padj&lt;0.05, log2FC&gt;1.5), scRNA-seq clustering strategy (Seurat, resolution 0.5-1.0), and prioritization criteria (secreted proteins, surface markers, druggability scores from DGIdb and ChEMBL)</li><li>qPCR primer design parameters for top candidates: amplicon 80-150bp, Tm 58-60°C, spanning exon junctions where possible, validated in silico with Primer-BLAST for specificity</li><li>Data deposition plan for GEO submission with metadata templates and FASTQ file organization structure</li></ul>
   </section>
 
   <div class="nav" style="margin-top: 20px;">
-    <a href="opc-go-004.html">&larr; Previous</a>
+    
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="opc-go-002.html">Next &rarr;</a>
   </div>

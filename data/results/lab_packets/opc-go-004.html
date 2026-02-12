@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#2563eb">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<title>Cell Density and Viability Validation for Lucifer Yellow Dye Transfer Assay — Lab Packet</title>
+<title>Functional validation of Type 2 IRES-ribosome structural contacts via mutagenesis and translation assays — Lab Packet</title>
 <style>  * { box-sizing: border-box; }
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
   .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
   h1 { margin: 0 0 6px; font-size: 24px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
   .tag-go { background: #dcfce7; color: #166534; }
@@ -29,6 +27,8 @@
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  td a { color: #9b9b94; text-decoration: none; }
+  td a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
   .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
   .problem-box p { margin: 0 0 4px; font-size: 14px; }
@@ -48,45 +48,45 @@
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="../viewer.html">Assessment viewer</a>
     <a href="opc-go-003.html">&larr; Previous</a>
-    <a href="opc-go-001.html">Next &rarr;</a>
+    <a href="opc-go-005.html">Next &rarr;</a>
   </div>
 
   <p class="muted">opc-go-004</p>
-  <h1>Cell Density and Viability Validation for Lucifer Yellow Dye Transfer Assay</h1>
+  <h1>Functional validation of Type 2 IRES-ribosome structural contacts via mutagenesis and translation assays</h1>
   <div class="meta">
     <span class="tag tag-go">READY TO TEST</span>
-    <span class="tag tag-score">Score 0.531</span>
-    <span class="tag tag-cost">$3,200 &ndash; $4,800</span>
+    <span class="tag tag-score">Score 0.527</span>
+    <span class="tag tag-cost">$8,500 &ndash; $14,500</span>
   </div>
 
   <section>
     <h2>Problem mapping</h2>
     <div class="problem-box">
-      <p><span class="label">Problem:</span> Lucifer Yellow dye transfer assay lacks essential controls (cell density, viability) and shows unexplained discrepancy where mutant has less dye but comparable migration distance to control</p>
-      <p><span class="label">Sub-question:</span> Are cell density and viability comparable between control and mutant groups in the dye transfer assay?</p>
+      <p><span class="label">Problem:</span> Lack of complementary biochemical validation for the structural findings of viral Type 2 IRES recruitment to ribosomal preinitiation complex</p>
+      <p><span class="label">Sub-question:</span> Do the structural observations correlate with functional translation activity in cellular or in vitro systems?</p>
     </div>
   </section>
 
   <section>
     <h2>Objective</h2>
-    <p>To quantify and compare cell density and viability between control and mutant cell populations at the time of Lucifer Yellow dye transfer assays.</p>
+    <p>To validate the functional importance of specific IRES-ribosome structural contacts identified by cryo-EM/X-ray through site-directed mutagenesis and quantitative translation assays.</p>
   </section>
 
   <section>
     <h2>Readouts</h2>
-    <ul><li>Primary: Cell density (cells/mm²) measured by automated nuclei counting in control vs. mutant cultures</li><li>Secondary: Cell viability percentage measured by live/dead fluorescence staining (calcein-AM/ethidium homodimer)</li><li>Secondary: Metabolic activity (MTT absorbance at 570nm) normalized to cell number</li><li>Secondary: Apoptotic cell percentage measured by Annexin V-FITC/PI flow cytometry</li></ul>
+    <ul><li>Primary: Relative translation efficiency (luciferase activity normalized to mRNA levels) for wild-type vs. mutant IRES constructs in rabbit reticulocyte lysate (RRL) in vitro translation system</li><li>Secondary: Dual-luciferase reporter ratios (IRES-driven Renilla/cap-dependent Firefly) in transfected HEK293T cells for cellular validation</li><li>Secondary: RNA binding affinity (KD) of wild-type and mutant IRES to purified 40S ribosomal subunits measured by microscale thermophoresis (MST)</li></ul>
   </section>
 
   <section>
     <h2>Experimental design</h2>
-    <p><strong>Overview:</strong> Culture control and mutant cells under identical conditions as the original dye transfer experiments, then quantify cell density by automated nuclei counting and assess viability by three orthogonal methods (live/dead imaging, MTT metabolic assay, and Annexin V flow cytometry) at the exact timepoint when dye transfer would be performed.</p>
-    <ul><li>WP1: Establish standardized cell culture protocol matching original dye transfer conditions - seed control and mutant cells at defined densities, culture for same duration as dye transfer experiments, collect samples at 0h, 24h, 48h, and 72h timepoints</li><li>WP2: Automated cell density quantification - fix cells, perform DAPI nuclear staining, image 10 fields per well using automated microscopy, analyze with ImageJ particle counting to determine cells/mm²</li><li>WP3: Multi-method viability assessment - perform live/dead staining (calcein-AM/EthD-1) with fluorescence imaging, MTT assay with spectrophotometry, and Annexin V-FITC/PI flow cytometry on parallel samples</li><li>WP4: Statistical analysis and correlation - perform two-way ANOVA (genotype × timepoint), calculate coefficient of variation within groups, correlate viability metrics with original dye transfer data, generate standardized report with quality control metrics</li></ul>
+    <p><strong>Overview:</strong> Generate 8-12 IRES mutants targeting key structural contact residues identified in cryo-EM/crystal structures. Test translation efficiency in parallel using in vitro RRL system and cellular dual-luciferase assays. Correlate functional defects with direct 40S binding affinity measurements.</p>
+    <ul><li>WP1: Design and generate IRES mutant library (single, double, and compensatory mutations) targeting ribosome contact sites; clone into dual-luciferase bicistronic reporters and in vitro transcription vectors (Weeks 1-3)</li><li>WP2: In vitro transcription of capped, polyadenylated mRNAs; quality control by denaturing gel electrophoresis and capillary electrophoresis; RRL translation assays with luciferase readout and RT-qPCR normalization (Weeks 4-7)</li><li>WP3: Transfection of dual-luciferase constructs into HEK293T cells; measure Renilla/Firefly ratios at 24h and 48h; Northern blot or RT-qPCR to confirm mRNA stability (Weeks 6-9)</li><li>WP4: Purify 40S ribosomal subunits from HEK293T cells; in vitro transcribe fluorescently-labeled IRES RNAs; perform MST binding assays; statistical analysis and correlation with structural contacts (Weeks 8-12)</li></ul>
     <p><strong>Controls:</strong></p>
-    <ul><li>Positive control for cell death: treat subset of control cells with 70% methanol for 10 minutes to induce complete cell death, verify viability assays detect 0% viability</li><li>Negative control for counting artifacts: image and analyze cell-free wells with media only to establish background threshold for automated counting</li><li>Technical control for metabolic assay: include wells with known cell numbers (5,000, 10,000, 20,000 cells) to generate standard curve and verify linear MTT response range</li></ul>
-    <p><strong>Sample size plan:</strong> N=6 biological replicates per genotype (control and mutant) per timepoint (4 timepoints), with 3 technical replicates per assay method, total of 48 culture wells; for flow cytometry, analyze 10,000 events per sample; for imaging, capture 10 fields per well (0.9 mm² each)</p>
+    <ul><li>Positive control: Wild-type EMCV or CrPV IRES (established Type 2 IRES) with known high translation efficiency</li><li>Negative control: Bicistronic construct with no IRES (empty intercistronic spacer) to measure background cap-independent translation</li><li>Technical control: Monocistronic cap-dependent luciferase construct to normalize transfection efficiency and cell viability; mock-transfected cells for background subtraction</li></ul>
+    <p><strong>Sample size plan:</strong> 8-12 IRES mutants plus wild-type and controls; each construct tested in n=4 biological replicates for RRL assays, n=6 biological replicates for cell-based assays (3 independent transfections × 2 time points), and n=3 technical replicates for MST binding measurements</p>
     <p><strong>Success criteria:</strong></p>
-    <ul><li>Cell density measurements show coefficient of variation &lt;15% within genotype groups and automated counting correlation with manual counts r²&gt;0.95</li><li>If cell density differs between genotypes by &gt;20% or viability differs by &gt;10% at dye transfer timepoint, these are identified as confounding variables requiring experimental redesign</li><li>All three viability assays (live/dead, MTT, Annexin V) show concordance within 10% for same samples, validating measurement reliability</li></ul>
-    <p><strong>Estimated timeline:</strong> 6 weeks</p>
+    <ul><li>At least 60% of mutations targeting direct contact residues show &gt;2-fold reduction in translation efficiency (p&lt;0.05 by one-way ANOVA with Dunnett&#x27;s post-hoc test) compared to wild-type IRES</li><li>Pearson correlation coefficient r &gt; 0.6 (p&lt;0.05) between translation efficiency defects and changes in 40S binding affinity (KD) for mutant IRES constructs</li><li>Cellular and in vitro translation assays show concordant results (same direction of effect) for &gt;80% of mutants tested</li></ul>
+    <p><strong>Estimated timeline:</strong> 12 weeks</p>
   </section>
 
   <section>
@@ -94,84 +94,120 @@
     <table>
       <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
       <tbody><tr>
-          <td>LIVE/DEAD Viability/Cytotoxicity Kit for mammalian cells</td>
-          <td>Thermo Fisher Scientific</td>
-          <td>L3224</td>
+          <td>Rabbit Reticulocyte Lysate System, Nuclease-Treated</td>
+          <td>Promega</td>
+          <td>L4960</td>
           <td></td>
-          <td>Simultaneous fluorescence-based measurement of live cells (calcein-AM) and dead cells (ethidium homodimer-1)</td>
+          <td>In vitro translation system for testing IRES-driven translation efficiency</td>
         </tr><tr>
-          <td>MTT (3-(4,5-Dimethylthiazol-2-yl)-2,5-Diphenyltetrazolium Bromide)</td>
-          <td>Sigma-Aldrich</td>
-          <td>M5655-1G</td>
+          <td>psiCHECK-2 Vector (dual-luciferase bicistronic reporter)</td>
+          <td>Promega</td>
+          <td>C8021</td>
           <td></td>
-          <td>Colorimetric assay for metabolic activity/viability</td>
+          <td>Backbone for cloning IRES variants between Renilla and Firefly luciferase coding sequences</td>
         </tr><tr>
-          <td>FITC Annexin V Apoptosis Detection Kit with PI</td>
-          <td>BioLegend</td>
-          <td>640914</td>
-          <td></td>
-          <td>Flow cytometry detection of apoptotic (Annexin V+) and necrotic (PI+) cells</td>
+          <td>Dual-Luciferase Reporter Assay System</td>
+          <td>Promega</td>
+          <td>E1960</td>
+          <td><a href="https://www.promega.com/products/reporter-assays-and-transfection/reporter-assays/dual_luciferase-reporter-assay-system" target="_blank" rel="noopener">source</a></td>
+          <td>Quantify IRES-driven Renilla and cap-dependent Firefly luciferase activities in cell lysates</td>
         </tr><tr>
-          <td>DAPI (4&#x27;,6-Diamidino-2-Phenylindole, Dihydrochloride)</td>
-          <td>Thermo Fisher Scientific</td>
-          <td>D1306</td>
-          <td></td>
-          <td>Nuclear counterstain for automated cell counting</td>
+          <td>HEK293T cells</td>
+          <td>ATCC</td>
+          <td>CRL-3216</td>
+          <td><a href="https://www.atcc.org/products/crl-3216" target="_blank" rel="noopener">source</a></td>
+          <td>Mammalian cell line for cellular translation reporter assays and 40S ribosome purification</td>
         </tr><tr>
-          <td>96-well clear bottom black-walled plate</td>
-          <td>Corning</td>
-          <td>3904</td>
-          <td></td>
-          <td>Culture vessel for fluorescence-based assays with minimal background</td>
+          <td>mMESSAGE mMACHINE T7 Transcription Kit</td>
+          <td>Thermo Fisher</td>
+          <td>AM1344</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/AM1344" target="_blank" rel="noopener">source</a></td>
+          <td>Generate capped, polyadenylated mRNA transcripts for in vitro translation assays</td>
         </tr><tr>
-          <td>96-well flat bottom plate</td>
-          <td>Corning</td>
-          <td>3599</td>
-          <td></td>
-          <td>Culture vessel for MTT absorbance assay</td>
+          <td>Q5 Site-Directed Mutagenesis Kit</td>
+          <td>New England Biolabs</td>
+          <td>E0554S</td>
+          <td><a href="https://www.neb.com/products/e0554-q5-site-directed-mutagenesis-kit" target="_blank" rel="noopener">source</a></td>
+          <td>Introduce point mutations into IRES sequences at structurally-defined contact sites</td>
         </tr><tr>
-          <td>Paraformaldehyde 16% solution</td>
-          <td>Electron Microscopy Sciences</td>
-          <td>15710</td>
-          <td></td>
-          <td>Cell fixation for immunofluorescence and counting</td>
+          <td>Luciferase Assay Reagent (LAR)</td>
+          <td>Promega</td>
+          <td>E1483</td>
+          <td><a href="https://www.promega.com/products/reporter-assays-and-transfection/reporter-assays/luciferase-assay-system" target="_blank" rel="noopener">source</a></td>
+          <td>Measure luciferase activity from in vitro translation reactions</td>
         </tr><tr>
-          <td>Countess II FL Automated Cell Counter</td>
-          <td>Thermo Fisher Scientific</td>
-          <td>AMQAF1000</td>
+          <td>Monolith NT.115 Microscale Thermophoresis instrument</td>
+          <td>NanoTemper Technologies</td>
+          <td>NT.115</td>
           <td></td>
-          <td>Initial cell seeding standardization and validation of automated counting</td>
+          <td>Measure binding affinity (KD) between fluorescently-labeled IRES RNA and purified 40S subunits</td>
         </tr><tr>
-          <td>Cell culture dish, 35mm</td>
-          <td>Corning</td>
-          <td>430165</td>
+          <td>Monolith His-Tag Labeling Kit RED-tris-NTA 2nd Generation</td>
+          <td>NanoTemper Technologies</td>
+          <td>MO-L018</td>
           <td></td>
-          <td>Standard culture vessel matching original dye transfer experimental setup</td>
+          <td>Fluorescent labeling of RNA or ribosomal proteins for MST measurements</td>
         </tr><tr>
-          <td>Trypan Blue Solution 0.4%</td>
-          <td>Thermo Fisher Scientific</td>
-          <td>15250061</td>
+          <td>Label IT Nucleic Acid Labeling Kit, Cy5</td>
+          <td>Mirus Bio</td>
+          <td>MIR3225</td>
           <td></td>
-          <td>Manual cell counting viability assessment at seeding</td>
+          <td>Fluorescently label in vitro transcribed IRES RNA for MST binding assays</td>
+        </tr><tr>
+          <td>Sucrose Cushion Ribosome Purification Buffer Set</td>
+          <td>Custom preparation</td>
+          <td>N/A</td>
+          <td></td>
+          <td>Buffers for ultracentrifugation-based purification of 40S ribosomal subunits (20 mM Tris-HCl pH 7.5, 100 mM KCl, 5 mM MgCl2, 1M sucrose cushion)</td>
+        </tr><tr>
+          <td>SuperScript IV Reverse Transcriptase</td>
+          <td>Thermo Fisher</td>
+          <td>18090010</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/18090010" target="_blank" rel="noopener">source</a></td>
+          <td>RT-qPCR to quantify mRNA levels for normalization of translation efficiency</td>
+        </tr><tr>
+          <td>PowerUp SYBR Green Master Mix</td>
+          <td>Applied Biosystems</td>
+          <td>A25742</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/A25742" target="_blank" rel="noopener">source</a></td>
+          <td>qPCR quantification of luciferase mRNA levels</td>
+        </tr><tr>
+          <td>Lipofectamine 3000 Transfection Reagent</td>
+          <td>Thermo Fisher</td>
+          <td>L3000015</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/L3000015" target="_blank" rel="noopener">source</a></td>
+          <td>Transfect dual-luciferase reporter constructs into HEK293T cells</td>
+        </tr><tr>
+          <td>Beckman Coulter Optima XPN-100 Ultracentrifuge with SW41 rotor</td>
+          <td>Beckman Coulter</td>
+          <td>A94471</td>
+          <td><a href="https://www.beckman.com/centrifuges/ultracentrifuges/optima-xpn-series" target="_blank" rel="noopener">source</a></td>
+          <td>Purification of ribosomal subunits through sucrose cushion ultracentrifugation</td>
+        </tr><tr>
+          <td>Agilent 2100 Bioanalyzer with RNA 6000 Nano Kit</td>
+          <td>Agilent</td>
+          <td>5067-1511</td>
+          <td></td>
+          <td>Quality control of in vitro transcribed mRNA integrity and purity</td>
         </tr></tbody>
     </table>
-    <p class="muted">Direct cost estimate: $3,200 &ndash; $4,800 (Includes all reagent kits, plates, and consumables for the described experiment. Excludes equipment costs (microscope, flow cytometer, plate reader assumed available), cell culture media, and personnel costs. High estimate includes additional replicates and troubleshooting reagents.)</p>
+    <p class="muted">Direct cost estimate: $8,500 &ndash; $14,500 (Includes molecular cloning reagents, in vitro translation kits, cell culture reagents, transfection reagents, luciferase assay reagents, RT-qPCR supplies, RNA labeling kits, and MST consumables. Excludes major equipment (ultracentrifuge, MST instrument, plate readers, qPCR machine), labor costs, and ribosome purification if commercial 40S subunits are purchased (~$3000 additional))</p>
   </section>
 
   <section>
     <h2>References</h2>
-    <ul><li>Papadopoulos NG, et al. An improved fluorescence assay for the determination of lymphocyte-mediated cytotoxicity using flow cytometry. J Immunol Methods. 1994;177(1-2):101-11 &mdash; Establishes validated flow cytometry gating strategy for Annexin V/PI discrimination of live, apoptotic, and necrotic cell populations</li><li>Riss TL, et al. Cell Viability Assays. Assay Guidance Manual [Internet]. Bethesda (MD): Eli Lilly &amp; Company and the National Center for Advancing Translational Sciences; 2004-2016 &mdash; Provides comprehensive guidance on MTT assay optimization, linear range determination, and appropriate controls for metabolic viability assessment</li><li>Decrock E, et al. Transfer of IP3 through gap junctions is critical, but not sufficient, for the spread of apoptosis. Cell Death Differ. 2012;19(6):947-57 &mdash; Demonstrates integrated approach to measuring gap junction communication and cell viability/apoptosis in parallel, relevant for experimental design</li><li>Schneider CA, Rasband WS, Eliceiri KW. NIH Image to ImageJ: 25 years of image analysis. Nat Methods. 2012;9(7):671-5 &mdash; Technical reference for automated cell counting using ImageJ nuclei segmentation and particle analysis tools</li></ul>
+    <ul><li>Zuker, M. &amp; Stiegler, P. (1981) &#x27;Optimal computer folding of large RNA sequences using thermodynamics and auxiliary information&#x27;, Nucleic Acids Research, 9(1), pp. 133-148. &mdash; Computational prediction of secondary structure changes introduced by mutations to ensure disruption of tertiary contacts without destabilizing overall IRES fold</li><li>Pestova, T.V. &amp; Hellen, C.U. (2003) &#x27;Translation elongation after assembly of ribosomes on the Cricket paralysis virus internal ribosomal entry site without initiation factors or initiator tRNA&#x27;, Genes &amp; Development, 17(2), pp. 181-186. &mdash; Established protocol for in vitro translation assays using Type 2 IRES constructs in rabbit reticulocyte lysate</li><li>Deniz, N., et al. (2009) &#x27;Translation initiation factors and their relevance in health and disease&#x27;, Biological Chemistry, 390(5-6), pp. 331-344. &mdash; Guidelines for normalization strategies in translation assays and interpretation of IRES-mediated translation efficiency</li><li>Khawaja, A., et al. (2015) &#x27;Measuring thermal stability of proteins in cell lysates by microscale thermophoresis&#x27;, Methods in Molecular Biology, 1261, pp. 253-261. &mdash; Optimized protocols for MST-based measurement of RNA-protein binding affinity including buffer optimization and concentration ranges</li><li>Easton, L.E., et al. (2009) &#x27;A novel method to engineer bicistronic constructs for the expression of influenza A proteins in cell culture and Xenopus laevis embryos&#x27;, Nucleic Acids Research, 37(10), e68. &mdash; Design principles for bicistronic dual-luciferase reporters to minimize cryptic promoter activity and ensure accurate IRES-dependent translation measurement</li><li>Anger, A.M., et al. (2013) &#x27;Structures of the human and Drosophila 80S ribosome&#x27;, Nature, 497(7447), pp. 80-85. &mdash; Protocol for purification of mammalian ribosomal subunits from cultured cells using sucrose gradient ultracentrifugation</li></ul>
   </section>
 
   <section>
     <h2>Lab handoff checklist</h2>
-    <ul><li>Detailed cell culture protocol from original Lucifer Yellow dye transfer experiments including: cell line identities, passage numbers used, seeding density, culture duration, media formulation, and exact timing of dye injection relative to plating</li><li>Microscope specifications and imaging parameters: objective magnification, numerical aperture, camera pixel size, field of view dimensions, and exposure settings to enable proper calibration of cell density measurements (cells/mm²)</li><li>Original dye transfer experimental data including: number of replicates performed, passage number ranges, any observations about cell morphology or confluence differences, and raw data on dye transfer distances and fluorescence intensities for correlation analysis</li><li>Standard operating procedures for handling the specific control and mutant cell lines including: optimal seeding densities, splitting ratios, freezing/thawing protocols, and any known growth rate differences or special culture requirements</li></ul>
+    <ul><li>3D structural coordinates (PDB or CIF file) of the IRES-ribosome complex with annotated contact residues and distances &lt;5Å for mutagenesis targeting</li><li>Complete nucleotide sequence of the wild-type IRES element with 5&#x27; and 3&#x27; flanking sequences (50-100 nt) for cloning into expression vectors</li><li>List of 8-12 prioritized residue positions for mutagenesis ranked by structural contact surface area and phylogenetic conservation, including proposed substitutions (e.g., charge reversals, alanine scanning)</li><li>Primer design file with sequences for site-directed mutagenesis of all target positions including compensatory double mutants</li><li>Reference translation efficiency data (if available) for the wild-type IRES from previous studies for benchmark comparison</li><li>Cell culture protocols and media requirements specific to the lab (preferred HEK293T culture conditions, passage numbers, transfection optimization data)</li></ul>
   </section>
 
   <div class="nav" style="margin-top: 20px;">
     <a href="opc-go-003.html">&larr; Previous</a>
     <a href="../go_now_lab_packets.html">All lab packets</a>
-    <a href="opc-go-001.html">Next &rarr;</a>
+    <a href="opc-go-005.html">Next &rarr;</a>
   </div>
 </div>
 </body>

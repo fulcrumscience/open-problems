@@ -16,7 +16,7 @@
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
   .link { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .link:hover { border-color: #2563eb; color: #1d4ed8; }
+  .link:hover { border-color: #9b9b94; color: #6b6b64; }
 
   .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
   .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
@@ -41,6 +41,8 @@
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
 
   pre { margin: 0; white-space: pre-wrap; background: #0f172a; color: #e2e8f0; border-radius: 8px; padding: 12px; font-size: 12px; overflow: auto; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; }
   .empty { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; color: #6b7280; }
 
@@ -63,14 +65,12 @@
     <a class="link" href="go_now_lab_packets.html">Go-now lab packets</a>
     <a class="link" href="go_now_feasibility_redlines.md" target="_blank" rel="noopener">Feasibility redlines (MD)</a>
     <a class="link" href="go_now_rfq_target_labs.md" target="_blank" rel="noopener">Target labs (MD)</a>
-    <a class="link" href="go_now_rfq_outreach_messages.md" target="_blank" rel="noopener">Outreach messages (MD)</a>
     <a class="link" href="go_now_rfq_packages.json" target="_blank" rel="noopener">Open raw RFQ JSON</a>
   </div>
 
   <div class="grid" id="summary"></div>
   <div class="grid" id="targets" style="margin-top:14px"></div>
   <div class="grid" id="packages" style="margin-top:14px"></div>
-  <div class="grid" id="emails" style="margin-top:14px"></div>
 </div>
 
 <script>
@@ -87,6 +87,21 @@ function arr(v) {
   return Array.isArray(v) ? v : [];
 }
 
+function renderTimeline(t) {
+  if (!t) return '<li>Timeline not specified</li>';
+  const issue = t.rfq_issue_date ? new Date(t.rfq_issue_date) : null;
+  function weeksAfter(dateStr, fallback) {
+    if (!issue || !dateStr) return fallback;
+    var d = new Date(dateStr);
+    var weeks = Math.round((d - issue) / (7 * 86400000));
+    return weeks > 0 ? 'Week +' + weeks : 'Week 0';
+  }
+  return '<li>RFQ issued: Week 0</li>' +
+    '<li>Questions due: ' + weeksAfter(t.questions_due, 'Week +1') + '</li>' +
+    '<li>Quote due: ' + weeksAfter(t.quote_due, 'Week +2') + '</li>' +
+    '<li>Target kickoff: ' + weeksAfter(t.target_kickoff, 'Week +4') + '</li>';
+}
+
 function renderSummary() {
   const root = document.getElementById('summary');
   const labs = arr(RFQ.target_labs).length;
@@ -97,7 +112,6 @@ function renderSummary() {
     <section class="card">
       <div class="card-head">
         <h2 class="card-title">RFQ Set Summary</h2>
-        <div class="card-sub">Generated ${esc(date)} · Criteria ${esc(RFQ.criteria_version || 'n/a')}</div>
       </div>
       <div class="card-body">
         <div class="chip-row">
@@ -184,12 +198,7 @@ function renderPackages() {
         </div>
         <div class="section">
           <h3>Timeline Request</h3>
-          <ul>
-            <li>Issue date: ${esc((pkg.timeline_request || {}).rfq_issue_date)}</li>
-            <li>Questions due: ${esc((pkg.timeline_request || {}).questions_due)}</li>
-            <li>Quote due: ${esc((pkg.timeline_request || {}).quote_due)}</li>
-            <li>Target kickoff: ${esc((pkg.timeline_request || {}).target_kickoff)}</li>
-          </ul>
+          <ul>${renderTimeline(pkg.timeline_request)}</ul>
         </div>
         <div class="section">
           <h3>Recommended Recipients</h3>
@@ -202,25 +211,6 @@ function renderPackages() {
   root.innerHTML = html || '<div class="empty">No RFQ packages found in JSON.</div>';
 }
 
-function renderEmails() {
-  const root = document.getElementById('emails');
-  const html = arr(RFQ.outreach_templates).map(t => `
-    <section class="card">
-      <div class="card-head">
-        <h2 class="card-title">Outreach Template: ${esc(t.template_id)}</h2>
-        <div class="card-sub">${esc(t.subject)}</div>
-      </div>
-      <div class="card-body">
-        <h3>Body</h3>
-        <pre>${esc(t.body)}</pre>
-        <p class="muted" style="margin-top:8px">Replace placeholders: {lab_name}, {sender_name}, {organization}, {contact_info}.</p>
-      </div>
-    </section>
-  `).join('');
-
-  root.innerHTML = html || '<div class="empty">No outreach templates found in JSON.</div>';
-}
-
 async function init() {
   try {
     const resp = await fetch('go_now_rfq_packages.json');
@@ -229,7 +219,6 @@ async function init() {
     renderSummary();
     renderTargets();
     renderPackages();
-    renderEmails();
   } catch (e) {
     document.getElementById('summary').innerHTML = '<div class="empty">Failed to load go_now_rfq_packages.json.</div>';
   }

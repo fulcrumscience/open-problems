@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#2563eb">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<title>Validate Safe-Harbor Loci and Insulator Sequences for Stable Transgene Expression in Bioenergy Crops — Lab Packet</title>
+<title>Cell Density and Viability Assessment in Gap Junction Dye Transfer Assay — Lab Packet</title>
 <style>  * { box-sizing: border-box; }
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
   .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
   h1 { margin: 0 0 6px; font-size: 24px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
   .tag-go { background: #dcfce7; color: #166534; }
@@ -29,6 +27,8 @@
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  td a { color: #9b9b94; text-decoration: none; }
+  td a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
   .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
   .problem-box p { margin: 0 0 4px; font-size: 14px; }
@@ -48,45 +48,45 @@
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="../viewer.html">Assessment viewer</a>
     <a href="opc-go-001.html">&larr; Previous</a>
-    <a href="opc-go-006.html">Next &rarr;</a>
+    <a href="opc-go-003.html">Next &rarr;</a>
   </div>
 
   <p class="muted">opc-go-002</p>
-  <h1>Validate Safe-Harbor Loci and Insulator Sequences for Stable Transgene Expression in Bioenergy Crops</h1>
+  <h1>Cell Density and Viability Assessment in Gap Junction Dye Transfer Assay</h1>
   <div class="meta">
     <span class="tag tag-go">READY TO TEST</span>
-    <span class="tag tag-score">Score 0.527</span>
-    <span class="tag tag-cost">$15,000 &ndash; $35,000</span>
+    <span class="tag tag-score">Score 0.531</span>
+    <span class="tag tag-cost">$2,800 &ndash; $4,500</span>
   </div>
 
   <section>
     <h2>Problem mapping</h2>
     <div class="problem-box">
-      <p><span class="label">Problem:</span> How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenergy crops is not understood, and sequences with insulator-like function to dampen ectopic interactions are needed.</p>
-      <p><span class="label">Sub-question:</span> Can validated safe harbor loci be identified in bioenergy crop genomes for predictable transgene expression?</p>
+      <p><span class="label">Problem:</span> Lucifer Yellow dye transfer assay lacks essential controls (cell density, viability) and shows unexplained discrepancy where mutant has less dye but comparable migration distance to control</p>
+      <p><span class="label">Sub-question:</span> Are cell density and viability comparable between control and mutant groups in the dye transfer assay?</p>
     </div>
   </section>
 
   <section>
     <h2>Objective</h2>
-    <p>Identify insertion sites and boundary elements that produce high, stable, low-variance expression across tissues and generations.</p>
+    <p>Quantify and compare cell density and viability between control and mutant cell lines at the time of Lucifer Yellow dye transfer to identify confounding variables.</p>
   </section>
 
   <section>
     <h2>Readouts</h2>
-    <ul><li>Primary: reporter mean expression and coefficient of variation across independent events</li><li>Primary: expression stability across tissues and T1 generation</li><li>Secondary: insertion fidelity and copy number</li><li>Secondary: growth/fitness neutrality</li></ul>
+    <ul><li>Primary: Cell density (cells/mm²) measured by automated nuclear counting (DAPI) at time of dye transfer</li><li>Secondary: Cell viability percentage measured by live/dead fluorescence staining (Calcein-AM/Ethidium homodimer-1)</li><li>Secondary: Metabolic activity measured by MTT assay (absorbance at 570nm)</li><li>Secondary: Apoptotic/necrotic cell percentage by flow cytometry (Annexin V/PI staining)</li></ul>
   </section>
 
   <section>
     <h2>Experimental design</h2>
-    <p><strong>Overview:</strong> Head-to-head targeted insertion experiment comparing 3 candidate safe-harbor loci and 2 insulator configurations using a dual-luciferase reporter cassette.</p>
-    <ul><li>WP1 candidate loci nomination from pan-genome and chromatin context</li><li>WP2 build cassettes: no-insulator, insulator-A, insulator-B</li><li>WP3 CRISPR-directed insertion into each candidate locus</li><li>WP4 random-integration comparator arm (standard Agrobacterium transformation)</li><li>WP5 expression profiling by dual-luciferase and qPCR in controlled growth conditions</li><li>WP6 multi-tissue and generation follow-up (T0 leaf/callus + T1 seedling tissues)</li></ul>
+    <p><strong>Overview:</strong> Replicate the existing dye transfer assay conditions with control and mutant cells, but harvest samples immediately before dye injection for comprehensive density and viability measurements using orthogonal methods (imaging, spectrophotometry, flow cytometry).</p>
+    <ul><li>WP1: Culture preparation - seed control and mutant cells at identical initial densities in 6-well plates and culture dishes, allow to reach confluence state matching original dye transfer experiments (3-5 days)</li><li>WP2: Viability assessment - at time point matching dye transfer assay, perform live/dead staining with confocal imaging, MTT assay in parallel wells, and harvest cells for Annexin V/PI flow cytometry</li><li>WP3: Density quantification - fix parallel samples, perform DAPI nuclear staining, acquire 10 random fields per well using automated microscopy, analyze with CellProfiler for cell counting</li><li>WP4: Statistical analysis and correlation - compare density and viability metrics between control and mutant using t-tests, calculate coefficients of variation, correlate with historical dye transfer data</li></ul>
     <p><strong>Controls:</strong></p>
-    <ul><li>Random integration arm as baseline position-effect comparator</li><li>No-insulator cassette at each candidate locus</li><li>Constitutive internal Renilla control for ratiometric normalization</li></ul>
-    <p><strong>Sample size plan:</strong> Target &gt;=12 independent insertion events per locus x insulator condition; minimum 3 technical assay replicates per tissue per line.</p>
+    <ul><li>Positive control for viability assays: cells treated with 0.1% Triton X-100 for 10 min (100% dead control)</li><li>Negative control for viability assays: freshly thawed early passage cells in optimal media (high viability baseline)</li><li>Technical control: cell-free wells with reagents only to measure background fluorescence and absorbance</li><li>Seeding density control: parallel wells seeded at 50%, 100%, and 150% of standard density to establish sensitivity range</li></ul>
+    <p><strong>Sample size plan:</strong> N=6 biological replicates per cell line (control and mutant), with 3 technical replicates per assay type per biological replicate, conducted over 2 independent experimental runs. Total: 12 wells per cell line per assay.</p>
     <p><strong>Success criteria:</strong></p>
-    <ul><li>&gt;=30% reduction in between-line expression CV versus random integration baseline</li><li>No significant drop in mean expression vs no-insulator comparator at same locus</li><li>Stable expression rank order maintained in T1 (Spearman rho &gt;=0.7)</li></ul>
-    <p><strong>Estimated timeline:</strong> 24 weeks</p>
+    <ul><li>Coefficient of variation for cell density measurements &lt;15% within biological replicates</li><li>Detection sensitivity to identify ≥10% difference in cell density between groups with power ≥0.80 at α=0.05</li><li>Viability assay concordance: &lt;20% discrepancy between live/dead staining and MTT-based viability percentages</li><li>Flow cytometry viable cell percentage &gt;85% to confirm healthy cultures (unless significant difference detected between groups)</li></ul>
+    <p><strong>Estimated timeline:</strong> 4 weeks</p>
   </section>
 
   <section>
@@ -94,78 +94,96 @@
     <table>
       <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
       <tbody><tr>
-          <td>Plant binary backbone (pCAMBIA1300 family)</td>
-          <td>Addgene</td>
-          <td>pCambia1300-PacI (#44183) or compatible pCAMBIA1300 derivative</td>
-          <td><a href="https://www.addgene.org/44183/" target="_blank" rel="noopener">source</a></td>
-          <td>Targeted insertion donor and reporter cassette backbone</td>
+          <td>LIVE/DEAD Viability/Cytotoxicity Kit for mammalian cells</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>L3224</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/L3224" target="_blank" rel="noopener">source</a></td>
+          <td>Simultaneous fluorescent labeling of live cells (Calcein-AM, green) and dead cells (Ethidium homodimer-1, red)</td>
         </tr><tr>
-          <td>Dual-luciferase assay chemistry</td>
-          <td>Promega</td>
-          <td>Dual-Luciferase Reporter Assay System, E1910/E1960</td>
-          <td><a href="https://www.promega.com/products/luciferase-assays/reporter-assays/dual_luciferase-reporter-assay-system" target="_blank" rel="noopener">source</a></td>
-          <td>Ratiometric reporter quantification</td>
+          <td>MTT (3-(4,5-dimethylthiazol-2-yl)-2,5-diphenyltetrazolium bromide) Cell Proliferation Assay Kit</td>
+          <td>Abcam</td>
+          <td>ab211091</td>
+          <td><a href="https://www.abcam.com/products/assay-kits/mtt-cell-proliferation-assay-kit-ab211091.html" target="_blank" rel="noopener">source</a></td>
+          <td>Colorimetric quantification of metabolic activity and cell viability</td>
         </tr><tr>
-          <td>Firefly/Renilla reporter vectors (for cassette assembly controls)</td>
-          <td>Promega</td>
-          <td>pGL4 vector family (e.g., pGL4.10, pGL4.73)</td>
-          <td><a href="https://www.promega.com/resources/protocols/product-information-sheets/a/pgl410-vector-protocol/" target="_blank" rel="noopener">source</a></td>
-          <td>Reference reporter constructs and assay controls</td>
+          <td>FITC Annexin V Apoptosis Detection Kit with PI</td>
+          <td>BioLegend</td>
+          <td>640914</td>
+          <td></td>
+          <td>Flow cytometry-based detection of apoptotic and necrotic cells</td>
         </tr><tr>
-          <td>CRISPR-Cas9 gRNA reagents</td>
-          <td>IDT</td>
-          <td>Alt-R CRISPR-Cas9 reagents</td>
-          <td><a href="https://www.idtdna.com/CRISPR-Cas9" target="_blank" rel="noopener">source</a></td>
-          <td>Guide synthesis for locus-targeted insertion</td>
+          <td>DAPI (4&#x27;,6-Diamidino-2-Phenylindole, Dihydrochloride)</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>D1306</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/D1306" target="_blank" rel="noopener">source</a></td>
+          <td>Nuclear counterstaining for automated cell counting and density determination</td>
         </tr><tr>
-          <td>Agrobacterium helper/host system</td>
-          <td>DSMZ (or institutional source)</td>
-          <td>DSM 12365 (pMP90RK in GV3101)</td>
-          <td><a href="https://webshop.dsmz.de/en/plasmids/pMP90RK.html" target="_blank" rel="noopener">source</a></td>
-          <td>Transformation delivery strain</td>
+          <td>16% Paraformaldehyde (PFA) Aqueous Solution</td>
+          <td>Electron Microscopy Sciences</td>
+          <td>15710</td>
+          <td></td>
+          <td>Cell fixation for immunofluorescence and nuclear staining</td>
         </tr><tr>
-          <td>Murashige and Skoog basal medium with vitamins</td>
-          <td>PhytoTech Labs</td>
-          <td>M519</td>
-          <td><a href="https://phytotechlab.com/murashige-skoog-basal-medium-with-vitamins.html" target="_blank" rel="noopener">source</a></td>
-          <td>Plant tissue culture and regeneration</td>
+          <td>6-well Clear Flat Bottom TC-treated Multiwell Cell Culture Plate</td>
+          <td>Corning</td>
+          <td>3516</td>
+          <td></td>
+          <td>Culture vessel for viability assays and density measurements</td>
         </tr><tr>
-          <td>Acetosyringone</td>
-          <td>PhytoTech Labs</td>
-          <td>A104 / A1104</td>
-          <td><a href="https://phytotechlab.com/acetosyringone.html" target="_blank" rel="noopener">source</a></td>
-          <td>Agrobacterium vir induction</td>
+          <td>96-well Flat Bottom TC-treated Microplate</td>
+          <td>Corning</td>
+          <td>3599</td>
+          <td></td>
+          <td>MTT assay plate for spectrophotometric readings</td>
         </tr><tr>
-          <td>Hygromycin B selection antibiotic</td>
-          <td>Thermo Fisher (Gibco)</td>
-          <td>10687010</td>
-          <td><a href="https://www.fishersci.com/shop/products/gibco-hygromycin-b-50mg-ml/10687010" target="_blank" rel="noopener">source</a></td>
-          <td>Selection of transformed lines</td>
+          <td>Countess II FL Automated Cell Counter</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>AMQAF1000</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/AMQAF1000" target="_blank" rel="noopener">source</a></td>
+          <td>Initial cell counting and viability assessment during seeding</td>
         </tr><tr>
-          <td>Plant DNA extraction kit</td>
-          <td>QIAGEN</td>
-          <td>DNeasy Plant Mini Kit, 69104</td>
-          <td><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-plant-kits" target="_blank" rel="noopener">source</a></td>
-          <td>Insertion-site and copy-number QC</td>
+          <td>Trypan Blue Solution, 0.4%</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>15250061</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/15250061" target="_blank" rel="noopener">source</a></td>
+          <td>Exclusion dye for cell viability during seeding and harvesting</td>
+        </tr><tr>
+          <td>CellProfiler Software (open source)</td>
+          <td>Broad Institute</td>
+          <td>v4.2.5</td>
+          <td><a href="https://cellprofiler.org/releases" target="_blank" rel="noopener">source</a></td>
+          <td>Automated image analysis for nuclear counting and cell density quantification</td>
+        </tr><tr>
+          <td>PBS (Phosphate Buffered Saline), pH 7.4</td>
+          <td>Gibco</td>
+          <td>10010023</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/10010023" target="_blank" rel="noopener">source</a></td>
+          <td>Washing and dilution buffer for all assays</td>
+        </tr><tr>
+          <td>DMSO (Dimethyl sulfoxide), Cell Culture Grade</td>
+          <td>Sigma-Aldrich</td>
+          <td>D2650</td>
+          <td><a href="https://www.sigmaaldrich.com/US/en/product/sial/d2650" target="_blank" rel="noopener">source</a></td>
+          <td>Solubilization of MTT formazan crystals</td>
         </tr></tbody>
     </table>
-    <p class="muted">Direct cost estimate: $15,000 &ndash; $35,000 (Consumables + reporter assays + routine molecular QC; excludes labor, greenhouse, and high-depth sequencing)</p>
+    <p class="muted">Direct cost estimate: $2,800 &ndash; $4,500 (Includes all reagent kits, consumables (plates, tips), and flow cytometry service fees for 2 experimental runs with 6 biological replicates each. Excludes existing equipment (microscopes, plate readers, cell counter), cell culture media, and personnel costs. Assumes flow cytometry is available as core facility service at $50/sample.)</p>
   </section>
 
   <section>
     <h2>References</h2>
-    <ul><li><a href="https://www.nature.com/articles/s41467-020-14981-y" target="_blank" rel="noopener">Marker-free targeted insertion at plant genomic safe harbors (rice)</a> &mdash; Template for CRISPR targeted insertion strategy and performance benchmarks</li><li><a href="https://pubs.acs.org/doi/full/10.1021/acssynbio.1c00248" target="_blank" rel="noopener">Plant dual-color luciferase reporter characterization</a> &mdash; Reporter assay design and normalization strategy in plants</li><li><a href="https://www.jstage.jst.go.jp/article/plantbiotechnology/18/1/18_1_71/_article" target="_blank" rel="noopener">Dual luciferase assay in higher plants</a> &mdash; Plant-specific transient reporter assay precedent</li><li><a href="https://pubmed.ncbi.nlm.nih.gov/31919795/" target="_blank" rel="noopener">Insulator/MAR impact on transgene accumulation in plants</a> &mdash; Candidate boundary-element rationale for position-effect mitigation</li></ul>
+    <ul><li>Brauchle E, et al. Cell death stages in single apoptotic and necrotic cells monitored by Raman microspectroscopy. Sci Rep. 2014;4:4698 &mdash; Reference protocol for Annexin V/PI flow cytometry gating strategy to distinguish viable, early apoptotic, late apoptotic, and necrotic populations</li><li>Riss TL, et al. Cell Viability Assays. In: Markossian S, et al., editors. Assay Guidance Manual. Bethesda (MD): Eli Lilly &amp; Company and the National Center for Advancing Translational Sciences; 2004 &mdash; Comprehensive guide for MTT assay optimization including cell number linearity, incubation time, and solvent selection</li><li>Carpentier G, et al. CellProfiler: image analysis software for identifying and quantifying cell phenotypes. Genome Biol. 2006;7(10):R100 &mdash; Automated cell counting pipeline design using nuclear segmentation and intensity thresholding for accurate density measurements</li><li>Wade MH, et al. A fluorescence photobleaching assay of gap junction-mediated communication between human cells. Science. 1986;232(4749):525-528 &mdash; Original gap junction assay methodology to ensure density measurements match conditions of dye transfer experiments</li></ul>
   </section>
 
   <section>
     <h2>Lab handoff checklist</h2>
-    <ul><li>Candidate safe-harbor coordinates and locus-screening rationale</li><li>Donor cassette maps (+/- insulators) and guide designs</li><li>Insertion-junction PCR and copy-number qPCR assays</li><li>Dual-luciferase plate map and normalization SOP</li><li>Expression stability analysis template (T0 and T1)</li></ul>
+    <ul><li>Detailed cell culture protocol for both control and mutant lines including passage numbers, seeding densities, media formulations, and growth conditions used in original dye transfer experiments</li><li>Original dye transfer assay timeline and conditions (culture duration, confluence state at time of injection, imaging timepoints) to replicate timing for density/viability measurements</li><li>Historical data on dye transfer results (quantitative fluorescence intensity, migration distance measurements) for correlation analysis with density/viability findings</li><li>Standard Operating Procedure (SOP) for confocal microscopy settings including objective magnification, laser power, gain settings, and z-stack parameters for live/dead imaging</li><li>Flow cytometry compensation matrix file for FITC/PI channels specific to the cytometer that will be used</li><li>CellProfiler pipeline file (.cppipe) pre-configured for nuclear segmentation and cell counting with quality control metrics</li></ul>
   </section>
 
   <div class="nav" style="margin-top: 20px;">
     <a href="opc-go-001.html">&larr; Previous</a>
     <a href="../go_now_lab_packets.html">All lab packets</a>
-    <a href="opc-go-006.html">Next &rarr;</a>
+    <a href="opc-go-003.html">Next &rarr;</a>
   </div>
 </div>
 </body>

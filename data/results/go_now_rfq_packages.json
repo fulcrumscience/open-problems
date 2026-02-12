@@ -17,11 +17,9 @@
       "contact": {
         "primary": "Todd Finley",
         "email": "tfinley@danforthcenter.org",
-        "intake_url": "https://www.danforthcenter.org/our-work/technology-development/plant-transformation/"
+        "intake_url": ""
       },
-      "source_evidence": [
-        "https://www.danforthcenter.org/our-work/technology-development/plant-transformation/"
-      ]
+      "source_evidence": []
     },
     {
       "id": "lab-mizzou-ptcf",
@@ -31,11 +29,9 @@
       "contact": {
         "primary": "Dr. Bing Yang",
         "email": "muptf@missouri.edu",
-        "intake_url": "https://ptf.missouri.edu/"
+        "intake_url": ""
       },
-      "source_evidence": [
-        "https://ptf.missouri.edu/"
-      ]
+      "source_evidence": []
     },
     {
       "id": "lab-plantedits",

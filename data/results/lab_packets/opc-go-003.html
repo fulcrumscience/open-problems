@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#2563eb">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<title>Integrated Transcriptomics to Identify Novel TET2-CHIP Cardiovascular Targets — Lab Packet</title>
+<title>CRISPR-Based Enhancement of Transformation Competence in Recalcitrant Elite Maize Lines — Lab Packet</title>
 <style>  * { box-sizing: border-box; }
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
   .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
   h1 { margin: 0 0 6px; font-size: 24px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
   .tag-go { background: #dcfce7; color: #166534; }
@@ -29,6 +27,8 @@
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  td a { color: #9b9b94; text-decoration: none; }
+  td a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
   .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
   .problem-box p { margin: 0 0 4px; font-size: 14px; }
@@ -47,46 +47,46 @@
   <div class="nav">
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="../viewer.html">Assessment viewer</a>
-    
+    <a href="opc-go-002.html">&larr; Previous</a>
     <a href="opc-go-004.html">Next &rarr;</a>
   </div>
 
   <p class="muted">opc-go-003</p>
-  <h1>Integrated Transcriptomics to Identify Novel TET2-CHIP Cardiovascular Targets</h1>
+  <h1>CRISPR-Based Enhancement of Transformation Competence in Recalcitrant Elite Maize Lines</h1>
   <div class="meta">
     <span class="tag tag-go">READY TO TEST</span>
-    <span class="tag tag-score">Score 0.720</span>
-    <span class="tag tag-cost">$28,000 &ndash; $42,000</span>
+    <span class="tag tag-score">Score 0.527</span>
+    <span class="tag tag-cost">$35,000 &ndash; $55,000</span>
   </div>
 
   <section>
     <h2>Problem mapping</h2>
     <div class="problem-box">
-      <p><span class="label">Problem:</span> The transcriptomic approaches fail to identify and validate novel therapeutic targets beyond already known markers like CXCL2/3 and IL8</p>
-      <p><span class="label">Sub-question:</span> What are the novel, previously unidentified molecular targets revealed by integrated transcriptomic analysis of TET2-CHIP-mediated cardiovascular disease?</p>
+      <p><span class="label">Problem:</span> Genotype-specific transformation efficiency differences are driven by unknown underlying genetic or epigenetic variation, preventing widespread adoption of plant engineering in non-elite lines.</p>
+      <p><span class="label">Sub-question:</span> Can identified genetic or epigenetic determinants of transformation competence be edited to convert recalcitrant elite lines into transformable lines?</p>
     </div>
   </section>
 
   <section>
     <h2>Objective</h2>
-    <p>To identify and validate previously unreported molecular targets driving TET2-CHIP-mediated cardiovascular inflammation through bulk and single-cell RNA-seq with orthogonal validation.</p>
+    <p>To determine if CRISPR/Cas9 editing of candidate transformation competence loci (BABY BOOM, WUSCHEL2, GRF-GIF) can increase Agrobacterium-mediated transformation efficiency in recalcitrant elite maize inbreds by at least 5-fold.</p>
   </section>
 
   <section>
     <h2>Readouts</h2>
-    <ul><li>Primary: Differentially expressed genes (DEGs) in TET2-deficient vs wildtype macrophages with |log2FC| &gt;1.5 and FDR &lt;0.05, excluding known markers (CXCL2/3, IL8)</li><li>Secondary: Single-cell RNA-seq cluster-specific expression profiles identifying cell-type-specific novel targets</li><li>Secondary: qPCR validation (≥3-fold change) and protein expression confirmation (≥2-fold change by Western/ELISA) for top 10 candidates</li></ul>
+    <ul><li>Primary: Transformation efficiency measured as percentage of regenerated T0 transgenic plants per inoculated immature embryo across three independent experiments</li><li>Secondary: Transgene integration events per line assessed by Southern blot and qPCR to confirm stable transformation</li><li>Secondary: Heritability of transformation competence in T1 and T2 generations measured by repeated transformation assays using edited line embryos</li></ul>
   </section>
 
   <section>
     <h2>Experimental design</h2>
-    <p><strong>Overview:</strong> Generate TET2-KO and WT bone marrow-derived macrophages from atherosclerotic mouse models, perform bulk and scRNA-seq, computationally filter known targets, validate top novel candidates by qPCR and protein analysis in vitro and in vivo.</p>
-    <ul><li>WP1: Generate TET2-KO and WT BMDMs from Ldlr-/- mice (n=6/group), stimulate with oxLDL (50 μg/mL, 24h), harvest for bulk RNA-seq (n=4) and scRNA-seq (n=2 pooled samples)</li><li>WP2: Bulk RNA-seq analysis (DESeq2), scRNA-seq analysis (Seurat), literature mining to exclude known CHIP/CVD markers, integrate datasets to prioritize top 10 novel targets based on expression magnitude, consistency, and druggability prediction</li><li>WP3: Validate top 10 candidates by qPCR in independent BMDM samples (n=6/group, TET2-KO vs WT, ±oxLDL), confirm protein expression for top 5 by Western blot and ELISA in cell lysates and supernatants</li><li>WP4: Validate top 3 targets in vivo using aortic arch samples from TET2-CHIP atherosclerosis model (Tet2+/- Ldlr-/-, n=8/group vs WT controls), perform quality control, statistical analysis, and pathway enrichment</li></ul>
+    <p><strong>Overview:</strong> Edit BBM, WUS2, and GRF5-GIF1 loci in recalcitrant elite maize line B104 using CRISPR/Cas9 to create gain-of-function or overexpression alleles, then compare Agrobacterium-mediated transformation efficiency between edited and parental lines across multiple generations.</p>
+    <ul><li>WP1: Design and validate CRISPR constructs targeting BBM, WUS2, and GRF5-GIF1 promoter regions to create constitutive or enhanced expression alleles; transform into Hi-II (transformable control line) for validation (Weeks 1-8)</li><li>WP2: Transform B104 elite recalcitrant line with validated CRISPR constructs; select and sequence T0 edited events; advance to T1 generation and confirm edits are heritable; backcross to remove Cas9 if necessary (Weeks 9-32)</li><li>WP3: Conduct standardized transformation efficiency assays on edited B104 lines and wild-type B104 using Agrobacterium strain EHA105 carrying pPHP71539 (bar + uidA); score transformation frequency, regeneration rate, and stable integration (Weeks 33-48)</li><li>WP4: Validate transformation competence heritability in T2 generation; perform molecular characterization of integration sites; statistical analysis comparing transformation rates across genotypes with ANOVA and post-hoc tests (Weeks 49-52)</li></ul>
     <p><strong>Controls:</strong></p>
-    <ul><li>Positive control: Known markers CXCL2, CXCL3, IL8 expression validated by qPCR and protein assays to confirm system responsiveness</li><li>Negative control: Unstimulated wildtype BMDMs to establish baseline expression levels</li><li>Technical control: RNA quality (RIN &gt;8.0), sequencing depth (&gt;30M reads/sample bulk, &gt;5000 cells scRNA-seq), isotype controls for protein assays</li></ul>
-    <p><strong>Sample size plan:</strong> Bulk RNA-seq: n=4 biological replicates per condition (TET2-KO+oxLDL, WT+oxLDL); scRNA-seq: n=2 pooled samples (3 mice each) per condition targeting 10,000 cells; qPCR validation: n=6 independent BMDM preparations; Western/ELISA: n=6; in vivo validation: n=8 mice per genotype</p>
+    <ul><li>Positive control: Hi-II maize line transformed in parallel to validate Agrobacterium competence and media conditions (expected efficiency 15-30%)</li><li>Negative control: Wild-type B104 line without editing transformed in parallel (expected efficiency &lt;1%)</li><li>Mock control: B104 line transformed with empty vector CRISPR construct (no gRNA) to control for transformation procedure effects</li><li>Segregation control: T1 null segregants (non-edited siblings) from edited lines to control for genetic background effects</li></ul>
+    <p><strong>Sample size plan:</strong> N=3 independent CRISPR constructs per target gene (9 total); minimum 5 independent T0 edited events advanced per construct; transformation efficiency assays with n=200 immature embryos per genotype per replicate across 3 biological replicates (total 600 embryos/genotype); statistical power calculation targets 80% power to detect 5-fold change at α=0.05</p>
     <p><strong>Success criteria:</strong></p>
-    <ul><li>Identification of ≥20 novel DEGs (not CXCL2/3, IL8, or other reported CHIP/CVD markers) with |log2FC| &gt;1.5, FDR &lt;0.05 in bulk RNA-seq, and corroboration in scRNA-seq</li><li>≥5 of top 10 candidates validate by qPCR with ≥3-fold change (p&lt;0.05) and ≥2 validate at protein level with ≥2-fold change (p&lt;0.05)</li><li>≥1 top target validates in vivo with ≥2-fold change in aortic tissue (p&lt;0.05) between TET2-deficient and WT atherosclerotic mice</li></ul>
-    <p><strong>Estimated timeline:</strong> 16 weeks</p>
+    <ul><li>At least one edited line achieves ≥5-fold increase in transformation efficiency compared to wild-type B104 (e.g., from 0.5% to ≥2.5%) with p&lt;0.05 by one-way ANOVA</li><li>Enhanced transformation competence is heritable and stable through T2 generation with &lt;20% reduction in efficiency compared to T0 edited line</li><li>Edited lines show no major agronomic penalties: germination rate &gt;85%, plant height within 15% of wild-type, and normal seed set (&gt;80% of wild-type)</li></ul>
+    <p><strong>Estimated timeline:</strong> 52 weeks</p>
   </section>
 
   <section>
@@ -94,130 +94,94 @@
     <table>
       <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
       <tbody><tr>
-          <td>Tet2 flox/flox mice (C57BL/6 background)</td>
-          <td>Jackson Laboratory</td>
-          <td>017573</td>
-          <td></td>
-          <td>Generate TET2-KO BMDMs via Cre-lox system</td>
+          <td>pYPQ146 Gateway-compatible Cas9 vector for maize</td>
+          <td>Addgene</td>
+          <td>164544</td>
+          <td><a href="https://www.addgene.org/164544/" target="_blank" rel="noopener">source</a></td>
+          <td>CRISPR/Cas9 delivery vector with maize-optimized expression cassettes</td>
         </tr><tr>
-          <td>Ldlr-/- mice (C57BL/6 background)</td>
-          <td>Jackson Laboratory</td>
-          <td>002207</td>
+          <td>GoldenGate MoClo Plant Parts Kit</td>
+          <td>Addgene</td>
+          <td>1000000044</td>
           <td></td>
-          <td>Atherosclerosis-prone background for CHIP model</td>
+          <td>Modular cloning system for assembling gRNA expression cassettes</td>
         </tr><tr>
-          <td>M-CSF recombinant mouse protein</td>
-          <td>BioLegend</td>
-          <td>576406</td>
+          <td>Agrobacterium tumefaciens EHA105 competent cells</td>
+          <td>Teknova</td>
+          <td>A1202</td>
           <td></td>
-          <td>Differentiate bone marrow cells to macrophages</td>
+          <td>Agrobacterium strain for maize transformation</td>
         </tr><tr>
-          <td>oxLDL (human)</td>
-          <td>Alfa Aesar</td>
-          <td>J65591</td>
+          <td>pPHP71539 binary vector (bar + uidA)</td>
+          <td>John Innes Centre</td>
+          <td>Request from ABRC stock center</td>
+          <td><a href="https://abrc.osu.edu/" target="_blank" rel="noopener">source</a></td>
+          <td>Standard transformation reporter construct for efficiency assays</td>
+        </tr><tr>
+          <td>Bialaphos (phosphinothricin, PPT)</td>
+          <td>Gold Biotechnology</td>
+          <td>B-110</td>
           <td></td>
-          <td>Inflammatory stimulus for atherosclerotic conditions</td>
+          <td>Selection agent for bar-expressing transformants</td>
         </tr><tr>
-          <td>TRIzol Reagent</td>
-          <td>Thermo Fisher</td>
-          <td>15596026</td>
+          <td>N6 Basal Medium with Vitamins</td>
+          <td>PhytoTechnology Laboratories</td>
+          <td>N611</td>
           <td></td>
-          <td>RNA extraction for bulk and validation experiments</td>
+          <td>Base medium for maize tissue culture and regeneration</td>
         </tr><tr>
-          <td>RNeasy Mini Kit</td>
-          <td>Qiagen</td>
-          <td>74106</td>
-          <td></td>
-          <td>RNA cleanup and quality improvement</td>
+          <td>2,4-Dichlorophenoxyacetic acid (2,4-D)</td>
+          <td>Sigma-Aldrich</td>
+          <td>D7299</td>
+          <td><a href="https://www.sigmaaldrich.com/catalog/product/sigma/d7299" target="_blank" rel="noopener">source</a></td>
+          <td>Auxin for callus induction from immature embryos</td>
         </tr><tr>
-          <td>TruSeq Stranded mRNA Library Prep Kit</td>
-          <td>Illumina</td>
-          <td>20020595</td>
-          <td></td>
-          <td>Bulk RNA-seq library preparation</td>
+          <td>DIG High Prime DNA Labeling and Detection Starter Kit II</td>
+          <td>Roche</td>
+          <td>11585614910</td>
+          <td><a href="https://www.sigmaaldrich.com/catalog/product/roche/11585614910" target="_blank" rel="noopener">source</a></td>
+          <td>Southern blot analysis to confirm transgene integration</td>
         </tr><tr>
-          <td>Chromium Single Cell 3&#x27; GEX Kit v3.1</td>
-          <td>10x Genomics</td>
-          <td>1000269</td>
-          <td></td>
-          <td>Single-cell RNA-seq library preparation</td>
+          <td>GUS Histochemical Staining Kit</td>
+          <td>Sigma-Aldrich</td>
+          <td>GUSB-1KT</td>
+          <td><a href="https://www.sigmaaldrich.com/catalog/product/sigma/gusb1kt" target="_blank" rel="noopener">source</a></td>
+          <td>Visual detection of uidA expression in putative transformants</td>
         </tr><tr>
-          <td>NovaSeq 6000 S4 Reagent Kit (300 cycles)</td>
-          <td>Illumina</td>
-          <td>20028312</td>
-          <td></td>
-          <td>High-throughput sequencing for bulk and scRNA-seq</td>
+          <td>Phire Plant Direct PCR Kit</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>F130WH</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/F130WH" target="_blank" rel="noopener">source</a></td>
+          <td>Rapid genotyping of edited events and transgene presence</td>
         </tr><tr>
-          <td>SuperScript IV First-Strand Synthesis System</td>
-          <td>Thermo Fisher</td>
-          <td>18091050</td>
-          <td></td>
-          <td>cDNA synthesis for qPCR validation</td>
-        </tr><tr>
-          <td>PowerUp SYBR Green Master Mix</td>
-          <td>Thermo Fisher</td>
-          <td>A25742</td>
-          <td></td>
-          <td>qPCR quantification of candidate targets</td>
-        </tr><tr>
-          <td>Custom TaqMan primers for novel targets</td>
-          <td>Thermo Fisher</td>
+          <td>Alt-R CRISPR-Cas9 crRNA synthesis</td>
+          <td>Integrated DNA Technologies</td>
           <td>Custom order</td>
-          <td></td>
-          <td>High-specificity qPCR validation</td>
+          <td><a href="https://www.idtdna.com/pages/products/crispr-genome-editing/alt-r-crispr-cas9-system" target="_blank" rel="noopener">source</a></td>
+          <td>Design validation: in vitro testing of gRNA efficiency before cloning</td>
         </tr><tr>
-          <td>Pierce BCA Protein Assay Kit</td>
-          <td>Thermo Fisher</td>
-          <td>23225</td>
+          <td>Percival AR-95L growth chamber</td>
+          <td>Percival Scientific</td>
+          <td>AR-95L</td>
           <td></td>
-          <td>Protein quantification for Western blots</td>
-        </tr><tr>
-          <td>4-20% Mini-PROTEAN TGX Precast Gels</td>
-          <td>Bio-Rad</td>
-          <td>4561096</td>
-          <td></td>
-          <td>Western blot protein separation</td>
-        </tr><tr>
-          <td>Custom primary antibodies for novel targets</td>
-          <td>Abcam/CST</td>
-          <td>Custom validation</td>
-          <td></td>
-          <td>Protein detection by Western blot</td>
-        </tr><tr>
-          <td>Mouse ELISA kits (custom for top targets)</td>
-          <td>R&amp;D Systems</td>
-          <td>TBD based on targets</td>
-          <td></td>
-          <td>Quantify secreted protein levels</td>
-        </tr><tr>
-          <td>Bioanalyzer 2100 with RNA Nano chips</td>
-          <td>Agilent</td>
-          <td>5067-1511</td>
-          <td></td>
-          <td>RNA quality assessment (RIN determination)</td>
-        </tr><tr>
-          <td>Cell Ranger software v7.0</td>
-          <td>10x Genomics</td>
-          <td>Free download</td>
-          <td></td>
-          <td>scRNA-seq data processing and alignment</td>
+          <td>Controlled environment for regenerating transformants and growing edited lines</td>
         </tr></tbody>
     </table>
-    <p class="muted">Direct cost estimate: $28,000 &ndash; $42,000 (Includes sequencing services ($15-20K), library prep kits ($5-8K), animal costs ($3-5K), validation reagents including custom primers/antibodies ($4-7K), and consumables ($1-2K). Excludes personnel, equipment depreciation, and institutional overhead.)</p>
+    <p class="muted">Direct cost estimate: $35,000 &ndash; $55,000 (Includes molecular biology reagents, tissue culture supplies, sequencing costs (~$8K), growth chamber space rental, and seed production. Excludes personnel costs, equipment already available (PCR machines, incubators, microscopes), greenhouse rental for backcrossing, and long-term generation advancement costs beyond T2)</p>
   </section>
 
   <section>
     <h2>References</h2>
-    <ul><li>Fuster et al. (2017) Clonal hematopoiesis associated with TET2 deficiency accelerates atherosclerosis development in mice. Science 355:842-847 &mdash; Reference CHIP-CVD mouse model generation, BMDM isolation protocols, and atherosclerosis induction parameters</li><li>Jaiswal et al. (2017) Clonal Hematopoiesis and Risk of Atherosclerotic Cardiovascular Disease. NEJM 377:111-121 &mdash; Establish clinical relevance and known CHIP-CVD markers to exclude from novel target identification</li><li>Zheng et al. (2017) Massively parallel digital transcriptional profiling of single cells. Nat Commun 8:14049 &mdash; 10x Genomics scRNA-seq protocol optimization and best practices for quality control</li><li>Love et al. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15:550 &mdash; Statistical framework for differential expression analysis with appropriate normalization and FDR control</li><li>Stuart et al. (2019) Comprehensive Integration of Single-Cell Data. Cell 177:1888-1902 &mdash; Seurat workflow for scRNA-seq analysis including clustering, cell type identification, and integration with bulk data</li><li>Bustin et al. (2009) The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments. Clin Chem 55:611-622 &mdash; Standardized qPCR validation protocols including primer design, normalization strategy, and statistical analysis</li></ul>
+    <ul><li>Lowe, K. et al. (2016) Morphogenic Regulators Baby boom and Wuschel Improve Monocot Transformation. Plant Cell 28:1998-2015 &mdash; Provides validated BBM and WUS2 expression strategies shown to enhance transformation; will adapt promoter and expression level strategies from this seminal work</li><li>Debernardi, J.M. et al. (2020) A GRF-GIF chimeric protein improves the regeneration efficiency of transgenic plants. Nature Biotechnology 38:1274-1279 &mdash; Describes GRF5-GIF1 chimeric construct design that enhances regeneration capacity; will create similar constructs or activation of endogenous loci</li><li>Frame, B.R. et al. (2011) Agrobacterium tumefaciens-mediated transformation of maize embryos using a standard binary vector system. Methods Mol Biol 710:327-341 &mdash; Standard protocol for maize transformation efficiency assays; will use this as basis for standardized comparative testing of edited vs. wild-type lines</li><li>Svitashev, S. et al. (2016) Genome editing in maize directed by CRISPR-Cas9 ribonucleoprotein complexes. Nature Communications 7:13274 &mdash; Maize CRISPR methodology including delivery methods, selection strategies, and confirmation of edits; informs construct design parameters</li><li>Char, S.N. et al. (2017) An Agrobacterium-delivered CRISPR/Cas9 system for high-frequency targeted mutagenesis in maize. Plant Biotechnology Journal 15:257-268 &mdash; Validates Agrobacterium delivery of CRISPR reagents in maize; provides technical details for combining transformation and editing in single step</li></ul>
   </section>
 
   <section>
     <h2>Lab handoff checklist</h2>
-    <ul><li>Comprehensive literature review document identifying all known CHIP-CVD markers (CXCL2/3, IL8, TNFα, IL1β, IL6, CCL2, etc.) with PubMed IDs for computational filtering, minimum 50 genes compiled</li><li>Approved IACUC protocol number and breeding strategy for generating Tet2+/- or Tet2-/- on Ldlr-/- background, including timeline for sufficient cohort generation</li><li>Bioinformatics pipeline specification including software versions (DESeq2 v1.38+, Seurat v4.3+, R v4.2+), server access credentials, and analysis scripts for reproducible DEG identification with literature-based filtering</li><li>Pre-validated primer sequences for positive control genes (Cxcl2, Cxcl3, Il8/Cxcl8 mouse ortholog, Gapdh, Actb) with demonstrated efficiency 90-110%</li><li>Vendor quotes for bulk RNA-seq (30M reads/sample, n=8) and scRNA-seq (targeting 10K cells/sample, n=4) services with confirmed turnaround time</li><li>Druggability screening criteria and database access (DrugBank, ChEMBL) for prioritizing targets with therapeutic potential in computational ranking</li></ul>
+    <ul><li>Validated sequence information for BBM, WUS2, and GRF5-GIF1 loci in B104 background including 5kb upstream promoter regions and full-length CDS obtained through genome sequencing or PCR amplification and Sanger sequencing</li><li>Fresh immature embryo source: maintained B104 and Hi-II nursery plantings with staggered planting dates to ensure continuous supply of 10-14 DAP embryos throughout transformation experiments (minimum 20 donor ears per experiment)</li><li>Completed CRISPR gRNA design with in silico off-target analysis for B104 genome; minimum 3 gRNA candidates per target locus scoring &lt;3 predicted off-targets and &gt;70% predicted efficiency by CRISPOR or comparable tool</li><li>Institutional biosafety and field release approvals for generating and testing CRISPR-edited maize lines; USDA-APHIS regulatory determination if advancing edited lines to field testing</li><li>Baseline transformation efficiency data: at least one pilot transformation experiment completed on wild-type B104 and Hi-II to establish baseline rates and validate tissue culture competency of laboratory (minimum n=100 embryos per line)</li></ul>
   </section>
 
   <div class="nav" style="margin-top: 20px;">
-    
+    <a href="opc-go-002.html">&larr; Previous</a>
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="opc-go-004.html">Next &rarr;</a>
   </div>

@@ -24,8 +24,10 @@ CSS = """\
   h1 { margin: 0 0 6px; font-size: 24px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
   .tag-go { background: #dcfce7; color: #166534; }
@@ -39,6 +41,8 @@ CSS = """\
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  td a { color: #9b9b94; text-decoration: none; }
+  td a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
   .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
   .problem-box p { margin: 0 0 4px; font-size: 14px; }
@@ -247,8 +251,10 @@ def render_index_page(data: dict) -> str:
   h1 {{ margin: 0 0 6px; font-size: 28px; }}
   .subtitle {{ color: #4b5563; margin: 0 0 16px; font-size: 14px; }}
   .nav {{ display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }}
+  a {{ color: #9b9b94; text-decoration: none; }}
+  a:hover {{ color: #6b6b64; text-decoration: underline; }}
   .nav a {{ display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }}
-  .nav a:hover {{ border-color: #2563eb; color: #1d4ed8; }}
+  .nav a:hover {{ border-color: #9b9b94; color: #6b6b64; text-decoration: none; }}
   .summary {{ display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }}
   .chip {{ background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 12px; }}
   .chip-value {{ font-size: 18px; font-weight: 700; color: #2563eb; }}
@@ -260,7 +266,7 @@ def render_index_page(data: dict) -> str:
   .tag-cost {{ background: #ecfeff; color: #155e75; }}
   .cards {{ display: grid; gap: 12px; }}
   .card {{ display: block; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; text-decoration: none; color: inherit; transition: box-shadow 0.15s, border-color 0.15s; }}
-  .card:hover {{ border-color: #2563eb; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }}
+  .card:hover {{ border-color: #9b9b94; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }}
   .card-id {{ font-size: 12px; color: #6b7280; margin-bottom: 4px; }}
   .card-title {{ font-size: 18px; font-weight: 600; margin-bottom: 8px; }}
   .card-meta {{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }}

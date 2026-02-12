@@ -3,19 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Detailed lab packet for a ready-to-test Open Problem Collector experiment.">
-<meta name="robots" content="index,follow">
-<meta name="theme-color" content="#2563eb">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<title>Functional Validation of Viral Type 2 IRES-Ribosome Interactions via Translation Assays — Lab Packet</title>
+<title>Identification and Validation of Safe Harbor Loci in Switchgrass and Miscanthus Genomes — Lab Packet</title>
 <style>  * { box-sizing: border-box; }
   body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif; background: #f5f5f5; color: #111827; line-height: 1.5; }
   .container { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
   h1 { margin: 0 0 6px; font-size: 24px; }
   .subtitle { color: #4b5563; margin: 0 0 16px; font-size: 14px; }
   .nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+  a { color: #9b9b94; text-decoration: none; }
+  a:hover { color: #6b6b64; text-decoration: underline; }
   .nav a { display: inline-block; padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 7px; background: #fff; color: #1f2937; font-size: 13px; text-decoration: none; }
-  .nav a:hover { border-color: #2563eb; color: #1d4ed8; }
+  .nav a:hover { border-color: #9b9b94; color: #6b6b64; text-decoration: none; }
   .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
   .tag-go { background: #dcfce7; color: #166534; }
@@ -29,6 +27,8 @@
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th, td { border: 1px solid #e5e7eb; padding: 8px; text-align: left; vertical-align: top; }
   th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; color: #4b5563; }
+  td a { color: #9b9b94; text-decoration: none; }
+  td a:hover { color: #6b6b64; text-decoration: underline; }
   .muted { color: #6b7280; font-size: 12px; margin-top: 8px; }
   .problem-box { background: #f9fafb; border-left: 3px solid #2563eb; padding: 12px; border-radius: 0 6px 6px 0; }
   .problem-box p { margin: 0 0 4px; font-size: 14px; }
@@ -47,46 +47,46 @@
   <div class="nav">
     <a href="../go_now_lab_packets.html">All lab packets</a>
     <a href="../viewer.html">Assessment viewer</a>
-    <a href="opc-go-002.html">&larr; Previous</a>
-    <a href="opc-go-005.html">Next &rarr;</a>
+    <a href="opc-go-005.html">&larr; Previous</a>
+    
   </div>
 
   <p class="muted">opc-go-006</p>
-  <h1>Functional Validation of Viral Type 2 IRES-Ribosome Interactions via Translation Assays</h1>
+  <h1>Identification and Validation of Safe Harbor Loci in Switchgrass and Miscanthus Genomes</h1>
   <div class="meta">
     <span class="tag tag-go">READY TO TEST</span>
     <span class="tag tag-score">Score 0.527</span>
-    <span class="tag tag-cost">$8,500 &ndash; $15,000</span>
+    <span class="tag tag-cost">$45,000 &ndash; $75,000</span>
   </div>
 
   <section>
     <h2>Problem mapping</h2>
     <div class="problem-box">
-      <p><span class="label">Problem:</span> Lack of complementary biochemical validation for the structural findings of viral Type 2 IRES recruitment to ribosomal preinitiation complex</p>
-      <p><span class="label">Sub-question:</span> Do the structural observations correlate with functional translation activity in cellular or in vitro systems?</p>
+      <p><span class="label">Problem:</span> How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenergy crops is not understood, and sequences with insulator-like function to dampen ectopic interactions are needed.</p>
+      <p><span class="label">Sub-question:</span> Can validated safe harbor loci be identified in bioenergy crop genomes for predictable transgene expression across diverse genetic backgrounds?</p>
     </div>
   </section>
 
   <section>
     <h2>Objective</h2>
-    <p>Correlate structural observations of IRES-ribosome contacts with functional translation activity using in vitro and cellular reporter assays with site-directed IRES mutants.</p>
+    <p>Identify and experimentally validate conserved intergenic genomic loci that support predictable, stable transgene expression across multiple bioenergy crop genotypes and generations.</p>
   </section>
 
   <section>
     <h2>Readouts</h2>
-    <ul><li>Primary: Relative luciferase activity (firefly/renilla ratio) from bicistronic reporter constructs in mammalian cells, normalized to wild-type IRES</li><li>Secondary: In vitro translation efficiency measured by luciferase luminescence from rabbit reticulocyte lysate reactions with mutant vs wild-type IRES constructs</li><li>Secondary: Ribosome binding affinity (Kd values) determined by fluorescence polarization or biolayer interferometry for mutant vs wild-type IRES with 40S ribosomal subunits</li></ul>
+    <ul><li>Primary: Transgene expression level (fluorescence intensity and qRT-PCR) across ≥6 independent insertion events per locus, measured as coefficient of variation (CV) between events</li><li>Secondary: Multi-generational expression stability (T0 through T2) measured by qRT-PCR with &lt;20% variation between generations</li><li>Secondary: Chromatin accessibility (ATAC-seq) and histone modification patterns (H3K9ac, H3K4me3) at candidate loci across tissues and genotypes</li></ul>
   </section>
 
   <section>
     <h2>Experimental design</h2>
-    <p><strong>Overview:</strong> Generate 8-12 site-directed IRES mutants targeting structurally-observed ribosome contact residues, then measure translation efficiency in parallel using dual-luciferase bicistronic reporters in HeLa cells and in vitro translation systems to establish structure-function relationships.</p>
-    <ul><li>WP1: Design and generate IRES mutants (weeks 1-3) - identify 8-12 residues/domains from structural data making ribosome contacts, design mutations (alanine scanning, charge reversals, deletions), clone into bicistronic vectors (HCV-IRES, EMCV-IRES, or target Type 2 IRES) between renilla and firefly luciferase ORFs, sequence-verify all constructs</li><li>WP2: Cellular translation assays (weeks 4-7) - transfect HeLa and HEK293T cells with wild-type and mutant bicistronic reporters, harvest at 24h and 48h, measure dual-luciferase activity, perform dose-response with 3 plasmid concentrations, include cap-dependent translation control constructs</li><li>WP3: In vitro translation and binding assays (weeks 6-10) - transcribe IRES-firefly constructs in vitro, perform translation in rabbit reticulocyte lysate and wheat germ extract systems, measure time-course luciferase activity, purify 40S subunits from HeLa cells, perform fluorescence polarization binding assays with fluorescein-labeled IRES RNAs</li><li>WP4: Data integration and validation (weeks 11-12) - statistical analysis of all translation data, correlation analysis between structural contact distances and functional defects, Western blotting to confirm equal protein loading in cellular assays, RNA stability assays (Northern blot or RT-qPCR) to exclude RNA folding defects</li></ul>
+    <p><strong>Overview:</strong> Perform pan-genome comparative analysis to identify conserved intergenic regions, then use CRISPR-mediated homology-directed repair to insert fluorescent reporter cassettes at 4-6 candidate safe harbor loci in switchgrass (Panicum virgatum) and Miscanthus × giganteus, followed by multi-generational phenotyping and expression analysis.</p>
+    <ul><li>WP1: Pan-genome bioinformatics analysis - identify conserved intergenic regions (&gt;2kb) in ≥20 switchgrass and ≥10 Miscanthus accessions with low syntenic variation, open chromatin signatures, and absence of predicted regulatory elements within 5kb; prioritize 6-8 candidate loci based on conservation, accessibility, and distance from genes</li><li>WP2: CRISPR/Cas9 construct design and delivery - design HDR donor templates containing mEGFP-NOS terminator cassette flanked by 800bp homology arms for each candidate locus; transform embryogenic callus of 3 switchgrass cultivars (Alamo, Kanlow, Cave-in-Rock) and 2 Miscanthus genotypes using Agrobacterium-mediated transformation</li><li>WP3: Plant regeneration and molecular characterization - regenerate T0 plants, confirm precise insertion by junction PCR and Sanger sequencing, select 6-10 independent events per locus per genotype, advance to T1 and T2 generations, collect leaf, stem, and root tissues across vegetative and reproductive stages</li><li>WP4: Expression and epigenetic profiling - quantify mEGFP expression by fluorometry and qRT-PCR across tissues, developmental stages, and generations; perform ATAC-seq and ChIP-qPCR for H3K9ac and H3K4me3 at insertion sites; statistical analysis of expression variance, heritability, and chromatin state correlation</li></ul>
     <p><strong>Controls:</strong></p>
-    <ul><li>Positive control: Wild-type IRES sequence in bicistronic reporter, expected firefly/renilla ratio of 0.5-2.0 depending on IRES type</li><li>Negative control: Bicistronic construct with no IRES (empty intercistronic spacer), expected firefly/renilla ratio &lt;0.05, validates no cap-dependent reinitiation or cryptic IRES activity</li><li>Cap-dependent control: Monocistronic firefly luciferase under CMV promoter to normalize for transfection efficiency and general translation capacity</li><li>RNA stability control: Mutations in non-contact regions predicted by structure to have no ribosome interaction, should maintain wild-type translation levels</li></ul>
-    <p><strong>Sample size plan:</strong> N=6 biological replicates per construct in cellular assays (3 independent transfections × 2 time points), N=4 technical replicates per construct in vitro translation assays, N=3 technical replicates for binding assays with triplicate measurements each</p>
+    <ul><li>Positive control: Random T-DNA insertion events (n=20) generated in parallel transformations to establish baseline expression variability (expected CV &gt;80%)</li><li>Negative control: Non-transformed wild-type plants of each genotype for background fluorescence measurement and normalization</li><li>Technical control: Internal reference gene control (ubiquitin, actin) for qRT-PCR normalization; spike-in controls for ATAC-seq library preparation</li></ul>
+    <p><strong>Sample size plan:</strong> 6-8 candidate loci × 5 genotypes (3 switchgrass + 2 Miscanthus) × 6-10 independent insertion events per locus = 180-400 independent T0 events; advance 3-5 events per locus to T1 (90-200 families) and 2-3 to T2 (60-120 families); 3 biological replicates per tissue type (leaf, stem, root) × 3 developmental stages × 3 technical replicates for expression analysis</p>
     <p><strong>Success criteria:</strong></p>
-    <ul><li>At least 50% of mutations targeting direct ribosome contact residues (as identified by &lt;5Å distance in structure) show &gt;2-fold reduction in translation efficiency with p&lt;0.01 vs wild-type</li><li>Correlation coefficient r&gt;0.6 between structural contact surface area (Å²) and functional translation defect (fold-change) across all mutants</li><li>Mutations in non-contact control regions maintain &gt;70% of wild-type translation activity, and RNA stability &gt;80% of wild-type by Northern blot or RT-qPCR</li><li>In vitro and cellular assay results show concordance with Pearson r&gt;0.5 for mutant phenotypes</li></ul>
-    <p><strong>Estimated timeline:</strong> 12 weeks</p>
+    <ul><li>At least 2 loci show CV &lt;30% for transgene expression across independent insertion events within same genotype and tissue (compared to &gt;80% for random insertions)</li><li>Selected safe harbor loci maintain expression levels within 2-fold variation across T0, T1, and T2 generations (≥80% of families) and show consistent chromatin accessibility (ATAC-seq peak present in ≥90% of samples, fold-change &lt;2× between genotypes)</li></ul>
+    <p><strong>Estimated timeline:</strong> 104 weeks</p>
   </section>
 
   <section>
@@ -94,120 +94,108 @@
     <table>
       <thead><tr><th>Item</th><th>Supplier</th><th>Catalog / ID</th><th>Link</th><th>Purpose</th></tr></thead>
       <tbody><tr>
-          <td>Dual-Luciferase Reporter Assay System</td>
-          <td>Promega</td>
-          <td>E1910</td>
-          <td></td>
-          <td>Primary readout for cellular translation efficiency from bicistronic reporters</td>
-        </tr><tr>
-          <td>pRF bicistronic dual-luciferase vector</td>
+          <td>pKSE401 CRISPR-Cas9 plant expression vector</td>
           <td>Addgene</td>
-          <td>#128654</td>
-          <td></td>
-          <td>Cloning backbone for IRES insertion between renilla and firefly luciferase genes</td>
+          <td>62202</td>
+          <td><a href="https://www.addgene.org/62202/" target="_blank" rel="noopener">source</a></td>
+          <td>Base vector for CRISPR/Cas9 expression and HDR donor template construction</td>
         </tr><tr>
-          <td>Q5 Site-Directed Mutagenesis Kit</td>
+          <td>mEGFP coding sequence (codon-optimized for monocots)</td>
+          <td>GenScript</td>
+          <td>Custom synthesis</td>
+          <td></td>
+          <td>Fluorescent reporter for transgene expression tracking</td>
+        </tr><tr>
+          <td>Agrobacterium tumefaciens strain EHA105</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>A13435</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/A13435" target="_blank" rel="noopener">source</a></td>
+          <td>Agrobacterium-mediated transformation of grass embryogenic callus</td>
+        </tr><tr>
+          <td>Murashige and Skoog Basal Medium with Vitamins</td>
+          <td>PhytoTechnology Laboratories</td>
+          <td>M519</td>
+          <td></td>
+          <td>Base medium for tissue culture and plant regeneration</td>
+        </tr><tr>
+          <td>2,4-Dichlorophenoxyacetic acid (2,4-D)</td>
+          <td>Sigma-Aldrich</td>
+          <td>D7299</td>
+          <td><a href="https://www.sigmaaldrich.com/catalog/product/sigma/d7299" target="_blank" rel="noopener">source</a></td>
+          <td>Auxin for callus induction from immature embryos</td>
+        </tr><tr>
+          <td>PowerPlant Pro RNA Isolation Kit</td>
+          <td>Qiagen</td>
+          <td>13427</td>
+          <td><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/total-rna/rneasy-powerplant-pro-kit/" target="_blank" rel="noopener">source</a></td>
+          <td>RNA extraction from grass tissues for qRT-PCR</td>
+        </tr><tr>
+          <td>Luna Universal One-Step RT-qPCR Kit</td>
           <td>New England Biolabs</td>
-          <td>E0554S</td>
-          <td></td>
-          <td>Generation of site-directed IRES mutations targeting ribosome contact residues</td>
+          <td>E3005</td>
+          <td><a href="https://www.neb.com/products/e3005-luna-universal-one-step-rt-qpcr-kit" target="_blank" rel="noopener">source</a></td>
+          <td>Quantitative RT-PCR for transgene expression measurement</td>
         </tr><tr>
-          <td>Rabbit Reticulocyte Lysate System</td>
-          <td>Promega</td>
-          <td>L4960</td>
-          <td></td>
-          <td>In vitro translation system for measuring IRES activity independent of cellular context</td>
+          <td>SYBR Green I Nucleic Acid Gel Stain</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>S7563</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/S7563" target="_blank" rel="noopener">source</a></td>
+          <td>Fluorescent detection for junction PCR validation</td>
         </tr><tr>
-          <td>Wheat Germ Extract Translation System</td>
-          <td>Promega</td>
-          <td>L4380</td>
-          <td></td>
-          <td>Alternative in vitro translation system to validate findings across different lysate sources</td>
+          <td>Nextera DNA Library Prep Kit</td>
+          <td>Illumina</td>
+          <td>20018705</td>
+          <td><a href="https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/nextera-dna.html" target="_blank" rel="noopener">source</a></td>
+          <td>ATAC-seq library preparation for chromatin accessibility profiling</td>
         </tr><tr>
-          <td>HeLa S3 ribosome pellet or 40S purification kit</td>
-          <td>Custom prep or BioVision</td>
-          <td>K280 (isolation kit)</td>
-          <td></td>
-          <td>Source of mammalian 40S ribosomal subunits for direct binding assays</td>
+          <td>SimpleChIP Plus Enzymatic Chromatin IP Kit</td>
+          <td>Cell Signaling Technology</td>
+          <td>9005</td>
+          <td><a href="https://www.cellsignal.com/products/chromatin-immunoprecipitation-chip/simplechip-plus-enzymatic-chromatin-ip-kit-magnetic-beads/9005" target="_blank" rel="noopener">source</a></td>
+          <td>Chromatin immunoprecipitation for histone modification analysis</td>
         </tr><tr>
-          <td>MEGAscript T7 Transcription Kit</td>
-          <td>Invitrogen/Thermo</td>
-          <td>AMB13345</td>
-          <td></td>
-          <td>In vitro transcription of IRES RNA constructs for translation and binding assays</td>
+          <td>Anti-Histone H3K9ac antibody</td>
+          <td>Abcam</td>
+          <td>ab4441</td>
+          <td><a href="https://www.abcam.com/histone-h3-acetyl-k9-antibody-chip-grade-ab4441.html" target="_blank" rel="noopener">source</a></td>
+          <td>ChIP-qPCR detection of active chromatin marks</td>
         </tr><tr>
-          <td>Fluorescein RNA Labeling Kit</td>
-          <td>Jena Bioscience</td>
-          <td>NU-803-FL</td>
-          <td></td>
-          <td>Labeling IRES RNAs for fluorescence polarization binding assays</td>
+          <td>Anti-Histone H3K4me3 antibody</td>
+          <td>Abcam</td>
+          <td>ab8580</td>
+          <td><a href="https://www.abcam.com/histone-h3-tri-methyl-k4-antibody-chip-grade-ab8580.html" target="_blank" rel="noopener">source</a></td>
+          <td>ChIP-qPCR detection of promoter-associated chromatin marks</td>
         </tr><tr>
-          <td>HeLa cells</td>
-          <td>ATCC</td>
-          <td>CCL-2</td>
+          <td>SpectraMax iD3 Multi-Mode Microplate Reader</td>
+          <td>Molecular Devices</td>
+          <td>iD3</td>
           <td></td>
-          <td>Primary cell line for cellular translation reporter assays</td>
+          <td>Fluorescence quantification of mEGFP expression in plant extracts</td>
         </tr><tr>
-          <td>HEK293T cells</td>
-          <td>ATCC</td>
-          <td>CRL-3216</td>
-          <td></td>
-          <td>Secondary cell line to validate translation phenotypes across cell types</td>
-        </tr><tr>
-          <td>Lipofectamine 3000</td>
-          <td>Invitrogen/Thermo</td>
-          <td>L3000015</td>
-          <td></td>
-          <td>Transfection reagent for bicistronic reporter plasmids</td>
-        </tr><tr>
-          <td>BLItz Biolayer Interferometry System</td>
-          <td>Sartorius/ForteBio</td>
-          <td>45-5000</td>
-          <td></td>
-          <td>Alternative label-free method for measuring IRES-ribosome binding kinetics</td>
-        </tr><tr>
-          <td>Streptavidin Biosensors for BLItz</td>
-          <td>Sartorius/ForteBio</td>
-          <td>18-5019</td>
-          <td></td>
-          <td>Immobilization of biotinylated IRES RNA for binding measurements</td>
-        </tr><tr>
-          <td>Northern Max Kit</td>
-          <td>Invitrogen/Thermo</td>
-          <td>AM1940</td>
-          <td></td>
-          <td>RNA stability analysis to ensure mutations don&#x27;t destabilize IRES transcripts</td>
-        </tr><tr>
-          <td>96-well black plates for luminescence</td>
-          <td>Corning</td>
-          <td>3912</td>
-          <td></td>
-          <td>Plate format for high-throughput dual-luciferase measurements</td>
-        </tr><tr>
-          <td>GloMax Discover Multimode Microplate Reader</td>
-          <td>Promega</td>
-          <td>GM3000</td>
-          <td></td>
-          <td>Luminescence detection for luciferase assays and fluorescence polarization</td>
+          <td>QuantStudio 5 Real-Time PCR System</td>
+          <td>Thermo Fisher Scientific</td>
+          <td>A28140</td>
+          <td><a href="https://www.thermofisher.com/order/catalog/product/A28140" target="_blank" rel="noopener">source</a></td>
+          <td>qRT-PCR and ChIP-qPCR analysis</td>
         </tr></tbody>
     </table>
-    <p class="muted">Direct cost estimate: $8,500 &ndash; $15,000 (Includes molecular biology reagents (cloning, mutagenesis, transcription kits), translation lysates, luciferase assay kits for ~200 assays, cell culture reagents, RNA labeling, and binding assay consumables. Excludes equipment purchases (assumes access to plate reader and BLItz system), labor costs, sequencing fees ($150/construct), and ribosome purification if done commercially (~$2000). High estimate includes BLItz biosensors and commercial 40S subunit purchase.)</p>
+    <p class="muted">Direct cost estimate: $45,000 &ndash; $75,000 (Includes molecular biology reagents, tissue culture supplies, antibodies, sequencing costs (ATAC-seq for 48 samples at ~$200/sample), and plant growth materials. Excludes personnel costs, major equipment purchases (assumes access to qPCR machine and plate reader), greenhouse space fees, and whole-genome sequencing for pan-genome analysis (assumes publicly available data).)</p>
   </section>
 
   <section>
     <h2>References</h2>
-    <ul><li>Dual-Luciferase Reporter Assay: An Advanced Co-Reporter Technology Integrating Firefly and Renilla Luciferase Assays (Promega Technical Manual #TM040) &mdash; Standard protocol for bicistronic reporter assay optimization, normalization procedures, and troubleshooting guidelines for IRES-mediated translation measurements</li><li>Jaafar et al. 2016, &#x27;Structural Insights into mRNA Reading Frame Regulation by tRNA Modification and Slippery Codon-Anticodon Pairing&#x27; eLife, RNA binding and in vitro translation methods &mdash; Detailed protocols for in vitro translation optimization with different IRES elements and validation of translation initiation vs elongation defects</li><li>Ochs et al. 2012, &#x27;Assaying Viral IRES Activity&#x27; Methods in Molecular Biology 867:271-283 &mdash; Best practices for Type 2 IRES functional analysis including construct design, appropriate controls, and interpretation of bicistronic reporter data</li><li>Pisarev et al. 2008, &#x27;Specific functional interactions of nucleotides at key -3 and +4 positions flanking the initiation codon with components of the mammalian 48S translation initiation complex&#x27; Genes Dev, ribosome binding assay protocols &mdash; Methods for purifying mammalian 40S subunits and performing quantitative ribosome-RNA binding measurements using fluorescence-based approaches</li><li>Fukushi et al. 2001, &#x27;Ribosomal protein S5 interacts with the internal ribosomal entry site of hepatitis C virus&#x27; JBC 276:20824-20826 &mdash; Fluorescence polarization binding assay protocols adapted for IRES-ribosome interactions with calculation of dissociation constants</li></ul>
+    <ul><li>Xi, Y. et al. (2009) Agrobacterium-mediated transformation of switchgrass and inheritance of the transgenes. BioEnergy Research 2:275-283 &mdash; Establish baseline transformation protocol for switchgrass embryogenic callus culture, selection conditions, and regeneration media</li><li>Buenrostro, J.D. et al. (2015) ATAC-seq: A method for assaying chromatin accessibility genome-wide. Current Protocols in Molecular Biology 109:21.29.1-21.29.9 &mdash; ATAC-seq protocol adaptation for plant tissues to assess chromatin accessibility at candidate safe harbor loci</li><li>Lee, K. et al. (2019) CRISPR/Cas9-mediated targeted T-DNA integration in rice. Plant Molecular Biology 99:317-328 &mdash; Design of HDR donor templates and CRISPR/Cas9 strategy for precise transgene insertion in monocots</li><li>Dong, N. et al. (2020) Validation of reference genes for gene expression studies in switchgrass (Panicum virgatum) by quantitative real-time RT-PCR. PLoS ONE 15:e0233662 &mdash; Selection of validated reference genes for normalization of transgene expression across tissues and developmental stages</li><li>Grewal, D. et al. (2021) Identification of safe harbor loci in rice genome by harnessing the property of zinc-finger nucleases to induce DNA damage and repair. Frontiers in Genetics 12:688597 &mdash; Bioinformatic criteria for candidate safe harbor locus identification including synteny conservation, intergenic spacing, and regulatory element prediction</li></ul>
   </section>
 
   <section>
     <h2>Lab handoff checklist</h2>
-    <ul><li>Structural coordinates (PDB file or CryoEM map) with annotated ribosome-IRES contact residues identified at &lt;5Å, &lt;8Å, and &lt;10Å distance thresholds, including contact surface area calculations and list of 12-15 candidate residues for mutagenesis prioritized by contact type (base-specific, backbone, protein contacts)</li><li>Complete wild-type IRES sequence (nucleotides) with secondary structure annotation, domain boundaries, and functional elements identified in literature, formatted for direct cloning into pRF vector between renilla and firefly luciferase genes with appropriate restriction sites or Gibson assembly overhangs</li><li>Mutagenesis strategy document specifying: (1) 8-12 target positions with rationale based on structural contacts, (2) specific mutations for each position (e.g., single nucleotide changes, small deletions, charge reversals), (3) 2-3 negative control mutations in non-contact regions, (4) predicted impact on RNA secondary structure using RNAfold or similar tool</li><li>Cell culture protocols including validated transfection conditions for HeLa and HEK293T cells with the specific bicistronic vector system, optimal plasmid amounts, and harvest timepoints from preliminary experiments or literature</li><li>Data analysis template with pre-defined normalization methods (firefly/renilla ratio calculation, fold-change relative to wild-type, statistical tests for N=6 replicates), correlation analysis pipeline for structure-function relationships, and figure templates for publication</li></ul>
+    <ul><li>Bioinformatics dataset containing: (1) coordinates of 6-8 prioritized candidate safe harbor loci with flanking sequences (±5kb) in switchgrass AP13 and Miscanthus reference genomes; (2) pan-genome alignment data showing conservation across accessions; (3) predicted regulatory element annotations; (4) existing RNA-seq and chromatin accessibility data if available</li><li>Cloned and sequence-verified CRISPR/Cas9 constructs for each candidate locus containing sgRNA expression cassettes, Cas9 driven by maize ubiquitin promoter, and HDR donor templates with mEGFP-NOS cassette and locus-specific homology arms (800bp each side); provided as purified plasmid DNA (≥10 μg each) and glycerol stocks of E. coli clones</li><li>Standard operating procedures (SOPs) for: (1) switchgrass and Miscanthus embryogenic callus induction from immature seeds; (2) Agrobacterium-mediated transformation conditions optimized for each genotype; (3) junction PCR primer sequences and validation PCR protocols; (4) tissue sampling schedule across developmental stages with photographic guides for standardization</li><li>Pre-negotiated sequencing service agreement for ATAC-seq (estimated 48-96 samples) including library QC requirements, sequencing depth (50M paired-end reads/sample), and data delivery timeline</li><li>Material transfer agreements (MTAs) or seed acquisition documentation for switchgrass cultivars (Alamo, Kanlow, Cave-in-Rock) and Miscanthus genotypes to be used, with greenhouse space allocation confirmed for multi-generational plant maintenance</li></ul>
   </section>
 
   <div class="nav" style="margin-top: 20px;">
-    <a href="opc-go-002.html">&larr; Previous</a>
+    <a href="opc-go-005.html">&larr; Previous</a>
     <a href="../go_now_lab_packets.html">All lab packets</a>
-    <a href="opc-go-005.html">Next &rarr;</a>
+    
   </div>
 </div>
 </body>

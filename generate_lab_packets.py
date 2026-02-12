@@ -80,6 +80,7 @@ Generate a JSON lab packet with this exact structure:
       "item": "specific reagent or equipment name",
       "supplier": "vendor name",
       "catalog_or_id": "catalog number",
+      "link": "https://vendor-website.com/product/catalog-number",
       "purpose": "what it's used for in this experiment"
     }}
   ],
@@ -102,7 +103,7 @@ Generate a JSON lab packet with this exact structure:
 }}
 
 Be specific about:
-- Real vendor names and plausible catalog numbers for key reagents
+- Real vendor names, plausible catalog numbers, and direct product page URLs for key reagents
 - Realistic sample sizes and timelines
 - Quantitative success criteria (fold changes, p-values, thresholds)
 - Appropriate controls for the experimental system

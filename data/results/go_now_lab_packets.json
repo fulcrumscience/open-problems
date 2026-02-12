@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-10T21:52:13.968061",
+  "generated_at": "2026-02-11T20:03:12.795327",
   "criteria_version": "feasibility_go_no_go_v2",
   "go_now_problem_count": 6,
   "notes": [
@@ -9,914 +9,1013 @@
   ],
   "experiments": [
     {
-      "id": "opc-go-003",
-      "title": "Integrated Transcriptomics to Identify Novel TET2-CHIP Cardiovascular Targets",
+      "id": "opc-go-001",
+      "title": "Integrated Transcriptomics to Identify Novel TET2-CHIP Inflammatory Targets",
       "decision_bucket": "go_now",
       "best_score": 0.72,
       "best_confidence": 0.75,
       "maps_to_problem_statement": "The transcriptomic approaches fail to identify and validate novel therapeutic targets beyond already known markers like CXCL2/3 and IL8",
       "maps_to_sub_question": "What are the novel, previously unidentified molecular targets revealed by integrated transcriptomic analysis of TET2-CHIP-mediated cardiovascular disease?",
-      "objective": "To identify and validate previously unreported molecular targets driving TET2-CHIP-mediated cardiovascular inflammation through bulk and single-cell RNA-seq with orthogonal validation.",
+      "objective": "Perform bulk and single-cell RNA-seq on TET2-deficient mouse and human models to identify and validate novel inflammatory mediators beyond known chemokines, followed by orthogonal validation.",
       "readouts": [
-        "Primary: Differentially expressed genes (DEGs) in TET2-deficient vs wildtype macrophages with |log2FC| >1.5 and FDR <0.05, excluding known markers (CXCL2/3, IL8)",
-        "Secondary: Single-cell RNA-seq cluster-specific expression profiles identifying cell-type-specific novel targets",
-        "Secondary: qPCR validation (\u22653-fold change) and protein expression confirmation (\u22652-fold change by Western/ELISA) for top 10 candidates"
+        "Primary: Differentially expressed genes (DEGs) in TET2-deficient vs WT macrophages with FDR<0.05 and |log2FC|>1.5, filtered against known CHIP markers",
+        "Secondary: Cell-type-specific expression patterns from scRNA-seq identifying myeloid subpopulations driving novel gene expression",
+        "Secondary: qPCR and Western blot validation of top 10 novel candidates with >2-fold expression change and correlation R\u00b2>0.7 with RNA-seq"
       ],
       "design": {
-        "overview": "Generate TET2-KO and WT bone marrow-derived macrophages from atherosclerotic mouse models, perform bulk and scRNA-seq, computationally filter known targets, validate top novel candidates by qPCR and protein analysis in vitro and in vivo.",
+        "overview": "Generate TET2-knockout and wild-type bone marrow-derived macrophages (BMDMs), perform bulk RNA-seq and scRNA-seq under basal and inflammatory conditions (LPS stimulation), conduct bioinformatic filtering to exclude known markers, then validate top novel candidates by qPCR, Western blot, and ELISA in mouse and human TET2-CHIP samples.",
         "work_packages": [
-          "WP1: Generate TET2-KO and WT BMDMs from Ldlr-/- mice (n=6/group), stimulate with oxLDL (50 \u03bcg/mL, 24h), harvest for bulk RNA-seq (n=4) and scRNA-seq (n=2 pooled samples)",
-          "WP2: Bulk RNA-seq analysis (DESeq2), scRNA-seq analysis (Seurat), literature mining to exclude known CHIP/CVD markers, integrate datasets to prioritize top 10 novel targets based on expression magnitude, consistency, and druggability prediction",
-          "WP3: Validate top 10 candidates by qPCR in independent BMDM samples (n=6/group, TET2-KO vs WT, \u00b1oxLDL), confirm protein expression for top 5 by Western blot and ELISA in cell lysates and supernatants",
-          "WP4: Validate top 3 targets in vivo using aortic arch samples from TET2-CHIP atherosclerosis model (Tet2+/- Ldlr-/-, n=8/group vs WT controls), perform quality control, statistical analysis, and pathway enrichment"
+          "WP1: Generate Tet2-/- and WT mouse BMDMs, culture under basal and LPS conditions (10 ng/ml, 6h), isolate RNA and prepare samples for bulk RNA-seq (n=4/group) and scRNA-seq (n=3/group)",
+          "WP2: Perform sequencing (150bp paired-end bulk RNA-seq at 40M reads/sample; 10X Chromium scRNA-seq targeting 5000 cells/sample), conduct quality control, alignment, and differential expression analysis with DESeq2 and Seurat",
+          "WP3: Bioinformatic prioritization - exclude genes matching literature search for CHIP/TET2/cardiovascular inflammation, prioritize secreted proteins and surface markers with drug target potential using Gene Ontology and druggability databases",
+          "WP4: Validate top 10 candidates by qPCR in independent BMDM samples (n=6/group), Western blot for protein expression (n=4/group), and ELISA for secreted factors in culture supernatants and plasma from Tet2-/- atherosclerosis mice"
         ],
         "controls": [
-          "Positive control: Known markers CXCL2, CXCL3, IL8 expression validated by qPCR and protein assays to confirm system responsiveness",
-          "Negative control: Unstimulated wildtype BMDMs to establish baseline expression levels",
-          "Technical control: RNA quality (RIN >8.0), sequencing depth (>30M reads/sample bulk, >5000 cells scRNA-seq), isotype controls for protein assays"
+          "Positive control: CXCL2, CXCL3, and IL8 expression must show expected upregulation (>3-fold) in TET2-deficient conditions, validating the model",
+          "Negative control: Wild-type BMDMs under identical culture and stimulation conditions to establish baseline expression",
+          "Technical control: ERCC spike-in controls for bulk RNA-seq; housekeeping genes (ACTB, GAPDH, 18S) for qPCR normalization; isotype controls for flow cytometry if surface markers identified"
         ],
-        "sample_size_plan": "Bulk RNA-seq: n=4 biological replicates per condition (TET2-KO+oxLDL, WT+oxLDL); scRNA-seq: n=2 pooled samples (3 mice each) per condition targeting 10,000 cells; qPCR validation: n=6 independent BMDM preparations; Western/ELISA: n=6; in vivo validation: n=8 mice per genotype",
+        "sample_size_plan": "Bulk RNA-seq: n=4 biological replicates per condition (WT basal, WT+LPS, Tet2-/- basal, Tet2-/-+LPS). scRNA-seq: n=3 pooled samples per condition targeting 5000 cells each. qPCR validation: n=6 independent biological replicates. Western blot: n=4. ELISA: n=8 mouse plasma samples per genotype.",
         "success_criteria": [
-          "Identification of \u226520 novel DEGs (not CXCL2/3, IL8, or other reported CHIP/CVD markers) with |log2FC| >1.5, FDR <0.05 in bulk RNA-seq, and corroboration in scRNA-seq",
-          "\u22655 of top 10 candidates validate by qPCR with \u22653-fold change (p<0.05) and \u22652 validate at protein level with \u22652-fold change (p<0.05)",
-          "\u22651 top target validates in vivo with \u22652-fold change in aortic tissue (p<0.05) between TET2-deficient and WT atherosclerotic mice"
+          "Identification of \u226550 novel DEGs (FDR<0.05, |log2FC|>1.5) in TET2-deficient conditions that are absent from curated list of 200+ known CHIP-associated inflammatory markers",
+          "\u22655 of top 10 prioritized candidates validated by qPCR with concordant direction and >2-fold change (p<0.05), and \u22653 confirmed at protein level by Western or ELISA"
         ],
         "estimated_timeline_weeks": 16
       },
       "materials": [
         {
-          "item": "Tet2 flox/flox mice (C57BL/6 background)",
+          "item": "Tet2 knockout mice (C57BL/6 background)",
           "supplier": "Jackson Laboratory",
-          "catalog_or_id": "017573",
-          "purpose": "Generate TET2-KO BMDMs via Cre-lox system"
+          "catalog_or_id": "Stock No: 017573",
+          "link": "https://www.jax.org/strain/017573",
+          "purpose": "Source of bone marrow for TET2-deficient macrophage generation"
         },
         {
-          "item": "Ldlr-/- mice (C57BL/6 background)",
+          "item": "C57BL/6J wild-type mice",
           "supplier": "Jackson Laboratory",
-          "catalog_or_id": "002207",
-          "purpose": "Atherosclerosis-prone background for CHIP model"
+          "catalog_or_id": "Stock No: 000664",
+          "link": "https://www.jax.org/strain/000664",
+          "purpose": "Control mice for wild-type BMDM generation"
         },
         {
-          "item": "M-CSF recombinant mouse protein",
+          "item": "Recombinant Mouse M-CSF",
           "supplier": "BioLegend",
           "catalog_or_id": "576406",
-          "purpose": "Differentiate bone marrow cells to macrophages"
+          "link": "",
+          "purpose": "Differentiation of bone marrow cells into macrophages"
         },
         {
-          "item": "oxLDL (human)",
-          "supplier": "Alfa Aesar",
-          "catalog_or_id": "J65591",
-          "purpose": "Inflammatory stimulus for atherosclerotic conditions"
+          "item": "LPS from E. coli O111:B4",
+          "supplier": "Sigma-Aldrich",
+          "catalog_or_id": "L4391",
+          "link": "https://www.sigmaaldrich.com/US/en/product/sigma/l4391",
+          "purpose": "Inflammatory stimulation of macrophages"
         },
         {
-          "item": "TRIzol Reagent",
-          "supplier": "Thermo Fisher",
-          "catalog_or_id": "15596026",
-          "purpose": "RNA extraction for bulk and validation experiments"
-        },
-        {
-          "item": "RNeasy Mini Kit",
+          "item": "RNeasy Plus Mini Kit",
           "supplier": "Qiagen",
-          "catalog_or_id": "74106",
-          "purpose": "RNA cleanup and quality improvement"
+          "catalog_or_id": "74134",
+          "link": "https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/total-rna/rneasy-plus-mini-kit",
+          "purpose": "RNA extraction from cultured macrophages for bulk RNA-seq and qPCR"
+        },
+        {
+          "item": "Chromium Next GEM Single Cell 3' Kit v3.1",
+          "supplier": "10X Genomics",
+          "catalog_or_id": "1000269",
+          "link": "https://www.10xgenomics.com/products/single-cell-gene-expression",
+          "purpose": "Single-cell RNA-seq library preparation"
         },
         {
           "item": "TruSeq Stranded mRNA Library Prep Kit",
           "supplier": "Illumina",
-          "catalog_or_id": "20020595",
+          "catalog_or_id": "20020594",
+          "link": "https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/truseq-stranded-mrna.html",
           "purpose": "Bulk RNA-seq library preparation"
         },
         {
-          "item": "Chromium Single Cell 3' GEX Kit v3.1",
-          "supplier": "10x Genomics",
-          "catalog_or_id": "1000269",
-          "purpose": "Single-cell RNA-seq library preparation"
-        },
-        {
-          "item": "NovaSeq 6000 S4 Reagent Kit (300 cycles)",
+          "item": "NovaSeq 6000 SP Reagent Kit v1.5 (300 cycles)",
           "supplier": "Illumina",
-          "catalog_or_id": "20028312",
-          "purpose": "High-throughput sequencing for bulk and scRNA-seq"
+          "catalog_or_id": "20028401",
+          "purpose": "Sequencing reagents for bulk RNA-seq"
         },
         {
-          "item": "SuperScript IV First-Strand Synthesis System",
+          "item": "ERCC RNA Spike-In Mix",
           "supplier": "Thermo Fisher",
-          "catalog_or_id": "18091050",
+          "catalog_or_id": "4456740",
+          "link": "https://www.thermofisher.com/order/catalog/product/4456740",
+          "purpose": "Technical control for RNA-seq quality and normalization"
+        },
+        {
+          "item": "High-Capacity cDNA Reverse Transcription Kit",
+          "supplier": "Applied Biosystems",
+          "catalog_or_id": "4368814",
+          "link": "https://www.thermofisher.com/order/catalog/product/4368814",
           "purpose": "cDNA synthesis for qPCR validation"
         },
         {
           "item": "PowerUp SYBR Green Master Mix",
-          "supplier": "Thermo Fisher",
+          "supplier": "Applied Biosystems",
           "catalog_or_id": "A25742",
-          "purpose": "qPCR quantification of candidate targets"
+          "link": "https://www.thermofisher.com/order/catalog/product/A25742",
+          "purpose": "qPCR reagent for candidate validation"
         },
         {
-          "item": "Custom TaqMan primers for novel targets",
+          "item": "Custom TaqMan Gene Expression Assays",
           "supplier": "Thermo Fisher",
-          "catalog_or_id": "Custom order",
-          "purpose": "High-specificity qPCR validation"
+          "catalog_or_id": "Custom design",
+          "link": "https://www.thermofisher.com/order/custom-genomic-products/tools/gene-expression/",
+          "purpose": "Probe-based qPCR validation of top 10 novel candidates"
         },
         {
           "item": "Pierce BCA Protein Assay Kit",
           "supplier": "Thermo Fisher",
           "catalog_or_id": "23225",
-          "purpose": "Protein quantification for Western blots"
+          "link": "https://www.thermofisher.com/order/catalog/product/23225",
+          "purpose": "Protein quantification for Western blot normalization"
         },
         {
           "item": "4-20% Mini-PROTEAN TGX Precast Gels",
           "supplier": "Bio-Rad",
-          "catalog_or_id": "4561096",
-          "purpose": "Western blot protein separation"
+          "catalog_or_id": "4561094",
+          "link": "https://www.bio-rad.com/en-us/sku/4561094-mini-protean-tgx-precast-gels",
+          "purpose": "Protein separation for Western blot validation"
         },
         {
-          "item": "Custom primary antibodies for novel targets",
-          "supplier": "Abcam/CST",
-          "catalog_or_id": "Custom validation",
-          "purpose": "Protein detection by Western blot"
-        },
-        {
-          "item": "Mouse ELISA kits (custom for top targets)",
-          "supplier": "R&D Systems",
-          "catalog_or_id": "TBD based on targets",
-          "purpose": "Quantify secreted protein levels"
-        },
-        {
-          "item": "Bioanalyzer 2100 with RNA Nano chips",
-          "supplier": "Agilent",
-          "catalog_or_id": "5067-1511",
-          "purpose": "RNA quality assessment (RIN determination)"
-        },
-        {
-          "item": "Cell Ranger software v7.0",
-          "supplier": "10x Genomics",
-          "catalog_or_id": "Free download",
-          "purpose": "scRNA-seq data processing and alignment"
+          "item": "Mouse Cytokine Array / Chemokine Array 44-Plex",
+          "supplier": "Eve Technologies",
+          "catalog_or_id": "MD44",
+          "link": "",
+          "purpose": "Multiplex screening of secreted protein candidates in plasma"
         }
       ],
       "estimated_direct_cost_usd": {
         "low": 28000,
         "high": 42000,
-        "scope": "Includes sequencing services ($15-20K), library prep kits ($5-8K), animal costs ($3-5K), validation reagents including custom primers/antibodies ($4-7K), and consumables ($1-2K). Excludes personnel, equipment depreciation, and institutional overhead."
+        "scope": "Includes RNA-seq (bulk and single-cell) library prep and sequencing, qPCR reagents and custom assays, Western blot supplies, ELISA/multiplex assays, and molecular biology reagents. Excludes mouse housing costs, personnel, bioinformatics compute infrastructure, and institutional core facility access fees."
       },
       "protocol_references": [
         {
-          "title": "Fuster et al. (2017) Clonal hematopoiesis associated with TET2 deficiency accelerates atherosclerosis development in mice. Science 355:842-847",
-          "use": "Reference CHIP-CVD mouse model generation, BMDM isolation protocols, and atherosclerosis induction parameters"
+          "title": "Fuster et al. (2017) Clonal hematopoiesis associated with TET2 deficiency accelerates atherosclerosis development in mice. Science 355(6327):842-847",
+          "use": "Established protocols for generating TET2-CHIP mouse models and characterizing inflammatory phenotypes in cardiovascular disease context"
         },
         {
-          "title": "Jaiswal et al. (2017) Clonal Hematopoiesis and Risk of Atherosclerotic Cardiovascular Disease. NEJM 377:111-121",
-          "use": "Establish clinical relevance and known CHIP-CVD markers to exclude from novel target identification"
+          "title": "Jaiswal et al. (2017) Clonal Hematopoiesis and Risk of Atherosclerotic Cardiovascular Disease. N Engl J Med 377:111-121",
+          "use": "Reference for known CHIP-associated markers to create exclusion list for novel target identification"
         },
         {
-          "title": "Zheng et al. (2017) Massively parallel digital transcriptional profiling of single cells. Nat Commun 8:14049",
-          "use": "10x Genomics scRNA-seq protocol optimization and best practices for quality control"
+          "title": "Zheng et al. (2017) Massively parallel digital transcriptional profiling of single cells. Nature Communications 8:14049",
+          "use": "10X Genomics scRNA-seq methodology and quality control parameters for immune cell profiling"
         },
         {
-          "title": "Love et al. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 15:550",
-          "use": "Statistical framework for differential expression analysis with appropriate normalization and FDR control"
+          "title": "Love et al. (2014) Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology 15:550",
+          "use": "Statistical framework for differential expression analysis with appropriate FDR correction"
         },
         {
-          "title": "Stuart et al. (2019) Comprehensive Integration of Single-Cell Data. Cell 177:1888-1902",
-          "use": "Seurat workflow for scRNA-seq analysis including clustering, cell type identification, and integration with bulk data"
-        },
-        {
-          "title": "Bustin et al. (2009) The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments. Clin Chem 55:611-622",
-          "use": "Standardized qPCR validation protocols including primer design, normalization strategy, and statistical analysis"
+          "title": "Bustin et al. (2009) The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments. Clinical Chemistry 55(4):611-622",
+          "use": "Best practices for qPCR validation including primer design, normalization strategies, and statistical analysis"
         }
       ],
       "handoff_package_for_lab": [
-        "Comprehensive literature review document identifying all known CHIP-CVD markers (CXCL2/3, IL8, TNF\u03b1, IL1\u03b2, IL6, CCL2, etc.) with PubMed IDs for computational filtering, minimum 50 genes compiled",
-        "Approved IACUC protocol number and breeding strategy for generating Tet2+/- or Tet2-/- on Ldlr-/- background, including timeline for sufficient cohort generation",
-        "Bioinformatics pipeline specification including software versions (DESeq2 v1.38+, Seurat v4.3+, R v4.2+), server access credentials, and analysis scripts for reproducible DEG identification with literature-based filtering",
-        "Pre-validated primer sequences for positive control genes (Cxcl2, Cxcl3, Il8/Cxcl8 mouse ortholog, Gapdh, Actb) with demonstrated efficiency 90-110%",
-        "Vendor quotes for bulk RNA-seq (30M reads/sample, n=8) and scRNA-seq (targeting 10K cells/sample, n=4) services with confirmed turnaround time",
-        "Druggability screening criteria and database access (DrugBank, ChEMBL) for prioritizing targets with therapeutic potential in computational ranking"
+        "Curated exclusion list of 200+ known CHIP/TET2-associated inflammatory genes compiled from literature search (PubMed, GeneCards) including CXCL2, CXCL3, IL8, IL1B, IL6, TNF, and all genes from Fuster 2017 and Jaiswal 2017 studies",
+        "Detailed BMDM differentiation and stimulation protocol with timing, cell density (10^6 cells/well), M-CSF concentration (50 ng/ml for 7 days), and quality control criteria (>95% CD11b+F4/80+ by flow cytometry)",
+        "Bioinformatics analysis pipeline specification: alignment tools (STAR v2.7+), DE analysis parameters (DESeq2, padj<0.05, log2FC>1.5), scRNA-seq clustering strategy (Seurat, resolution 0.5-1.0), and prioritization criteria (secreted proteins, surface markers, druggability scores from DGIdb and ChEMBL)",
+        "qPCR primer design parameters for top candidates: amplicon 80-150bp, Tm 58-60\u00b0C, spanning exon junctions where possible, validated in silico with Primer-BLAST for specificity",
+        "Data deposition plan for GEO submission with metadata templates and FASTQ file organization structure"
       ]
     },
     {
-      "id": "opc-go-004",
-      "title": "Cell Density and Viability Validation for Lucifer Yellow Dye Transfer Assay",
+      "id": "opc-go-002",
+      "title": "Cell Density and Viability Assessment in Gap Junction Dye Transfer Assay",
       "decision_bucket": "go_now",
       "best_score": 0.531,
       "best_confidence": 0.5,
       "maps_to_problem_statement": "Lucifer Yellow dye transfer assay lacks essential controls (cell density, viability) and shows unexplained discrepancy where mutant has less dye but comparable migration distance to control",
       "maps_to_sub_question": "Are cell density and viability comparable between control and mutant groups in the dye transfer assay?",
-      "objective": "To quantify and compare cell density and viability between control and mutant cell populations at the time of Lucifer Yellow dye transfer assays.",
+      "objective": "Quantify and compare cell density and viability between control and mutant cell lines at the time of Lucifer Yellow dye transfer to identify confounding variables.",
       "readouts": [
-        "Primary: Cell density (cells/mm\u00b2) measured by automated nuclei counting in control vs. mutant cultures",
-        "Secondary: Cell viability percentage measured by live/dead fluorescence staining (calcein-AM/ethidium homodimer)",
-        "Secondary: Metabolic activity (MTT absorbance at 570nm) normalized to cell number",
-        "Secondary: Apoptotic cell percentage measured by Annexin V-FITC/PI flow cytometry"
+        "Primary: Cell density (cells/mm\u00b2) measured by automated nuclear counting (DAPI) at time of dye transfer",
+        "Secondary: Cell viability percentage measured by live/dead fluorescence staining (Calcein-AM/Ethidium homodimer-1)",
+        "Secondary: Metabolic activity measured by MTT assay (absorbance at 570nm)",
+        "Secondary: Apoptotic/necrotic cell percentage by flow cytometry (Annexin V/PI staining)"
       ],
       "design": {
-        "overview": "Culture control and mutant cells under identical conditions as the original dye transfer experiments, then quantify cell density by automated nuclei counting and assess viability by three orthogonal methods (live/dead imaging, MTT metabolic assay, and Annexin V flow cytometry) at the exact timepoint when dye transfer would be performed.",
+        "overview": "Replicate the existing dye transfer assay conditions with control and mutant cells, but harvest samples immediately before dye injection for comprehensive density and viability measurements using orthogonal methods (imaging, spectrophotometry, flow cytometry).",
         "work_packages": [
-          "WP1: Establish standardized cell culture protocol matching original dye transfer conditions - seed control and mutant cells at defined densities, culture for same duration as dye transfer experiments, collect samples at 0h, 24h, 48h, and 72h timepoints",
-          "WP2: Automated cell density quantification - fix cells, perform DAPI nuclear staining, image 10 fields per well using automated microscopy, analyze with ImageJ particle counting to determine cells/mm\u00b2",
-          "WP3: Multi-method viability assessment - perform live/dead staining (calcein-AM/EthD-1) with fluorescence imaging, MTT assay with spectrophotometry, and Annexin V-FITC/PI flow cytometry on parallel samples",
-          "WP4: Statistical analysis and correlation - perform two-way ANOVA (genotype \u00d7 timepoint), calculate coefficient of variation within groups, correlate viability metrics with original dye transfer data, generate standardized report with quality control metrics"
+          "WP1: Culture preparation - seed control and mutant cells at identical initial densities in 6-well plates and culture dishes, allow to reach confluence state matching original dye transfer experiments (3-5 days)",
+          "WP2: Viability assessment - at time point matching dye transfer assay, perform live/dead staining with confocal imaging, MTT assay in parallel wells, and harvest cells for Annexin V/PI flow cytometry",
+          "WP3: Density quantification - fix parallel samples, perform DAPI nuclear staining, acquire 10 random fields per well using automated microscopy, analyze with CellProfiler for cell counting",
+          "WP4: Statistical analysis and correlation - compare density and viability metrics between control and mutant using t-tests, calculate coefficients of variation, correlate with historical dye transfer data"
         ],
         "controls": [
-          "Positive control for cell death: treat subset of control cells with 70% methanol for 10 minutes to induce complete cell death, verify viability assays detect 0% viability",
-          "Negative control for counting artifacts: image and analyze cell-free wells with media only to establish background threshold for automated counting",
-          "Technical control for metabolic assay: include wells with known cell numbers (5,000, 10,000, 20,000 cells) to generate standard curve and verify linear MTT response range"
+          "Positive control for viability assays: cells treated with 0.1% Triton X-100 for 10 min (100% dead control)",
+          "Negative control for viability assays: freshly thawed early passage cells in optimal media (high viability baseline)",
+          "Technical control: cell-free wells with reagents only to measure background fluorescence and absorbance",
+          "Seeding density control: parallel wells seeded at 50%, 100%, and 150% of standard density to establish sensitivity range"
         ],
-        "sample_size_plan": "N=6 biological replicates per genotype (control and mutant) per timepoint (4 timepoints), with 3 technical replicates per assay method, total of 48 culture wells; for flow cytometry, analyze 10,000 events per sample; for imaging, capture 10 fields per well (0.9 mm\u00b2 each)",
+        "sample_size_plan": "N=6 biological replicates per cell line (control and mutant), with 3 technical replicates per assay type per biological replicate, conducted over 2 independent experimental runs. Total: 12 wells per cell line per assay.",
         "success_criteria": [
-          "Cell density measurements show coefficient of variation <15% within genotype groups and automated counting correlation with manual counts r\u00b2>0.95",
-          "If cell density differs between genotypes by >20% or viability differs by >10% at dye transfer timepoint, these are identified as confounding variables requiring experimental redesign",
-          "All three viability assays (live/dead, MTT, Annexin V) show concordance within 10% for same samples, validating measurement reliability"
+          "Coefficient of variation for cell density measurements <15% within biological replicates",
+          "Detection sensitivity to identify \u226510% difference in cell density between groups with power \u22650.80 at \u03b1=0.05",
+          "Viability assay concordance: <20% discrepancy between live/dead staining and MTT-based viability percentages",
+          "Flow cytometry viable cell percentage >85% to confirm healthy cultures (unless significant difference detected between groups)"
         ],
-        "estimated_timeline_weeks": 6
+        "estimated_timeline_weeks": 4
       },
       "materials": [
         {
           "item": "LIVE/DEAD Viability/Cytotoxicity Kit for mammalian cells",
           "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "L3224",
-          "purpose": "Simultaneous fluorescence-based measurement of live cells (calcein-AM) and dead cells (ethidium homodimer-1)"
+          "link": "https://www.thermofisher.com/order/catalog/product/L3224",
+          "purpose": "Simultaneous fluorescent labeling of live cells (Calcein-AM, green) and dead cells (Ethidium homodimer-1, red)"
         },
         {
-          "item": "MTT (3-(4,5-Dimethylthiazol-2-yl)-2,5-Diphenyltetrazolium Bromide)",
-          "supplier": "Sigma-Aldrich",
-          "catalog_or_id": "M5655-1G",
-          "purpose": "Colorimetric assay for metabolic activity/viability"
+          "item": "MTT (3-(4,5-dimethylthiazol-2-yl)-2,5-diphenyltetrazolium bromide) Cell Proliferation Assay Kit",
+          "supplier": "Abcam",
+          "catalog_or_id": "ab211091",
+          "link": "https://www.abcam.com/products/assay-kits/mtt-cell-proliferation-assay-kit-ab211091.html",
+          "purpose": "Colorimetric quantification of metabolic activity and cell viability"
         },
         {
           "item": "FITC Annexin V Apoptosis Detection Kit with PI",
           "supplier": "BioLegend",
           "catalog_or_id": "640914",
-          "purpose": "Flow cytometry detection of apoptotic (Annexin V+) and necrotic (PI+) cells"
+          "link": "",
+          "purpose": "Flow cytometry-based detection of apoptotic and necrotic cells"
         },
         {
           "item": "DAPI (4',6-Diamidino-2-Phenylindole, Dihydrochloride)",
           "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "D1306",
-          "purpose": "Nuclear counterstain for automated cell counting"
+          "link": "https://www.thermofisher.com/order/catalog/product/D1306",
+          "purpose": "Nuclear counterstaining for automated cell counting and density determination"
         },
         {
-          "item": "96-well clear bottom black-walled plate",
-          "supplier": "Corning",
-          "catalog_or_id": "3904",
-          "purpose": "Culture vessel for fluorescence-based assays with minimal background"
-        },
-        {
-          "item": "96-well flat bottom plate",
-          "supplier": "Corning",
-          "catalog_or_id": "3599",
-          "purpose": "Culture vessel for MTT absorbance assay"
-        },
-        {
-          "item": "Paraformaldehyde 16% solution",
+          "item": "16% Paraformaldehyde (PFA) Aqueous Solution",
           "supplier": "Electron Microscopy Sciences",
           "catalog_or_id": "15710",
-          "purpose": "Cell fixation for immunofluorescence and counting"
+          "link": "",
+          "purpose": "Cell fixation for immunofluorescence and nuclear staining"
+        },
+        {
+          "item": "6-well Clear Flat Bottom TC-treated Multiwell Cell Culture Plate",
+          "supplier": "Corning",
+          "catalog_or_id": "3516",
+          "link": "",
+          "purpose": "Culture vessel for viability assays and density measurements"
+        },
+        {
+          "item": "96-well Flat Bottom TC-treated Microplate",
+          "supplier": "Corning",
+          "catalog_or_id": "3599",
+          "link": "",
+          "purpose": "MTT assay plate for spectrophotometric readings"
         },
         {
           "item": "Countess II FL Automated Cell Counter",
           "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "AMQAF1000",
-          "purpose": "Initial cell seeding standardization and validation of automated counting"
+          "link": "https://www.thermofisher.com/order/catalog/product/AMQAF1000",
+          "purpose": "Initial cell counting and viability assessment during seeding"
         },
         {
-          "item": "Cell culture dish, 35mm",
-          "supplier": "Corning",
-          "catalog_or_id": "430165",
-          "purpose": "Standard culture vessel matching original dye transfer experimental setup"
-        },
-        {
-          "item": "Trypan Blue Solution 0.4%",
+          "item": "Trypan Blue Solution, 0.4%",
           "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "15250061",
-          "purpose": "Manual cell counting viability assessment at seeding"
+          "link": "https://www.thermofisher.com/order/catalog/product/15250061",
+          "purpose": "Exclusion dye for cell viability during seeding and harvesting"
+        },
+        {
+          "item": "CellProfiler Software (open source)",
+          "supplier": "Broad Institute",
+          "catalog_or_id": "v4.2.5",
+          "link": "https://cellprofiler.org/releases",
+          "purpose": "Automated image analysis for nuclear counting and cell density quantification"
+        },
+        {
+          "item": "PBS (Phosphate Buffered Saline), pH 7.4",
+          "supplier": "Gibco",
+          "catalog_or_id": "10010023",
+          "link": "https://www.thermofisher.com/order/catalog/product/10010023",
+          "purpose": "Washing and dilution buffer for all assays"
+        },
+        {
+          "item": "DMSO (Dimethyl sulfoxide), Cell Culture Grade",
+          "supplier": "Sigma-Aldrich",
+          "catalog_or_id": "D2650",
+          "link": "https://www.sigmaaldrich.com/US/en/product/sial/d2650",
+          "purpose": "Solubilization of MTT formazan crystals"
         }
       ],
       "estimated_direct_cost_usd": {
-        "low": 3200,
-        "high": 4800,
-        "scope": "Includes all reagent kits, plates, and consumables for the described experiment. Excludes equipment costs (microscope, flow cytometer, plate reader assumed available), cell culture media, and personnel costs. High estimate includes additional replicates and troubleshooting reagents."
+        "low": 2800,
+        "high": 4500,
+        "scope": "Includes all reagent kits, consumables (plates, tips), and flow cytometry service fees for 2 experimental runs with 6 biological replicates each. Excludes existing equipment (microscopes, plate readers, cell counter), cell culture media, and personnel costs. Assumes flow cytometry is available as core facility service at $50/sample."
       },
       "protocol_references": [
         {
-          "title": "Papadopoulos NG, et al. An improved fluorescence assay for the determination of lymphocyte-mediated cytotoxicity using flow cytometry. J Immunol Methods. 1994;177(1-2):101-11",
-          "use": "Establishes validated flow cytometry gating strategy for Annexin V/PI discrimination of live, apoptotic, and necrotic cell populations"
+          "title": "Brauchle E, et al. Cell death stages in single apoptotic and necrotic cells monitored by Raman microspectroscopy. Sci Rep. 2014;4:4698",
+          "use": "Reference protocol for Annexin V/PI flow cytometry gating strategy to distinguish viable, early apoptotic, late apoptotic, and necrotic populations"
         },
         {
-          "title": "Riss TL, et al. Cell Viability Assays. Assay Guidance Manual [Internet]. Bethesda (MD): Eli Lilly & Company and the National Center for Advancing Translational Sciences; 2004-2016",
-          "use": "Provides comprehensive guidance on MTT assay optimization, linear range determination, and appropriate controls for metabolic viability assessment"
+          "title": "Riss TL, et al. Cell Viability Assays. In: Markossian S, et al., editors. Assay Guidance Manual. Bethesda (MD): Eli Lilly & Company and the National Center for Advancing Translational Sciences; 2004",
+          "use": "Comprehensive guide for MTT assay optimization including cell number linearity, incubation time, and solvent selection"
         },
         {
-          "title": "Decrock E, et al. Transfer of IP3 through gap junctions is critical, but not sufficient, for the spread of apoptosis. Cell Death Differ. 2012;19(6):947-57",
-          "use": "Demonstrates integrated approach to measuring gap junction communication and cell viability/apoptosis in parallel, relevant for experimental design"
+          "title": "Carpentier G, et al. CellProfiler: image analysis software for identifying and quantifying cell phenotypes. Genome Biol. 2006;7(10):R100",
+          "use": "Automated cell counting pipeline design using nuclear segmentation and intensity thresholding for accurate density measurements"
         },
         {
-          "title": "Schneider CA, Rasband WS, Eliceiri KW. NIH Image to ImageJ: 25 years of image analysis. Nat Methods. 2012;9(7):671-5",
-          "use": "Technical reference for automated cell counting using ImageJ nuclei segmentation and particle analysis tools"
+          "title": "Wade MH, et al. A fluorescence photobleaching assay of gap junction-mediated communication between human cells. Science. 1986;232(4749):525-528",
+          "use": "Original gap junction assay methodology to ensure density measurements match conditions of dye transfer experiments"
         }
       ],
       "handoff_package_for_lab": [
-        "Detailed cell culture protocol from original Lucifer Yellow dye transfer experiments including: cell line identities, passage numbers used, seeding density, culture duration, media formulation, and exact timing of dye injection relative to plating",
-        "Microscope specifications and imaging parameters: objective magnification, numerical aperture, camera pixel size, field of view dimensions, and exposure settings to enable proper calibration of cell density measurements (cells/mm\u00b2)",
-        "Original dye transfer experimental data including: number of replicates performed, passage number ranges, any observations about cell morphology or confluence differences, and raw data on dye transfer distances and fluorescence intensities for correlation analysis",
-        "Standard operating procedures for handling the specific control and mutant cell lines including: optimal seeding densities, splitting ratios, freezing/thawing protocols, and any known growth rate differences or special culture requirements"
+        "Detailed cell culture protocol for both control and mutant lines including passage numbers, seeding densities, media formulations, and growth conditions used in original dye transfer experiments",
+        "Original dye transfer assay timeline and conditions (culture duration, confluence state at time of injection, imaging timepoints) to replicate timing for density/viability measurements",
+        "Historical data on dye transfer results (quantitative fluorescence intensity, migration distance measurements) for correlation analysis with density/viability findings",
+        "Standard Operating Procedure (SOP) for confocal microscopy settings including objective magnification, laser power, gain settings, and z-stack parameters for live/dead imaging",
+        "Flow cytometry compensation matrix file for FITC/PI channels specific to the cytometer that will be used",
+        "CellProfiler pipeline file (.cppipe) pre-configured for nuclear segmentation and cell counting with quality control metrics"
       ]
     },
     {
-      "id": "opc-go-001",
-      "title": "Edit Transformation-Competence Determinants in Recalcitrant Bioenergy Crop Genotypes",
+      "id": "opc-go-003",
+      "title": "CRISPR-Based Enhancement of Transformation Competence in Recalcitrant Elite Maize Lines",
       "decision_bucket": "go_now",
       "best_score": 0.527,
       "best_confidence": 0.5,
       "maps_to_problem_statement": "Genotype-specific transformation efficiency differences are driven by unknown underlying genetic or epigenetic variation, preventing widespread adoption of plant engineering in non-elite lines.",
       "maps_to_sub_question": "Can identified genetic or epigenetic determinants of transformation competence be edited to convert recalcitrant elite lines into transformable lines?",
-      "objective": "Test whether targeted editing of candidate competence loci increases Agrobacterium-mediated transformation efficiency in recalcitrant lines.",
+      "objective": "To determine if CRISPR/Cas9 editing of candidate transformation competence loci (BABY BOOM, WUSCHEL2, GRF-GIF) can increase Agrobacterium-mediated transformation efficiency in recalcitrant elite maize inbreds by at least 5-fold.",
       "readouts": [
-        "Primary: stable transformation efficiency = PCR-positive independent events / immature embryos treated",
-        "Secondary: event quality (copy number, backbone integration, edit genotype at target loci)",
-        "Secondary: regeneration rate and fertility in T0/T1"
+        "Primary: Transformation efficiency measured as percentage of regenerated T0 transgenic plants per inoculated immature embryo across three independent experiments",
+        "Secondary: Transgene integration events per line assessed by Southern blot and qPCR to confirm stable transformation",
+        "Secondary: Heritability of transformation competence in T1 and T2 generations measured by repeated transformation assays using edited line embryos"
       ],
       "design": {
-        "overview": "Parallel construct and transformation study across one transformable control genotype and two recalcitrant genotypes, with multiplex CRISPR edits to top-ranked candidate loci.",
+        "overview": "Edit BBM, WUS2, and GRF5-GIF1 loci in recalcitrant elite maize line B104 using CRISPR/Cas9 to create gain-of-function or overexpression alleles, then compare Agrobacterium-mediated transformation efficiency between edited and parental lines across multiple generations.",
         "work_packages": [
-          "WP1 candidate selection: choose 8-12 loci from prior omics/QTL literature and internal pilot data",
-          "WP2 construct build: 3-4 multiplex CRISPR constructs plus non-targeting control",
-          "WP3 Agrobacterium transformation: immature embryos or embryogenic callus using a validated sorghum/switchgrass protocol",
-          "WP4 selection and regeneration under hygromycin",
-          "WP5 molecular QC: targeted amplicon sequencing, transgene PCR/qPCR copy number, backbone check",
-          "WP6 statistics: mixed-effects model of transformation efficiency by genotype and construct"
+          "WP1: Design and validate CRISPR constructs targeting BBM, WUS2, and GRF5-GIF1 promoter regions to create constitutive or enhanced expression alleles; transform into Hi-II (transformable control line) for validation (Weeks 1-8)",
+          "WP2: Transform B104 elite recalcitrant line with validated CRISPR constructs; select and sequence T0 edited events; advance to T1 generation and confirm edits are heritable; backcross to remove Cas9 if necessary (Weeks 9-32)",
+          "WP3: Conduct standardized transformation efficiency assays on edited B104 lines and wild-type B104 using Agrobacterium strain EHA105 carrying pPHP71539 (bar + uidA); score transformation frequency, regeneration rate, and stable integration (Weeks 33-48)",
+          "WP4: Validate transformation competence heritability in T2 generation; perform molecular characterization of integration sites; statistical analysis comparing transformation rates across genotypes with ANOVA and post-hoc tests (Weeks 49-52)"
         ],
         "controls": [
-          "Transformable genotype positive process control (e.g., TX430-like line)",
-          "Recalcitrant genotype + empty/non-targeting construct negative control",
-          "No-Agrobacterium contamination control on selection media"
+          "Positive control: Hi-II maize line transformed in parallel to validate Agrobacterium competence and media conditions (expected efficiency 15-30%)",
+          "Negative control: Wild-type B104 line without editing transformed in parallel (expected efficiency <1%)",
+          "Mock control: B104 line transformed with empty vector CRISPR construct (no gRNA) to control for transformation procedure effects",
+          "Segregation control: T1 null segregants (non-edited siblings) from edited lines to control for genetic background effects"
         ],
-        "sample_size_plan": "Per construct per genotype: 120 immature embryos, 3 biological replicates (total ~1080 embryos for 3 genotypes x 3 constructs x 120).",
+        "sample_size_plan": "N=3 independent CRISPR constructs per target gene (9 total); minimum 5 independent T0 edited events advanced per construct; transformation efficiency assays with n=200 immature embryos per genotype per replicate across 3 biological replicates (total 600 embryos/genotype); statistical power calculation targets 80% power to detect 5-fold change at \u03b1=0.05",
         "success_criteria": [
-          ">=2x increase in stable transformation efficiency in >=1 recalcitrant genotype vs matched non-targeting control",
-          "No major regeneration penalty (>25% drop) compared with control",
-          "At least 30% of positive events show intended edit at one or more target loci"
+          "At least one edited line achieves \u22655-fold increase in transformation efficiency compared to wild-type B104 (e.g., from 0.5% to \u22652.5%) with p<0.05 by one-way ANOVA",
+          "Enhanced transformation competence is heritable and stable through T2 generation with <20% reduction in efficiency compared to T0 edited line",
+          "Edited lines show no major agronomic penalties: germination rate >85%, plant height within 15% of wild-type, and normal seed set (>80% of wild-type)"
         ],
-        "estimated_timeline_weeks": 20
+        "estimated_timeline_weeks": 52
       },
       "materials": [
         {
-          "item": "Agrobacterium helper/host system (GV3101:pMP90RK or equivalent validated plant transformation strain)",
-          "supplier": "DSMZ (or institutional source)",
-          "catalog_or_id": "DSM 12365 (pMP90RK in GV3101)",
-          "link": "https://webshop.dsmz.de/en/plasmids/pMP90RK.html",
-          "purpose": "Binary vector delivery into plant tissue"
-        },
-        {
-          "item": "Plant binary backbone (pCAMBIA1300 family)",
+          "item": "pYPQ146 Gateway-compatible Cas9 vector for maize",
           "supplier": "Addgene",
-          "catalog_or_id": "pCambia1300-PacI (#44183) or current pCAMBIA1300-compatible backbone",
-          "link": "https://www.addgene.org/44183/",
-          "purpose": "CRISPR cassette and selectable marker backbone"
+          "catalog_or_id": "164544",
+          "link": "https://www.addgene.org/164544/",
+          "purpose": "CRISPR/Cas9 delivery vector with maize-optimized expression cassettes"
         },
         {
-          "item": "CRISPR-Cas9 gRNA reagents",
-          "supplier": "IDT",
-          "catalog_or_id": "Alt-R CRISPR-Cas9 reagents",
-          "link": "https://www.idtdna.com/CRISPR-Cas9",
-          "purpose": "Guide design and synthesis for locus editing"
+          "item": "GoldenGate MoClo Plant Parts Kit",
+          "supplier": "Addgene",
+          "catalog_or_id": "1000000044",
+          "purpose": "Modular cloning system for assembling gRNA expression cassettes"
         },
         {
-          "item": "Murashige and Skoog basal medium with vitamins",
-          "supplier": "PhytoTech Labs",
-          "catalog_or_id": "M519",
-          "link": "https://phytotechlab.com/murashige-skoog-basal-medium-with-vitamins.html",
-          "purpose": "Core plant tissue culture medium"
+          "item": "Agrobacterium tumefaciens EHA105 competent cells",
+          "supplier": "Teknova",
+          "catalog_or_id": "A1202",
+          "purpose": "Agrobacterium strain for maize transformation"
         },
         {
-          "item": "Acetosyringone",
-          "supplier": "PhytoTech Labs",
-          "catalog_or_id": "A104 (powder) or A1104 (100 mM solution)",
-          "link": "https://phytotechlab.com/acetosyringone.html",
-          "purpose": "Vir gene induction to enhance Agrobacterium transfer"
+          "item": "pPHP71539 binary vector (bar + uidA)",
+          "supplier": "John Innes Centre",
+          "catalog_or_id": "Request from ABRC stock center",
+          "link": "https://abrc.osu.edu/",
+          "purpose": "Standard transformation reporter construct for efficiency assays"
         },
         {
-          "item": "6-Benzylaminopurine (cytokinin)",
-          "supplier": "PhytoTech Labs",
-          "catalog_or_id": "B800",
-          "link": "https://phytotechlab.com/6-benzylaminopurine-ba.html",
-          "purpose": "Regeneration medium hormone component"
+          "item": "Bialaphos (phosphinothricin, PPT)",
+          "supplier": "Gold Biotechnology",
+          "catalog_or_id": "B-110",
+          "purpose": "Selection agent for bar-expressing transformants"
         },
         {
-          "item": "Naphthaleneacetic acid (auxin)",
+          "item": "N6 Basal Medium with Vitamins",
+          "supplier": "PhytoTechnology Laboratories",
+          "catalog_or_id": "N611",
+          "purpose": "Base medium for maize tissue culture and regeneration"
+        },
+        {
+          "item": "2,4-Dichlorophenoxyacetic acid (2,4-D)",
           "supplier": "Sigma-Aldrich",
-          "catalog_or_id": "N0640",
-          "link": "https://b2b.sigmaaldrich.com/FR/fr/product/sigma/n0640",
-          "purpose": "Callus/rooting medium hormone component"
+          "catalog_or_id": "D7299",
+          "link": "https://www.sigmaaldrich.com/catalog/product/sigma/d7299",
+          "purpose": "Auxin for callus induction from immature embryos"
         },
         {
-          "item": "Hygromycin B selection antibiotic",
-          "supplier": "Thermo Fisher (Gibco)",
-          "catalog_or_id": "10687010",
-          "link": "https://www.thermofisher.cn/order/catalog/product/cn/en/10687010",
-          "purpose": "Selection of transformed plant tissue"
+          "item": "DIG High Prime DNA Labeling and Detection Starter Kit II",
+          "supplier": "Roche",
+          "catalog_or_id": "11585614910",
+          "link": "https://www.sigmaaldrich.com/catalog/product/roche/11585614910",
+          "purpose": "Southern blot analysis to confirm transgene integration"
         },
         {
-          "item": "Plant DNA extraction kit",
-          "supplier": "QIAGEN",
-          "catalog_or_id": "DNeasy Plant Mini Kit, 69104",
-          "link": "https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-plant-kits",
-          "purpose": "Genotyping and transgene QC"
+          "item": "GUS Histochemical Staining Kit",
+          "supplier": "Sigma-Aldrich",
+          "catalog_or_id": "GUSB-1KT",
+          "link": "https://www.sigmaaldrich.com/catalog/product/sigma/gusb1kt",
+          "purpose": "Visual detection of uidA expression in putative transformants"
         },
         {
-          "item": "qPCR master mix",
-          "supplier": "Applied Biosystems / Thermo Fisher",
-          "catalog_or_id": "PowerUp SYBR Green Master Mix",
-          "link": "https://www.fishersci.com/shop/products/powerup-sybr-green-master-mix/a25743",
-          "purpose": "Copy number and marker-qPCR assays"
+          "item": "Phire Plant Direct PCR Kit",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "F130WH",
+          "link": "https://www.thermofisher.com/order/catalog/product/F130WH",
+          "purpose": "Rapid genotyping of edited events and transgene presence"
+        },
+        {
+          "item": "Alt-R CRISPR-Cas9 crRNA synthesis",
+          "supplier": "Integrated DNA Technologies",
+          "catalog_or_id": "Custom order",
+          "link": "https://www.idtdna.com/pages/products/crispr-genome-editing/alt-r-crispr-cas9-system",
+          "purpose": "Design validation: in vitro testing of gRNA efficiency before cloning"
+        },
+        {
+          "item": "Percival AR-95L growth chamber",
+          "supplier": "Percival Scientific",
+          "catalog_or_id": "AR-95L",
+          "purpose": "Controlled environment for regenerating transformants and growing edited lines"
         }
       ],
       "estimated_direct_cost_usd": {
-        "low": 12000,
-        "high": 28000,
-        "scope": "Consumables + standard molecular assays; excludes labor, sequencing core overhead, greenhouse costs, and major equipment"
+        "low": 35000,
+        "high": 55000,
+        "scope": "Includes molecular biology reagents, tissue culture supplies, sequencing costs (~$8K), growth chamber space rental, and seed production. Excludes personnel costs, equipment already available (PCR machines, incubators, microscopes), greenhouse rental for backcrossing, and long-term generation advancement costs beyond T2"
       },
       "protocol_references": [
         {
-          "title": "Optimized Agrobacterium-mediated sorghum transformation protocol",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/26316679/",
-          "use": "Transformation benchmarking and event quality expectations"
+          "title": "Lowe, K. et al. (2016) Morphogenic Regulators Baby boom and Wuschel Improve Monocot Transformation. Plant Cell 28:1998-2015",
+          "use": "Provides validated BBM and WUS2 expression strategies shown to enhance transformation; will adapt promoter and expression level strategies from this seminal work"
         },
         {
-          "title": "Agrobacterium-mediated sorghum transformation (Methods Mol Biol)",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/28936670/",
-          "use": "Step-level sorghum transformation guidance"
+          "title": "Debernardi, J.M. et al. (2020) A GRF-GIF chimeric protein improves the regeneration efficiency of transgenic plants. Nature Biotechnology 38:1274-1279",
+          "use": "Describes GRF5-GIF1 chimeric construct design that enhances regeneration capacity; will create similar constructs or activation of endogenous loci"
         },
         {
-          "title": "Switchgrass cell-suspension transformation with GV3101",
-          "url": "https://www.osti.gov/biblio/1618774",
-          "use": "Switchgrass-compatible high-throughput workflow"
+          "title": "Frame, B.R. et al. (2011) Agrobacterium tumefaciens-mediated transformation of maize embryos using a standard binary vector system. Methods Mol Biol 710:327-341",
+          "use": "Standard protocol for maize transformation efficiency assays; will use this as basis for standardized comparative testing of edited vs. wild-type lines"
         },
         {
-          "title": "Simple efficient switchgrass Agrobacterium protocol",
-          "url": "https://www.jstage.jst.go.jp/article/plantbiotechnology/33/1/33_15.1127b/_article/-char/en",
-          "use": "Coculture parameters and acetosyringone usage range"
+          "title": "Svitashev, S. et al. (2016) Genome editing in maize directed by CRISPR-Cas9 ribonucleoprotein complexes. Nature Communications 7:13274",
+          "use": "Maize CRISPR methodology including delivery methods, selection strategies, and confirmation of edits; informs construct design parameters"
+        },
+        {
+          "title": "Char, S.N. et al. (2017) An Agrobacterium-delivered CRISPR/Cas9 system for high-frequency targeted mutagenesis in maize. Plant Biotechnology Journal 15:257-268",
+          "use": "Validates Agrobacterium delivery of CRISPR reagents in maize; provides technical details for combining transformation and editing in single step"
         }
       ],
       "handoff_package_for_lab": [
-        "Target locus list and gRNA sequences",
-        "Construct maps and cloning strategy",
-        "Per-genotype tissue source and stage criteria",
-        "Transformation and regeneration media recipes",
-        "QC assay primer list and acceptance thresholds",
-        "Statistical analysis plan template"
+        "Validated sequence information for BBM, WUS2, and GRF5-GIF1 loci in B104 background including 5kb upstream promoter regions and full-length CDS obtained through genome sequencing or PCR amplification and Sanger sequencing",
+        "Fresh immature embryo source: maintained B104 and Hi-II nursery plantings with staggered planting dates to ensure continuous supply of 10-14 DAP embryos throughout transformation experiments (minimum 20 donor ears per experiment)",
+        "Completed CRISPR gRNA design with in silico off-target analysis for B104 genome; minimum 3 gRNA candidates per target locus scoring <3 predicted off-targets and >70% predicted efficiency by CRISPOR or comparable tool",
+        "Institutional biosafety and field release approvals for generating and testing CRISPR-edited maize lines; USDA-APHIS regulatory determination if advancing edited lines to field testing",
+        "Baseline transformation efficiency data: at least one pilot transformation experiment completed on wild-type B104 and Hi-II to establish baseline rates and validate tissue culture competency of laboratory (minimum n=100 embryos per line)"
       ]
     },
     {
-      "id": "opc-go-002",
-      "title": "Validate Safe-Harbor Loci and Insulator Sequences for Stable Transgene Expression in Bioenergy Crops",
-      "decision_bucket": "go_now",
-      "best_score": 0.527,
-      "best_confidence": 0.5,
-      "maps_to_problem_statement": "How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenergy crops is not understood, and sequences with insulator-like function to dampen ectopic interactions are needed.",
-      "maps_to_sub_question": "Can validated safe harbor loci be identified in bioenergy crop genomes for predictable transgene expression?",
-      "objective": "Identify insertion sites and boundary elements that produce high, stable, low-variance expression across tissues and generations.",
-      "readouts": [
-        "Primary: reporter mean expression and coefficient of variation across independent events",
-        "Primary: expression stability across tissues and T1 generation",
-        "Secondary: insertion fidelity and copy number",
-        "Secondary: growth/fitness neutrality"
-      ],
-      "design": {
-        "overview": "Head-to-head targeted insertion experiment comparing 3 candidate safe-harbor loci and 2 insulator configurations using a dual-luciferase reporter cassette.",
-        "work_packages": [
-          "WP1 candidate loci nomination from pan-genome and chromatin context",
-          "WP2 build cassettes: no-insulator, insulator-A, insulator-B",
-          "WP3 CRISPR-directed insertion into each candidate locus",
-          "WP4 random-integration comparator arm (standard Agrobacterium transformation)",
-          "WP5 expression profiling by dual-luciferase and qPCR in controlled growth conditions",
-          "WP6 multi-tissue and generation follow-up (T0 leaf/callus + T1 seedling tissues)"
-        ],
-        "controls": [
-          "Random integration arm as baseline position-effect comparator",
-          "No-insulator cassette at each candidate locus",
-          "Constitutive internal Renilla control for ratiometric normalization"
-        ],
-        "sample_size_plan": "Target >=12 independent insertion events per locus x insulator condition; minimum 3 technical assay replicates per tissue per line.",
-        "success_criteria": [
-          ">=30% reduction in between-line expression CV versus random integration baseline",
-          "No significant drop in mean expression vs no-insulator comparator at same locus",
-          "Stable expression rank order maintained in T1 (Spearman rho >=0.7)"
-        ],
-        "estimated_timeline_weeks": 24
-      },
-      "materials": [
-        {
-          "item": "Plant binary backbone (pCAMBIA1300 family)",
-          "supplier": "Addgene",
-          "catalog_or_id": "pCambia1300-PacI (#44183) or compatible pCAMBIA1300 derivative",
-          "link": "https://www.addgene.org/44183/",
-          "purpose": "Targeted insertion donor and reporter cassette backbone"
-        },
-        {
-          "item": "Dual-luciferase assay chemistry",
-          "supplier": "Promega",
-          "catalog_or_id": "Dual-Luciferase Reporter Assay System, E1910/E1960",
-          "link": "https://www.promega.com/products/luciferase-assays/reporter-assays/dual_luciferase-reporter-assay-system",
-          "purpose": "Ratiometric reporter quantification"
-        },
-        {
-          "item": "Firefly/Renilla reporter vectors (for cassette assembly controls)",
-          "supplier": "Promega",
-          "catalog_or_id": "pGL4 vector family (e.g., pGL4.10, pGL4.73)",
-          "link": "https://www.promega.com/resources/protocols/product-information-sheets/a/pgl410-vector-protocol/",
-          "purpose": "Reference reporter constructs and assay controls"
-        },
-        {
-          "item": "CRISPR-Cas9 gRNA reagents",
-          "supplier": "IDT",
-          "catalog_or_id": "Alt-R CRISPR-Cas9 reagents",
-          "link": "https://www.idtdna.com/CRISPR-Cas9",
-          "purpose": "Guide synthesis for locus-targeted insertion"
-        },
-        {
-          "item": "Agrobacterium helper/host system",
-          "supplier": "DSMZ (or institutional source)",
-          "catalog_or_id": "DSM 12365 (pMP90RK in GV3101)",
-          "link": "https://webshop.dsmz.de/en/plasmids/pMP90RK.html",
-          "purpose": "Transformation delivery strain"
-        },
-        {
-          "item": "Murashige and Skoog basal medium with vitamins",
-          "supplier": "PhytoTech Labs",
-          "catalog_or_id": "M519",
-          "link": "https://phytotechlab.com/murashige-skoog-basal-medium-with-vitamins.html",
-          "purpose": "Plant tissue culture and regeneration"
-        },
-        {
-          "item": "Acetosyringone",
-          "supplier": "PhytoTech Labs",
-          "catalog_or_id": "A104 / A1104",
-          "link": "https://phytotechlab.com/acetosyringone.html",
-          "purpose": "Agrobacterium vir induction"
-        },
-        {
-          "item": "Hygromycin B selection antibiotic",
-          "supplier": "Thermo Fisher (Gibco)",
-          "catalog_or_id": "10687010",
-          "link": "https://www.fishersci.com/shop/products/gibco-hygromycin-b-50mg-ml/10687010",
-          "purpose": "Selection of transformed lines"
-        },
-        {
-          "item": "Plant DNA extraction kit",
-          "supplier": "QIAGEN",
-          "catalog_or_id": "DNeasy Plant Mini Kit, 69104",
-          "link": "https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/dna-purification/genomic-dna/dneasy-plant-kits",
-          "purpose": "Insertion-site and copy-number QC"
-        }
-      ],
-      "estimated_direct_cost_usd": {
-        "low": 15000,
-        "high": 35000,
-        "scope": "Consumables + reporter assays + routine molecular QC; excludes labor, greenhouse, and high-depth sequencing"
-      },
-      "protocol_references": [
-        {
-          "title": "Marker-free targeted insertion at plant genomic safe harbors (rice)",
-          "url": "https://www.nature.com/articles/s41467-020-14981-y",
-          "use": "Template for CRISPR targeted insertion strategy and performance benchmarks"
-        },
-        {
-          "title": "Plant dual-color luciferase reporter characterization",
-          "url": "https://pubs.acs.org/doi/full/10.1021/acssynbio.1c00248",
-          "use": "Reporter assay design and normalization strategy in plants"
-        },
-        {
-          "title": "Dual luciferase assay in higher plants",
-          "url": "https://www.jstage.jst.go.jp/article/plantbiotechnology/18/1/18_1_71/_article",
-          "use": "Plant-specific transient reporter assay precedent"
-        },
-        {
-          "title": "Insulator/MAR impact on transgene accumulation in plants",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/31919795/",
-          "use": "Candidate boundary-element rationale for position-effect mitigation"
-        }
-      ],
-      "handoff_package_for_lab": [
-        "Candidate safe-harbor coordinates and locus-screening rationale",
-        "Donor cassette maps (+/- insulators) and guide designs",
-        "Insertion-junction PCR and copy-number qPCR assays",
-        "Dual-luciferase plate map and normalization SOP",
-        "Expression stability analysis template (T0 and T1)"
-      ]
-    },
-    {
-      "id": "opc-go-006",
-      "title": "Functional Validation of Viral Type 2 IRES-Ribosome Interactions via Translation Assays",
+      "id": "opc-go-004",
+      "title": "Functional validation of Type 2 IRES-ribosome structural contacts via mutagenesis and translation assays",
       "decision_bucket": "go_now",
       "best_score": 0.527,
       "best_confidence": 0.5,
       "maps_to_problem_statement": "Lack of complementary biochemical validation for the structural findings of viral Type 2 IRES recruitment to ribosomal preinitiation complex",
       "maps_to_sub_question": "Do the structural observations correlate with functional translation activity in cellular or in vitro systems?",
-      "objective": "Correlate structural observations of IRES-ribosome contacts with functional translation activity using in vitro and cellular reporter assays with site-directed IRES mutants.",
+      "objective": "To validate the functional importance of specific IRES-ribosome structural contacts identified by cryo-EM/X-ray through site-directed mutagenesis and quantitative translation assays.",
       "readouts": [
-        "Primary: Relative luciferase activity (firefly/renilla ratio) from bicistronic reporter constructs in mammalian cells, normalized to wild-type IRES",
-        "Secondary: In vitro translation efficiency measured by luciferase luminescence from rabbit reticulocyte lysate reactions with mutant vs wild-type IRES constructs",
-        "Secondary: Ribosome binding affinity (Kd values) determined by fluorescence polarization or biolayer interferometry for mutant vs wild-type IRES with 40S ribosomal subunits"
+        "Primary: Relative translation efficiency (luciferase activity normalized to mRNA levels) for wild-type vs. mutant IRES constructs in rabbit reticulocyte lysate (RRL) in vitro translation system",
+        "Secondary: Dual-luciferase reporter ratios (IRES-driven Renilla/cap-dependent Firefly) in transfected HEK293T cells for cellular validation",
+        "Secondary: RNA binding affinity (KD) of wild-type and mutant IRES to purified 40S ribosomal subunits measured by microscale thermophoresis (MST)"
       ],
       "design": {
-        "overview": "Generate 8-12 site-directed IRES mutants targeting structurally-observed ribosome contact residues, then measure translation efficiency in parallel using dual-luciferase bicistronic reporters in HeLa cells and in vitro translation systems to establish structure-function relationships.",
+        "overview": "Generate 8-12 IRES mutants targeting key structural contact residues identified in cryo-EM/crystal structures. Test translation efficiency in parallel using in vitro RRL system and cellular dual-luciferase assays. Correlate functional defects with direct 40S binding affinity measurements.",
         "work_packages": [
-          "WP1: Design and generate IRES mutants (weeks 1-3) - identify 8-12 residues/domains from structural data making ribosome contacts, design mutations (alanine scanning, charge reversals, deletions), clone into bicistronic vectors (HCV-IRES, EMCV-IRES, or target Type 2 IRES) between renilla and firefly luciferase ORFs, sequence-verify all constructs",
-          "WP2: Cellular translation assays (weeks 4-7) - transfect HeLa and HEK293T cells with wild-type and mutant bicistronic reporters, harvest at 24h and 48h, measure dual-luciferase activity, perform dose-response with 3 plasmid concentrations, include cap-dependent translation control constructs",
-          "WP3: In vitro translation and binding assays (weeks 6-10) - transcribe IRES-firefly constructs in vitro, perform translation in rabbit reticulocyte lysate and wheat germ extract systems, measure time-course luciferase activity, purify 40S subunits from HeLa cells, perform fluorescence polarization binding assays with fluorescein-labeled IRES RNAs",
-          "WP4: Data integration and validation (weeks 11-12) - statistical analysis of all translation data, correlation analysis between structural contact distances and functional defects, Western blotting to confirm equal protein loading in cellular assays, RNA stability assays (Northern blot or RT-qPCR) to exclude RNA folding defects"
+          "WP1: Design and generate IRES mutant library (single, double, and compensatory mutations) targeting ribosome contact sites; clone into dual-luciferase bicistronic reporters and in vitro transcription vectors (Weeks 1-3)",
+          "WP2: In vitro transcription of capped, polyadenylated mRNAs; quality control by denaturing gel electrophoresis and capillary electrophoresis; RRL translation assays with luciferase readout and RT-qPCR normalization (Weeks 4-7)",
+          "WP3: Transfection of dual-luciferase constructs into HEK293T cells; measure Renilla/Firefly ratios at 24h and 48h; Northern blot or RT-qPCR to confirm mRNA stability (Weeks 6-9)",
+          "WP4: Purify 40S ribosomal subunits from HEK293T cells; in vitro transcribe fluorescently-labeled IRES RNAs; perform MST binding assays; statistical analysis and correlation with structural contacts (Weeks 8-12)"
         ],
         "controls": [
-          "Positive control: Wild-type IRES sequence in bicistronic reporter, expected firefly/renilla ratio of 0.5-2.0 depending on IRES type",
-          "Negative control: Bicistronic construct with no IRES (empty intercistronic spacer), expected firefly/renilla ratio <0.05, validates no cap-dependent reinitiation or cryptic IRES activity",
-          "Cap-dependent control: Monocistronic firefly luciferase under CMV promoter to normalize for transfection efficiency and general translation capacity",
-          "RNA stability control: Mutations in non-contact regions predicted by structure to have no ribosome interaction, should maintain wild-type translation levels"
+          "Positive control: Wild-type EMCV or CrPV IRES (established Type 2 IRES) with known high translation efficiency",
+          "Negative control: Bicistronic construct with no IRES (empty intercistronic spacer) to measure background cap-independent translation",
+          "Technical control: Monocistronic cap-dependent luciferase construct to normalize transfection efficiency and cell viability; mock-transfected cells for background subtraction"
         ],
-        "sample_size_plan": "N=6 biological replicates per construct in cellular assays (3 independent transfections \u00d7 2 time points), N=4 technical replicates per construct in vitro translation assays, N=3 technical replicates for binding assays with triplicate measurements each",
+        "sample_size_plan": "8-12 IRES mutants plus wild-type and controls; each construct tested in n=4 biological replicates for RRL assays, n=6 biological replicates for cell-based assays (3 independent transfections \u00d7 2 time points), and n=3 technical replicates for MST binding measurements",
         "success_criteria": [
-          "At least 50% of mutations targeting direct ribosome contact residues (as identified by <5\u00c5 distance in structure) show >2-fold reduction in translation efficiency with p<0.01 vs wild-type",
-          "Correlation coefficient r>0.6 between structural contact surface area (\u00c5\u00b2) and functional translation defect (fold-change) across all mutants",
-          "Mutations in non-contact control regions maintain >70% of wild-type translation activity, and RNA stability >80% of wild-type by Northern blot or RT-qPCR",
-          "In vitro and cellular assay results show concordance with Pearson r>0.5 for mutant phenotypes"
+          "At least 60% of mutations targeting direct contact residues show >2-fold reduction in translation efficiency (p<0.05 by one-way ANOVA with Dunnett's post-hoc test) compared to wild-type IRES",
+          "Pearson correlation coefficient r > 0.6 (p<0.05) between translation efficiency defects and changes in 40S binding affinity (KD) for mutant IRES constructs",
+          "Cellular and in vitro translation assays show concordant results (same direction of effect) for >80% of mutants tested"
         ],
         "estimated_timeline_weeks": 12
       },
       "materials": [
         {
-          "item": "Dual-Luciferase Reporter Assay System",
-          "supplier": "Promega",
-          "catalog_or_id": "E1910",
-          "purpose": "Primary readout for cellular translation efficiency from bicistronic reporters"
-        },
-        {
-          "item": "pRF bicistronic dual-luciferase vector",
-          "supplier": "Addgene",
-          "catalog_or_id": "#128654",
-          "purpose": "Cloning backbone for IRES insertion between renilla and firefly luciferase genes"
-        },
-        {
-          "item": "Q5 Site-Directed Mutagenesis Kit",
-          "supplier": "New England Biolabs",
-          "catalog_or_id": "E0554S",
-          "purpose": "Generation of site-directed IRES mutations targeting ribosome contact residues"
-        },
-        {
-          "item": "Rabbit Reticulocyte Lysate System",
+          "item": "Rabbit Reticulocyte Lysate System, Nuclease-Treated",
           "supplier": "Promega",
           "catalog_or_id": "L4960",
-          "purpose": "In vitro translation system for measuring IRES activity independent of cellular context"
+          "purpose": "In vitro translation system for testing IRES-driven translation efficiency"
         },
         {
-          "item": "Wheat Germ Extract Translation System",
+          "item": "psiCHECK-2 Vector (dual-luciferase bicistronic reporter)",
           "supplier": "Promega",
-          "catalog_or_id": "L4380",
-          "purpose": "Alternative in vitro translation system to validate findings across different lysate sources"
+          "catalog_or_id": "C8021",
+          "purpose": "Backbone for cloning IRES variants between Renilla and Firefly luciferase coding sequences"
         },
         {
-          "item": "HeLa S3 ribosome pellet or 40S purification kit",
-          "supplier": "Custom prep or BioVision",
-          "catalog_or_id": "K280 (isolation kit)",
-          "purpose": "Source of mammalian 40S ribosomal subunits for direct binding assays"
-        },
-        {
-          "item": "MEGAscript T7 Transcription Kit",
-          "supplier": "Invitrogen/Thermo",
-          "catalog_or_id": "AMB13345",
-          "purpose": "In vitro transcription of IRES RNA constructs for translation and binding assays"
-        },
-        {
-          "item": "Fluorescein RNA Labeling Kit",
-          "supplier": "Jena Bioscience",
-          "catalog_or_id": "NU-803-FL",
-          "purpose": "Labeling IRES RNAs for fluorescence polarization binding assays"
-        },
-        {
-          "item": "HeLa cells",
-          "supplier": "ATCC",
-          "catalog_or_id": "CCL-2",
-          "purpose": "Primary cell line for cellular translation reporter assays"
+          "item": "Dual-Luciferase Reporter Assay System",
+          "supplier": "Promega",
+          "catalog_or_id": "E1960",
+          "link": "https://www.promega.com/products/reporter-assays-and-transfection/reporter-assays/dual_luciferase-reporter-assay-system",
+          "purpose": "Quantify IRES-driven Renilla and cap-dependent Firefly luciferase activities in cell lysates"
         },
         {
           "item": "HEK293T cells",
           "supplier": "ATCC",
           "catalog_or_id": "CRL-3216",
-          "purpose": "Secondary cell line to validate translation phenotypes across cell types"
+          "link": "https://www.atcc.org/products/crl-3216",
+          "purpose": "Mammalian cell line for cellular translation reporter assays and 40S ribosome purification"
         },
         {
-          "item": "Lipofectamine 3000",
-          "supplier": "Invitrogen/Thermo",
-          "catalog_or_id": "L3000015",
-          "purpose": "Transfection reagent for bicistronic reporter plasmids"
+          "item": "mMESSAGE mMACHINE T7 Transcription Kit",
+          "supplier": "Thermo Fisher",
+          "catalog_or_id": "AM1344",
+          "link": "https://www.thermofisher.com/order/catalog/product/AM1344",
+          "purpose": "Generate capped, polyadenylated mRNA transcripts for in vitro translation assays"
         },
         {
-          "item": "BLItz Biolayer Interferometry System",
-          "supplier": "Sartorius/ForteBio",
-          "catalog_or_id": "45-5000",
-          "purpose": "Alternative label-free method for measuring IRES-ribosome binding kinetics"
+          "item": "Q5 Site-Directed Mutagenesis Kit",
+          "supplier": "New England Biolabs",
+          "catalog_or_id": "E0554S",
+          "link": "https://www.neb.com/products/e0554-q5-site-directed-mutagenesis-kit",
+          "purpose": "Introduce point mutations into IRES sequences at structurally-defined contact sites"
         },
         {
-          "item": "Streptavidin Biosensors for BLItz",
-          "supplier": "Sartorius/ForteBio",
-          "catalog_or_id": "18-5019",
-          "purpose": "Immobilization of biotinylated IRES RNA for binding measurements"
-        },
-        {
-          "item": "Northern Max Kit",
-          "supplier": "Invitrogen/Thermo",
-          "catalog_or_id": "AM1940",
-          "purpose": "RNA stability analysis to ensure mutations don't destabilize IRES transcripts"
-        },
-        {
-          "item": "96-well black plates for luminescence",
-          "supplier": "Corning",
-          "catalog_or_id": "3912",
-          "purpose": "Plate format for high-throughput dual-luciferase measurements"
-        },
-        {
-          "item": "GloMax Discover Multimode Microplate Reader",
+          "item": "Luciferase Assay Reagent (LAR)",
           "supplier": "Promega",
-          "catalog_or_id": "GM3000",
-          "purpose": "Luminescence detection for luciferase assays and fluorescence polarization"
+          "catalog_or_id": "E1483",
+          "link": "https://www.promega.com/products/reporter-assays-and-transfection/reporter-assays/luciferase-assay-system",
+          "purpose": "Measure luciferase activity from in vitro translation reactions"
+        },
+        {
+          "item": "Monolith NT.115 Microscale Thermophoresis instrument",
+          "supplier": "NanoTemper Technologies",
+          "catalog_or_id": "NT.115",
+          "purpose": "Measure binding affinity (KD) between fluorescently-labeled IRES RNA and purified 40S subunits"
+        },
+        {
+          "item": "Monolith His-Tag Labeling Kit RED-tris-NTA 2nd Generation",
+          "supplier": "NanoTemper Technologies",
+          "catalog_or_id": "MO-L018",
+          "purpose": "Fluorescent labeling of RNA or ribosomal proteins for MST measurements"
+        },
+        {
+          "item": "Label IT Nucleic Acid Labeling Kit, Cy5",
+          "supplier": "Mirus Bio",
+          "catalog_or_id": "MIR3225",
+          "link": "",
+          "purpose": "Fluorescently label in vitro transcribed IRES RNA for MST binding assays"
+        },
+        {
+          "item": "Sucrose Cushion Ribosome Purification Buffer Set",
+          "supplier": "Custom preparation",
+          "catalog_or_id": "N/A",
+          "purpose": "Buffers for ultracentrifugation-based purification of 40S ribosomal subunits (20 mM Tris-HCl pH 7.5, 100 mM KCl, 5 mM MgCl2, 1M sucrose cushion)"
+        },
+        {
+          "item": "SuperScript IV Reverse Transcriptase",
+          "supplier": "Thermo Fisher",
+          "catalog_or_id": "18090010",
+          "link": "https://www.thermofisher.com/order/catalog/product/18090010",
+          "purpose": "RT-qPCR to quantify mRNA levels for normalization of translation efficiency"
+        },
+        {
+          "item": "PowerUp SYBR Green Master Mix",
+          "supplier": "Applied Biosystems",
+          "catalog_or_id": "A25742",
+          "link": "https://www.thermofisher.com/order/catalog/product/A25742",
+          "purpose": "qPCR quantification of luciferase mRNA levels"
+        },
+        {
+          "item": "Lipofectamine 3000 Transfection Reagent",
+          "supplier": "Thermo Fisher",
+          "catalog_or_id": "L3000015",
+          "link": "https://www.thermofisher.com/order/catalog/product/L3000015",
+          "purpose": "Transfect dual-luciferase reporter constructs into HEK293T cells"
+        },
+        {
+          "item": "Beckman Coulter Optima XPN-100 Ultracentrifuge with SW41 rotor",
+          "supplier": "Beckman Coulter",
+          "catalog_or_id": "A94471",
+          "link": "https://www.beckman.com/centrifuges/ultracentrifuges/optima-xpn-series",
+          "purpose": "Purification of ribosomal subunits through sucrose cushion ultracentrifugation"
+        },
+        {
+          "item": "Agilent 2100 Bioanalyzer with RNA 6000 Nano Kit",
+          "supplier": "Agilent",
+          "catalog_or_id": "5067-1511",
+          "purpose": "Quality control of in vitro transcribed mRNA integrity and purity"
         }
       ],
       "estimated_direct_cost_usd": {
         "low": 8500,
-        "high": 15000,
-        "scope": "Includes molecular biology reagents (cloning, mutagenesis, transcription kits), translation lysates, luciferase assay kits for ~200 assays, cell culture reagents, RNA labeling, and binding assay consumables. Excludes equipment purchases (assumes access to plate reader and BLItz system), labor costs, sequencing fees ($150/construct), and ribosome purification if done commercially (~$2000). High estimate includes BLItz biosensors and commercial 40S subunit purchase."
+        "high": 14500,
+        "scope": "Includes molecular cloning reagents, in vitro translation kits, cell culture reagents, transfection reagents, luciferase assay reagents, RT-qPCR supplies, RNA labeling kits, and MST consumables. Excludes major equipment (ultracentrifuge, MST instrument, plate readers, qPCR machine), labor costs, and ribosome purification if commercial 40S subunits are purchased (~$3000 additional)"
       },
       "protocol_references": [
         {
-          "title": "Dual-Luciferase Reporter Assay: An Advanced Co-Reporter Technology Integrating Firefly and Renilla Luciferase Assays (Promega Technical Manual #TM040)",
-          "use": "Standard protocol for bicistronic reporter assay optimization, normalization procedures, and troubleshooting guidelines for IRES-mediated translation measurements"
+          "title": "Zuker, M. & Stiegler, P. (1981) 'Optimal computer folding of large RNA sequences using thermodynamics and auxiliary information', Nucleic Acids Research, 9(1), pp. 133-148.",
+          "use": "Computational prediction of secondary structure changes introduced by mutations to ensure disruption of tertiary contacts without destabilizing overall IRES fold"
         },
         {
-          "title": "Jaafar et al. 2016, 'Structural Insights into mRNA Reading Frame Regulation by tRNA Modification and Slippery Codon-Anticodon Pairing' eLife, RNA binding and in vitro translation methods",
-          "use": "Detailed protocols for in vitro translation optimization with different IRES elements and validation of translation initiation vs elongation defects"
+          "title": "Pestova, T.V. & Hellen, C.U. (2003) 'Translation elongation after assembly of ribosomes on the Cricket paralysis virus internal ribosomal entry site without initiation factors or initiator tRNA', Genes & Development, 17(2), pp. 181-186.",
+          "use": "Established protocol for in vitro translation assays using Type 2 IRES constructs in rabbit reticulocyte lysate"
         },
         {
-          "title": "Ochs et al. 2012, 'Assaying Viral IRES Activity' Methods in Molecular Biology 867:271-283",
-          "use": "Best practices for Type 2 IRES functional analysis including construct design, appropriate controls, and interpretation of bicistronic reporter data"
+          "title": "Deniz, N., et al. (2009) 'Translation initiation factors and their relevance in health and disease', Biological Chemistry, 390(5-6), pp. 331-344.",
+          "use": "Guidelines for normalization strategies in translation assays and interpretation of IRES-mediated translation efficiency"
         },
         {
-          "title": "Pisarev et al. 2008, 'Specific functional interactions of nucleotides at key -3 and +4 positions flanking the initiation codon with components of the mammalian 48S translation initiation complex' Genes Dev, ribosome binding assay protocols",
-          "use": "Methods for purifying mammalian 40S subunits and performing quantitative ribosome-RNA binding measurements using fluorescence-based approaches"
+          "title": "Khawaja, A., et al. (2015) 'Measuring thermal stability of proteins in cell lysates by microscale thermophoresis', Methods in Molecular Biology, 1261, pp. 253-261.",
+          "use": "Optimized protocols for MST-based measurement of RNA-protein binding affinity including buffer optimization and concentration ranges"
         },
         {
-          "title": "Fukushi et al. 2001, 'Ribosomal protein S5 interacts with the internal ribosomal entry site of hepatitis C virus' JBC 276:20824-20826",
-          "use": "Fluorescence polarization binding assay protocols adapted for IRES-ribosome interactions with calculation of dissociation constants"
+          "title": "Easton, L.E., et al. (2009) 'A novel method to engineer bicistronic constructs for the expression of influenza A proteins in cell culture and Xenopus laevis embryos', Nucleic Acids Research, 37(10), e68.",
+          "use": "Design principles for bicistronic dual-luciferase reporters to minimize cryptic promoter activity and ensure accurate IRES-dependent translation measurement"
+        },
+        {
+          "title": "Anger, A.M., et al. (2013) 'Structures of the human and Drosophila 80S ribosome', Nature, 497(7447), pp. 80-85.",
+          "use": "Protocol for purification of mammalian ribosomal subunits from cultured cells using sucrose gradient ultracentrifugation"
         }
       ],
       "handoff_package_for_lab": [
-        "Structural coordinates (PDB file or CryoEM map) with annotated ribosome-IRES contact residues identified at <5\u00c5, <8\u00c5, and <10\u00c5 distance thresholds, including contact surface area calculations and list of 12-15 candidate residues for mutagenesis prioritized by contact type (base-specific, backbone, protein contacts)",
-        "Complete wild-type IRES sequence (nucleotides) with secondary structure annotation, domain boundaries, and functional elements identified in literature, formatted for direct cloning into pRF vector between renilla and firefly luciferase genes with appropriate restriction sites or Gibson assembly overhangs",
-        "Mutagenesis strategy document specifying: (1) 8-12 target positions with rationale based on structural contacts, (2) specific mutations for each position (e.g., single nucleotide changes, small deletions, charge reversals), (3) 2-3 negative control mutations in non-contact regions, (4) predicted impact on RNA secondary structure using RNAfold or similar tool",
-        "Cell culture protocols including validated transfection conditions for HeLa and HEK293T cells with the specific bicistronic vector system, optimal plasmid amounts, and harvest timepoints from preliminary experiments or literature",
-        "Data analysis template with pre-defined normalization methods (firefly/renilla ratio calculation, fold-change relative to wild-type, statistical tests for N=6 replicates), correlation analysis pipeline for structure-function relationships, and figure templates for publication"
+        "3D structural coordinates (PDB or CIF file) of the IRES-ribosome complex with annotated contact residues and distances <5\u00c5 for mutagenesis targeting",
+        "Complete nucleotide sequence of the wild-type IRES element with 5' and 3' flanking sequences (50-100 nt) for cloning into expression vectors",
+        "List of 8-12 prioritized residue positions for mutagenesis ranked by structural contact surface area and phylogenetic conservation, including proposed substitutions (e.g., charge reversals, alanine scanning)",
+        "Primer design file with sequences for site-directed mutagenesis of all target positions including compensatory double mutants",
+        "Reference translation efficiency data (if available) for the wild-type IRES from previous studies for benchmark comparison",
+        "Cell culture protocols and media requirements specific to the lab (preferred HEK293T culture conditions, passage numbers, transfection optimization data)"
       ]
     },
     {
       "id": "opc-go-005",
-      "title": "Transcriptomic Profiling of Pachytene-Specific Gene Activation in Meiotic Cells",
+      "title": "Transcriptomic Profiling of Pachytene Genome Activation in Mouse Spermatocytes",
       "decision_bucket": "go_now",
       "best_score": 0.527,
       "best_confidence": 0.5,
       "maps_to_problem_statement": "The concept of 'pachytene genome activation' (PGS) is introduced without proper characterization of which genes are activated, what defines this process, or what mechanisms underlie it",
       "maps_to_sub_question": "What is the complete set of genes that are specifically upregulated during pachytene stage (pachytene genome activation)?",
-      "objective": "To identify and validate the complete set of genes specifically upregulated during the pachytene stage of meiosis through temporal RNA-seq profiling across meiotic progression.",
+      "objective": "Identify the complete set of genes specifically upregulated during pachytene stage of meiosis through stage-specific RNA-seq and validation.",
       "readouts": [
-        "Primary: Differential gene expression profiles across meiotic stages (leptotene, zygotene, pachytene, diplotene) identifying pachytene-upregulated genes (fold-change \u22652, FDR<0.05)",
-        "Secondary: RT-qPCR validation of top 20 pachytene-enriched candidates showing stage-specific expression patterns",
-        "Secondary: RNA in situ hybridization of 5 representative pachytene-specific genes confirming cellular localization and temporal expression"
+        "Primary: Differential gene expression profiles across leptotene, zygotene, pachytene, and diplotene stages by RNA-seq (TPM values, log2 fold-change)",
+        "Secondary: RT-qPCR validation of top 20 pachytene-upregulated candidate genes across meiotic stages (relative expression normalized to housekeeping genes)",
+        "Secondary: Immunofluorescence or RNA-FISH validation of 5-10 candidate genes showing pachytene-specific expression patterns in testis sections"
       ],
       "design": {
-        "overview": "Purify staged meiotic spermatocytes from mouse testes using FACS-based separation (DNA content and surface markers), perform RNA-seq on biological quadruplicates per stage, and validate candidates through orthogonal methods.",
+        "overview": "Isolate staged spermatocytes (leptotene, zygotene, pachytene, diplotene) from adult mouse testes by STA-PUT velocity sedimentation, perform RNA-seq with 4 biological replicates per stage, identify pachytene-specific upregulated genes (\u22654-fold vs other stages), and validate top candidates by RT-qPCR and RNA-FISH.",
         "work_packages": [
-          "WP1: Optimize and perform FACS-based isolation of meiotic stages (leptotene, zygotene, pachytene, diplotene) from juvenile mouse testes using Hoechst/surface marker staining; quality control by cytology and stage-specific marker RT-qPCR",
-          "WP2: Extract RNA, perform quality control (RIN>8), prepare libraries and sequence (150bp paired-end, 50M reads/sample) for 4 biological replicates per meiotic stage plus pre-meiotic spermatogonia control",
-          "WP3: Validate top 20 pachytene-enriched genes by RT-qPCR across all stages (technical triplicates) and perform RNA-FISH on testis sections for 5 representative genes across 3 biological replicates",
-          "WP4: Bioinformatic analysis including read alignment, differential expression (DESeq2), clustering, Gene Ontology enrichment, and motif analysis of pachytene-specific promoters"
+          "WP1: Optimize STA-PUT sedimentation protocol and isolate staged spermatocytes from 8-10 week old C57BL/6J male mice (n=16 mice for 4 replicates per stage); assess purity by flow cytometry (DNA content) and stage markers by RT-qPCR; isolate total RNA with RIN>8.0",
+          "WP2: Perform poly-A selected RNA-seq on all samples (50M paired-end 150bp reads per sample); conduct quality control, read alignment to mm10, and differential expression analysis using DESeq2 to identify genes with pachytene-specific upregulation (\u22654-fold vs all other stages, FDR<0.01)",
+          "WP3: Validate top 20 pachytene-upregulated genes by RT-qPCR across all four meiotic stages using 3 independent biological replicates; design primers, optimize conditions, and quantify relative expression normalized to Gapdh and Actb",
+          "WP4: Perform RNA-FISH on testis sections for 5-10 validated genes to confirm stage-specific expression patterns; analyze images for stage-specific signal; integrate all data and generate final gene list with functional annotation"
         ],
         "controls": [
-          "Positive control: Known pachytene-expressed genes (e.g., Spo11, Dmc1, Sycp1) should show expected expression patterns",
-          "Negative control: Pre-meiotic spermatogonia sample to establish baseline and identify meiosis-specific vs pachytene-specific genes",
-          "Technical control: ERCC spike-in controls for RNA-seq normalization and batch effect assessment across libraries"
+          "Positive control: Known pachytene-specific genes (Dazl, Sycp1, Tex19.1) should show expected upregulation pattern",
+          "Negative control: Housekeeping genes (Gapdh, Actb, Rpl19) should show stable expression across all meiotic stages",
+          "Technical control: Pre-meiotic spermatogonia (isolated separately) as out-group to confirm meiotic-specific expression patterns; spike-in controls (ERCC) for RNA-seq normalization"
         ],
-        "sample_size_plan": "4 biological replicates per stage (5 stages total = 20 RNA-seq samples); RT-qPCR validation on 3 independent biological replicates with 3 technical replicates each; RNA-FISH on 3 biological replicate animals with 10 sections per animal",
+        "sample_size_plan": "4 biological replicates per meiotic stage (leptotene, zygotene, pachytene, diplotene) for RNA-seq (16 samples total, each from pooled cells from 4 mice); 3 independent biological replicates for RT-qPCR validation; 3 mice for RNA-FISH validation",
         "success_criteria": [
-          "Identify \u2265100 genes with pachytene-specific upregulation (\u22652-fold vs all other stages, FDR<0.05) with clear stage separation in PCA analysis",
-          "RT-qPCR validation confirms pachytene enrichment for \u226580% of tested candidates (\u22651.5-fold vs adjacent stages, p<0.05)",
-          "RNA-FISH demonstrates pachytene-stage localized expression for \u22654 of 5 tested genes with signal in >70% of pachytene cells"
+          "RNA quality: RIN \u22658.0 for all samples; Stage purity: \u226585% target stage by flow cytometry DNA content analysis and marker gene expression",
+          "RNA-seq: \u226545M mapped reads per sample, identification of \u2265100 genes with pachytene-specific upregulation (\u22654-fold vs other stages, FDR<0.01); RT-qPCR validation: \u226580% concordance with RNA-seq fold-change direction for top 20 candidates"
         ],
-        "estimated_timeline_weeks": 16
+        "estimated_timeline_weeks": 14
       },
       "materials": [
         {
-          "item": "C57BL/6J juvenile mice (postnatal day 18-20)",
-          "supplier": "Jackson Laboratory",
+          "item": "C57BL/6J male mice, 8-10 weeks old",
+          "supplier": "The Jackson Laboratory",
           "catalog_or_id": "000664",
-          "purpose": "Source of enriched meiotic cells at synchronized stages"
+          "link": "https://www.jax.org/strain/000664",
+          "purpose": "Source of staged spermatocytes for meiotic profiling"
         },
         {
-          "item": "Hoechst 33342",
-          "supplier": "Thermo Fisher",
-          "catalog_or_id": "H3570",
-          "purpose": "DNA staining for FACS-based cell cycle staging"
+          "item": "STA-PUT apparatus and chambers",
+          "supplier": "ProScience Inc or custom fabrication",
+          "catalog_or_id": "Custom",
+          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374907/",
+          "purpose": "Velocity sedimentation separation of staged spermatocytes"
         },
         {
-          "item": "FITC anti-mouse c-Kit antibody",
-          "supplier": "BioLegend",
-          "catalog_or_id": "105806",
-          "purpose": "Surface marker for excluding undifferentiated spermatogonia"
+          "item": "TRIzol Reagent",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "15596026",
+          "link": "https://www.thermofisher.com/order/catalog/product/15596026",
+          "purpose": "Total RNA extraction from isolated spermatocytes"
         },
         {
-          "item": "RNeasy Micro Kit",
+          "item": "RNeasy Mini Kit",
           "supplier": "Qiagen",
-          "catalog_or_id": "74004",
-          "purpose": "RNA extraction from FACS-purified cell populations"
+          "catalog_or_id": "74106",
+          "link": "https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/total-rna/rneasy-mini-kit",
+          "purpose": "RNA cleanup and purification after TRIzol extraction"
         },
         {
           "item": "Agilent RNA 6000 Nano Kit",
-          "supplier": "Agilent",
+          "supplier": "Agilent Technologies",
           "catalog_or_id": "5067-1511",
-          "purpose": "RNA quality control and RIN assessment"
+          "purpose": "RNA quality assessment and RIN determination"
         },
         {
-          "item": "NEBNext Ultra II Directional RNA Library Prep Kit",
-          "supplier": "New England Biolabs",
-          "catalog_or_id": "E7760",
-          "purpose": "Strand-specific RNA-seq library preparation"
+          "item": "TruSeq Stranded mRNA Library Prep Kit",
+          "supplier": "Illumina",
+          "catalog_or_id": "20020595",
+          "link": "https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/truseq-stranded-mrna.html",
+          "purpose": "Poly-A selected RNA-seq library preparation"
+        },
+        {
+          "item": "NovaSeq 6000 SP Reagent Kit v1.5 (100 cycles)",
+          "supplier": "Illumina",
+          "catalog_or_id": "20028401",
+          "link": "https://www.illumina.com/products/by-type/sequencing-kits/cluster-gen-sequencing-reagents/novaseq-reagent-kits.html",
+          "purpose": "Paired-end 150bp sequencing for RNA-seq samples"
         },
         {
           "item": "ERCC RNA Spike-In Mix",
-          "supplier": "Thermo Fisher",
+          "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "4456740",
-          "purpose": "Technical controls for normalization and quality assessment"
-        },
-        {
-          "item": "NovaSeq 6000 S4 Reagent Kit (300 cycles)",
-          "supplier": "Illumina",
-          "catalog_or_id": "20028312",
-          "purpose": "High-throughput paired-end RNA sequencing"
+          "link": "https://www.thermofisher.com/order/catalog/product/4456740",
+          "purpose": "Technical controls for RNA-seq normalization and quality control"
         },
         {
           "item": "SuperScript IV First-Strand Synthesis System",
-          "supplier": "Thermo Fisher",
+          "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "18091050",
+          "link": "https://www.thermofisher.com/order/catalog/product/18091050",
           "purpose": "cDNA synthesis for RT-qPCR validation"
         },
         {
           "item": "PowerUp SYBR Green Master Mix",
-          "supplier": "Thermo Fisher",
+          "supplier": "Thermo Fisher Scientific",
           "catalog_or_id": "A25742",
-          "purpose": "RT-qPCR quantification of validation candidates"
+          "link": "https://www.thermofisher.com/order/catalog/product/A25742",
+          "purpose": "RT-qPCR quantification of candidate genes"
         },
         {
           "item": "RNAscope Multiplex Fluorescent Reagent Kit v2",
           "supplier": "Advanced Cell Diagnostics",
           "catalog_or_id": "323100",
-          "purpose": "RNA in situ hybridization for spatial validation"
+          "link": "",
+          "purpose": "RNA-FISH validation of pachytene-specific expression in tissue sections"
         },
         {
-          "item": "Custom RNAscope probes (5 targets)",
+          "item": "Custom RNAscope probes for candidate genes",
           "supplier": "Advanced Cell Diagnostics",
-          "catalog_or_id": "Custom design",
-          "purpose": "Target-specific probes for pachytene gene visualization"
+          "catalog_or_id": "Custom",
+          "link": "",
+          "purpose": "Gene-specific probes for RNA-FISH validation (5-10 genes)"
         },
         {
-          "item": "Anti-SYCP3 antibody",
-          "supplier": "Abcam",
-          "catalog_or_id": "ab15093",
-          "purpose": "Immunofluorescence co-staining to identify pachytene cells for RNA-FISH"
+          "item": "Hoechst 33342",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "H3570",
+          "link": "https://www.thermofisher.com/order/catalog/product/H3570",
+          "purpose": "DNA staining for flow cytometry purity assessment and chromosome visualization"
+        },
+        {
+          "item": "BD FACSAria Fusion flow cytometer (existing equipment)",
+          "supplier": "BD Biosciences",
+          "catalog_or_id": "Facility",
+          "link": "https://www.bdbiosciences.com/en-us/products/instruments/flow-cytometers/research-cell-sorters/facsaria-fusion",
+          "purpose": "Assessment of spermatocyte stage purity by DNA content"
+        },
+        {
+          "item": "QuantStudio 6 Real-Time PCR System (existing equipment)",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "Facility",
+          "link": "https://www.thermofisher.com/order/catalog/product/4485691",
+          "purpose": "RT-qPCR validation of candidate genes"
         }
       ],
       "estimated_direct_cost_usd": {
         "low": 18000,
         "high": 25000,
-        "scope": "Includes animals, FACS reagents, RNA extraction, library prep, sequencing (20 samples at institutional rates ~$400/sample), RT-qPCR reagents and primers, RNA-FISH probes and kits. Excludes personnel, equipment access fees, and computational infrastructure."
+        "scope": "Includes: mice ($800), RNA extraction/QC reagents ($1,200), RNA-seq library prep ($3,200), sequencing costs ($8,000-12,000 depending on core facility rates), RT-qPCR reagents and primers ($1,500), RNA-FISH reagents and custom probes ($3,000-5,000), flow cytometry costs ($500), consumables ($1,800). Excludes: personnel costs, existing equipment access fees, bioinformatics server costs, publication fees"
       },
       "protocol_references": [
         {
-          "title": "Bastos et al. (2005) Flow cytometric characterization of viable meiotic and postmeiotic cells by Hoechst 33342 in mouse spermatogenesis. Cytometry A 65:40-49",
-          "use": "Established protocol for FACS-based separation of meiotic stage spermatocytes using DNA content and staining patterns"
+          "title": "Isolation of specific stages of spermatogenic cells from mouse testis by STA-PUT velocity sedimentation (Bryant et al., J Vis Exp 2013)",
+          "use": "Primary protocol for staged spermatocyte isolation with expected purity and yield metrics"
         },
         {
-          "title": "Soumillon et al. (2013) Cellular source and mechanisms of high transcriptome complexity in the mammalian testis. Cell Rep 3:2179-2190",
-          "use": "Reference transcriptomic approach for meiotic cell profiling and computational methods for stage-specific gene identification"
+          "title": "Transcriptome Dynamics of the Developing Male Mouse Testis (Soumillon et al., Nature 2013)",
+          "use": "Reference dataset for comparison and validation of meiotic stage-specific expression patterns"
         },
         {
-          "title": "Green et al. (2018) Comprehensive roadmap of murine spermatogenesis defined by single-cell RNA-seq. Dev Cell 46:651-667",
-          "use": "Benchmark dataset for known stage-specific marker genes and validation of pachytene cell identity"
+          "title": "RNA-seq workflow: gene-level exploratory analysis and differential expression (Love et al., F1000Research 2015)",
+          "use": "DESeq2 analysis pipeline for differential expression calling with appropriate statistical thresholds"
         },
         {
-          "title": "Wang et al. (2012) RNAscope: a novel in situ RNA analysis platform for formalin-fixed, paraffin-embedded tissues. J Mol Diagn 14:22-29",
-          "use": "RNA-FISH protocol for sensitive detection and spatial localization of pachytene-specific transcripts"
+          "title": "Single-cell RNA-seq reveals dynamic, random monoallelic gene expression in mammalian cells (Deng et al., Science 2014)",
+          "use": "Quality control metrics and normalization approaches for RNA-seq data"
+        },
+        {
+          "title": "RNAscope: a novel in situ RNA analysis platform for formalin-fixed, paraffin-embedded tissues (Wang et al., J Mol Diagn 2012)",
+          "use": "RNA-FISH protocol for spatial validation of pachytene-specific gene expression in testis sections"
         }
       ],
       "handoff_package_for_lab": [
-        "Detailed FACS gating strategy document with representative plots showing separation of leptotene, zygotene, pachytene, and diplotene populations based on DNA content and forward/side scatter parameters",
-        "Complete list of validated primer sequences for 10 known stage-specific marker genes (2-3 per stage) to be used for quality control of sorted populations prior to RNA-seq",
-        "Bioinformatics pipeline specification including: reference genome version (e.g., mm10/GRCm38), alignment software (STAR v2.7+), differential expression package (DESeq2), cutoffs for defining pachytene-specific genes (statistical and fold-change thresholds), and clustering approach for temporal pattern analysis",
-        "Animal breeding schedule to ensure availability of 4 cohorts of day 18-20 juvenile mice (minimum 6 males per cohort) at 2-week intervals for biological replicates"
+        "IACUC protocol approval for mouse work including euthanasia method and number of animals (minimum 25 male mice total); facility breeding plan if not purchasing",
+        "Bioinformatics pipeline specification: compute resources allocated (\u2265256GB RAM, 32 cores), software installed (STAR v2.7+, DESeq2, Salmon, FastQC, MultiQC), reference genome mm10/GRCm38, and designated bioinformatician contact",
+        "Primer design table for RT-qPCR validation: list of top 20 candidate genes from preliminary literature (e.g., Dazl, Tex19.1, Hormad1, Spo11, Meiob) plus housekeeping genes (Gapdh, Actb, Rpl19); primers pre-designed using Primer3 with validation criteria",
+        "Standard operating procedures (SOPs) documented: STA-PUT apparatus setup and calibration, testis dissociation protocol, flow cytometry gating strategy for meiotic stages, RNA quality acceptance criteria",
+        "Data management plan: designated storage location for raw FASTQ files (\u2265500GB), processed count matrices, and metadata; GEO accession number reserved for public deposition upon publication"
+      ]
+    },
+    {
+      "id": "opc-go-006",
+      "title": "Identification and Validation of Safe Harbor Loci in Switchgrass and Miscanthus Genomes",
+      "decision_bucket": "go_now",
+      "best_score": 0.527,
+      "best_confidence": 0.5,
+      "maps_to_problem_statement": "How promoters, enhancers, and cis-regulatory elements (CREs) impact position effects of transgene insertions in bioenergy crops is not understood, and sequences with insulator-like function to dampen ectopic interactions are needed.",
+      "maps_to_sub_question": "Can validated safe harbor loci be identified in bioenergy crop genomes for predictable transgene expression across diverse genetic backgrounds?",
+      "objective": "Identify and experimentally validate conserved intergenic genomic loci that support predictable, stable transgene expression across multiple bioenergy crop genotypes and generations.",
+      "readouts": [
+        "Primary: Transgene expression level (fluorescence intensity and qRT-PCR) across \u22656 independent insertion events per locus, measured as coefficient of variation (CV) between events",
+        "Secondary: Multi-generational expression stability (T0 through T2) measured by qRT-PCR with <20% variation between generations",
+        "Secondary: Chromatin accessibility (ATAC-seq) and histone modification patterns (H3K9ac, H3K4me3) at candidate loci across tissues and genotypes"
+      ],
+      "design": {
+        "overview": "Perform pan-genome comparative analysis to identify conserved intergenic regions, then use CRISPR-mediated homology-directed repair to insert fluorescent reporter cassettes at 4-6 candidate safe harbor loci in switchgrass (Panicum virgatum) and Miscanthus \u00d7 giganteus, followed by multi-generational phenotyping and expression analysis.",
+        "work_packages": [
+          "WP1: Pan-genome bioinformatics analysis - identify conserved intergenic regions (>2kb) in \u226520 switchgrass and \u226510 Miscanthus accessions with low syntenic variation, open chromatin signatures, and absence of predicted regulatory elements within 5kb; prioritize 6-8 candidate loci based on conservation, accessibility, and distance from genes",
+          "WP2: CRISPR/Cas9 construct design and delivery - design HDR donor templates containing mEGFP-NOS terminator cassette flanked by 800bp homology arms for each candidate locus; transform embryogenic callus of 3 switchgrass cultivars (Alamo, Kanlow, Cave-in-Rock) and 2 Miscanthus genotypes using Agrobacterium-mediated transformation",
+          "WP3: Plant regeneration and molecular characterization - regenerate T0 plants, confirm precise insertion by junction PCR and Sanger sequencing, select 6-10 independent events per locus per genotype, advance to T1 and T2 generations, collect leaf, stem, and root tissues across vegetative and reproductive stages",
+          "WP4: Expression and epigenetic profiling - quantify mEGFP expression by fluorometry and qRT-PCR across tissues, developmental stages, and generations; perform ATAC-seq and ChIP-qPCR for H3K9ac and H3K4me3 at insertion sites; statistical analysis of expression variance, heritability, and chromatin state correlation"
+        ],
+        "controls": [
+          "Positive control: Random T-DNA insertion events (n=20) generated in parallel transformations to establish baseline expression variability (expected CV >80%)",
+          "Negative control: Non-transformed wild-type plants of each genotype for background fluorescence measurement and normalization",
+          "Technical control: Internal reference gene control (ubiquitin, actin) for qRT-PCR normalization; spike-in controls for ATAC-seq library preparation"
+        ],
+        "sample_size_plan": "6-8 candidate loci \u00d7 5 genotypes (3 switchgrass + 2 Miscanthus) \u00d7 6-10 independent insertion events per locus = 180-400 independent T0 events; advance 3-5 events per locus to T1 (90-200 families) and 2-3 to T2 (60-120 families); 3 biological replicates per tissue type (leaf, stem, root) \u00d7 3 developmental stages \u00d7 3 technical replicates for expression analysis",
+        "success_criteria": [
+          "At least 2 loci show CV <30% for transgene expression across independent insertion events within same genotype and tissue (compared to >80% for random insertions)",
+          "Selected safe harbor loci maintain expression levels within 2-fold variation across T0, T1, and T2 generations (\u226580% of families) and show consistent chromatin accessibility (ATAC-seq peak present in \u226590% of samples, fold-change <2\u00d7 between genotypes)"
+        ],
+        "estimated_timeline_weeks": 104
+      },
+      "materials": [
+        {
+          "item": "pKSE401 CRISPR-Cas9 plant expression vector",
+          "supplier": "Addgene",
+          "catalog_or_id": "62202",
+          "link": "https://www.addgene.org/62202/",
+          "purpose": "Base vector for CRISPR/Cas9 expression and HDR donor template construction"
+        },
+        {
+          "item": "mEGFP coding sequence (codon-optimized for monocots)",
+          "supplier": "GenScript",
+          "catalog_or_id": "Custom synthesis",
+          "link": "",
+          "purpose": "Fluorescent reporter for transgene expression tracking"
+        },
+        {
+          "item": "Agrobacterium tumefaciens strain EHA105",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "A13435",
+          "link": "https://www.thermofisher.com/order/catalog/product/A13435",
+          "purpose": "Agrobacterium-mediated transformation of grass embryogenic callus"
+        },
+        {
+          "item": "Murashige and Skoog Basal Medium with Vitamins",
+          "supplier": "PhytoTechnology Laboratories",
+          "catalog_or_id": "M519",
+          "link": "",
+          "purpose": "Base medium for tissue culture and plant regeneration"
+        },
+        {
+          "item": "2,4-Dichlorophenoxyacetic acid (2,4-D)",
+          "supplier": "Sigma-Aldrich",
+          "catalog_or_id": "D7299",
+          "link": "https://www.sigmaaldrich.com/catalog/product/sigma/d7299",
+          "purpose": "Auxin for callus induction from immature embryos"
+        },
+        {
+          "item": "PowerPlant Pro RNA Isolation Kit",
+          "supplier": "Qiagen",
+          "catalog_or_id": "13427",
+          "link": "https://www.qiagen.com/us/products/discovery-and-translational-research/dna-rna-purification/rna-purification/total-rna/rneasy-powerplant-pro-kit/",
+          "purpose": "RNA extraction from grass tissues for qRT-PCR"
+        },
+        {
+          "item": "Luna Universal One-Step RT-qPCR Kit",
+          "supplier": "New England Biolabs",
+          "catalog_or_id": "E3005",
+          "link": "https://www.neb.com/products/e3005-luna-universal-one-step-rt-qpcr-kit",
+          "purpose": "Quantitative RT-PCR for transgene expression measurement"
+        },
+        {
+          "item": "SYBR Green I Nucleic Acid Gel Stain",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "S7563",
+          "link": "https://www.thermofisher.com/order/catalog/product/S7563",
+          "purpose": "Fluorescent detection for junction PCR validation"
+        },
+        {
+          "item": "Nextera DNA Library Prep Kit",
+          "supplier": "Illumina",
+          "catalog_or_id": "20018705",
+          "link": "https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/nextera-dna.html",
+          "purpose": "ATAC-seq library preparation for chromatin accessibility profiling"
+        },
+        {
+          "item": "SimpleChIP Plus Enzymatic Chromatin IP Kit",
+          "supplier": "Cell Signaling Technology",
+          "catalog_or_id": "9005",
+          "link": "https://www.cellsignal.com/products/chromatin-immunoprecipitation-chip/simplechip-plus-enzymatic-chromatin-ip-kit-magnetic-beads/9005",
+          "purpose": "Chromatin immunoprecipitation for histone modification analysis"
+        },
+        {
+          "item": "Anti-Histone H3K9ac antibody",
+          "supplier": "Abcam",
+          "catalog_or_id": "ab4441",
+          "link": "https://www.abcam.com/histone-h3-acetyl-k9-antibody-chip-grade-ab4441.html",
+          "purpose": "ChIP-qPCR detection of active chromatin marks"
+        },
+        {
+          "item": "Anti-Histone H3K4me3 antibody",
+          "supplier": "Abcam",
+          "catalog_or_id": "ab8580",
+          "link": "https://www.abcam.com/histone-h3-tri-methyl-k4-antibody-chip-grade-ab8580.html",
+          "purpose": "ChIP-qPCR detection of promoter-associated chromatin marks"
+        },
+        {
+          "item": "SpectraMax iD3 Multi-Mode Microplate Reader",
+          "supplier": "Molecular Devices",
+          "catalog_or_id": "iD3",
+          "link": "",
+          "purpose": "Fluorescence quantification of mEGFP expression in plant extracts"
+        },
+        {
+          "item": "QuantStudio 5 Real-Time PCR System",
+          "supplier": "Thermo Fisher Scientific",
+          "catalog_or_id": "A28140",
+          "link": "https://www.thermofisher.com/order/catalog/product/A28140",
+          "purpose": "qRT-PCR and ChIP-qPCR analysis"
+        }
+      ],
+      "estimated_direct_cost_usd": {
+        "low": 45000,
+        "high": 75000,
+        "scope": "Includes molecular biology reagents, tissue culture supplies, antibodies, sequencing costs (ATAC-seq for 48 samples at ~$200/sample), and plant growth materials. Excludes personnel costs, major equipment purchases (assumes access to qPCR machine and plate reader), greenhouse space fees, and whole-genome sequencing for pan-genome analysis (assumes publicly available data)."
+      },
+      "protocol_references": [
+        {
+          "title": "Xi, Y. et al. (2009) Agrobacterium-mediated transformation of switchgrass and inheritance of the transgenes. BioEnergy Research 2:275-283",
+          "use": "Establish baseline transformation protocol for switchgrass embryogenic callus culture, selection conditions, and regeneration media"
+        },
+        {
+          "title": "Buenrostro, J.D. et al. (2015) ATAC-seq: A method for assaying chromatin accessibility genome-wide. Current Protocols in Molecular Biology 109:21.29.1-21.29.9",
+          "use": "ATAC-seq protocol adaptation for plant tissues to assess chromatin accessibility at candidate safe harbor loci"
+        },
+        {
+          "title": "Lee, K. et al. (2019) CRISPR/Cas9-mediated targeted T-DNA integration in rice. Plant Molecular Biology 99:317-328",
+          "use": "Design of HDR donor templates and CRISPR/Cas9 strategy for precise transgene insertion in monocots"
+        },
+        {
+          "title": "Dong, N. et al. (2020) Validation of reference genes for gene expression studies in switchgrass (Panicum virgatum) by quantitative real-time RT-PCR. PLoS ONE 15:e0233662",
+          "use": "Selection of validated reference genes for normalization of transgene expression across tissues and developmental stages"
+        },
+        {
+          "title": "Grewal, D. et al. (2021) Identification of safe harbor loci in rice genome by harnessing the property of zinc-finger nucleases to induce DNA damage and repair. Frontiers in Genetics 12:688597",
+          "use": "Bioinformatic criteria for candidate safe harbor locus identification including synteny conservation, intergenic spacing, and regulatory element prediction"
+        }
+      ],
+      "handoff_package_for_lab": [
+        "Bioinformatics dataset containing: (1) coordinates of 6-8 prioritized candidate safe harbor loci with flanking sequences (\u00b15kb) in switchgrass AP13 and Miscanthus reference genomes; (2) pan-genome alignment data showing conservation across accessions; (3) predicted regulatory element annotations; (4) existing RNA-seq and chromatin accessibility data if available",
+        "Cloned and sequence-verified CRISPR/Cas9 constructs for each candidate locus containing sgRNA expression cassettes, Cas9 driven by maize ubiquitin promoter, and HDR donor templates with mEGFP-NOS cassette and locus-specific homology arms (800bp each side); provided as purified plasmid DNA (\u226510 \u03bcg each) and glycerol stocks of E. coli clones",
+        "Standard operating procedures (SOPs) for: (1) switchgrass and Miscanthus embryogenic callus induction from immature seeds; (2) Agrobacterium-mediated transformation conditions optimized for each genotype; (3) junction PCR primer sequences and validation PCR protocols; (4) tissue sampling schedule across developmental stages with photographic guides for standardization",
+        "Pre-negotiated sequencing service agreement for ATAC-seq (estimated 48-96 samples) including library QC requirements, sequencing depth (50M paired-end reads/sample), and data delivery timeline",
+        "Material transfer agreements (MTAs) or seed acquisition documentation for switchgrass cultivars (Alamo, Kanlow, Cave-in-Rock) and Miscanthus genotypes to be used, with greenhouse space allocation confirmed for multi-generational plant maintenance"
       ]
     }
   ]
