@@ -36,6 +36,15 @@ sources:
       - predict_modality
       - spatial_decomposition
       - spatially_variable_genes
+  openalex:
+    enabled: true
+    topics_file: "config/energy_topics.yaml"
+    max_per_topic: 25
+    from_year: 2025
+    doc_types: ["review", "editorial"]
+    min_impact_score: 0       # set >0 to filter low-impact papers
+    email: ""                 # OpenAlex polite pool contact email
+    rate_limit_delay: 0.5
   conference_abstracts:
     enabled: false
 

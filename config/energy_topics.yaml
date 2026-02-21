@@ -1,0 +1,46 @@
+# Energy/Sustainability topic definitions for OpenAlex ingestion.
+# Each topic has a search query, optional source (journal) filter, and result limit.
+
+topics:
+  - label: "CO2 capture"
+    search: "CO2 capture OR carbon capture OR direct air capture"
+    max_results: 25
+
+  - label: "Lithium-ion batteries"
+    search: "lithium ion battery OR lithium-ion battery"
+    max_results: 25
+
+  - label: "Hydrogen energy"
+    search: "hydrogen energy OR hydrogen production OR green hydrogen"
+    max_results: 25
+
+  - label: "Hydrogen (IJHE)"
+    search: "hydrogen"
+    source_ids: ["S48860480"]   # International Journal of Hydrogen Energy
+    max_results: 20
+
+  - label: "Solar panel recycling"
+    search: "solar panel recycling OR photovoltaic recycling OR PV waste"
+    max_results: 20
+
+  - label: "Green chemistry"
+    search: "green chemistry OR sustainable chemistry"
+    max_results: 25
+
+  - label: "Tire recycling & waste valorization"
+    search: "tire recycling OR tyre recycling OR waste tire OR rubber recycling OR waste valorization"
+    max_results: 20
+
+  - label: "Biofuel"
+    search: "biofuel OR bioenergy OR bioethanol OR biodiesel"
+    max_results: 25
+
+  - label: "Green fuels"
+    search: "green fuel OR sustainable fuel OR e-fuel OR synthetic fuel"
+    max_results: 20
+
+defaults:
+  from_year: 2025
+  doc_types: ["review", "editorial"]
+  email: ""              # set for OpenAlex polite pool (faster rate limits)
+  rate_limit_delay: 0.5  # seconds between API calls

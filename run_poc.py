@@ -23,7 +23,7 @@ from pipeline.output import (
 def _resolve_sources(source_arg: str) -> list[str]:
     """Map --source argument to list of source type labels."""
     if source_arg == "all":
-        return ["workshops", "elife", "nas", "openproblems"]
+        return ["workshops", "elife", "nas", "openproblems", "openalex"]
     return [source_arg]
 
 
@@ -43,6 +43,9 @@ def _ingest_source_type(stype: str, config: dict) -> list:
     elif stype == "openproblems":
         from pipeline.ingest_openproblems import ingest_openproblems_sync
         return ingest_openproblems_sync(config)
+    elif stype == "openalex":
+        from pipeline.ingest_openalex import ingest_openalex_sync
+        return ingest_openalex_sync(config)
     else:
         logging.getLogger("collector").warning("Unknown source type: %s", stype)
         return []
@@ -52,7 +55,7 @@ def main():
     parser = argparse.ArgumentParser(description="Open Problem Collector — PoC Run")
     parser.add_argument("--resume", help="Resume a previous run by run_id")
     parser.add_argument("--source", default="workshops",
-                        choices=["workshops", "elife", "nas", "openproblems", "all"],
+                        choices=["workshops", "elife", "nas", "openproblems", "openalex", "all"],
                         help="Source type to ingest (default: workshops)")
     parser.add_argument("--skip-llm", action="store_true",
                         help="Skip LLM stages (for testing ingestion/filter)")
