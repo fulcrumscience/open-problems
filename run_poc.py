@@ -23,7 +23,7 @@ from pipeline.output import (
 def _resolve_sources(source_arg: str) -> list[str]:
     """Map --source argument to list of source type labels."""
     if source_arg == "all":
-        return ["workshops", "elife", "nas"]
+        return ["workshops", "elife", "nas", "openproblems"]
     return [source_arg]
 
 
@@ -40,6 +40,9 @@ def _ingest_source_type(stype: str, config: dict) -> list:
         except ImportError:
             logging.getLogger("collector").warning("NAS ingestion not yet implemented")
             return []
+    elif stype == "openproblems":
+        from pipeline.ingest_openproblems import ingest_openproblems_sync
+        return ingest_openproblems_sync(config)
     else:
         logging.getLogger("collector").warning("Unknown source type: %s", stype)
         return []
@@ -49,7 +52,7 @@ def main():
     parser = argparse.ArgumentParser(description="Open Problem Collector — PoC Run")
     parser.add_argument("--resume", help="Resume a previous run by run_id")
     parser.add_argument("--source", default="workshops",
-                        choices=["workshops", "elife", "nas", "all"],
+                        choices=["workshops", "elife", "nas", "openproblems", "all"],
                         help="Source type to ingest (default: workshops)")
     parser.add_argument("--skip-llm", action="store_true",
                         help="Skip LLM stages (for testing ingestion/filter)")
@@ -99,64 +102,100 @@ def main():
         _print_summary(stats, start_time)
         return
 
+    # ── Partition: direct-mapped vs pipeline sources ─────────────────
+    # Sources with pre-populated problems (e.g. openproblems.bio) skip
+    # stages 2+3 and go straight to output.
+    direct_sources = [s for s in sources if s.problems]
+    pipeline_sources = [s for s in sources if not s.problems]
+
+    if direct_sources:
+        logger.info("Direct-mapped sources (skip stages 2-3): %d sources, %d problems",
+                     len(direct_sources),
+                     sum(len(s.problems) for s in direct_sources))
+
     # ── Stage 2: Signal Filter ───────────────────────────────────────
-    if checkpoint_exists(run_id, "stage2"):
-        logger.info("Stage 2: Loading from checkpoint")
-        filtered = load_checkpoint(run_id, "stage2")
-    else:
-        logger.info("Stage 2: Applying signal filter...")
-        sig_filter = SignalFilter()
-        filtered = sig_filter.filter_sources(sources)
-        write_checkpoint(run_id, "stage2", filtered)
+    extracted = []
+    if pipeline_sources:
+        if checkpoint_exists(run_id, "stage2"):
+            logger.info("Stage 2: Loading from checkpoint")
+            filtered = load_checkpoint(run_id, "stage2")
+        else:
+            logger.info("Stage 2: Applying signal filter...")
+            sig_filter = SignalFilter()
+            filtered = sig_filter.filter_sources(pipeline_sources)
+            write_checkpoint(run_id, "stage2", filtered)
 
-    total_passages = sum(len(s.signal_passages) for s in filtered)
-    stats["signal_passages"] = total_passages
-    logger.info("Stage 2 complete: %d sources with %d signal passages",
-                len(filtered), total_passages)
+        total_passages = sum(len(s.signal_passages) for s in filtered)
+        stats["signal_passages"] = total_passages
+        logger.info("Stage 2 complete: %d sources with %d signal passages",
+                    len(filtered), total_passages)
 
-    if args.skip_llm:
-        logger.info("Skipping LLM stages (--skip-llm)")
-        _print_summary(stats, start_time)
-        return
+        if args.skip_llm:
+            logger.info("Skipping LLM stages (--skip-llm)")
+            if not direct_sources:
+                _print_summary(stats, start_time)
+                return
+            # Still write direct_sources to output below
+        elif not filtered:
+            logger.warning("No signal passages found. Check signal_phrases.yaml or input documents.")
+            if not direct_sources:
+                _print_summary(stats, start_time)
+                return
+        else:
+            # ── Stage 3: LLM Extraction ──────────────────────────────
+            if checkpoint_exists(run_id, "stage3"):
+                logger.info("Stage 3: Loading from checkpoint")
+                extracted = load_checkpoint(run_id, "stage3")
+            else:
+                logger.info("Stage 3: Extracting open problems with LLM...")
+                try:
+                    extracted = extract_problems_sync(filtered, run_id, config, cost_tracker)
+                except BudgetExceeded:
+                    logger.error("Budget exceeded during Stage 3. Saving progress and aborting.")
+                    stats["total_cost"] = cost_tracker.total_cost
+                    stats["aborted"] = "budget_exceeded_stage3"
+                    _print_summary(stats, start_time, cost_tracker)
+                    sys.exit(1)
+                write_checkpoint(run_id, "stage3", extracted)
+    elif args.skip_llm:
+        logger.info("Skipping LLM stages (--skip-llm, only direct-mapped sources)")
 
-    if not filtered:
-        logger.warning("No signal passages found. Check signal_phrases.yaml or input documents.")
-        _print_summary(stats, start_time)
-        return
+    # Combine extracted (from LLM) with direct-mapped sources
+    all_output_sources = extracted + direct_sources
 
-    # ── Stage 3: LLM Extraction ──────────────────────────────────────
-    if checkpoint_exists(run_id, "stage3"):
-        logger.info("Stage 3: Loading from checkpoint")
-        extracted = load_checkpoint(run_id, "stage3")
-    else:
-        logger.info("Stage 3: Extracting open problems with LLM...")
-        try:
-            extracted = extract_problems_sync(filtered, run_id, config, cost_tracker)
-        except BudgetExceeded:
-            logger.error("Budget exceeded during Stage 3. Saving progress and aborting.")
-            stats["total_cost"] = cost_tracker.total_cost
-            stats["aborted"] = "budget_exceeded_stage3"
-            _print_summary(stats, start_time, cost_tracker)
-            sys.exit(1)
-        write_checkpoint(run_id, "stage3", extracted)
-
-    total_problems = sum(len(s.problems) for s in extracted)
+    total_problems = sum(len(s.problems) for s in all_output_sources)
     total_sub_q = sum(
         len(p.get("sub_questions", []))
-        for s in extracted
+        for s in all_output_sources
         for p in s.problems
     )
     stats["problems_extracted"] = total_problems
     stats["sub_questions_extracted"] = total_sub_q
-    logger.info("Stage 3 complete: %d problems, %d sub-questions", total_problems, total_sub_q)
+    if extracted:
+        logger.info("Stage 3 complete: %d problems, %d sub-questions from LLM",
+                     sum(len(s.problems) for s in extracted),
+                     sum(len(p.get("sub_questions", [])) for s in extracted for p in s.problems))
+
+    if not all_output_sources:
+        logger.warning("No sources with problems to output.")
+        _print_summary(stats, start_time)
+        return
 
     # ── Stage 6: Output ──────────────────────────────────────────────
     logger.info("Stage 6: Writing output...")
     conn = init_db()
-    for source in extracted:
+    for source in all_output_sources:
         upsert_source(conn, source)
         for problem in source.problems:
-            provenance = build_provenance(source, problem)
+            # Direct-mapped sources get simple provenance; others use signal-based
+            if source.signal_passages:
+                provenance = build_provenance(source, problem)
+            else:
+                provenance = {
+                    "original_text": problem.get("original_text", ""),
+                    "deep_link": source.url,
+                    "section_label": "Benchmark Task Description",
+                }
             problem_id = upsert_problem(conn, run_id, source.source_id, problem, provenance)
             for sq in problem.get("sub_questions", []):
                 upsert_sub_question(conn, problem_id, sq, source.source_id)
