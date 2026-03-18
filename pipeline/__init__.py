@@ -97,6 +97,9 @@ class Source:
     problems: list[dict] = field(default_factory=list)
     # Each: {problem_statement, domain, subdomain, scope, sub_questions, ...}
 
+    # Optional metadata (e.g. citation count, journal impact)
+    metadata: dict = field(default_factory=dict)
+
     def to_dict(self) -> dict:
         return asdict(self)
 

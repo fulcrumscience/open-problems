@@ -29,6 +29,22 @@ category_a:
   - "deserves further study"
   - "important open problem"
   - "outstanding question"
+  # Abstract-friendly / energy-domain phrases
+  - "remains a significant challenge"
+  - "remains a major challenge"
+  - "remains a critical challenge"
+  - "remains challenging"
+  - "challenges remain"
+  - "significant challenges"
+  - "major obstacle"
+  - "key bottleneck"
+  - "not yet commercially viable"
+  - "far from practical"
+  - "yet to be fully understood"
+  - "not yet fully understood"
+  - "not well understood"
+  - "fundamental limitations"
+  - "current limitations"
 
 category_b:
   - "we recommend that"
@@ -47,6 +63,21 @@ category_b:
   - "understudied"
   - "limited data"
   - "lack of experimental evidence"
+  # Abstract-friendly / energy-domain phrases
+  - "scalability challenges"
+  - "scale-up challenges"
+  - "needs further development"
+  - "needs further optimization"
+  - "requires further research"
+  - "requires further investigation"
+  - "emerging technology"
+  - "emerging approach"
+  - "performance gap"
+  - "cost barrier"
+  - "hindering"
+  - "impeding"
+  - "lack of understanding"
+  - "insufficient understanding"
 
 category_c:
   - "priority research area"
@@ -60,6 +91,11 @@ category_c:
   - "bottleneck"
   - "barrier to progress"
   - "enabling technology needed"
+  # Energy-domain
+  - "techno-economic barrier"
+  - "durability challenge"
+  - "degradation mechanism"
+  - "technology readiness"
 
 category_d:
   - "the authors should"

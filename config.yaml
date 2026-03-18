@@ -20,6 +20,31 @@ sources:
       - "environmental-science"
     max_reports: 20
     data_dir: "data/nas_reports"
+  openproblems:
+    enabled: true
+    base_url: "https://raw.githubusercontent.com/openproblems-bio/website/main/results"
+    tasks:
+      - batch_integration
+      - cell_cell_communication_ligand_target
+      - cell_cell_communication_source_target
+      - denoising
+      - dimensionality_reduction
+      - foundation_models
+      - label_projection
+      - matching_modalities
+      - perturbation_prediction
+      - predict_modality
+      - spatial_decomposition
+      - spatially_variable_genes
+  openalex:
+    enabled: true
+    topics_file: "config/energy_topics.yaml"
+    max_per_topic: 25
+    from_year: 2025
+    doc_types: ["review", "editorial"]
+    min_impact_score: 0       # set >0 to filter low-impact papers
+    email: ""                 # OpenAlex polite pool contact email
+    rate_limit_delay: 0.5
   conference_abstracts:
     enabled: false
 

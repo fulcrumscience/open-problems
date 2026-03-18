@@ -168,6 +168,10 @@ def build_provenance(source: Source, problem: dict) -> dict | None:
         if section and source.url:
             provenance["deep_link"] = source.url
             provenance["section_label"] = section.replace("_", " ").title()
+    elif source.source_type == "openalex_review":
+        if source.url:
+            provenance["deep_link"] = source.url
+            provenance["section_label"] = "Abstract"
 
     return provenance
 

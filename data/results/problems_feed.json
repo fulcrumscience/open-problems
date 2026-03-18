@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-02-11T08:51:25.538949",
+  "generated_at": "2026-02-21T19:14:12.359463",
   "pipeline_run_id": "all",
   "summary": {
-    "sources_scanned": 262,
-    "signal_passages": 410,
-    "problems_extracted": 250,
-    "sub_questions": 718
+    "sources_scanned": 378,
+    "signal_passages": 425,
+    "problems_extracted": 285,
+    "sub_questions": 836
   },
   "problems": [
     {
@@ -15186,6 +15186,2448 @@
         "original_text": "Another significant limitation is the lack of editing specificity, as observed changes occurred at multiple A:T sites within and across the editing window rather than being confined to a single position, raising concerns about precision and off-target effects.",
         "deep_link": "https://elifesciences.org/reviewed-preprints/105080v1/reviews#peer-review-0",
         "section_label": "Reviewer #1"
+      }
+    },
+    {
+      "problem_statement": "Challenges in impurity control and structural engineering of bamboo-based hard carbon precursors for sodium-ion batteries persist",
+      "domain": "battery materials science",
+      "subdomain": "hard carbon anode materials from biomass",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4410933453",
+          "type": "openalex_review",
+          "title": "Sustainable Hard Carbon for Sodium\u2010Ion Batteries: Precursor Design and Scalable Production Roadmaps",
+          "url": "https://doi.org/10.1002/adma.202506066"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What is the relationship between specific impurities (e.g., metals, silicates, lignin residues) in bamboo precursors and the electrochemical performance of resulting hard carbon anodes?",
+          "evidence_needed": "Systematic study correlating impurity composition (via ICP-MS, XPS, EDX) with battery performance metrics (capacity, cycling stability, rate capability) across bamboo samples with controlled impurity levels",
+          "disciplines": [
+            "materials chemistry",
+            "electrochemistry",
+            "analytical chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What pretreatment methods (acid/alkali leaching parameters, hydrothermal conditions) most effectively remove impurities while preserving desirable structural features in bamboo precursors?",
+          "evidence_needed": "Comparative experimental study testing various pretreatment protocols with quantification of impurity removal efficiency and structural characterization (SEM, TEM, XRD, BET) of resulting materials",
+          "disciplines": [
+            "materials processing",
+            "chemical engineering",
+            "biomass conversion"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How can the pseudo-graphitic layering and nanoporosity be engineered in bamboo-derived hard carbon to optimize sodium storage sites?",
+          "evidence_needed": "Structure-property relationship studies using advanced characterization (HRTEM, Raman spectroscopy, SAXS) combined with electrochemical testing to identify optimal structural parameters and carbonization conditions to achieve them",
+          "disciplines": [
+            "materials science",
+            "carbon chemistry",
+            "electrochemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What is the minimum purity threshold and structural uniformity required in bamboo-derived hard carbon for commercial viability in sodium-ion batteries?",
+          "evidence_needed": "Techno-economic analysis combined with performance benchmarking studies comparing bamboo-derived materials against commercial standards, including cost-performance trade-off analysis",
+          "disciplines": [
+            "materials engineering",
+            "battery technology",
+            "techno-economic analysis"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "bamboo precursor",
+        "hard carbon",
+        "impurity control",
+        "structural engineering",
+        "biomass",
+        "sodium-ion battery",
+        "pretreatment"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "Bamboo\u2010based precursors are highlighted as a promising pathway due to their renewability and environmental advantages, though challenges such as impurity control and structural engineering persist.",
+        "deep_link": "https://doi.org/10.1002/adma.202506066",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Optimization of pyrolysis conditions for high-volatility biomass precursors in hard carbon production requires understanding of pretreatment effects",
+      "domain": "battery materials science",
+      "subdomain": "carbonization and pyrolysis of biomass",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4410933453",
+          "type": "openalex_review",
+          "title": "Sustainable Hard Carbon for Sodium\u2010Ion Batteries: Precursor Design and Scalable Production Roadmaps",
+          "url": "https://doi.org/10.1002/adma.202506066"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "How do different pretreatment methods (acid leaching, alkali leaching, hydrothermal processing) alter the volatile composition and release profile during pyrolysis of biomass precursors?",
+          "evidence_needed": "TGA-MS or TGA-FTIR studies tracking volatile evolution during pyrolysis of pretreated versus untreated biomass samples, with compositional analysis of volatiles",
+          "disciplines": [
+            "thermal analysis",
+            "analytical chemistry",
+            "biomass chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the optimal pyrolysis temperature and heating rate for biomass precursors with different pretreatment histories to achieve desired microstructural features in hard carbon?",
+          "evidence_needed": "Systematic carbonization experiments varying temperature (e.g., 800-1400\u00b0C) and heating rates with structural characterization (XRD, Raman, BET, pore size distribution) and electrochemical performance testing",
+          "disciplines": [
+            "materials processing",
+            "carbon science",
+            "thermal engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How does volatile content and release kinetics during pyrolysis influence the formation of pseudo-graphitic domains and nanopore structure in the final hard carbon?",
+          "evidence_needed": "In-situ or ex-situ studies combining controlled pyrolysis with time-resolved structural characterization (XRD, SAXS) and computational modeling of carbon structure evolution",
+          "disciplines": [
+            "materials science",
+            "physical chemistry",
+            "carbon materials"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "pyrolysis optimization",
+        "volatile content",
+        "biomass pretreatment",
+        "carbonization",
+        "microstructure formation"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "High\u2010volatility biomass precursors, such as bamboo, require pretreatments like acid/alkali leaching or hydrothermal processing to optimize pyrolysis.",
+        "deep_link": "https://doi.org/10.1002/adma.202506066",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Understanding the effectiveness of crosslinking strategies for medium-volatility resins and plastics in hard carbon production",
+      "domain": "battery materials science",
+      "subdomain": "polymer-derived carbons",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4410933453",
+          "type": "openalex_review",
+          "title": "Sustainable Hard Carbon for Sodium\u2010Ion Batteries: Precursor Design and Scalable Production Roadmaps",
+          "url": "https://doi.org/10.1002/adma.202506066"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What crosslinking chemistries and conditions are most effective for different resin and plastic precursors (phenolic, epoxy, polyacrylonitrile, etc.) to optimize carbon yield and structure?",
+          "evidence_needed": "Comparative study of crosslinking agents and conditions (temperature, time, catalyst) with measurement of crosslink density (FTIR, DSC), carbon yield, and final material properties",
+          "disciplines": [
+            "polymer chemistry",
+            "materials synthesis",
+            "carbon materials"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How does the degree of crosslinking in resin/plastic precursors affect the nanopore structure and pseudo-graphitic ordering in the resulting hard carbon?",
+          "evidence_needed": "Structure-property study correlating crosslink density with hard carbon characteristics using BET, SAXS, XRD, Raman spectroscopy, and TEM imaging",
+          "disciplines": [
+            "polymer science",
+            "materials characterization",
+            "carbon chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the relationship between crosslinking-induced structural changes and sodium storage mechanisms (adsorption vs. intercalation) in polymer-derived hard carbons?",
+          "evidence_needed": "Electrochemical studies combining galvanostatic charge-discharge, CV, and in-situ/operando techniques (XRD, NMR) on hard carbons from precursors with systematically varied crosslinking",
+          "disciplines": [
+            "electrochemistry",
+            "battery science",
+            "materials characterization"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "crosslinking",
+        "resin precursors",
+        "plastic precursors",
+        "polymer-derived carbon",
+        "carbon yield"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "Medium\u2010volatility resins and plastics benefit from crosslinking strategies",
+        "deep_link": "https://doi.org/10.1002/adma.202506066",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Nanochannel engineering in low-volatility materials (biochar and petroleum coke) to improve sodium storage performance",
+      "domain": "battery materials science",
+      "subdomain": "hard carbon nanostructure engineering",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4410933453",
+          "type": "openalex_review",
+          "title": "Sustainable Hard Carbon for Sodium\u2010Ion Batteries: Precursor Design and Scalable Production Roadmaps",
+          "url": "https://doi.org/10.1002/adma.202506066"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What activation or template methods can create optimal nanochannel dimensions and connectivity in biochar and petroleum coke for sodium ion transport?",
+          "evidence_needed": "Experimental studies testing various activation agents (KOH, ZnCl2, CO2) and templating approaches with detailed pore characterization (BET, BJH, SAXS, HRTEM) and sodium-ion diffusion measurements",
+          "disciplines": [
+            "materials engineering",
+            "nanoporous materials",
+            "electrochemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the optimal nanochannel size distribution and architecture for balancing sodium ion accessibility with structural integrity in low-volatility derived hard carbons?",
+          "evidence_needed": "Systematic study correlating pore size distribution and architecture (from gas adsorption, microscopy) with rate capability, capacity, and mechanical stability measurements",
+          "disciplines": [
+            "materials science",
+            "battery engineering",
+            "physical chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do nanochannels engineered in low-volatility precursors affect the distribution of sodium storage sites (surface adsorption, pore filling, interlayer intercalation)?",
+          "evidence_needed": "Advanced electrochemical analysis (differential capacity analysis, GITT) combined with operando characterization (XRD, NMR, XAS) to identify and quantify different storage mechanisms",
+          "disciplines": [
+            "electrochemistry",
+            "materials characterization",
+            "battery science"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "nanochannel engineering",
+        "biochar",
+        "petroleum coke",
+        "sodium storage",
+        "pore structure",
+        "activation"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "low\u2010volatility materials such as biochar and petroleum coke rely on nanochannel engineering to improve sodium storage performance",
+        "deep_link": "https://doi.org/10.1002/adma.202506066",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Development of sensors capable of operating in high-pressure transmission pipelines for hydrogen-natural gas blends",
+      "domain": "pipeline engineering",
+      "subdomain": "sensor technology for gas transmission",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406790869",
+          "type": "openalex_review",
+          "title": "Advances in hydrogen blending and injection in natural gas networks: A review",
+          "url": "https://doi.org/10.1016/j.ijhydene.2025.01.314"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the specific failure mechanisms of current sensors when exposed to high-pressure hydrogen-natural gas environments?",
+          "evidence_needed": "Controlled laboratory testing of existing sensor technologies under varying pressure conditions (up to transmission pipeline pressures) with different hydrogen blend ratios, measuring sensor accuracy, drift, and failure modes",
+          "disciplines": [
+            "materials science",
+            "sensor engineering",
+            "mechanical engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Can existing high-pressure sensor technologies be adapted for accurate real-time hydrogen concentration measurement in natural gas blends?",
+          "evidence_needed": "Experimental validation of adapted sensor prototypes in high-pressure test facilities with controlled hydrogen-natural gas mixtures, measuring response time, accuracy, and long-term stability",
+          "disciplines": [
+            "sensor engineering",
+            "instrumentation",
+            "analytical chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What materials and designs can withstand hydrogen embrittlement while maintaining sensor functionality at transmission pipeline pressures?",
+          "evidence_needed": "Materials characterization studies combined with prototype testing, including accelerated aging tests under high-pressure hydrogen exposure and mechanical integrity assessments",
+          "disciplines": [
+            "materials science",
+            "mechanical engineering",
+            "sensor design"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "hydrogen sensors",
+        "high-pressure measurement",
+        "real-time monitoring",
+        "transmission pipelines",
+        "hydrogen detection"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "challenges remain regarding experimental work, sensors capable of operating in high-pressure transmission pipelines... While real-time measurement technology is advancing, more innovation is needed for high-pressure environments.",
+        "deep_link": "https://doi.org/10.1016/j.ijhydene.2025.01.314",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Development and in-situ application of coatings that can inhibit hydrogen embrittlement in operating pipelines",
+      "domain": "materials science",
+      "subdomain": "protective coatings for hydrogen embrittlement",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406790869",
+          "type": "openalex_review",
+          "title": "Advances in hydrogen blending and injection in natural gas networks: A review",
+          "url": "https://doi.org/10.1016/j.ijhydene.2025.01.314"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What coating materials and formulations effectively prevent hydrogen permeation into pipeline steel under operational conditions?",
+          "evidence_needed": "Laboratory permeation studies using electrochemical methods and pressure-driven permeation tests on coated steel samples exposed to hydrogen-natural gas blends at various temperatures and pressures",
+          "disciplines": [
+            "materials science",
+            "surface engineering",
+            "electrochemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How can protective coatings be applied to the interior of operating pipelines without requiring pipeline shutdown or excavation?",
+          "evidence_needed": "Development and field testing of in-situ application methods (e.g., robotic applicators, spray systems) in pipeline test sections, with assessment of coating uniformity, adhesion, and coverage",
+          "disciplines": [
+            "pipeline engineering",
+            "robotics",
+            "application engineering",
+            "materials science"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What is the long-term durability and effectiveness of hydrogen-resistant coatings under cyclic loading and varying gas compositions in pipelines?",
+          "evidence_needed": "Accelerated aging studies and long-term field trials measuring coating integrity, adhesion, hydrogen permeation rates, and mechanical properties after exposure to realistic pipeline conditions including pressure cycles and compositional variations",
+          "disciplines": [
+            "materials science",
+            "mechanical engineering",
+            "corrosion engineering"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "hydrogen embrittlement",
+        "protective coatings",
+        "pipeline coatings",
+        "in-situ application",
+        "hydrogen barriers",
+        "permeation resistance"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "New coatings and linings have been developed to mitigate embrittlement, but their application in operating pipelines requires further investigation.",
+        "deep_link": "https://doi.org/10.1016/j.ijhydene.2025.01.314",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Limited experimental research on mixing and injection systems for hydrogen-natural gas blends in transmission pipelines",
+      "domain": "fluid dynamics",
+      "subdomain": "gas mixing in pipeline systems",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406790869",
+          "type": "openalex_review",
+          "title": "Advances in hydrogen blending and injection in natural gas networks: A review",
+          "url": "https://doi.org/10.1016/j.ijhydene.2025.01.314"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the optimal injection geometries and configurations for achieving homogeneous hydrogen-natural gas mixing in high-pressure transmission pipelines?",
+          "evidence_needed": "Experimental studies in scaled pipeline test facilities using different injection nozzle designs, orientations, and configurations, with spatial and temporal measurement of gas composition downstream using sampling or optical methods",
+          "disciplines": [
+            "fluid dynamics",
+            "pipeline engineering",
+            "experimental mechanics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do flow regime, pressure, temperature, and pipeline geometry affect mixing efficiency and distance required for homogenization?",
+          "evidence_needed": "Systematic experimental parametric studies in pipeline test loops varying Reynolds number, pressure, temperature, and pipe diameter, with detailed mixing characterization using concentration measurements at multiple downstream locations",
+          "disciplines": [
+            "fluid dynamics",
+            "transport phenomena",
+            "experimental engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What are the transient mixing dynamics during startup, shutdown, and flow rate variations in hydrogen injection systems?",
+          "evidence_needed": "Time-resolved experimental measurements of concentration profiles during controlled transient operations in pipeline test facilities, using high-frequency sampling or continuous monitoring systems",
+          "disciplines": [
+            "fluid dynamics",
+            "control engineering",
+            "experimental engineering"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "hydrogen injection",
+        "gas mixing",
+        "pipeline blending",
+        "mixing efficiency",
+        "injection systems",
+        "experimental validation"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "Although numerous numerical studies exist, experimental research on mixing and injection systems remains limited.",
+        "deep_link": "https://doi.org/10.1016/j.ijhydene.2025.01.314",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Several factors, such as microalgal strain, cultivation technique, and the type of pollutants, limit the understanding of the microalgal removal mechanism and efficiency for refractory pollutants",
+      "domain": "bioremediation",
+      "subdomain": "microalgae-based pollutant removal",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406362337",
+          "type": "openalex_review",
+          "title": "Microalgae-based bioremediation of refractory pollutants: an approach towards environmental sustainability",
+          "url": "https://doi.org/10.1186/s12934-024-02638-0"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "How do different microalgal strains vary in their mechanisms and efficiency for removing specific classes of refractory pollutants (e.g., industrial effluents, dyes, pesticides, pharmaceuticals)?",
+          "evidence_needed": "Comparative studies testing multiple microalgal species against standardized concentrations of specific pollutant classes, measuring removal rates, biomass accumulation patterns, and metabolic transformation products using analytical chemistry techniques (HPLC, GC-MS)",
+          "disciplines": [
+            "environmental microbiology",
+            "phycology",
+            "analytical chemistry",
+            "ecotoxicology"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What are the relative contributions of accumulation, adsorption, and metabolic degradation mechanisms for different pollutant types in microalgal bioremediation?",
+          "evidence_needed": "Mechanistic studies using isotope labeling, mass balance analysis, and subcellular fractionation to quantify pollutant distribution between cell surface, intracellular compartments, and metabolic products; enzyme activity assays to identify degradation pathways",
+          "disciplines": [
+            "biochemistry",
+            "cell biology",
+            "environmental chemistry",
+            "phycology"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do cultivation techniques (e.g., open pond vs. photobioreactor, batch vs. continuous culture) affect microalgal pollutant removal efficiency for refractory compounds?",
+          "evidence_needed": "Side-by-side comparison experiments testing the same microalgal strain under different cultivation systems with identical pollutant loading, measuring removal kinetics, biomass productivity, and cost-effectiveness metrics",
+          "disciplines": [
+            "bioprocess engineering",
+            "environmental engineering",
+            "phycology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What physicochemical properties of refractory pollutants determine their susceptibility to microalgal remediation (e.g., molecular weight, hydrophobicity, functional groups)?",
+          "evidence_needed": "Systematic testing of structurally diverse pollutants with known physicochemical properties, followed by quantitative structure-activity relationship (QSAR) modeling to identify key predictors of removal efficiency",
+          "disciplines": [
+            "environmental chemistry",
+            "cheminformatics",
+            "phycology"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "microalgae",
+        "bioremediation mechanism",
+        "pollutant removal efficiency",
+        "strain specificity",
+        "cultivation optimization"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "However, several factors, such as microalgal strain, cultivation technique, and the type of pollutants, limit the understanding of the microalgal removal mechanism and efficiency.",
+        "deep_link": "https://doi.org/10.1186/s12934-024-02638-0",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "The potential of nanotechnology-enhanced microalgal bioremediation approaches for addressing refractory pollutants needs investigation, including immobilization of microalgae on nanomaterials",
+      "domain": "bioremediation",
+      "subdomain": "nano-enhanced microalgal systems",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406362337",
+          "type": "openalex_review",
+          "title": "Microalgae-based bioremediation of refractory pollutants: an approach towards environmental sustainability",
+          "url": "https://doi.org/10.1186/s12934-024-02638-0"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What types of nanomaterials are most effective for immobilizing microalgae while maintaining viability and pollutant removal activity?",
+          "evidence_needed": "Systematic testing of different nanomaterial substrates (carbon nanotubes, metal oxides, graphene, etc.) for microalgal immobilization, measuring cell viability, growth rates, and pollutant degradation capacity compared to free-floating cells",
+          "disciplines": [
+            "nanobiotechnology",
+            "materials science",
+            "phycology",
+            "environmental engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How does immobilization on nanomaterials affect the bioremediation mechanisms (accumulation vs. adsorption vs. metabolism) in microalgae?",
+          "evidence_needed": "Comparative mechanistic studies using immobilized vs. free microalgae with pollutant tracking (isotope labeling, fractionation studies), enzyme activity assays, and surface characterization of nanomaterial-microalgae composites",
+          "disciplines": [
+            "biochemistry",
+            "nanobiotechnology",
+            "environmental chemistry",
+            "cell biology"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Can microalgae-derived nanoparticles or nanomaterials enhance the degradation of specific refractory pollutants, and what are their mechanisms of action?",
+          "evidence_needed": "Synthesis and characterization of microalgae-derived nanoparticles, testing their catalytic or adsorbent properties against refractory pollutants, identifying active components through spectroscopic and chemical analysis",
+          "disciplines": [
+            "green nanotechnology",
+            "materials science",
+            "catalysis",
+            "environmental chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What is the long-term stability and reusability of nanomaterial-immobilized microalgae systems for continuous bioremediation?",
+          "evidence_needed": "Long-term continuous operation studies measuring pollutant removal efficiency over multiple cycles, assessment of nanomaterial and microalgal integrity, and techno-economic analysis",
+          "disciplines": [
+            "bioprocess engineering",
+            "materials science",
+            "environmental engineering"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "nanotechnology",
+        "microalgae immobilization",
+        "nanomaterials",
+        "refractory pollutants",
+        "nano-bioremediation",
+        "green synthesis"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "Furthermore, adopting novel technological advancements (e.g., nanotechnology) may serve as a viable approach to address the challenge of refractory pollutants and bioremediation process sustainability. Therefore, this review discusses the mechanism and the ability of different microalgal species to mitigate persistent refractory pollutants, such as industrial effluents, dyes, pesticides, and pharmaceuticals. Also, this review paper provided insight into the production of nanomaterials, nanoparticles, and nanoparticle-based biosensors from microalgae and the immobilization of microalgae on nanomaterials to enhance bioremediation process efficiency.",
+        "deep_link": "https://doi.org/10.1186/s12934-024-02638-0",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Knowledge gaps persist in understanding the long-term ecological impacts of heavy metal contamination in coastal ecosystems",
+      "domain": "marine ecology",
+      "subdomain": "heavy metal ecotoxicology",
+      "scope": "broad",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406613137",
+          "type": "openalex_review",
+          "title": "Heavy Metal Pollution in Coastal Environments: Ecological Implications and Management Strategies: A Review",
+          "url": "https://doi.org/10.3390/su17020701"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the multi-generational effects of chronic heavy metal exposure on coastal fish populations?",
+          "evidence_needed": "Long-term field monitoring studies (5-10+ years) tracking multiple generations of fish populations in contaminated vs. control sites, measuring reproductive success, genetic diversity, population structure, and physiological stress markers",
+          "disciplines": [
+            "marine ecology",
+            "ecotoxicology",
+            "population genetics",
+            "fisheries science"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How does heavy metal contamination affect long-term ecosystem-level processes such as nutrient cycling and primary productivity in coastal sediments?",
+          "evidence_needed": "Chronic exposure experiments and long-term monitoring of biogeochemical cycles (nitrogen, phosphorus, carbon) in contaminated coastal sediments, measuring microbial community function, sediment respiration, and nutrient flux rates",
+          "disciplines": [
+            "biogeochemistry",
+            "marine microbiology",
+            "ecosystem ecology",
+            "sedimentology"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What are the delayed or latent effects of heavy metal exposure on marine mammal health and reproduction across multiple breeding cycles?",
+          "evidence_needed": "Longitudinal cohort studies tracking individual marine mammals over multiple years, correlating tissue heavy metal burdens with reproductive success, immune function, endocrine disruption, and offspring survival",
+          "disciplines": [
+            "marine mammalogy",
+            "veterinary medicine",
+            "ecotoxicology",
+            "reproductive biology"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do heavy metal-induced changes in foundational species (e.g., seagrasses, mangroves) cascade through coastal food webs over decadal timescales?",
+          "evidence_needed": "Long-term ecosystem monitoring combining vegetation health assessments, stable isotope analysis of food web structure, and community composition surveys in areas with documented heavy metal gradients",
+          "disciplines": [
+            "community ecology",
+            "plant ecophysiology",
+            "food web ecology",
+            "coastal ecology"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "chronic exposure",
+        "multigenerational effects",
+        "ecosystem functioning",
+        "population dynamics",
+        "coastal ecology"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap",
+          "future research should"
+        ],
+        "original_text": "Knowledge gaps persist in understanding the long-term ecological impacts of heavy metal contamination and optimizing management strategies for diverse coastal ecosystems.",
+        "deep_link": "https://doi.org/10.3390/su17020701",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Optimization of management strategies for heavy metal contamination across diverse coastal ecosystem types remains unresolved",
+      "domain": "environmental management",
+      "subdomain": "coastal remediation",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406613137",
+          "type": "openalex_review",
+          "title": "Heavy Metal Pollution in Coastal Environments: Ecological Implications and Management Strategies: A Review",
+          "url": "https://doi.org/10.3390/su17020701"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the optimal combinations of remediation techniques (physical, chemical, biological) for different coastal ecosystem types (estuaries, mangroves, salt marshes, rocky shores)?",
+          "evidence_needed": "Comparative field trials testing multiple remediation approaches across different coastal habitats, measuring heavy metal removal efficiency, ecosystem recovery metrics, cost-effectiveness, and non-target impacts",
+          "disciplines": [
+            "environmental engineering",
+            "restoration ecology",
+            "coastal geomorphology",
+            "environmental chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do site-specific factors (sediment type, hydrodynamics, salinity gradients, pH) influence the effectiveness of heavy metal remediation strategies?",
+          "evidence_needed": "Controlled field experiments and mesocosm studies testing remediation techniques under varied environmental conditions, with detailed characterization of sediment properties, water chemistry, and metal speciation",
+          "disciplines": [
+            "sediment chemistry",
+            "coastal oceanography",
+            "environmental engineering",
+            "geochemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What are the trade-offs between rapid heavy metal removal and preservation of existing ecosystem structure and function during remediation?",
+          "evidence_needed": "Comparative studies measuring both contaminant reduction and ecological indicators (biodiversity, habitat structure, ecosystem services) across different remediation intensities and timescales",
+          "disciplines": [
+            "restoration ecology",
+            "conservation biology",
+            "ecosystem services",
+            "environmental management"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "remediation optimization",
+        "ecosystem-specific management",
+        "restoration ecology",
+        "adaptive management"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap",
+          "future research should"
+        ],
+        "original_text": "Knowledge gaps persist in understanding the long-term ecological impacts of heavy metal contamination and optimizing management strategies for diverse coastal ecosystems.",
+        "deep_link": "https://doi.org/10.3390/su17020701",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Emerging technologies such as nanotechnology and bioremediation for heavy metal pollution offer innovative solutions but require further validation",
+      "domain": "environmental remediation",
+      "subdomain": "coastal pollution control",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406613137",
+          "type": "openalex_review",
+          "title": "Heavy Metal Pollution in Coastal Environments: Ecological Implications and Management Strategies: A Review",
+          "url": "https://doi.org/10.3390/su17020701"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the efficacy, stability, and environmental fate of nanomaterials (e.g., nano zero-valent iron, carbon nanotubes, graphene oxide) for heavy metal removal in coastal sediments under field conditions?",
+          "evidence_needed": "Field-scale pilot studies testing nanomaterial applications in coastal environments, measuring metal removal rates, nanoparticle persistence and mobility, and potential ecotoxicological effects on non-target organisms",
+          "disciplines": [
+            "nanotechnology",
+            "environmental engineering",
+            "ecotoxicology",
+            "marine chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Which indigenous microbial communities or engineered microorganisms are most effective for bioremediation of specific heavy metals in different coastal ecosystem types?",
+          "evidence_needed": "Microcosm and mesocosm experiments screening native and engineered microbial strains/consortia for heavy metal removal capacity across different sediment types, followed by small-scale field trials in target ecosystems",
+          "disciplines": [
+            "microbiology",
+            "microbial ecology",
+            "biotechnology",
+            "environmental microbiology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What are the potential unintended ecological consequences of introducing novel bioremediation agents or nanomaterials into coastal food webs?",
+          "evidence_needed": "Controlled exposure experiments and field monitoring studies assessing bioaccumulation of nanomaterials, effects on microbial community structure, impacts on invertebrate and fish populations, and changes in ecosystem function",
+          "disciplines": [
+            "ecotoxicology",
+            "marine ecology",
+            "risk assessment",
+            "environmental safety"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do environmental factors (temperature, salinity, organic matter content, competing ions) affect the performance of nanotechnology and bioremediation approaches in coastal settings?",
+          "evidence_needed": "Laboratory and field experiments testing remediation performance across gradients of environmental conditions typical of coastal ecosystems, with detailed characterization of physicochemical parameters",
+          "disciplines": [
+            "environmental chemistry",
+            "marine biogeochemistry",
+            "microbial physiology",
+            "materials science"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "nanotechnology",
+        "bioremediation",
+        "validation studies",
+        "field trials",
+        "environmental safety"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap",
+          "future research should"
+        ],
+        "original_text": "Emerging technologies such as nanotechnology and bioremediation offer innovative solutions but require further validation.",
+        "deep_link": "https://doi.org/10.3390/su17020701",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Complex interactions between heavy metals and biological and chemical factors in coastal sediments influencing metal cycling are not fully understood",
+      "domain": "biogeochemistry",
+      "subdomain": "heavy metal cycling",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406613137",
+          "type": "openalex_review",
+          "title": "Heavy Metal Pollution in Coastal Environments: Ecological Implications and Management Strategies: A Review",
+          "url": "https://doi.org/10.3390/su17020701"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "How do microbial-mediated redox transformations of iron and sulfur influence heavy metal speciation, mobility, and bioavailability in coastal sediments?",
+          "evidence_needed": "In situ sediment porewater profiling combined with microbial community analysis, synchrotron-based speciation measurements, and laboratory incubations manipulating microbial activity and redox conditions",
+          "disciplines": [
+            "biogeochemistry",
+            "microbial ecology",
+            "geochemistry",
+            "analytical chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What role do organic ligands (e.g., dissolved organic matter, extracellular polymeric substances) play in heavy metal complexation and transport at the sediment-water interface?",
+          "evidence_needed": "Field sampling campaigns measuring organic ligand concentrations, metal-ligand binding constants, and metal flux rates, combined with laboratory binding experiments using isolated organic matter fractions",
+          "disciplines": [
+            "aquatic chemistry",
+            "marine chemistry",
+            "organic geochemistry",
+            "environmental chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do bioturbation and bioirrigation by benthic organisms alter heavy metal distribution and remobilization in coastal sediments?",
+          "evidence_needed": "Controlled experiments using sediment cores with and without key bioturbating species, measuring vertical metal profiles, porewater chemistry, and metal flux rates across the sediment-water interface",
+          "disciplines": [
+            "benthic ecology",
+            "sediment biogeochemistry",
+            "marine ecology",
+            "geochemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What are the interactive effects of multiple heavy metals on their individual cycling and biogeochemical behavior in coastal sediments?",
+          "evidence_needed": "Laboratory and field experiments examining metal-metal interactions in complex mixtures, measuring changes in speciation, sorption behavior, and biological uptake compared to single-metal systems",
+          "disciplines": [
+            "environmental chemistry",
+            "ecotoxicology",
+            "biogeochemistry",
+            "marine chemistry"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "metal speciation",
+        "biogeochemical cycling",
+        "sediment chemistry",
+        "microbial interactions",
+        "organic complexation"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap",
+          "future research should"
+        ],
+        "original_text": "Their cycling is influenced by sediment dynamics, water circulation, and complex interactions with biological and chemical factors.",
+        "deep_link": "https://doi.org/10.3390/su17020701",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Optimization of compressed hydrogen storage to resolve low volumetric density, safety concerns, and cost issues for mobile applications",
+      "domain": "hydrogen storage",
+      "subdomain": "compressed gas storage",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4408167357",
+          "type": "openalex_review",
+          "title": "Hydrogen Storage Technology, and Its Challenges: A Review",
+          "url": "https://doi.org/10.3390/catal15030260"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "How can volumetric density of compressed hydrogen storage be increased beyond current levels while maintaining safety standards?",
+          "evidence_needed": "Experimental testing of new tank designs, materials (e.g., composite materials, novel liner materials), and compression technologies with measurement of volumetric energy density at various pressures; structural integrity testing under operational conditions",
+          "disciplines": [
+            "materials science",
+            "mechanical engineering",
+            "hydrogen storage"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What tank materials and designs can reduce the risk of hydrogen embrittlement and improve safety metrics for compressed hydrogen storage?",
+          "evidence_needed": "Long-term materials testing under cyclic loading and hydrogen exposure; failure mode analysis; development and testing of new composite materials or protective coatings; safety testing including leak detection and rupture scenarios",
+          "disciplines": [
+            "materials science",
+            "safety engineering",
+            "mechanical engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What manufacturing approaches can reduce the cost of high-pressure hydrogen storage tanks for mobile applications?",
+          "evidence_needed": "Techno-economic analysis of different manufacturing processes; pilot-scale production testing of novel fabrication methods; cost-benefit analysis comparing materials and manufacturing techniques",
+          "disciplines": [
+            "manufacturing engineering",
+            "industrial engineering",
+            "economics"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "compressed hydrogen",
+        "volumetric density",
+        "storage safety",
+        "mobile applications",
+        "tank design",
+        "cost reduction"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "future research should",
+          "challenges remain"
+        ],
+        "original_text": "Literature suggests that compressed hydrogen storage holds promise for mobile applications. However, further optimization is desired to resolve concerns such as low volumetric density, safety worries, and cost.",
+        "deep_link": "https://doi.org/10.3390/catal15030260",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Optimization of cryo-compressed hydrogen storage to address slow refueling, boil-off losses, and high energy consumption",
+      "domain": "hydrogen storage",
+      "subdomain": "cryo-compressed storage",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4408167357",
+          "type": "openalex_review",
+          "title": "Hydrogen Storage Technology, and Its Challenges: A Review",
+          "url": "https://doi.org/10.3390/catal15030260"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "How can refueling rates for cryo-compressed hydrogen systems be increased to meet practical requirements for vehicle applications?",
+          "evidence_needed": "Engineering studies on heat transfer management during refueling; testing of novel nozzle and coupling designs; experimental validation of rapid cooling protocols; measurement of refueling times under various temperature and pressure conditions",
+          "disciplines": [
+            "thermal engineering",
+            "fluid dynamics",
+            "mechanical engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What insulation technologies and tank designs can minimize boil-off losses in cryo-compressed hydrogen storage systems?",
+          "evidence_needed": "Testing of advanced insulation materials (e.g., vacuum insulation panels, aerogels, multilayer insulation); measurement of boil-off rates under various storage durations and ambient conditions; thermal modeling validation with experimental data",
+          "disciplines": [
+            "thermal engineering",
+            "materials science",
+            "cryogenics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How can the energy consumption for liquefaction and compression in cryo-compressed systems be reduced to improve overall system efficiency?",
+          "evidence_needed": "Thermodynamic analysis of cooling and compression cycles; experimental testing of novel liquefaction processes; evaluation of waste heat recovery systems; measurement of total energy input vs. stored energy output",
+          "disciplines": [
+            "thermodynamics",
+            "process engineering",
+            "energy systems"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "cryo-compressed storage",
+        "boil-off",
+        "refueling",
+        "energy consumption",
+        "cryogenic",
+        "onboard storage"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "future research should",
+          "challenges remain"
+        ],
+        "original_text": "Cryo-compressed hydrogen storage also is seen as optimal for storing hydrogen onboard and offers notable benefits for storage due to its combination of benefits from compressed gas and liquefied hydrogen storage, by tackling issues related to slow refueling, boil-off, and high energy consumption.",
+        "deep_link": "https://doi.org/10.3390/catal15030260",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Achieving optimal stability and storage capacities in material-based hydrogen storage methods",
+      "domain": "hydrogen storage",
+      "subdomain": "solid-state/material-based storage",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4408167357",
+          "type": "openalex_review",
+          "title": "Hydrogen Storage Technology, and Its Challenges: A Review",
+          "url": "https://doi.org/10.3390/catal15030260"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What material modifications can improve the cyclic stability of hydrogen storage materials over repeated charge-discharge cycles?",
+          "evidence_needed": "Long-term cycling experiments (hundreds to thousands of cycles) on candidate materials (metal hydrides, complex hydrides, chemical hydrides, MOFs); structural characterization before and after cycling using XRD, electron microscopy; measurement of capacity retention and kinetics degradation",
+          "disciplines": [
+            "materials science",
+            "solid-state chemistry",
+            "materials characterization"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How can gravimetric and volumetric hydrogen storage capacities of solid-state materials be enhanced to meet or exceed DOE targets (e.g., 5.5 wt% system-level)?",
+          "evidence_needed": "Synthesis and characterization of novel hydrogen storage materials (e.g., nanostructured metal hydrides, doped MOFs, novel complex hydrides); measurement of hydrogen uptake at various temperatures and pressures; system-level analysis including tank and balance of plant weight",
+          "disciplines": [
+            "materials science",
+            "inorganic chemistry",
+            "chemical engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What strategies can improve the kinetics of hydrogen absorption and desorption in solid-state storage materials to enable practical refueling and delivery rates?",
+          "evidence_needed": "Experimental testing of catalytic additives, nanostructuring approaches, and ball milling techniques; measurement of absorption/desorption rates and activation energies; investigation of surface modifications and particle size effects",
+          "disciplines": [
+            "catalysis",
+            "materials science",
+            "surface chemistry",
+            "chemical kinetics"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "material-based storage",
+        "metal hydrides",
+        "MOFs",
+        "chemical hydrides",
+        "storage capacity",
+        "cycling stability",
+        "kinetics"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "future research should",
+          "challenges remain"
+        ],
+        "original_text": "Material-based storage methods offer advantages in terms of energy densities, safety, and weight reduction, but challenges remain in achieving optimal stability and capacities.",
+        "deep_link": "https://doi.org/10.3390/catal15030260",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Development of hydrogen storage solutions that provide higher energy density than compressed and cryo-compressed hydrogen storage at 70 MPa while being cost-effective",
+      "domain": "hydrogen storage",
+      "subdomain": "advanced storage technologies",
+      "scope": "broad",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4408167357",
+          "type": "openalex_review",
+          "title": "Hydrogen Storage Technology, and Its Challenges: A Review",
+          "url": "https://doi.org/10.3390/catal15030260"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What novel materials or material combinations can achieve gravimetric and volumetric energy densities exceeding 70 MPa compressed hydrogen systems?",
+          "evidence_needed": "Synthesis and testing of advanced storage materials; comparative energy density measurements against 70 MPa baseline; system-level analysis including container weight and volume; techno-economic assessment",
+          "disciplines": [
+            "materials science",
+            "chemistry",
+            "chemical engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What engineering approaches (e.g., hybrid systems, novel containment strategies) can improve energy density beyond current 70 MPa systems?",
+          "evidence_needed": "Design and prototype testing of hybrid storage systems combining multiple approaches; engineering analysis of system integration; measurement of overall system energy density including all components",
+          "disciplines": [
+            "mechanical engineering",
+            "systems engineering",
+            "chemical engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How can production costs of high-energy-density hydrogen storage systems be reduced to enable commercial viability?",
+          "evidence_needed": "Techno-economic modeling of various storage approaches; identification of cost drivers; pilot-scale manufacturing studies; lifecycle cost analysis compared to conventional storage methods",
+          "disciplines": [
+            "industrial engineering",
+            "economics",
+            "manufacturing engineering"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "energy density",
+        "70 MPa",
+        "cost-effectiveness",
+        "novel materials",
+        "storage capacity",
+        "commercial viability"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "future research should",
+          "challenges remain"
+        ],
+        "original_text": "Moreover, future research should focus on developing novel materials and engineering approaches in order to overcome existing limitations, provide higher energy density than compressed hydrogen and cryo-compressed hydrogen storage at 70 MPa, enhance cost-effectiveness, and accelerate the deployment of hydrogen as a clean energy vector.",
+        "deep_link": "https://doi.org/10.3390/catal15030260",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Scalability of production of cellulose-based electrochemical sensors needs to be achieved for practical applications",
+      "domain": "materials science",
+      "subdomain": "cellulose-based sensors and electrochemical devices",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406696650",
+          "type": "openalex_review",
+          "title": "Cellulose-Based Electrochemical Sensors",
+          "url": "https://doi.org/10.3390/s25030645"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the bottlenecks in scaling up nanocellulose composite synthesis from laboratory to industrial scale?",
+          "evidence_needed": "Comparative studies of laboratory-scale versus pilot-scale production processes, identifying yield losses, quality variations, and cost barriers at different scales",
+          "disciplines": [
+            "materials science",
+            "chemical engineering",
+            "process engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Can continuous manufacturing processes be developed for cellulose-based sensor fabrication while maintaining sensor performance?",
+          "evidence_needed": "Development and testing of continuous or roll-to-roll manufacturing methods with performance benchmarking against batch-produced sensors",
+          "disciplines": [
+            "manufacturing engineering",
+            "materials science",
+            "electrochemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What is the cost-effectiveness of scaled cellulose-based sensor production compared to conventional sensor materials?",
+          "evidence_needed": "Techno-economic analysis comparing production costs, yield, and performance metrics at industrial scale",
+          "disciplines": [
+            "chemical engineering",
+            "economics",
+            "materials science"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "cellulose",
+        "electrochemical sensors",
+        "scalability",
+        "production",
+        "manufacturing",
+        "nanocellulose"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "significant challenges still need to be overcome regarding the scalability of production, selectivity improvement, and long-term stability under real operational conditions",
+        "deep_link": "https://doi.org/10.3390/s25030645",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Selectivity of cellulose-based electrochemical sensors needs improvement to distinguish between target analytes in complex matrices",
+      "domain": "analytical chemistry",
+      "subdomain": "electrochemical sensing and cellulose materials",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406696650",
+          "type": "openalex_review",
+          "title": "Cellulose-Based Electrochemical Sensors",
+          "url": "https://doi.org/10.3390/s25030645"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What surface modification strategies can enhance the selective recognition of target analytes on cellulose-based sensors?",
+          "evidence_needed": "Experimental studies testing various functionalization approaches (e.g., molecular imprinting, specific binding ligands, selective coatings) with interference studies in complex matrices",
+          "disciplines": [
+            "analytical chemistry",
+            "surface chemistry",
+            "materials science"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do different cellulose nanostructures (nanocrystals, nanofibrils, nanocomposites) affect selectivity toward specific analyte classes?",
+          "evidence_needed": "Comparative electrochemical characterization studies testing different cellulose morphologies against panels of structurally similar analytes",
+          "disciplines": [
+            "materials science",
+            "electrochemistry",
+            "nanotechnology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Can multi-modal sensing approaches combining cellulose-based sensors with other detection principles improve selectivity?",
+          "evidence_needed": "Development and validation of hybrid sensor systems combining electrochemical detection with complementary techniques (optical, piezoelectric, etc.) using cellulose platforms",
+          "disciplines": [
+            "analytical chemistry",
+            "sensor technology",
+            "electrochemistry"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "selectivity",
+        "cellulose sensors",
+        "functionalization",
+        "analyte recognition",
+        "interference",
+        "specificity"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "significant challenges still need to be overcome regarding the scalability of production, selectivity improvement, and long-term stability under real operational conditions",
+        "deep_link": "https://doi.org/10.3390/s25030645",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Long-term stability of cellulose-based electrochemical sensors under real operational conditions needs to be achieved",
+      "domain": "materials science",
+      "subdomain": "sensor stability and degradation",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406696650",
+          "type": "openalex_review",
+          "title": "Cellulose-Based Electrochemical Sensors",
+          "url": "https://doi.org/10.3390/s25030645"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the dominant degradation mechanisms affecting cellulose-based sensors during extended operation in aqueous environments?",
+          "evidence_needed": "Long-term stability studies with systematic characterization of physical, chemical, and electrochemical changes over time, including microscopy, spectroscopy, and performance testing",
+          "disciplines": [
+            "materials science",
+            "electrochemistry",
+            "polymer chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Can protective coatings or crosslinking strategies extend the operational lifetime of cellulose-based sensors without compromising sensitivity?",
+          "evidence_needed": "Experimental testing of various stabilization approaches with accelerated aging studies and real-time monitoring of sensor performance over extended periods",
+          "disciplines": [
+            "materials science",
+            "polymer chemistry",
+            "surface chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do environmental factors (temperature, humidity, pH, ionic strength) affect the long-term stability of cellulose-based sensors in real-world applications?",
+          "evidence_needed": "Systematic environmental stress testing under conditions mimicking medical diagnostics, environmental monitoring, and wearable technology applications",
+          "disciplines": [
+            "materials science",
+            "environmental chemistry",
+            "biomedical engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the shelf-life and storage stability of cellulose-based sensors compared to conventional sensor materials?",
+          "evidence_needed": "Long-term storage studies under various conditions with periodic performance validation",
+          "disciplines": [
+            "materials science",
+            "analytical chemistry",
+            "stability testing"
+          ],
+          "estimated_complexity": "simple"
+        }
+      ],
+      "related_keywords": [
+        "stability",
+        "degradation",
+        "cellulose",
+        "operational lifetime",
+        "environmental conditions",
+        "durability"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "significant challenges"
+        ],
+        "original_text": "significant challenges still need to be overcome regarding the scalability of production, selectivity improvement, and long-term stability under real operational conditions",
+        "deep_link": "https://doi.org/10.3390/s25030645",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Challenges related to long-term stability of metal halide perovskites persist",
+      "domain": "photovoltaics",
+      "subdomain": "metal halide perovskite solar cells",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409505875",
+          "type": "openalex_review",
+          "title": "Progress and Developments in the Fabrication and Characterization of Metal Halide Perovskites for Photovoltaic Applications",
+          "url": "https://doi.org/10.3390/nano15080613"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the dominant mechanisms of perovskite degradation under continuous illumination?",
+          "evidence_needed": "Long-term photostability testing under controlled conditions (temperature, humidity, light intensity) with time-resolved spectroscopic and structural characterization to identify chemical and structural changes",
+          "disciplines": [
+            "materials science",
+            "photochemistry",
+            "solid-state physics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do environmental factors (moisture, oxygen, temperature) individually and synergistically affect perovskite stability?",
+          "evidence_needed": "Systematic degradation studies isolating individual environmental stressors and their combinations, with quantitative analysis of performance metrics and structural integrity over time",
+          "disciplines": [
+            "materials science",
+            "environmental chemistry",
+            "device physics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What encapsulation strategies can effectively prevent moisture and oxygen ingress while maintaining optical transparency and mechanical flexibility?",
+          "evidence_needed": "Comparative testing of encapsulation materials and architectures with accelerated aging protocols, measuring permeation rates and device lifetime",
+          "disciplines": [
+            "materials engineering",
+            "polymer chemistry",
+            "device engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do interfacial reactions between perovskite and charge transport layers contribute to device degradation?",
+          "evidence_needed": "In-situ and ex-situ chemical analysis of perovskite/transport layer interfaces during aging, using techniques like XPS, ToF-SIMS, and cross-sectional TEM",
+          "disciplines": [
+            "surface chemistry",
+            "materials science",
+            "electrochemistry"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "perovskite stability",
+        "degradation",
+        "moisture sensitivity",
+        "photostability",
+        "operational lifetime"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "C",
+        "matched_phrases": [
+          "degradation mechanism"
+        ],
+        "original_text": "Despite significant progress, challenges related to long-term stability, degradation mechanisms, and environmental sustainability persist.",
+        "deep_link": "https://doi.org/10.3390/nano15080613",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Understanding and mitigating degradation mechanisms in metal halide perovskites",
+      "domain": "photovoltaics",
+      "subdomain": "metal halide perovskite materials chemistry",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409505875",
+          "type": "openalex_review",
+          "title": "Progress and Developments in the Fabrication and Characterization of Metal Halide Perovskites for Photovoltaic Applications",
+          "url": "https://doi.org/10.3390/nano15080613"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the chemical pathways of ion migration in perovskite materials under operational conditions?",
+          "evidence_needed": "Time-of-flight secondary ion mass spectrometry (ToF-SIMS) and impedance spectroscopy studies under bias and illumination to track ion movement; computational modeling of migration barriers",
+          "disciplines": [
+            "solid-state ionics",
+            "materials chemistry",
+            "computational chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do phase transitions and structural instabilities contribute to performance degradation?",
+          "evidence_needed": "In-situ temperature-dependent X-ray diffraction and Raman spectroscopy during thermal cycling; correlation with device performance metrics",
+          "disciplines": [
+            "crystallography",
+            "materials science",
+            "solid-state physics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What role do defects and grain boundaries play in initiating degradation?",
+          "evidence_needed": "High-resolution electron microscopy and kelvin probe force microscopy to characterize defect states; correlative degradation studies tracking specific microstructural features",
+          "disciplines": [
+            "materials characterization",
+            "defect chemistry",
+            "microscopy"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "degradation mechanisms",
+        "ion migration",
+        "phase stability",
+        "defects",
+        "grain boundaries"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "C",
+        "matched_phrases": [
+          "degradation mechanism"
+        ],
+        "original_text": "Despite significant progress, challenges related to long-term stability, degradation mechanisms, and environmental sustainability persist.",
+        "deep_link": "https://doi.org/10.3390/nano15080613",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Environmental sustainability challenges of metal halide perovskites",
+      "domain": "photovoltaics",
+      "subdomain": "green chemistry and sustainable materials",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409505875",
+          "type": "openalex_review",
+          "title": "Progress and Developments in the Fabrication and Characterization of Metal Halide Perovskites for Photovoltaic Applications",
+          "url": "https://doi.org/10.3390/nano15080613"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What lead-free perovskite compositions can achieve comparable efficiency and stability to lead-based systems?",
+          "evidence_needed": "Systematic synthesis and characterization of alternative metal compositions (Sn, Ge, Bi, etc.) with performance testing; structure-property relationship studies",
+          "disciplines": [
+            "materials chemistry",
+            "photovoltaics",
+            "inorganic chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How can lead leakage from damaged or disposed perovskite solar cells be prevented or remediated?",
+          "evidence_needed": "Leaching studies under environmental conditions; testing of sequestration layers and self-healing encapsulation; remediation material effectiveness",
+          "disciplines": [
+            "environmental chemistry",
+            "materials engineering",
+            "toxicology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What are the lifecycle environmental impacts and recyclability options for perovskite photovoltaic modules?",
+          "evidence_needed": "Lifecycle assessment studies; development and testing of recycling protocols for component recovery; techno-economic analysis",
+          "disciplines": [
+            "environmental engineering",
+            "chemical engineering",
+            "sustainability science"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "lead toxicity",
+        "lead-free perovskites",
+        "sustainability",
+        "recycling",
+        "environmental impact"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "C",
+        "matched_phrases": [
+          "degradation mechanism"
+        ],
+        "original_text": "Despite significant progress, challenges related to long-term stability, degradation mechanisms, and environmental sustainability persist.",
+        "deep_link": "https://doi.org/10.3390/nano15080613",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Scalability issues, performance variability, and economic feasibility of low-carbon binders, supplementary cementitious materials, and geopolymer concrete for infrastructure applications",
+      "domain": "materials science",
+      "subdomain": "sustainable construction materials",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409608467",
+          "type": "openalex_review",
+          "title": "Sustainable Strategies for Concrete Infrastructure Preservation: A Comprehensive Review and Perspective",
+          "url": "https://doi.org/10.3390/infrastructures10040099"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the barriers to scaling up production of geopolymer concrete from laboratory to industrial scale while maintaining consistent performance properties?",
+          "evidence_needed": "Pilot-scale manufacturing studies comparing laboratory formulations with industrial production, measuring mechanical properties, durability metrics, and cost analysis across different production volumes",
+          "disciplines": [
+            "materials science",
+            "chemical engineering",
+            "construction engineering",
+            "industrial engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What causes performance variability in supplementary cementitious materials (SCMs) across different sources and how can it be controlled?",
+          "evidence_needed": "Systematic characterization studies of SCMs from multiple sources, correlating chemical composition, particle size distribution, and reactivity with concrete performance; standardized testing protocols to predict performance",
+          "disciplines": [
+            "materials science",
+            "civil engineering",
+            "chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the economic break-even point for low-carbon binders compared to traditional Portland cement when lifecycle costs and carbon pricing are considered?",
+          "evidence_needed": "Comprehensive lifecycle cost analysis and techno-economic assessments across different geographic regions and market conditions, including carbon credits and environmental externalities",
+          "disciplines": [
+            "economics",
+            "environmental engineering",
+            "lifecycle assessment",
+            "civil engineering"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "geopolymer concrete",
+        "supplementary cementitious materials",
+        "low-carbon binders",
+        "scalability",
+        "performance variability",
+        "economic feasibility"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "However, critical challenges remain, including scalability issues, performance variability, economic feasibility, and the lack of standardized guidelines.",
+        "deep_link": "https://doi.org/10.3390/infrastructures10040099",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Understanding the long-term durability and reliability mechanisms of self-healing concrete technologies under field conditions",
+      "domain": "materials science",
+      "subdomain": "smart construction materials",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409608467",
+          "type": "openalex_review",
+          "title": "Sustainable Strategies for Concrete Infrastructure Preservation: A Comprehensive Review and Perspective",
+          "url": "https://doi.org/10.3390/infrastructures10040099"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the activation mechanisms and longevity of different self-healing agents (bacterial, encapsulated polymers, mineral-based) under real environmental exposure conditions?",
+          "evidence_needed": "Long-term field exposure studies (10+ years) comparing different self-healing mechanisms under various climate conditions, measuring crack healing efficiency, mechanical property recovery, and agent viability over time",
+          "disciplines": [
+            "materials science",
+            "microbiology",
+            "polymer chemistry",
+            "civil engineering"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do cyclic loading conditions and multiple damage-healing cycles affect the self-healing capacity and structural integrity of concrete?",
+          "evidence_needed": "Accelerated fatigue testing with controlled damage-healing cycles, measuring healing efficiency degradation, residual mechanical properties, and microstructural changes after repeated healing events",
+          "disciplines": [
+            "materials science",
+            "structural engineering",
+            "mechanics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the effective depth and crack width range for which self-healing technologies can reliably restore structural and durability performance?",
+          "evidence_needed": "Systematic experimental studies on specimens with controlled crack geometries (varying depths and widths), measuring healing penetration depth, sealing efficiency, and recovered mechanical and transport properties",
+          "disciplines": [
+            "materials science",
+            "civil engineering"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "self-healing concrete",
+        "autogenous healing",
+        "bacteria-based healing",
+        "microencapsulation",
+        "crack healing",
+        "durability"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "Innovations include low-carbon binders, supplementary cementitious materials (SCMs), geopolymer concrete, and self-healing technologies to enhance durability and reduce environmental impact.",
+        "deep_link": "https://doi.org/10.3390/infrastructures10040099",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Performance optimization and durability mechanisms of hybrid retrofitting approaches combining fiber-reinforced polymers with traditional steel reinforcement",
+      "domain": "structural engineering",
+      "subdomain": "infrastructure retrofitting",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409608467",
+          "type": "openalex_review",
+          "title": "Sustainable Strategies for Concrete Infrastructure Preservation: A Comprehensive Review and Perspective",
+          "url": "https://doi.org/10.3390/infrastructures10040099"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the optimal load-sharing mechanisms and stress distribution patterns between FRP composites and steel reinforcement in hybrid retrofitting systems?",
+          "evidence_needed": "Experimental structural testing with embedded sensors and strain gauges coupled with finite element validation, measuring load distribution under various loading scenarios and environmental conditions",
+          "disciplines": [
+            "structural engineering",
+            "mechanics",
+            "composite materials"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do environmental factors (UV exposure, temperature cycling, moisture) affect the long-term bond integrity between FRP systems and concrete substrates in hybrid configurations?",
+          "evidence_needed": "Accelerated weathering tests and long-term outdoor exposure studies measuring bond strength degradation, interface characterization using microscopy and mechanical testing at various exposure durations",
+          "disciplines": [
+            "materials science",
+            "civil engineering",
+            "polymer chemistry"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What failure modes dominate in hybrid FRP-steel retrofitted structures and how can they be predicted to optimize design?",
+          "evidence_needed": "Full-scale structural testing to failure of hybrid retrofitted elements under realistic loading, failure mode characterization, and correlation with design parameters to develop predictive models",
+          "disciplines": [
+            "structural engineering",
+            "materials science",
+            "mechanics"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "fiber-reinforced polymer",
+        "FRP",
+        "hybrid retrofitting",
+        "steel reinforcement",
+        "structural strengthening",
+        "bond behavior"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "Advanced retrofitting techniques, particularly fiber-reinforced polymer (FRP) systems, modularized steel reinforcement, and hybrid approaches, effectively improve resilience against environmental and operational stresses.",
+        "deep_link": "https://doi.org/10.3390/infrastructures10040099",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Understanding the reaction kinetics and microstructure development in low-carbon and alternative binder systems compared to traditional Portland cement",
+      "domain": "materials science",
+      "subdomain": "cement chemistry and microstructure",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4409608467",
+          "type": "openalex_review",
+          "title": "Sustainable Strategies for Concrete Infrastructure Preservation: A Comprehensive Review and Perspective",
+          "url": "https://doi.org/10.3390/infrastructures10040099"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the fundamental hydration/geopolymerization reaction pathways and kinetics for different low-carbon binder systems and how do they differ from Portland cement?",
+          "evidence_needed": "Time-resolved calorimetry, in-situ X-ray diffraction, NMR spectroscopy, and advanced microscopy studies tracking phase evolution and reaction products formation from mixing through long-term curing",
+          "disciplines": [
+            "materials science",
+            "chemistry",
+            "physical chemistry",
+            "solid-state physics"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How does the pore structure and interfacial transition zone develop in alternative binder systems and what are the implications for transport properties and durability?",
+          "evidence_needed": "Multi-scale microstructural characterization using mercury intrusion porosimetry, nitrogen sorption, X-ray computed tomography, and nanoindentation to correlate pore structure with transport properties (permeability, diffusivity)",
+          "disciplines": [
+            "materials science",
+            "civil engineering",
+            "microscopy"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What chemical and mineralogical factors control the carbonation and sulfate attack resistance of geopolymer and other alternative binders?",
+          "evidence_needed": "Accelerated degradation testing coupled with thermodynamic modeling and microstructural analysis (XRD, SEM-EDS, TGA) to identify reaction products and degradation mechanisms under chemical attack",
+          "disciplines": [
+            "materials science",
+            "chemistry",
+            "thermodynamics",
+            "civil engineering"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "geopolymer",
+        "alkali-activated materials",
+        "hydration kinetics",
+        "microstructure",
+        "pore structure",
+        "durability mechanisms"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "challenges remain"
+        ],
+        "original_text": "Innovations include low-carbon binders, supplementary cementitious materials (SCMs), geopolymer concrete, and self-healing technologies to enhance durability and reduce environmental impact.",
+        "deep_link": "https://doi.org/10.3390/infrastructures10040099",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "The long-term impact of chronic air pollution exposure on neurodegenerative disease development and progression remains unclear",
+      "domain": "environmental neurotoxicology",
+      "subdomain": "air pollution and neurodegeneration",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406803512",
+          "type": "openalex_review",
+          "title": "The impact of air pollution on neurodegenerative diseases: a narrative review of current evidence",
+          "url": "https://doi.org/10.1186/s43162-025-00403-2"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What is the dose-response relationship between chronic PM2.5 exposure duration/concentration and neurodegenerative disease incidence?",
+          "evidence_needed": "Longitudinal cohort studies tracking air pollution exposure levels and neurodegenerative disease diagnosis over decades, with quantified exposure metrics and clinical outcomes",
+          "disciplines": [
+            "epidemiology",
+            "environmental health",
+            "neurology",
+            "biostatistics"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Does chronic air pollution exposure accelerate progression rates in established neurodegenerative diseases compared to unexposed populations?",
+          "evidence_needed": "Prospective studies comparing disease progression markers (cognitive scores, imaging biomarkers, functional decline) in patients with high vs. low air pollution exposure",
+          "disciplines": [
+            "neurology",
+            "clinical research",
+            "environmental health",
+            "neuroimaging"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Are there critical windows of vulnerability during the lifespan where air pollution exposure has greater neurodegenerative impact?",
+          "evidence_needed": "Life-course epidemiological studies or animal models examining exposure during development, adulthood, and aging with long-term neurodegenerative outcomes",
+          "disciplines": [
+            "developmental neurotoxicology",
+            "epidemiology",
+            "gerontology",
+            "neuroscience"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What cumulative exposure thresholds exist for different air pollutants beyond which neurodegenerative risk significantly increases?",
+          "evidence_needed": "Meta-analyses of exposure-response data combined with mechanistic studies to identify threshold concentrations and exposure durations",
+          "disciplines": [
+            "environmental health",
+            "toxicology",
+            "epidemiology",
+            "risk assessment"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "chronic exposure",
+        "PM2.5",
+        "neurodegenerative diseases",
+        "long-term effects",
+        "exposure duration",
+        "dose-response"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap"
+        ],
+        "original_text": "Despite advancements, significant knowledge gaps remain, particularly regarding the long-term impact of chronic exposure and the specific molecular pathways involved.",
+        "deep_link": "https://doi.org/10.1186/s43162-025-00403-2",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "The specific molecular pathways by which air pollutants cause or exacerbate neurodegenerative diseases are not fully elucidated",
+      "domain": "molecular neurotoxicology",
+      "subdomain": "air pollution mechanisms in neurodegeneration",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406803512",
+          "type": "openalex_review",
+          "title": "The impact of air pollution on neurodegenerative diseases: a narrative review of current evidence",
+          "url": "https://doi.org/10.1186/s43162-025-00403-2"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "How do different air pollutant components (PM2.5, ozone, NO2, heavy metals) cross the blood-brain barrier and access neural tissue?",
+          "evidence_needed": "In vivo tracer studies and in vitro blood-brain barrier models with labeled pollutants, combined with imaging and quantification of pollutant distribution in brain regions",
+          "disciplines": [
+            "neurotoxicology",
+            "neurovascular biology",
+            "analytical chemistry",
+            "molecular imaging"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What are the direct molecular interactions between air pollutants and proteins involved in neurodegenerative diseases (e.g., amyloid-beta, tau, alpha-synuclein)?",
+          "evidence_needed": "Biochemical binding assays, structural biology studies, and cell culture experiments examining pollutant effects on protein aggregation, phosphorylation, and clearance",
+          "disciplines": [
+            "biochemistry",
+            "structural biology",
+            "protein chemistry",
+            "cell biology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Which specific inflammatory signaling cascades are activated by different air pollutants in microglia and astrocytes that lead to neurodegeneration?",
+          "evidence_needed": "Single-cell transcriptomics and proteomics of glial cells exposed to specific pollutants, followed by pathway analysis and validation through targeted inhibition studies",
+          "disciplines": [
+            "neuroimmunology",
+            "cell biology",
+            "systems biology",
+            "molecular neuroscience"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Do air pollutants alter mitochondrial function and oxidative stress pathways in neurons, and if so, through which specific mechanisms?",
+          "evidence_needed": "Cellular bioenergetics assays, reactive oxygen species measurements, and mitochondrial imaging in neurons exposed to pollutants, with mechanistic validation using targeted antioxidants",
+          "disciplines": [
+            "mitochondrial biology",
+            "neurochemistry",
+            "oxidative stress biology",
+            "cellular physiology"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "molecular mechanisms",
+        "blood-brain barrier",
+        "neuroinflammation",
+        "oxidative stress",
+        "protein aggregation",
+        "mitochondrial dysfunction"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap"
+        ],
+        "original_text": "Despite advancements, significant knowledge gaps remain, particularly regarding the long-term impact of chronic exposure and the specific molecular pathways involved.",
+        "deep_link": "https://doi.org/10.1186/s43162-025-00403-2",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "The relationship between air pollution-induced white matter abnormalities and their functional consequences for neural communication and cognitive decline is not fully understood",
+      "domain": "neuroscience",
+      "subdomain": "white matter pathology and air pollution",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406803512",
+          "type": "openalex_review",
+          "title": "The impact of air pollution on neurodegenerative diseases: a narrative review of current evidence",
+          "url": "https://doi.org/10.1186/s43162-025-00403-2"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "Which specific white matter tracts are most vulnerable to air pollution-induced damage?",
+          "evidence_needed": "Neuroimaging studies (diffusion tensor imaging, MRI) comparing white matter integrity across brain regions in exposed vs. unexposed populations, correlated with pollutant exposure data",
+          "disciplines": [
+            "neuroimaging",
+            "neuroanatomy",
+            "environmental health",
+            "radiology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What cellular mechanisms underlie air pollution-induced white matter damage (demyelination, oligodendrocyte death, axonal injury)?",
+          "evidence_needed": "Histopathological studies and animal models examining white matter at cellular and ultrastructural levels after controlled pollutant exposure, with immunohistochemistry for myelin and oligodendrocyte markers",
+          "disciplines": [
+            "neuropathology",
+            "glial biology",
+            "neurotoxicology",
+            "electron microscopy"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do white matter abnormalities caused by air pollution correlate with specific cognitive deficits and neurodegenerative disease symptoms?",
+          "evidence_needed": "Combined neuroimaging and neuropsychological assessment studies linking white matter tract damage patterns to specific cognitive domains and clinical symptoms",
+          "disciplines": [
+            "cognitive neuroscience",
+            "neuropsychology",
+            "neuroimaging",
+            "clinical neurology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Are air pollution-induced white matter changes reversible with reduced exposure or therapeutic intervention?",
+          "evidence_needed": "Longitudinal studies or animal experiments examining white matter recovery after exposure cessation, and intervention trials testing neuroprotective or remyelinating agents",
+          "disciplines": [
+            "neurology",
+            "neuroregeneration",
+            "environmental health",
+            "therapeutics"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "white matter",
+        "myelin",
+        "neural communication",
+        "cognitive function",
+        "neuroimaging",
+        "oligodendrocytes"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap"
+        ],
+        "original_text": "Research indicates that air pollution may exacerbate neuroinflammation and cause white matter abnormalities, which disrupt neural communication and cognitive function.",
+        "deep_link": "https://doi.org/10.1186/s43162-025-00403-2",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "The mechanisms by which environmental factors like residential greenness mitigate adverse neurological effects of air pollution are unclear",
+      "domain": "environmental health",
+      "subdomain": "protective environmental factors in neurodegeneration",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4406803512",
+          "type": "openalex_review",
+          "title": "The impact of air pollution on neurodegenerative diseases: a narrative review of current evidence",
+          "url": "https://doi.org/10.1186/s43162-025-00403-2"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "Does residential greenness directly reduce air pollution exposure levels, or does it provide neurological benefits through independent mechanisms?",
+          "evidence_needed": "Epidemiological studies with both air pollution measurements and greenness indices, combined with statistical modeling to separate direct pollution reduction from independent effects on neurodegenerative outcomes",
+          "disciplines": [
+            "environmental epidemiology",
+            "urban ecology",
+            "atmospheric science",
+            "public health"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What biological mechanisms might explain greenness-associated neuroprotection (stress reduction, physical activity promotion, microbiome changes)?",
+          "evidence_needed": "Studies measuring stress biomarkers, physical activity levels, immune markers, and gut microbiome composition in relation to greenness exposure, correlated with cognitive outcomes",
+          "disciplines": [
+            "psychoneuroimmunology",
+            "environmental psychology",
+            "microbiome research",
+            "neuroscience"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "What are the optimal characteristics of green spaces (size, proximity, biodiversity, accessibility) for maximizing neuroprotective effects?",
+          "evidence_needed": "Comparative epidemiological studies examining different green space features and their associations with neurodegenerative disease risk, combined with intervention studies",
+          "disciplines": [
+            "landscape ecology",
+            "urban planning",
+            "environmental health",
+            "epidemiology"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Can controlled exposure to green environments or nature-based interventions reduce biomarkers of air pollution-induced neuroinflammation?",
+          "evidence_needed": "Randomized controlled trials measuring inflammatory biomarkers, cognitive function, and neuroimaging markers before and after nature exposure interventions in polluted areas",
+          "disciplines": [
+            "clinical research",
+            "environmental psychology",
+            "neuroimmunology",
+            "public health"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "residential greenness",
+        "green space",
+        "protective factors",
+        "nature exposure",
+        "environmental mitigation",
+        "urban planning"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "knowledge gap"
+        ],
+        "original_text": "Additionally, emerging evidence suggests that environmental factors like residential greenness and climate action could mitigate some of these adverse effects.",
+        "deep_link": "https://doi.org/10.1186/s43162-025-00403-2",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Cost competitiveness of biodegradable plastics remains a significant challenge, as they often have higher production costs than conventional plastics, limiting large-scale adoption",
+      "domain": "materials science",
+      "subdomain": "biodegradable polymer production",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4412158199",
+          "type": "openalex_review",
+          "title": "Existing Scenario and Environmental Significance of Biodegradable Plastics: A Review for a Sustainable Future",
+          "url": "https://doi.org/10.5772/geet.20250011"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the primary cost drivers in microbial fermentation-based production of biodegradable plastics (e.g., polyhydroxyalkanoates) compared to petroleum-based polymer production?",
+          "evidence_needed": "Techno-economic analysis comparing input costs (feedstock, energy, labor), capital expenditure, and operational costs for microbial fermentation versus conventional petrochemical processes",
+          "disciplines": [
+            "bioprocess engineering",
+            "industrial microbiology",
+            "economics"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "Can alternative low-cost feedstocks (e.g., agricultural waste, industrial by-products) reduce production costs of biodegradable plastics while maintaining polymer quality?",
+          "evidence_needed": "Experimental studies using waste feedstocks in fermentation or chemical synthesis, measuring yield, polymer properties, and cost per kilogram compared to conventional feedstocks",
+          "disciplines": [
+            "bioprocess engineering",
+            "materials science",
+            "waste valorization"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do economies of scale affect the cost competitiveness of biodegradable plastic production facilities?",
+          "evidence_needed": "Economic modeling and analysis of production costs at different scales (pilot, demonstration, commercial), including case studies of existing facilities",
+          "disciplines": [
+            "industrial engineering",
+            "economics",
+            "chemical engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What is the cost-effectiveness of biopolymer blending approaches to reduce production costs while maintaining desirable material properties?",
+          "evidence_needed": "Experimental studies testing blends of biodegradable polymers with cheaper materials, measuring mechanical properties, degradation rates, and calculating cost per unit with acceptable performance",
+          "disciplines": [
+            "polymer chemistry",
+            "materials science",
+            "economics"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "biodegradable plastics",
+        "production costs",
+        "bioprocessing",
+        "economic feasibility",
+        "feedstock optimization",
+        "scale-up"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "remains a significant challenge"
+        ],
+        "original_text": "However, cost competitiveness remains a significant challenge, as biodegradable plastics often have higher production costs than conventional plastics, limiting large-scale adoption. Strategies such as improved bioprocessing techniques, policy interventions, and circular economy approaches are essential for enhancing economic feasibility.",
+        "deep_link": "https://doi.org/10.5772/geet.20250011",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Understanding the relationship between physicochemical properties (tensile strength, degradation rate, thermal stability) and viability of biodegradable plastics across different industrial applications",
+      "domain": "materials science",
+      "subdomain": "biodegradable polymer characterization",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4412158199",
+          "type": "openalex_review",
+          "title": "Existing Scenario and Environmental Significance of Biodegradable Plastics: A Review for a Sustainable Future",
+          "url": "https://doi.org/10.5772/geet.20250011"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What minimum tensile strength and thermal stability thresholds are required for biodegradable plastics to function effectively in food packaging applications?",
+          "evidence_needed": "Comparative testing of biodegradable plastics with varying properties in real-world packaging conditions, measuring failure rates, product protection, and shelf-life maintenance",
+          "disciplines": [
+            "materials science",
+            "food science",
+            "packaging engineering"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "How do degradation rates of biodegradable plastics in agricultural mulch films need to be tuned to match crop growth cycles in different climates?",
+          "evidence_needed": "Field trials testing biodegradable mulch films with different degradation profiles across various crops and climate conditions, measuring degradation timing, soil residue, and crop performance",
+          "disciplines": [
+            "agricultural science",
+            "polymer chemistry",
+            "soil science"
+          ],
+          "estimated_complexity": "medium"
+        },
+        {
+          "question": "What are the critical mechanical property requirements for biodegradable plastics in biomedical applications (e.g., sutures, implants, drug delivery) versus packaging?",
+          "evidence_needed": "Systematic characterization of biodegradable polymers used in approved biomedical devices, establishing property-performance relationships through in vitro and in vivo testing",
+          "disciplines": [
+            "biomedical engineering",
+            "materials science",
+            "polymer chemistry"
+          ],
+          "estimated_complexity": "complex"
+        }
+      ],
+      "related_keywords": [
+        "mechanical properties",
+        "degradation kinetics",
+        "thermal stability",
+        "application requirements",
+        "performance criteria"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "remains a significant challenge"
+        ],
+        "original_text": "The physicochemical and mechanical properties of biodegradable plastics, including tensile strength, degradation rate, and thermal stability, are analysed to assess their viability across industries. Furthermore, their applications span packaging, agriculture, biomedical fields, and consumer goods, demonstrating their versatility of use.",
+        "deep_link": "https://doi.org/10.5772/geet.20250011",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Optimization of biodegradable plastic degradation rates to balance environmental persistence during use with effective biodegradation after disposal",
+      "domain": "environmental science",
+      "subdomain": "polymer degradation",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4412158199",
+          "type": "openalex_review",
+          "title": "Existing Scenario and Environmental Significance of Biodegradable Plastics: A Review for a Sustainable Future",
+          "url": "https://doi.org/10.5772/geet.20250011"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What molecular structural features control the initiation and rate of biodegradation in polylactic acid and polyhydroxyalkanoates under different environmental conditions (soil, marine, compost)?",
+          "evidence_needed": "Controlled degradation experiments with systematically varied polymer structures in different environments, coupled with molecular characterization techniques to track degradation mechanisms",
+          "disciplines": [
+            "polymer chemistry",
+            "microbiology",
+            "environmental science"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Can biodegradable plastics be engineered with triggered degradation mechanisms that activate only under specific end-of-life conditions?",
+          "evidence_needed": "Synthesis and testing of biodegradable polymers with conditional degradation triggers (e.g., pH, temperature, microbial consortia), measuring stability during use and degradation upon activation",
+          "disciplines": [
+            "polymer chemistry",
+            "materials engineering",
+            "synthetic biology"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "How do additives and blending components affect the degradation profile of biodegradable plastics in real-world disposal scenarios?",
+          "evidence_needed": "Degradation studies of formulated biodegradable plastic products (with plasticizers, fillers, etc.) in simulated and field disposal conditions, tracking degradation completeness and residue formation",
+          "disciplines": [
+            "polymer chemistry",
+            "environmental engineering",
+            "materials science"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "biodegradation",
+        "degradation mechanisms",
+        "environmental fate",
+        "polymer stability",
+        "end-of-life"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "remains a significant challenge"
+        ],
+        "original_text": "The physicochemical and mechanical properties of biodegradable plastics, including tensile strength, degradation rate, and thermal stability, are analysed to assess their viability across industries... This review explores the current scenario of biodegradable plastics, emphasizing their environmental significance in reducing landfill burden and marine pollution.",
+        "deep_link": "https://doi.org/10.5772/geet.20250011",
+        "section_label": "Abstract"
+      }
+    },
+    {
+      "problem_statement": "Understanding the environmental fate and actual biodegradation of biodegradable plastics in marine environments to validate their effectiveness in reducing marine pollution",
+      "domain": "marine environmental science",
+      "subdomain": "biodegradable polymer fate",
+      "scope": "medium",
+      "mention_count": 1,
+      "sources": [
+        {
+          "id": "openalex-W4412158199",
+          "type": "openalex_review",
+          "title": "Existing Scenario and Environmental Significance of Biodegradable Plastics: A Review for a Sustainable Future",
+          "url": "https://doi.org/10.5772/geet.20250011"
+        }
+      ],
+      "sub_questions": [
+        {
+          "question": "What are the actual degradation rates of commercially available biodegradable plastics in marine environments compared to terrestrial and composting conditions?",
+          "evidence_needed": "Long-term field studies deploying biodegradable plastic samples in various marine environments (coastal, pelagic, deep sea) with periodic retrieval for degradation assessment and microbial community analysis",
+          "disciplines": [
+            "marine biology",
+            "environmental science",
+            "polymer chemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Which marine microbial communities are capable of degrading different types of biodegradable plastics, and what environmental factors limit their activity?",
+          "evidence_needed": "Microbial enrichment studies from marine samples using biodegradable plastics as sole carbon sources, coupled with metagenomics and enzyme activity assays under varying conditions (temperature, salinity, oxygen)",
+          "disciplines": [
+            "marine microbiology",
+            "environmental microbiology",
+            "biochemistry"
+          ],
+          "estimated_complexity": "complex"
+        },
+        {
+          "question": "Do biodegradable plastics fragment into microplastics before complete mineralization in marine environments, potentially creating transient pollution?",
+          "evidence_needed": "Marine degradation experiments tracking physical fragmentation, microplastic formation, and chemical mineralization over time using microscopy, spectroscopy, and carbon tracking",
+          "disciplines": [
+            "marine science",
+            "environmental chemistry",
+            "materials science"
+          ],
+          "estimated_complexity": "medium"
+        }
+      ],
+      "related_keywords": [
+        "marine degradation",
+        "marine microbiome",
+        "ocean pollution",
+        "microplastics",
+        "environmental fate"
+      ],
+      "provenance": {
+        "section": "abstract",
+        "signal_category": "A",
+        "matched_phrases": [
+          "remains a significant challenge"
+        ],
+        "original_text": "This review explores the current scenario of biodegradable plastics, emphasizing their environmental significance in reducing landfill burden and marine pollution.",
+        "deep_link": "https://doi.org/10.5772/geet.20250011",
+        "section_label": "Abstract"
       }
     }
   ]
